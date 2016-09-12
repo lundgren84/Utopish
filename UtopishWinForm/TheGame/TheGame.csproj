@@ -47,19 +47,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="Buildings\Bank.cs" />
+    <Compile Include="Buildings\Barracks.cs" />
+    <Compile Include="Buildings\Buildings.cs" />
+    <Compile Include="Buildings\Lab.cs" />
     <Compile Include="Class\Kingdom.cs" />
     <Compile Include="Class\SoldierTypes\Archer.cs" />
-    <Compile Include="Class\SoldierTypes\HorseKnight.cs" />
+    <Compile Include="Class\SoldierTypes\ArmyUnit.cs" />
+    <Compile Include="Class\SoldierTypes\MountedKnight.cs" />
     <Compile Include="Class\SoldierTypes\Knight.cs" />
+    <Compile Include="DatabaseCommunication\LoginRelated.cs" />
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="World\Location.cs" />
+    <Compile Include="Player\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaticShit.cs" />
+    <Compile Include="World\World.cs" />
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>

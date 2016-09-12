@@ -11,6 +11,6 @@ namespace TheGame
         public string KD_Name { get; set; }
         public int KD_Location { get; set; }
         public int KD_Power { get; set; }
-        public List<Soldiers> Soldiers { get; set; }
+      //  public List<Soldiers> Soldiers { get; set; }
     }
 }

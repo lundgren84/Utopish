@@ -6,23 +6,15 @@ using System.Threading.Tasks;
 
 namespace TheGame
 {
-   public class Knight
+   public class Knight : ArmyUnit
     {
-        public int amount;
-        public string soldierName;
-        public int HP;
-        public int attack;
-        public double armor;
-        public double magicResistance;
-        public Knight()
+        public Knight(int _cost, int _quantity, int _hp, int _attackPower, int _armor) : base(_cost, _quantity, _hp, _attackPower, _armor)
         {
-            soldierName = "Knight";
-            HP = 100;
-            attack = 10;
-            armor = 0;
-            magicResistance = 0;
-            amount = 0;
+            _quantity = 0;
+            _cost = 200;
+            _hp = 200;
+            _attackPower = 100;
+            _armor = 25;
         }
-
     }
 }
