@@ -1,0 +1,5 @@
+﻿Buildings
+banks, barrack, lab
+Soldiers
+knight, horsemen, archer, catapult
+
