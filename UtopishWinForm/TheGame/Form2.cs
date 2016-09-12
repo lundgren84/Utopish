@@ -25,10 +25,7 @@ namespace TheGame
         {
             Acc.Location = "Im here!";
             Acc.Power = 19929;
-            Acc.Size = 45;
-            Acc.soldierList.Add(new Knight("Knight", 100, 10, 0, 0));
-            Acc.soldierList.Add(new Archer("Knight", 100, 10, 0, 0));
-            Acc.soldierList.Add(new HorseKnight("Knight", 100, 10, 0, 0));
+            Acc.Size = 45;    
         }
 
         private void RefreshGame()
@@ -43,6 +40,27 @@ namespace TheGame
         {
             this.Close();
             
+        }
+
+        private void btnTroopTrain_Click(object sender, EventArgs e)
+        {
+            int shopKnight = (int)numKnight.Value;
+            int shopArcher = (int)numArcher.Value;
+            int shopHorse = (int)numHorse.Value;
+
+
+            Acc.archer.amount += shopArcher;
+            Acc.knight.amount += shopKnight;
+            Acc.horseKnight.amount += shopHorse;
+
+            updateGame();
+        }
+
+        private void updateGame()
+        {
+            lblOverWiewArcher.Text = Acc.archer.amount.ToString();
+            lblOverWiewKnight.Text = Acc.knight.amount.ToString();
+            lblOverWiewHorse.Text = Acc.horseKnight.amount.ToString();
         }
     }
 }

@@ -6,15 +6,23 @@ using System.Threading.Tasks;
 
 namespace TheGame
 {
-    class Archer : Soldiers
+   public class Archer
     {
-        public Archer(string soldierName, double hp, double attack, double armor, double magicResistance) :base(soldierName,hp,attack,armor,magicResistance)
+        public int amount;
+        public string soldierName;
+        public int HP;
+        public int attack;
+        public double armor;
+        public double magicResistance;
+
+        public Archer() 
         {
-            soldierName = "Knight";
-            hp = 100;
+        soldierName = "Knight";
+            HP = 100;
             attack = 10;
             armor = 0;
             magicResistance = 0;
+            amount = 0;
         }
     }
 }

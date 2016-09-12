@@ -16,14 +16,19 @@ namespace TheGame
         public string Location { get; set; }
         public int Size { get; set; }
 
-        public List<Soldiers> soldierList;
+        public Knight knight;
+        public Archer archer;
+        public HorseKnight horseKnight;
+
 
         public Account (string username,string password,string email)
         {
             this.Username = username;
             this.Password = password;
             this.Email = email;
-            soldierList = new List<Soldiers>();
+            knight = new Knight();
+            archer = new Archer();
+            horseKnight = new HorseKnight();
         }
     }
 }

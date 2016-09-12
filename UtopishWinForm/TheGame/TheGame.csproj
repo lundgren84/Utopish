@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="Class\Kingdom.cs" />
-    <Compile Include="Class\Soldiers.cs" />
     <Compile Include="Class\SoldierTypes\Archer.cs" />
     <Compile Include="Class\SoldierTypes\HorseKnight.cs" />
     <Compile Include="Class\SoldierTypes\Knight.cs" />

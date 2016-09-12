@@ -6,15 +6,22 @@ using System.Threading.Tasks;
 
 namespace TheGame
 {
-    class HorseKnight :Soldiers
+   public class HorseKnight
     {
-        public HorseKnight(string soldierName, double hp, double attack, double armor, double magicResistance) :base(soldierName,hp,attack,armor,magicResistance)
+        public int amount;
+        public string soldierName;
+        public int HP;
+        public int attack;
+        public double armor;
+        public double magicResistance;
+        public HorseKnight()
         {
             soldierName = "Knight";
-            hp = 100;
+            HP = 100;
             attack = 10;
             armor = 0;
             magicResistance = 0;
+            amount = 0;
         }
     }
 }
