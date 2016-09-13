@@ -8,7 +8,7 @@ namespace TheGame
 {
     public class Location
     {
-        int x;
-        int y;
+       public int island;
+       public int kingdomNumber;
     }
 }
