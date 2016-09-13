@@ -594,7 +594,7 @@
             this.panelTrain.Controls.Add(this.label9);
             this.panelTrain.Location = new System.Drawing.Point(218, 3);
             this.panelTrain.Name = "panelTrain";
-            this.panelTrain.Size = new System.Drawing.Size(111, 410);
+            this.panelTrain.Size = new System.Drawing.Size(244, 410);
             this.panelTrain.TabIndex = 16;
             // 
             // lblTrainCost

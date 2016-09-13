@@ -78,7 +78,10 @@ namespace TheGame
          
             RefreshGame();
         }
-   
+        private void btnBuildBuild_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void btnOverWiew_Click(object sender, EventArgs e)
         {
@@ -137,10 +140,7 @@ namespace TheGame
             lblTrainCost.Text = (knightCost + archerCost + mountedKnightCost).ToString();          
         }
 
-        private void btnBuildBuild_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void numBank_ValueChanged(object sender, EventArgs e)
         {
