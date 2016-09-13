@@ -57,6 +57,8 @@
             this.panelBuild = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panelTrain = new System.Windows.Forms.Panel();
+            this.lblTrainCost = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -78,8 +80,8 @@
             this.panelResearch = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.panelScreen = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.lblTrainCost = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtGold = new System.Windows.Forms.Label();
             this.panelOverWiew.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelBuild.SuspendLayout();
@@ -324,6 +326,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtGold);
+            this.panel2.Controls.Add(this.label26);
             this.panel2.Controls.Add(this.txtSize);
             this.panel2.Controls.Add(this.txtPower);
             this.panel2.Controls.Add(this.txtLocation);
@@ -423,6 +427,28 @@
             this.panelTrain.Name = "panelTrain";
             this.panelTrain.Size = new System.Drawing.Size(705, 410);
             this.panelTrain.TabIndex = 16;
+            // 
+            // lblTrainCost
+            // 
+            this.lblTrainCost.AutoSize = true;
+            this.lblTrainCost.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTrainCost.ForeColor = System.Drawing.Color.White;
+            this.lblTrainCost.Location = new System.Drawing.Point(222, 233);
+            this.lblTrainCost.Name = "lblTrainCost";
+            this.lblTrainCost.Size = new System.Drawing.Size(16, 17);
+            this.lblTrainCost.TabIndex = 30;
+            this.lblTrainCost.Text = "0";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(81, 233);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(96, 17);
+            this.label25.TabIndex = 29;
+            this.label25.Text = "Total cost:";
             // 
             // label21
             // 
@@ -627,10 +653,10 @@
             // 
             // panelScreen
             // 
+            this.panelScreen.Controls.Add(this.panelOverWiew);
             this.panelScreen.Controls.Add(this.panelTrain);
             this.panelScreen.Controls.Add(this.panelResearch);
             this.panelScreen.Controls.Add(this.panelExplore);
-            this.panelScreen.Controls.Add(this.panelOverWiew);
             this.panelScreen.Controls.Add(this.panelBuild);
             this.panelScreen.Controls.Add(this.panelAttack);
             this.panelScreen.Location = new System.Drawing.Point(223, 84);
@@ -638,27 +664,27 @@
             this.panelScreen.Size = new System.Drawing.Size(927, 420);
             this.panelScreen.TabIndex = 19;
             // 
-            // label25
+            // label26
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(81, 233);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(96, 17);
-            this.label25.TabIndex = 29;
-            this.label25.Text = "Total cost:";
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(19, 288);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(54, 23);
+            this.label26.TabIndex = 22;
+            this.label26.Text = "Gold";
             // 
-            // lblTrainCost
+            // txtGold
             // 
-            this.lblTrainCost.AutoSize = true;
-            this.lblTrainCost.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTrainCost.ForeColor = System.Drawing.Color.White;
-            this.lblTrainCost.Location = new System.Drawing.Point(222, 233);
-            this.lblTrainCost.Name = "lblTrainCost";
-            this.lblTrainCost.Size = new System.Drawing.Size(16, 17);
-            this.lblTrainCost.TabIndex = 30;
-            this.lblTrainCost.Text = "0";
+            this.txtGold.AutoSize = true;
+            this.txtGold.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGold.ForeColor = System.Drawing.Color.White;
+            this.txtGold.Location = new System.Drawing.Point(23, 311);
+            this.txtGold.Name = "txtGold";
+            this.txtGold.Size = new System.Drawing.Size(21, 23);
+            this.txtGold.TabIndex = 23;
+            this.txtGold.Text = "0";
             // 
             // Form2
             // 
@@ -756,6 +782,8 @@
         private System.Windows.Forms.Panel panelScreen;
         private System.Windows.Forms.Label lblTrainCost;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label txtGold;
+        private System.Windows.Forms.Label label26;
     }
 }
 

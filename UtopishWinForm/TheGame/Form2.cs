@@ -31,7 +31,8 @@ namespace TheGame
         {
             Acc.Location = "Im here!";
             Acc.Power = 19929;
-            Acc.Size = 45;    
+            Acc.Size = 45;
+            Acc.Gold = 1000;  
         }
 
         private void RefreshGame()
@@ -40,6 +41,10 @@ namespace TheGame
             txtPower.Text = Acc.Power.ToString();
             txtLocation.Text = Acc.Location;
             txtSize.Text = Acc.Size.ToString();
+            txtGold.Text = Acc.Gold.ToString();
+            lblOverWiewArcher.Text = Acc.archer.quantity.ToString();
+            lblOverWiewKnight.Text = Acc.knight.quantity.ToString();
+            lblOverWiewHorse.Text = Acc.mountedKnight.quantity.ToString();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -53,38 +58,34 @@ namespace TheGame
             int shopKnight = (int)numKnight.Value;
             int shopArcher = (int)numArcher.Value;
             int shopHorse = (int)numHorse.Value;
+            int totalCost;
+            int.TryParse(lblTrainCost.Text, out totalCost);
 
+            if (totalCost <= Acc.Gold)
+            {
+                Acc.Gold -= totalCost;
+                Acc.archer.quantity += shopArcher;
+                Acc.knight.quantity += shopKnight;
+                Acc.mountedKnight.quantity += shopHorse;
+                numArcher.Value = 0;
+                numKnight.Value = 0;
+                numHorse.Value = 0;
+            }
 
-            Acc.archer.quantity += shopArcher;
-            Acc.knight.quantity += shopKnight;
-            Acc.mountedKnight.quantity += shopHorse;
-
-            updateGame();
+         
+            RefreshGame();
         }
-
-        private void updateGame()
-        {
-            lblOverWiewArcher.Text = Acc.archer.quantity.ToString();
-            lblOverWiewKnight.Text = Acc.knight.quantity.ToString();
-            lblOverWiewHorse.Text = Acc.mountedKnight.quantity.ToString();
-        }
+   
 
         private void btnOverWiew_Click(object sender, EventArgs e)
         {
-            //panelOverWiew.Height = 410;
-            //panelOverWiew.Width = 927;
             panelOverWiew.Dock = DockStyle.Fill;
             panelOverWiew.BringToFront();
         }
 
         private void btnBuild_Click(object sender, EventArgs e)
         {
-            //panelBuild.Height = 410;
-            //panelBuild.Width = 927;
-            //panelBuild.Left = 233;
-            //panelBuild.Top = 94;
-            panelBuild.BringToFront();
-          
+            panelBuild.BringToFront();     
             panelBuild.Dock = DockStyle.Fill;
         }
 
@@ -130,7 +131,7 @@ namespace TheGame
         {
             mountedKnightCost = 0;
             mountedKnightCost = StaticShit.AddValue(numHorse.Value, Acc.mountedKnight.cost);
-            lblTrainCost.Text = (knightCost + archerCost + mountedKnightCost).ToString();
+            lblTrainCost.Text = (knightCost + archerCost + mountedKnightCost).ToString();          
         }
     }
 }

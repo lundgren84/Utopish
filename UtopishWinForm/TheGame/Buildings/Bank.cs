@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace TheGame
 {
-    class Bank : Buildings
+   public class Bank : Buildings
     {
         decimal economicEffect;
+
+        public Bank()
+        {
+            quantity = 0;
+            cost = 1000;
+        }
     }
 }

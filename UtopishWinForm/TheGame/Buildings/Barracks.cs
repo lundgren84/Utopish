@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace TheGame
 {
-    class Barracks : Buildings
+   public class Barracks : Buildings
     {
         decimal militaryEffect;
+
+        public Barracks()
+        {
+            quantity = 0;
+            cost = 1000;
+        }
     }
 }

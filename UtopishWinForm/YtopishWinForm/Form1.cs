@@ -19,6 +19,7 @@ namespace YtopishWinForm
             InitializeComponent();
             RefreshClick();
             Accounts = new List<Account>();
+            Accounts.Add(new Account("q", "q", "q"));
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
