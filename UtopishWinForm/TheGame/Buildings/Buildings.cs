@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TheGame
 {
-    class Buildings
+   public class Buildings
     {
-        int quantity;
-        int cost;
+       public int quantity;
+       public int cost;
     }
 }

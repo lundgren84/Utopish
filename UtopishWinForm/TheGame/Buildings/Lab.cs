@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace TheGame
 {
-    class Lab : Buildings
+   public class Lab : Buildings
     {
         decimal techEffect;
+        public Lab()
+        {
+            quantity = 0;
+            cost = 1000;
+        }
     }
 }
