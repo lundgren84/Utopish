@@ -50,11 +50,25 @@
             this.button7 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtGold = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.txtSize = new System.Windows.Forms.Label();
             this.txtPower = new System.Windows.Forms.Label();
             this.txtLocation = new System.Windows.Forms.Label();
             this.txtKDName = new System.Windows.Forms.Label();
             this.panelBuild = new System.Windows.Forms.Panel();
+            this.label32 = new System.Windows.Forms.Label();
+            this.numLab = new System.Windows.Forms.NumericUpDown();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.numBarrack = new System.Windows.Forms.NumericUpDown();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.lblBuildCost = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.btnBuildBuild = new System.Windows.Forms.Button();
+            this.numBank = new System.Windows.Forms.NumericUpDown();
+            this.label27 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panelTrain = new System.Windows.Forms.Panel();
             this.lblTrainCost = new System.Windows.Forms.Label();
@@ -64,7 +78,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.numHorse = new System.Windows.Forms.NumericUpDown();
             this.numArcher = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
@@ -80,11 +93,12 @@
             this.panelResearch = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.panelScreen = new System.Windows.Forms.Panel();
-            this.label26 = new System.Windows.Forms.Label();
-            this.txtGold = new System.Windows.Forms.Label();
             this.panelOverWiew.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelBuild.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numLab)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBarrack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBank)).BeginInit();
             this.panelTrain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHorse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numArcher)).BeginInit();
@@ -341,6 +355,28 @@
             this.panel2.Size = new System.Drawing.Size(200, 410);
             this.panel2.TabIndex = 18;
             // 
+            // txtGold
+            // 
+            this.txtGold.AutoSize = true;
+            this.txtGold.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGold.ForeColor = System.Drawing.Color.White;
+            this.txtGold.Location = new System.Drawing.Point(23, 311);
+            this.txtGold.Name = "txtGold";
+            this.txtGold.Size = new System.Drawing.Size(21, 23);
+            this.txtGold.TabIndex = 23;
+            this.txtGold.Text = "0";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(19, 288);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(54, 23);
+            this.label26.TabIndex = 22;
+            this.label26.Text = "Gold";
+            // 
             // txtSize
             // 
             this.txtSize.AutoSize = true;
@@ -388,11 +424,145 @@
             // panelBuild
             // 
             this.panelBuild.BackColor = System.Drawing.Color.Black;
+            this.panelBuild.Controls.Add(this.label32);
+            this.panelBuild.Controls.Add(this.numLab);
+            this.panelBuild.Controls.Add(this.label33);
+            this.panelBuild.Controls.Add(this.label30);
+            this.panelBuild.Controls.Add(this.numBarrack);
+            this.panelBuild.Controls.Add(this.label31);
+            this.panelBuild.Controls.Add(this.label29);
+            this.panelBuild.Controls.Add(this.lblBuildCost);
+            this.panelBuild.Controls.Add(this.label28);
+            this.panelBuild.Controls.Add(this.btnBuildBuild);
+            this.panelBuild.Controls.Add(this.numBank);
+            this.panelBuild.Controls.Add(this.label27);
             this.panelBuild.Controls.Add(this.label8);
             this.panelBuild.Location = new System.Drawing.Point(112, 3);
             this.panelBuild.Name = "panelBuild";
-            this.panelBuild.Size = new System.Drawing.Size(101, 410);
+            this.panelBuild.Size = new System.Drawing.Size(103, 410);
             this.panelBuild.TabIndex = 16;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.White;
+            this.label32.Location = new System.Drawing.Point(202, 181);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(80, 17);
+            this.label32.TabIndex = 36;
+            this.label32.Text = "cost: 100";
+            // 
+            // numLab
+            // 
+            this.numLab.Location = new System.Drawing.Point(139, 181);
+            this.numLab.Name = "numLab";
+            this.numLab.Size = new System.Drawing.Size(57, 22);
+            this.numLab.TabIndex = 37;
+            this.numLab.ValueChanged += new System.EventHandler(this.numLab_ValueChanged);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.White;
+            this.label33.Location = new System.Drawing.Point(101, 181);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(32, 17);
+            this.label33.TabIndex = 38;
+            this.label33.Text = "Lab";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.White;
+            this.label30.Location = new System.Drawing.Point(202, 125);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(80, 17);
+            this.label30.TabIndex = 33;
+            this.label30.Text = "cost: 100";
+            // 
+            // numBarrack
+            // 
+            this.numBarrack.Location = new System.Drawing.Point(139, 122);
+            this.numBarrack.Name = "numBarrack";
+            this.numBarrack.Size = new System.Drawing.Size(57, 22);
+            this.numBarrack.TabIndex = 34;
+            this.numBarrack.ValueChanged += new System.EventHandler(this.numBarrack_ValueChanged);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.Color.White;
+            this.label31.Location = new System.Drawing.Point(69, 125);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(64, 17);
+            this.label31.TabIndex = 35;
+            this.label31.Text = "Barrack";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.White;
+            this.label29.Location = new System.Drawing.Point(202, 83);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(80, 17);
+            this.label29.TabIndex = 31;
+            this.label29.Text = "cost: 100";
+            // 
+            // lblBuildCost
+            // 
+            this.lblBuildCost.AutoSize = true;
+            this.lblBuildCost.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuildCost.ForeColor = System.Drawing.Color.White;
+            this.lblBuildCost.Location = new System.Drawing.Point(139, 233);
+            this.lblBuildCost.Name = "lblBuildCost";
+            this.lblBuildCost.Size = new System.Drawing.Size(16, 17);
+            this.lblBuildCost.TabIndex = 32;
+            this.lblBuildCost.Text = "0";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.White;
+            this.label28.Location = new System.Drawing.Point(37, 233);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(96, 17);
+            this.label28.TabIndex = 31;
+            this.label28.Text = "Total cost:";
+            // 
+            // btnBuildBuild
+            // 
+            this.btnBuildBuild.Location = new System.Drawing.Point(139, 259);
+            this.btnBuildBuild.Name = "btnBuildBuild";
+            this.btnBuildBuild.Size = new System.Drawing.Size(75, 23);
+            this.btnBuildBuild.TabIndex = 31;
+            this.btnBuildBuild.Text = "Build";
+            this.btnBuildBuild.UseVisualStyleBackColor = true;
+            this.btnBuildBuild.Click += new System.EventHandler(this.btnBuildBuild_Click);
+            // 
+            // numBank
+            // 
+            this.numBank.Location = new System.Drawing.Point(139, 80);
+            this.numBank.Name = "numBank";
+            this.numBank.Size = new System.Drawing.Size(57, 22);
+            this.numBank.TabIndex = 31;
+            this.numBank.ValueChanged += new System.EventHandler(this.numBank_ValueChanged);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.White;
+            this.label27.Location = new System.Drawing.Point(93, 83);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(40, 17);
+            this.label27.TabIndex = 31;
+            this.label27.Text = "Bank";
             // 
             // label8
             // 
@@ -414,7 +584,6 @@
             this.panelTrain.Controls.Add(this.label19);
             this.panelTrain.Controls.Add(this.label18);
             this.panelTrain.Controls.Add(this.label17);
-            this.panelTrain.Controls.Add(this.label16);
             this.panelTrain.Controls.Add(this.numHorse);
             this.panelTrain.Controls.Add(this.numArcher);
             this.panelTrain.Controls.Add(this.label15);
@@ -423,9 +592,9 @@
             this.panelTrain.Controls.Add(this.numKnight);
             this.panelTrain.Controls.Add(this.btnTroopTrain);
             this.panelTrain.Controls.Add(this.label9);
-            this.panelTrain.Location = new System.Drawing.Point(219, 3);
+            this.panelTrain.Location = new System.Drawing.Point(218, 3);
             this.panelTrain.Name = "panelTrain";
-            this.panelTrain.Size = new System.Drawing.Size(705, 410);
+            this.panelTrain.Size = new System.Drawing.Size(111, 410);
             this.panelTrain.TabIndex = 16;
             // 
             // lblTrainCost
@@ -455,7 +624,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(246, 189);
+            this.label21.Location = new System.Drawing.Point(246, 184);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(80, 17);
             this.label21.TabIndex = 28;
@@ -466,7 +635,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(246, 133);
+            this.label20.Location = new System.Drawing.Point(246, 128);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(88, 17);
             this.label20.TabIndex = 27;
@@ -504,17 +673,6 @@
             this.label17.Size = new System.Drawing.Size(48, 17);
             this.label17.TabIndex = 24;
             this.label17.Text = "Iron:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(184, 13);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(48, 17);
-            this.label16.TabIndex = 23;
-            this.label16.Text = "Wood:";
             // 
             // numHorse
             // 
@@ -653,38 +811,16 @@
             // 
             // panelScreen
             // 
+            this.panelScreen.Controls.Add(this.panelBuild);
             this.panelScreen.Controls.Add(this.panelOverWiew);
             this.panelScreen.Controls.Add(this.panelTrain);
             this.panelScreen.Controls.Add(this.panelResearch);
             this.panelScreen.Controls.Add(this.panelExplore);
-            this.panelScreen.Controls.Add(this.panelBuild);
             this.panelScreen.Controls.Add(this.panelAttack);
             this.panelScreen.Location = new System.Drawing.Point(223, 84);
             this.panelScreen.Name = "panelScreen";
             this.panelScreen.Size = new System.Drawing.Size(927, 420);
             this.panelScreen.TabIndex = 19;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.White;
-            this.label26.Location = new System.Drawing.Point(19, 288);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(54, 23);
-            this.label26.TabIndex = 22;
-            this.label26.Text = "Gold";
-            // 
-            // txtGold
-            // 
-            this.txtGold.AutoSize = true;
-            this.txtGold.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGold.ForeColor = System.Drawing.Color.White;
-            this.txtGold.Location = new System.Drawing.Point(23, 311);
-            this.txtGold.Name = "txtGold";
-            this.txtGold.Size = new System.Drawing.Size(21, 23);
-            this.txtGold.TabIndex = 23;
-            this.txtGold.Text = "0";
             // 
             // Form2
             // 
@@ -711,6 +847,9 @@
             this.panel2.PerformLayout();
             this.panelBuild.ResumeLayout(false);
             this.panelBuild.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numLab)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBarrack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBank)).EndInit();
             this.panelTrain.ResumeLayout(false);
             this.panelTrain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHorse)).EndInit();
@@ -758,7 +897,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.NumericUpDown numHorse;
         private System.Windows.Forms.NumericUpDown numArcher;
         private System.Windows.Forms.Label label15;
@@ -784,6 +922,18 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label txtGold;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.NumericUpDown numLab;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.NumericUpDown numBarrack;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label lblBuildCost;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Button btnBuildBuild;
+        private System.Windows.Forms.NumericUpDown numBank;
+        private System.Windows.Forms.Label label27;
     }
 }
 

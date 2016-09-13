@@ -29,7 +29,6 @@ namespace TheGame
                             string sql2 = $"UPDATE Player SET Archer = '{updateValue}' WHERE UserID = '{player.playerId}';";
                             var command2 = new SqlCommand(sql2, connection);
                         }
-
                     }
                 }
             }
