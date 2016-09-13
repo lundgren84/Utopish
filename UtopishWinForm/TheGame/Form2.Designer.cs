@@ -431,9 +431,9 @@
             this.label21.ForeColor = System.Drawing.Color.White;
             this.label21.Location = new System.Drawing.Point(246, 189);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(208, 17);
+            this.label21.Size = new System.Drawing.Size(80, 17);
             this.label21.TabIndex = 28;
-            this.label21.Text = "10 wood, 10 Iron, 10 Gold";
+            this.label21.Text = "cost: 500";
             // 
             // label20
             // 
@@ -442,9 +442,9 @@
             this.label20.ForeColor = System.Drawing.Color.White;
             this.label20.Location = new System.Drawing.Point(246, 133);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(136, 17);
+            this.label20.Size = new System.Drawing.Size(88, 17);
             this.label20.TabIndex = 27;
-            this.label20.Text = "10 wood, 10 Iron";
+            this.label20.Text = "cost: 100 ";
             // 
             // label19
             // 
@@ -453,9 +453,9 @@
             this.label19.ForeColor = System.Drawing.Color.White;
             this.label19.Location = new System.Drawing.Point(246, 86);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(64, 17);
+            this.label19.Size = new System.Drawing.Size(80, 17);
             this.label19.TabIndex = 26;
-            this.label19.Text = "10 wood";
+            this.label19.Text = "cost: 200";
             // 
             // label18
             // 
