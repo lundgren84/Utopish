@@ -29,6 +29,17 @@ namespace TheGame.Player
             this.knight = new Knight(knight.cost, 0, knight.HP, knight.attackPower, knight.armor);
             this.location = FigureOutLocation();
         }
+
+        private int FigureOutPlayerID()
+        {
+            throw new NotImplementedException();
+        }
+
+        private Location FigureOutLocation()
+        {
+            throw new NotImplementedException();
+        }
+
         public Player CreateNewPlayer()
         {
             LoginRelated login = new LoginRelated();
@@ -48,13 +59,7 @@ namespace TheGame.Player
 
 
         }
-        private Location FigureOutLocation()
-        {
-
-        }
-        private int FigureOutPlayerID()
-        {
-
-        }
+      
+        
     }
 }

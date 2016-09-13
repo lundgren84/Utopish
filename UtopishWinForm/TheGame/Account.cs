@@ -18,7 +18,7 @@ namespace TheGame
 
         public Knight knight;
         public Archer archer;
-        public HorseKnight horseKnight;
+        public MountedKnight mountedKnight;
 
 
         public Account (string username,string password,string email)
@@ -26,9 +26,9 @@ namespace TheGame
             this.Username = username;
             this.Password = password;
             this.Email = email;
-            knight = new Knight();
-            archer = new Archer();
-            horseKnight = new HorseKnight();
+            knight = new Knight(knight.cost, 0, knight.HP, knight.attackPower, knight.armor);
+            archer = new Archer(archer.cost, 0, archer.HP, archer.attackPower, archer.armor);
+            mountedKnight = new MountedKnight(mountedKnight.cost, 0, mountedKnight.HP, mountedKnight.attackPower, mountedKnight.armor);
         }
     }
 }

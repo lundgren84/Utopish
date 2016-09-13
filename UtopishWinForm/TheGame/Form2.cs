@@ -49,18 +49,18 @@ namespace TheGame
             int shopHorse = (int)numHorse.Value;
 
 
-            Acc.archer.amount += shopArcher;
-            Acc.knight.amount += shopKnight;
-            Acc.horseKnight.amount += shopHorse;
+            Acc.archer.quantity += shopArcher;
+            Acc.knight.quantity += shopKnight;
+            Acc.mountedKnight.quantity += shopHorse;
 
             updateGame();
         }
 
         private void updateGame()
         {
-            lblOverWiewArcher.Text = Acc.archer.amount.ToString();
-            lblOverWiewKnight.Text = Acc.knight.amount.ToString();
-            lblOverWiewHorse.Text = Acc.horseKnight.amount.ToString();
+            lblOverWiewArcher.Text = Acc.archer.quantity.ToString();
+            lblOverWiewKnight.Text = Acc.knight.quantity.ToString();
+            lblOverWiewHorse.Text = Acc.mountedKnight.quantity.ToString();
         }
     }
 }
