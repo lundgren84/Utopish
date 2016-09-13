@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using YtopishWinForm;
 
 namespace TheGame
 {
@@ -26,9 +26,9 @@ namespace TheGame
             this.Username = username;
             this.Password = password;
             this.Email = email;
-            knight = new Knight(knight.cost, 0, knight.HP, knight.attackPower, knight.armor);
-            archer = new Archer(archer.cost, 0, archer.HP, archer.attackPower, archer.armor);
-            mountedKnight = new MountedKnight(mountedKnight.cost, 0, mountedKnight.HP, mountedKnight.attackPower, mountedKnight.armor);
+            knight = new Knight(200, 0,200, 90,25);
+            archer = new Archer(100, 0,100,50, 10);
+            mountedKnight = new MountedKnight(500, 0, 500, 250, 25);
         }
     }
 }

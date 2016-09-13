@@ -14,9 +14,15 @@ namespace TheGame
     public partial class Form2 : Form
     {
         Account Acc = StaticShit.acc;
+        int archerCost;
+        int knightCost;
+        int mountedKnightCost;
         public Form2()
         {
             InitializeComponent();
+            panelOverWiew.Height = 410;
+            panelOverWiew.Width = 927;
+            panelOverWiew.BringToFront();
             LoadAccount();
             RefreshGame();        
         }
@@ -61,6 +67,70 @@ namespace TheGame
             lblOverWiewArcher.Text = Acc.archer.quantity.ToString();
             lblOverWiewKnight.Text = Acc.knight.quantity.ToString();
             lblOverWiewHorse.Text = Acc.mountedKnight.quantity.ToString();
+        }
+
+        private void btnOverWiew_Click(object sender, EventArgs e)
+        {
+            //panelOverWiew.Height = 410;
+            //panelOverWiew.Width = 927;
+            panelOverWiew.Dock = DockStyle.Fill;
+            panelOverWiew.BringToFront();
+        }
+
+        private void btnBuild_Click(object sender, EventArgs e)
+        {
+            //panelBuild.Height = 410;
+            //panelBuild.Width = 927;
+            //panelBuild.Left = 233;
+            //panelBuild.Top = 94;
+            panelBuild.BringToFront();
+          
+            panelBuild.Dock = DockStyle.Fill;
+        }
+
+        private void btnTrain_Click(object sender, EventArgs e)
+        {
+            panelTrain.BringToFront();
+            panelTrain.Dock = DockStyle.Fill;
+        }
+
+        private void btnAttack_Click(object sender, EventArgs e)
+        {
+            panelAttack.BringToFront();
+            panelAttack.Dock = DockStyle.Fill;
+        }
+
+        private void btnExplore_Click(object sender, EventArgs e)
+        {
+            panelExplore.BringToFront();
+            panelExplore.Dock = DockStyle.Fill;
+        }
+
+        private void btnResearch_Click(object sender, EventArgs e)
+        {
+            panelResearch.BringToFront();
+            panelResearch.Dock = DockStyle.Fill;
+        }
+
+        private void numKnight_ValueChanged(object sender, EventArgs e)
+        {
+            knightCost = 0;
+           knightCost = StaticShit.AddValue(numKnight.Value,Acc.knight.cost);
+            lblTrainCost.Text = (knightCost + archerCost + mountedKnightCost).ToString();
+        }
+
+        private void numArcher_ValueChanged(object sender, EventArgs e)
+        {
+            archerCost = 0;
+           archerCost = StaticShit.AddValue(numArcher.Value, Acc.archer.cost);
+            lblTrainCost.Text = (knightCost + archerCost + mountedKnightCost).ToString();
+        }
+
+        private void numHorse_ValueChanged(object sender, EventArgs e)
+        {
+            mountedKnightCost = 0;
+            mountedKnightCost = StaticShit.AddValue(numHorse.Value, Acc.mountedKnight.cost);
+            lblTrainCost.Text = (knightCost + archerCost + mountedKnightCost).ToString();
         }
     }
 }

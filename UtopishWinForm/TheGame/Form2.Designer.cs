@@ -33,12 +33,18 @@
             this.btnExplore = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnBuild = new System.Windows.Forms.Button();
             this.btnTrain = new System.Windows.Forms.Button();
             this.btnAttack = new System.Windows.Forms.Button();
             this.btnOverWiew = new System.Windows.Forms.Button();
             this.btnResearch = new System.Windows.Forms.Button();
             this.panelOverWiew = new System.Windows.Forms.Panel();
+            this.lblOverWiewHorse = new System.Windows.Forms.Label();
+            this.lblOverWiewArcher = new System.Windows.Forms.Label();
+            this.lblOverWiewKnight = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
@@ -48,7 +54,7 @@
             this.txtPower = new System.Windows.Forms.Label();
             this.txtLocation = new System.Windows.Forms.Label();
             this.txtKDName = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelBuild = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panelTrain = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
@@ -71,15 +77,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panelResearch = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.lblOverWiewKnight = new System.Windows.Forms.Label();
-            this.lblOverWiewArcher = new System.Windows.Forms.Label();
-            this.lblOverWiewHorse = new System.Windows.Forms.Label();
+            this.panelScreen = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.lblTrainCost = new System.Windows.Forms.Label();
             this.panelOverWiew.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panelBuild.SuspendLayout();
             this.panelTrain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHorse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numArcher)).BeginInit();
@@ -87,6 +90,7 @@
             this.panelAttack.SuspendLayout();
             this.panelExplore.SuspendLayout();
             this.panelResearch.SuspendLayout();
+            this.panelScreen.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -120,6 +124,7 @@
             this.btnExplore.TabIndex = 2;
             this.btnExplore.Text = "explore";
             this.btnExplore.UseVisualStyleBackColor = true;
+            this.btnExplore.Click += new System.EventHandler(this.btnExplore_Click);
             // 
             // label3
             // 
@@ -143,14 +148,15 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Location";
             // 
-            // button2
+            // btnBuild
             // 
-            this.button2.Location = new System.Drawing.Point(332, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 52);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "build";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnBuild.Location = new System.Drawing.Point(332, 13);
+            this.btnBuild.Name = "btnBuild";
+            this.btnBuild.Size = new System.Drawing.Size(103, 52);
+            this.btnBuild.TabIndex = 9;
+            this.btnBuild.Text = "build";
+            this.btnBuild.UseVisualStyleBackColor = true;
+            this.btnBuild.Click += new System.EventHandler(this.btnBuild_Click);
             // 
             // btnTrain
             // 
@@ -160,6 +166,7 @@
             this.btnTrain.TabIndex = 10;
             this.btnTrain.Text = "train";
             this.btnTrain.UseVisualStyleBackColor = true;
+            this.btnTrain.Click += new System.EventHandler(this.btnTrain_Click);
             // 
             // btnAttack
             // 
@@ -169,6 +176,7 @@
             this.btnAttack.TabIndex = 11;
             this.btnAttack.Text = "attack";
             this.btnAttack.UseVisualStyleBackColor = true;
+            this.btnAttack.Click += new System.EventHandler(this.btnAttack_Click);
             // 
             // btnOverWiew
             // 
@@ -178,6 +186,7 @@
             this.btnOverWiew.TabIndex = 12;
             this.btnOverWiew.Text = "overwiew";
             this.btnOverWiew.UseVisualStyleBackColor = true;
+            this.btnOverWiew.Click += new System.EventHandler(this.btnOverWiew_Click);
             // 
             // btnResearch
             // 
@@ -187,9 +196,11 @@
             this.btnResearch.TabIndex = 13;
             this.btnResearch.Text = "research";
             this.btnResearch.UseVisualStyleBackColor = true;
+            this.btnResearch.Click += new System.EventHandler(this.btnResearch_Click);
             // 
             // panelOverWiew
             // 
+            this.panelOverWiew.BackColor = System.Drawing.Color.Black;
             this.panelOverWiew.Controls.Add(this.lblOverWiewHorse);
             this.panelOverWiew.Controls.Add(this.lblOverWiewArcher);
             this.panelOverWiew.Controls.Add(this.lblOverWiewKnight);
@@ -197,10 +208,76 @@
             this.panelOverWiew.Controls.Add(this.label23);
             this.panelOverWiew.Controls.Add(this.label22);
             this.panelOverWiew.Controls.Add(this.label5);
-            this.panelOverWiew.Location = new System.Drawing.Point(223, 94);
+            this.panelOverWiew.Location = new System.Drawing.Point(3, 3);
             this.panelOverWiew.Name = "panelOverWiew";
             this.panelOverWiew.Size = new System.Drawing.Size(103, 410);
             this.panelOverWiew.TabIndex = 14;
+            // 
+            // lblOverWiewHorse
+            // 
+            this.lblOverWiewHorse.AutoSize = true;
+            this.lblOverWiewHorse.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOverWiewHorse.ForeColor = System.Drawing.Color.White;
+            this.lblOverWiewHorse.Location = new System.Drawing.Point(180, 155);
+            this.lblOverWiewHorse.Name = "lblOverWiewHorse";
+            this.lblOverWiewHorse.Size = new System.Drawing.Size(21, 23);
+            this.lblOverWiewHorse.TabIndex = 27;
+            this.lblOverWiewHorse.Text = "0";
+            // 
+            // lblOverWiewArcher
+            // 
+            this.lblOverWiewArcher.AutoSize = true;
+            this.lblOverWiewArcher.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOverWiewArcher.ForeColor = System.Drawing.Color.White;
+            this.lblOverWiewArcher.Location = new System.Drawing.Point(180, 107);
+            this.lblOverWiewArcher.Name = "lblOverWiewArcher";
+            this.lblOverWiewArcher.Size = new System.Drawing.Size(21, 23);
+            this.lblOverWiewArcher.TabIndex = 26;
+            this.lblOverWiewArcher.Text = "0";
+            // 
+            // lblOverWiewKnight
+            // 
+            this.lblOverWiewKnight.AutoSize = true;
+            this.lblOverWiewKnight.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOverWiewKnight.ForeColor = System.Drawing.Color.White;
+            this.lblOverWiewKnight.Location = new System.Drawing.Point(180, 52);
+            this.lblOverWiewKnight.Name = "lblOverWiewKnight";
+            this.lblOverWiewKnight.Size = new System.Drawing.Size(21, 23);
+            this.lblOverWiewKnight.TabIndex = 25;
+            this.lblOverWiewKnight.Text = "0";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(32, 155);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(142, 23);
+            this.label24.TabIndex = 24;
+            this.label24.Text = "HorseKnights";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(87, 107);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(87, 23);
+            this.label23.TabIndex = 23;
+            this.label23.Text = "Archers";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(87, 52);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(87, 23);
+            this.label22.TabIndex = 22;
+            this.label22.Text = "Knights";
             // 
             // label5
             // 
@@ -304,13 +381,14 @@
             this.txtKDName.TabIndex = 18;
             this.txtKDName.Text = "textHolder";
             // 
-            // panel3
+            // panelBuild
             // 
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Location = new System.Drawing.Point(332, 94);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(101, 410);
-            this.panel3.TabIndex = 16;
+            this.panelBuild.BackColor = System.Drawing.Color.Black;
+            this.panelBuild.Controls.Add(this.label8);
+            this.panelBuild.Location = new System.Drawing.Point(112, 3);
+            this.panelBuild.Name = "panelBuild";
+            this.panelBuild.Size = new System.Drawing.Size(101, 410);
+            this.panelBuild.TabIndex = 16;
             // 
             // label8
             // 
@@ -325,6 +403,8 @@
             // 
             // panelTrain
             // 
+            this.panelTrain.Controls.Add(this.lblTrainCost);
+            this.panelTrain.Controls.Add(this.label25);
             this.panelTrain.Controls.Add(this.label21);
             this.panelTrain.Controls.Add(this.label20);
             this.panelTrain.Controls.Add(this.label19);
@@ -339,9 +419,9 @@
             this.panelTrain.Controls.Add(this.numKnight);
             this.panelTrain.Controls.Add(this.btnTroopTrain);
             this.panelTrain.Controls.Add(this.label9);
-            this.panelTrain.Location = new System.Drawing.Point(441, 94);
+            this.panelTrain.Location = new System.Drawing.Point(219, 3);
             this.panelTrain.Name = "panelTrain";
-            this.panelTrain.Size = new System.Drawing.Size(103, 410);
+            this.panelTrain.Size = new System.Drawing.Size(705, 410);
             this.panelTrain.TabIndex = 16;
             // 
             // label21
@@ -416,6 +496,7 @@
             this.numHorse.Name = "numHorse";
             this.numHorse.Size = new System.Drawing.Size(57, 22);
             this.numHorse.TabIndex = 22;
+            this.numHorse.ValueChanged += new System.EventHandler(this.numHorse_ValueChanged);
             // 
             // numArcher
             // 
@@ -423,6 +504,7 @@
             this.numArcher.Name = "numArcher";
             this.numArcher.Size = new System.Drawing.Size(57, 22);
             this.numArcher.TabIndex = 21;
+            this.numArcher.ValueChanged += new System.EventHandler(this.numArcher_ValueChanged);
             // 
             // label15
             // 
@@ -463,10 +545,11 @@
             this.numKnight.Name = "numKnight";
             this.numKnight.Size = new System.Drawing.Size(57, 22);
             this.numKnight.TabIndex = 17;
+            this.numKnight.ValueChanged += new System.EventHandler(this.numKnight_ValueChanged);
             // 
             // btnTroopTrain
             // 
-            this.btnTroopTrain.Location = new System.Drawing.Point(165, 231);
+            this.btnTroopTrain.Location = new System.Drawing.Point(183, 262);
             this.btnTroopTrain.Name = "btnTroopTrain";
             this.btnTroopTrain.Size = new System.Drawing.Size(75, 23);
             this.btnTroopTrain.TabIndex = 16;
@@ -488,7 +571,7 @@
             // panelAttack
             // 
             this.panelAttack.Controls.Add(this.label10);
-            this.panelAttack.Location = new System.Drawing.Point(550, 94);
+            this.panelAttack.Location = new System.Drawing.Point(441, 3);
             this.panelAttack.Name = "panelAttack";
             this.panelAttack.Size = new System.Drawing.Size(103, 410);
             this.panelAttack.TabIndex = 16;
@@ -507,7 +590,7 @@
             // panelExplore
             // 
             this.panelExplore.Controls.Add(this.label11);
-            this.panelExplore.Location = new System.Drawing.Point(659, 94);
+            this.panelExplore.Location = new System.Drawing.Point(332, 3);
             this.panelExplore.Name = "panelExplore";
             this.panelExplore.Size = new System.Drawing.Size(103, 410);
             this.panelExplore.TabIndex = 16;
@@ -526,7 +609,7 @@
             // panelResearch
             // 
             this.panelResearch.Controls.Add(this.label12);
-            this.panelResearch.Location = new System.Drawing.Point(768, 94);
+            this.panelResearch.Location = new System.Drawing.Point(550, 3);
             this.panelResearch.Name = "panelResearch";
             this.panelResearch.Size = new System.Drawing.Size(103, 410);
             this.panelResearch.TabIndex = 16;
@@ -542,71 +625,40 @@
             this.label12.TabIndex = 15;
             this.label12.Text = "Research";
             // 
-            // label22
+            // panelScreen
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(87, 52);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(87, 23);
-            this.label22.TabIndex = 22;
-            this.label22.Text = "Knights";
+            this.panelScreen.Controls.Add(this.panelTrain);
+            this.panelScreen.Controls.Add(this.panelResearch);
+            this.panelScreen.Controls.Add(this.panelExplore);
+            this.panelScreen.Controls.Add(this.panelOverWiew);
+            this.panelScreen.Controls.Add(this.panelBuild);
+            this.panelScreen.Controls.Add(this.panelAttack);
+            this.panelScreen.Location = new System.Drawing.Point(223, 84);
+            this.panelScreen.Name = "panelScreen";
+            this.panelScreen.Size = new System.Drawing.Size(927, 420);
+            this.panelScreen.TabIndex = 19;
             // 
-            // label23
+            // label25
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(87, 107);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(87, 23);
-            this.label23.TabIndex = 23;
-            this.label23.Text = "Archers";
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(81, 233);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(96, 17);
+            this.label25.TabIndex = 29;
+            this.label25.Text = "Total cost:";
             // 
-            // label24
+            // lblTrainCost
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(32, 155);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(142, 23);
-            this.label24.TabIndex = 24;
-            this.label24.Text = "HorseKnights";
-            // 
-            // lblOverWiewKnight
-            // 
-            this.lblOverWiewKnight.AutoSize = true;
-            this.lblOverWiewKnight.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOverWiewKnight.ForeColor = System.Drawing.Color.White;
-            this.lblOverWiewKnight.Location = new System.Drawing.Point(180, 52);
-            this.lblOverWiewKnight.Name = "lblOverWiewKnight";
-            this.lblOverWiewKnight.Size = new System.Drawing.Size(21, 23);
-            this.lblOverWiewKnight.TabIndex = 25;
-            this.lblOverWiewKnight.Text = "0";
-            // 
-            // lblOverWiewArcher
-            // 
-            this.lblOverWiewArcher.AutoSize = true;
-            this.lblOverWiewArcher.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOverWiewArcher.ForeColor = System.Drawing.Color.White;
-            this.lblOverWiewArcher.Location = new System.Drawing.Point(180, 107);
-            this.lblOverWiewArcher.Name = "lblOverWiewArcher";
-            this.lblOverWiewArcher.Size = new System.Drawing.Size(21, 23);
-            this.lblOverWiewArcher.TabIndex = 26;
-            this.lblOverWiewArcher.Text = "0";
-            // 
-            // lblOverWiewHorse
-            // 
-            this.lblOverWiewHorse.AutoSize = true;
-            this.lblOverWiewHorse.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOverWiewHorse.ForeColor = System.Drawing.Color.White;
-            this.lblOverWiewHorse.Location = new System.Drawing.Point(180, 155);
-            this.lblOverWiewHorse.Name = "lblOverWiewHorse";
-            this.lblOverWiewHorse.Size = new System.Drawing.Size(21, 23);
-            this.lblOverWiewHorse.TabIndex = 27;
-            this.lblOverWiewHorse.Text = "0";
+            this.lblTrainCost.AutoSize = true;
+            this.lblTrainCost.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTrainCost.ForeColor = System.Drawing.Color.White;
+            this.lblTrainCost.Location = new System.Drawing.Point(222, 233);
+            this.lblTrainCost.Name = "lblTrainCost";
+            this.lblTrainCost.Size = new System.Drawing.Size(16, 17);
+            this.lblTrainCost.TabIndex = 30;
+            this.lblTrainCost.Text = "0";
             // 
             // Form2
             // 
@@ -614,19 +666,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1162, 516);
-            this.Controls.Add(this.panelOverWiew);
-            this.Controls.Add(this.panelTrain);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panelResearch);
-            this.Controls.Add(this.panelExplore);
-            this.Controls.Add(this.panelAttack);
+            this.Controls.Add(this.panelScreen);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.btnResearch);
             this.Controls.Add(this.btnOverWiew);
             this.Controls.Add(this.btnAttack);
             this.Controls.Add(this.btnTrain);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnBuild);
             this.Controls.Add(this.btnExplore);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -636,8 +683,8 @@
             this.panelOverWiew.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panelBuild.ResumeLayout(false);
+            this.panelBuild.PerformLayout();
             this.panelTrain.ResumeLayout(false);
             this.panelTrain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHorse)).EndInit();
@@ -649,6 +696,7 @@
             this.panelExplore.PerformLayout();
             this.panelResearch.ResumeLayout(false);
             this.panelResearch.PerformLayout();
+            this.panelScreen.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -661,7 +709,7 @@
         private System.Windows.Forms.Button btnExplore;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBuild;
         private System.Windows.Forms.Button btnTrain;
         private System.Windows.Forms.Button btnAttack;
         private System.Windows.Forms.Button btnOverWiew;
@@ -676,7 +724,7 @@
         private System.Windows.Forms.Label txtPower;
         private System.Windows.Forms.Label txtLocation;
         private System.Windows.Forms.Label txtKDName;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelBuild;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panelTrain;
         private System.Windows.Forms.Label label21;
@@ -705,6 +753,9 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Panel panelScreen;
+        private System.Windows.Forms.Label lblTrainCost;
+        private System.Windows.Forms.Label label25;
     }
 }
 

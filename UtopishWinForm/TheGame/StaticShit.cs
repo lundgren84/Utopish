@@ -38,5 +38,14 @@ namespace YtopishWinForm
             }
             return false;
         }
+
+        internal static int AddValue(decimal text, int cost)
+        {
+            int current;
+            int.TryParse(text, out current);
+
+            int output = current + cost;
+            return output;
+        }
     }
 }
