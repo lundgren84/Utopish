@@ -31,7 +31,7 @@ namespace TheGame
             this.Username = username;
             this.Password = password;
             this.Email = email;
-            this.Gold = 10000;
+            this.Gold = 0;
             knight = new Knight(200, 0,200, 90,25);
             archer = new Archer(100, 0,100,50, 10);
             mountedKnight = new MountedKnight(500, 0, 500, 250, 25);
