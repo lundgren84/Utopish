@@ -50,39 +50,14 @@ namespace TheGame
             lblOverWiewHorse.Text = Acc.mountedKnight.quantity.ToString();
         }
 
+
+        //MainNavButtons
+        #region MainNavButtons
         private void button7_Click(object sender, EventArgs e)
         {
             this.Close();
-            
-        }
-
-        private void btnTroopTrain_Click(object sender, EventArgs e)
-        {
-            int shopKnight = (int)numKnight.Value;
-            int shopArcher = (int)numArcher.Value;
-            int shopHorse = (int)numHorse.Value;
-            int totalCost;
-            int.TryParse(lblTrainCost.Text, out totalCost);
-
-            if (totalCost <= Acc.Gold)
-            {
-                Acc.Gold -= totalCost;
-                Acc.archer.quantity += shopArcher;
-                Acc.knight.quantity += shopKnight;
-                Acc.mountedKnight.quantity += shopHorse;
-                numArcher.Value = 0;
-                numKnight.Value = 0;
-                numHorse.Value = 0;
-            }
-
-         
-            RefreshGame();
-        }
-        private void btnBuildBuild_Click(object sender, EventArgs e)
-        {
 
         }
-
         private void btnOverWiew_Click(object sender, EventArgs e)
         {
             panelOverWiew.Dock = DockStyle.Fill;
@@ -91,7 +66,7 @@ namespace TheGame
 
         private void btnBuild_Click(object sender, EventArgs e)
         {
-            panelBuild.BringToFront();     
+            panelBuild.BringToFront();
             panelBuild.Dock = DockStyle.Fill;
         }
 
@@ -117,19 +92,44 @@ namespace TheGame
         {
             panelResearch.BringToFront();
             panelResearch.Dock = DockStyle.Fill;
+        } 
+        #endregion
+        //Soldiers
+        #region Soldiers
+        private void btnTroopTrain_Click(object sender, EventArgs e)
+        {
+            int shopKnight = (int)numKnight.Value;
+            int shopArcher = (int)numArcher.Value;
+            int shopHorse = (int)numHorse.Value;
+            int totalCost;
+            int.TryParse(lblTrainCost.Text, out totalCost);
+
+            if (totalCost <= Acc.Gold)
+            {
+                Acc.Gold -= totalCost;
+                Acc.archer.quantity += shopArcher;
+                Acc.knight.quantity += shopKnight;
+                Acc.mountedKnight.quantity += shopHorse;
+                numArcher.Value = 0;
+                numKnight.Value = 0;
+                numHorse.Value = 0;
+            }
+
+
+            RefreshGame();
         }
 
         private void numKnight_ValueChanged(object sender, EventArgs e)
         {
             knightCost = 0;
-           knightCost = StaticShit.AddValue(numKnight.Value,Acc.knight.cost);
+            knightCost = StaticShit.AddValue(numKnight.Value, Acc.knight.cost);
             lblTrainCost.Text = (knightCost + archerCost + mountedKnightCost).ToString();
         }
 
         private void numArcher_ValueChanged(object sender, EventArgs e)
         {
             archerCost = 0;
-           archerCost = StaticShit.AddValue(numArcher.Value, Acc.archer.cost);
+            archerCost = StaticShit.AddValue(numArcher.Value, Acc.archer.cost);
             lblTrainCost.Text = (knightCost + archerCost + mountedKnightCost).ToString();
         }
 
@@ -137,15 +137,36 @@ namespace TheGame
         {
             mountedKnightCost = 0;
             mountedKnightCost = StaticShit.AddValue(numHorse.Value, Acc.mountedKnight.cost);
-            lblTrainCost.Text = (knightCost + archerCost + mountedKnightCost).ToString();          
-        }
+            lblTrainCost.Text = (knightCost + archerCost + mountedKnightCost).ToString();
+        } 
+        #endregion
+        //Building
+        #region Buildings
+        private void btnBuildBuild_Click(object sender, EventArgs e)
+        {
+            int shopBank = (int)numBank.Value;
+            int shopLab = (int)numLab.Value;
+            int shopBarrack = (int)numBarrack.Value;
+            int totalCost;
+            int.TryParse(lblBuildCost.Text, out totalCost);
 
-       
+            if (totalCost <= Acc.Gold)
+            {
+                Acc.Gold -= totalCost;
+                Acc.bank.quantity += shopBank;
+                Acc.lab.quantity += shopLab;
+                Acc.barrack.quantity += shopBarrack;
+                numBank.Value = 0;
+                numLab.Value = 0;
+                numBarrack.Value = 0;
+            }
+            RefreshGame();
+        }
 
         private void numBank_ValueChanged(object sender, EventArgs e)
         {
             bankCost = 0;
-            bankCost = StaticShit.AddValue(numBank.Value,Acc.bank.cost);
+            bankCost = StaticShit.AddValue(numBank.Value, Acc.bank.cost);
             lblBuildCost.Text = (bankCost + labCost + barrackCost).ToString();
         }
 
@@ -162,5 +183,6 @@ namespace TheGame
             labCost = StaticShit.AddValue(numLab.Value, Acc.lab.cost);
             lblBuildCost.Text = (bankCost + labCost + barrackCost).ToString();
         }
-    }
+    } 
+    #endregion
 }
