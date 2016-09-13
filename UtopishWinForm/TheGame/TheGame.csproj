@@ -58,12 +58,16 @@
     <Compile Include="Class\SoldierTypes\Knight.cs" />
     <Compile Include="DatabaseCommunication\LoginRelated.cs" />
     <Compile Include="DatabaseCommunication\TrainingTroops.cs" />
+    <Compile Include="DatabaseCommunication\Transaction.cs" />
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Research\EconomicResearch.cs" />
+    <Compile Include="Research\MilitaryResearch.cs" />
+    <Compile Include="Research\Research.cs" />
     <Compile Include="World\Location.cs" />
     <Compile Include="Player\Player.cs" />
     <Compile Include="Program.cs" />

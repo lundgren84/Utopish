@@ -25,7 +25,7 @@ namespace TheGame
                     {
                         if (Convert.ToInt32(datareader["UserID"]) == player.playerId)
                         {
-                            int updateValue = Convert.ToInt32(datareader["Amount"]) + amount;
+                            int updateValue = Convert.ToInt32(datareader["Archer"]) + amount;
                             string sql2 = $"UPDATE Player SET Archer = '{updateValue}' WHERE UserID = '{player.playerId}';";
                             var command2 = new SqlCommand(sql2, connection);
                         }
@@ -35,17 +35,41 @@ namespace TheGame
             }
             else if (unittype is Knight)
             {
-                string sql = "Select * from UserLocation";
+                string sql = "Select * from Player";
                 var command = new SqlCommand(sql, connection);
 
                 using (var datareader = command.ExecuteReader())
+                {
+                    while (datareader.Read())
+                    {
+                        if (Convert.ToInt32(datareader["UserID"]) == player.playerId)
+                        {
+                            int updateValue = Convert.ToInt32(datareader["Knight"]) + amount;
+                            string sql2 = $"UPDATE Player SET Knight = '{updateValue}' WHERE UserID = '{player.playerId}';";
+                            var command2 = new SqlCommand(sql2, connection);
+                        }
+
+                    }
+                }
             }
             else if (unittype is MountedKnight)
             {
-                string sql = "Select * from UserLocation";
+                string sql = "Select * from Player";
                 var command = new SqlCommand(sql, connection);
 
                 using (var datareader = command.ExecuteReader())
+                {
+                    while (datareader.Read())
+                    {
+                        if (Convert.ToInt32(datareader["UserID"]) == player.playerId)
+                        {
+                            int updateValue = Convert.ToInt32(datareader["MountedKnight"]) + amount;
+                            string sql2 = $"UPDATE Player SET MountedKnight = '{updateValue}' WHERE UserID = '{player.playerId}';";
+                            var command2 = new SqlCommand(sql2, connection);
+                        }
+
+                    }
+                }
             }
             CloseConnection();
         }
