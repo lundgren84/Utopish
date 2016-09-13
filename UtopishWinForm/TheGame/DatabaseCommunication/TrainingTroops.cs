@@ -16,7 +16,7 @@ namespace TheGame
             OpenConnection();
             if (unittype is Archer)
             {
-                string sql = "Select * from Archer";
+                string sql = "Select * from Player";
                 var command = new SqlCommand(sql, connection);
 
                 using (var datareader = command.ExecuteReader())
@@ -26,7 +26,7 @@ namespace TheGame
                         if (Convert.ToInt32(datareader["UserID"]) == player.playerId)
                         {
                             int updateValue = Convert.ToInt32(datareader["Amount"]) + amount;
-                            string sql2 = $"UPDATE Archers SET Amount = '{updateValue}' WHERE UserID = '{player.playerId}';";
+                            string sql2 = $"UPDATE Player SET Archer = '{updateValue}' WHERE UserID = '{player.playerId}';";
                             var command2 = new SqlCommand(sql2, connection);
                         }
 
