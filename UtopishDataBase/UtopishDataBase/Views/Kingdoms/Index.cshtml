@@ -1,0 +1,51 @@
+﻿@model IEnumerable<UtopishDataBase.Kingdom>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KingdomName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gold)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wood)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KingdomName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gold)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wood)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.KingdomID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.KingdomID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.KingdomID })
+        </td>
+    </tr>
+}
+
+</table>

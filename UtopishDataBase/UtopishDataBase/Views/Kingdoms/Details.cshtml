@@ -1,0 +1,50 @@
+﻿@model UtopishDataBase.Kingdom
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Kingdom</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KingdomName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KingdomName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gold)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gold)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wood)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wood)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.KingdomID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,26 @@
+﻿@model UtopishDataBase.Building
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Building</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BuildingType.BuildingTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BuildingType.BuildingTypeName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BuildingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
