@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnExplore = new System.Windows.Forms.Button();
@@ -39,6 +40,12 @@
             this.btnOverWiew = new System.Windows.Forms.Button();
             this.btnResearch = new System.Windows.Forms.Button();
             this.panelOverWiew = new System.Windows.Forms.Panel();
+            this.lblOverViewBarrack = new System.Windows.Forms.Label();
+            this.lblOverViewLab = new System.Windows.Forms.Label();
+            this.lblOverwieBank = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.lblOverWiewHorse = new System.Windows.Forms.Label();
             this.lblOverWiewArcher = new System.Windows.Forms.Label();
             this.lblOverWiewKnight = new System.Windows.Forms.Label();
@@ -93,12 +100,8 @@
             this.panelResearch = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.panelScreen = new System.Windows.Forms.Panel();
-            this.lblOverViewBarrack = new System.Windows.Forms.Label();
-            this.lblOverViewLab = new System.Windows.Forms.Label();
-            this.lblOverwieBank = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelOverWiew.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelBuild.SuspendLayout();
@@ -120,7 +123,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(2, 1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(206, 56);
             this.label1.TabIndex = 0;
@@ -241,6 +244,72 @@
             this.panelOverWiew.Size = new System.Drawing.Size(100, 410);
             this.panelOverWiew.TabIndex = 14;
             // 
+            // lblOverViewBarrack
+            // 
+            this.lblOverViewBarrack.AutoSize = true;
+            this.lblOverViewBarrack.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOverViewBarrack.ForeColor = System.Drawing.Color.White;
+            this.lblOverViewBarrack.Location = new System.Drawing.Point(438, 155);
+            this.lblOverViewBarrack.Name = "lblOverViewBarrack";
+            this.lblOverViewBarrack.Size = new System.Drawing.Size(21, 23);
+            this.lblOverViewBarrack.TabIndex = 33;
+            this.lblOverViewBarrack.Text = "0";
+            // 
+            // lblOverViewLab
+            // 
+            this.lblOverViewLab.AutoSize = true;
+            this.lblOverViewLab.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOverViewLab.ForeColor = System.Drawing.Color.White;
+            this.lblOverViewLab.Location = new System.Drawing.Point(438, 107);
+            this.lblOverViewLab.Name = "lblOverViewLab";
+            this.lblOverViewLab.Size = new System.Drawing.Size(21, 23);
+            this.lblOverViewLab.TabIndex = 32;
+            this.lblOverViewLab.Text = "0";
+            // 
+            // lblOverwieBank
+            // 
+            this.lblOverwieBank.AutoSize = true;
+            this.lblOverwieBank.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOverwieBank.ForeColor = System.Drawing.Color.White;
+            this.lblOverwieBank.Location = new System.Drawing.Point(438, 52);
+            this.lblOverwieBank.Name = "lblOverwieBank";
+            this.lblOverwieBank.Size = new System.Drawing.Size(21, 23);
+            this.lblOverwieBank.TabIndex = 31;
+            this.lblOverwieBank.Text = "0";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(321, 155);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(98, 23);
+            this.label21.TabIndex = 30;
+            this.label21.Text = "Barracks";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.White;
+            this.label29.Location = new System.Drawing.Point(365, 105);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(54, 23);
+            this.label29.TabIndex = 29;
+            this.label29.Text = "Labs";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.White;
+            this.label30.Location = new System.Drawing.Point(362, 52);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(65, 23);
+            this.label30.TabIndex = 28;
+            this.label30.Text = "Banks";
+            // 
             // lblOverWiewHorse
             // 
             this.lblOverWiewHorse.AutoSize = true;
@@ -331,9 +400,9 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(1047, 13);
+            this.button7.Location = new System.Drawing.Point(1059, 13);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(103, 52);
+            this.button7.Size = new System.Drawing.Size(91, 52);
             this.button7.TabIndex = 16;
             this.button7.Text = "Exit";
             this.button7.UseVisualStyleBackColor = true;
@@ -834,71 +903,21 @@
             this.panelScreen.Size = new System.Drawing.Size(927, 420);
             this.panelScreen.TabIndex = 19;
             // 
-            // lblOverViewBarrack
+            // lblTime
             // 
-            this.lblOverViewBarrack.AutoSize = true;
-            this.lblOverViewBarrack.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOverViewBarrack.ForeColor = System.Drawing.Color.White;
-            this.lblOverViewBarrack.Location = new System.Drawing.Point(438, 155);
-            this.lblOverViewBarrack.Name = "lblOverViewBarrack";
-            this.lblOverViewBarrack.Size = new System.Drawing.Size(21, 23);
-            this.lblOverViewBarrack.TabIndex = 33;
-            this.lblOverViewBarrack.Text = "0";
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(61, 57);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(72, 17);
+            this.lblTime.TabIndex = 39;
+            this.lblTime.Text = "00:00:00";
             // 
-            // lblOverViewLab
+            // timer1
             // 
-            this.lblOverViewLab.AutoSize = true;
-            this.lblOverViewLab.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOverViewLab.ForeColor = System.Drawing.Color.White;
-            this.lblOverViewLab.Location = new System.Drawing.Point(438, 107);
-            this.lblOverViewLab.Name = "lblOverViewLab";
-            this.lblOverViewLab.Size = new System.Drawing.Size(21, 23);
-            this.lblOverViewLab.TabIndex = 32;
-            this.lblOverViewLab.Text = "0";
-            // 
-            // lblOverwieBank
-            // 
-            this.lblOverwieBank.AutoSize = true;
-            this.lblOverwieBank.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOverwieBank.ForeColor = System.Drawing.Color.White;
-            this.lblOverwieBank.Location = new System.Drawing.Point(438, 52);
-            this.lblOverwieBank.Name = "lblOverwieBank";
-            this.lblOverwieBank.Size = new System.Drawing.Size(21, 23);
-            this.lblOverwieBank.TabIndex = 31;
-            this.lblOverwieBank.Text = "0";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(321, 155);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(98, 23);
-            this.label21.TabIndex = 30;
-            this.label21.Text = "Barracks";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.White;
-            this.label29.Location = new System.Drawing.Point(365, 105);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(54, 23);
-            this.label29.TabIndex = 29;
-            this.label29.Text = "Labs";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.White;
-            this.label30.Location = new System.Drawing.Point(362, 52);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(65, 23);
-            this.label30.TabIndex = 28;
-            this.label30.Text = "Banks";
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form2
             // 
@@ -906,6 +925,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1162, 516);
+            this.Controls.Add(this.lblTime);
             this.Controls.Add(this.panelScreen);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button7);
@@ -1018,6 +1038,8 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

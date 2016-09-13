@@ -14,6 +14,7 @@ namespace TheGame
     public partial class Form2 : Form
     {
         Account Acc = StaticShit.acc;
+        DateTime now;
         int archerCost;
         int knightCost;
         int mountedKnightCost;
@@ -27,7 +28,8 @@ namespace TheGame
             panelOverWiew.Width = 927;
             panelOverWiew.BringToFront();
             LoadAccount();
-            RefreshGame();        
+            RefreshGame();
+            timer1.Start();    
         }
 
         private void LoadAccount()
@@ -192,6 +194,12 @@ namespace TheGame
             labCost = 0;
             labCost = StaticShit.AddValue(numLab.Value, Acc.lab.cost);
             lblBuildCost.Text = (bankCost + labCost + barrackCost).ToString();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            now = DateTime.Now;
+            lblTime.Text = now.Hour + ":"+now.Minute+":"+now.Second ;
         }
     } 
     #endregion
