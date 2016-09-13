@@ -17,7 +17,7 @@ namespace UtopishDataBase.Controllers
         // GET: Acc
         public ActionResult Index()
         {
-            var account = db.Account.Include(a => a.Kingdom);
+            var account = db.Account.Include(a => a.Archer).Include(a => a.Bank).Include(a => a.Barrack).Include(a => a.Knight).Include(a => a.Lab).Include(a => a.Location).Include(a => a.MountedKnight);
             return View(account.ToList());
         }
 
@@ -39,7 +39,13 @@ namespace UtopishDataBase.Controllers
         // GET: Acc/Create
         public ActionResult Create()
         {
-            ViewBag.KingdomRefID = new SelectList(db.Kingdom, "KingdomID", "KingdomName");
+            ViewBag.ArcherRefID = new SelectList(db.Archer, "ArcherID", "Name");
+            ViewBag.BankRefID = new SelectList(db.Bank, "BankID", "BankID");
+            ViewBag.BarrackRefID = new SelectList(db.Barrack, "BarrackID", "BarrackID");
+            ViewBag.KnightRefID = new SelectList(db.Knight, "KnightID", "Name");
+            ViewBag.LabRefID = new SelectList(db.Lab, "LabID", "LabID");
+            ViewBag.LocationRefID = new SelectList(db.Location, "LocationID", "LocationID");
+            ViewBag.MountedKnightRefID = new SelectList(db.MountedKnight, "MountedKnightID", "Name");
             return View();
         }
 
@@ -48,7 +54,7 @@ namespace UtopishDataBase.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AccountID,AccountName,AccountPassword,KingdomRefID")] Account account)
+        public ActionResult Create([Bind(Include = "AccountID,AccountName,AccountPassword,AccountEmail,Power,Size,Gold,LocationRefID,ArcherRefID,KnightRefID,MountedKnightRefID,LabRefID,BankRefID,BarrackRefID")] Account account)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +63,13 @@ namespace UtopishDataBase.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.KingdomRefID = new SelectList(db.Kingdom, "KingdomID", "KingdomName", account.KingdomRefID);
+            ViewBag.ArcherRefID = new SelectList(db.Archer, "ArcherID", "Name", account.ArcherRefID);
+            ViewBag.BankRefID = new SelectList(db.Bank, "BankID", "BankID", account.BankRefID);
+            ViewBag.BarrackRefID = new SelectList(db.Barrack, "BarrackID", "BarrackID", account.BarrackRefID);
+            ViewBag.KnightRefID = new SelectList(db.Knight, "KnightID", "Name", account.KnightRefID);
+            ViewBag.LabRefID = new SelectList(db.Lab, "LabID", "LabID", account.LabRefID);
+            ViewBag.LocationRefID = new SelectList(db.Location, "LocationID", "LocationID", account.LocationRefID);
+            ViewBag.MountedKnightRefID = new SelectList(db.MountedKnight, "MountedKnightID", "Name", account.MountedKnightRefID);
             return View(account);
         }
 
@@ -73,7 +85,13 @@ namespace UtopishDataBase.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.KingdomRefID = new SelectList(db.Kingdom, "KingdomID", "KingdomName", account.KingdomRefID);
+            ViewBag.ArcherRefID = new SelectList(db.Archer, "ArcherID", "Name", account.ArcherRefID);
+            ViewBag.BankRefID = new SelectList(db.Bank, "BankID", "BankID", account.BankRefID);
+            ViewBag.BarrackRefID = new SelectList(db.Barrack, "BarrackID", "BarrackID", account.BarrackRefID);
+            ViewBag.KnightRefID = new SelectList(db.Knight, "KnightID", "Name", account.KnightRefID);
+            ViewBag.LabRefID = new SelectList(db.Lab, "LabID", "LabID", account.LabRefID);
+            ViewBag.LocationRefID = new SelectList(db.Location, "LocationID", "LocationID", account.LocationRefID);
+            ViewBag.MountedKnightRefID = new SelectList(db.MountedKnight, "MountedKnightID", "Name", account.MountedKnightRefID);
             return View(account);
         }
 
@@ -82,7 +100,7 @@ namespace UtopishDataBase.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AccountID,AccountName,AccountPassword,KingdomRefID")] Account account)
+        public ActionResult Edit([Bind(Include = "AccountID,AccountName,AccountPassword,AccountEmail,Power,Size,Gold,LocationRefID,ArcherRefID,KnightRefID,MountedKnightRefID,LabRefID,BankRefID,BarrackRefID")] Account account)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +108,13 @@ namespace UtopishDataBase.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.KingdomRefID = new SelectList(db.Kingdom, "KingdomID", "KingdomName", account.KingdomRefID);
+            ViewBag.ArcherRefID = new SelectList(db.Archer, "ArcherID", "Name", account.ArcherRefID);
+            ViewBag.BankRefID = new SelectList(db.Bank, "BankID", "BankID", account.BankRefID);
+            ViewBag.BarrackRefID = new SelectList(db.Barrack, "BarrackID", "BarrackID", account.BarrackRefID);
+            ViewBag.KnightRefID = new SelectList(db.Knight, "KnightID", "Name", account.KnightRefID);
+            ViewBag.LabRefID = new SelectList(db.Lab, "LabID", "LabID", account.LabRefID);
+            ViewBag.LocationRefID = new SelectList(db.Location, "LocationID", "LocationID", account.LocationRefID);
+            ViewBag.MountedKnightRefID = new SelectList(db.MountedKnight, "MountedKnightID", "Name", account.MountedKnightRefID);
             return View(account);
         }
 

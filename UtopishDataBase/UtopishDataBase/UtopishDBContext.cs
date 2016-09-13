@@ -12,12 +12,14 @@ namespace UtopishDataBase
         {
 
 
-    }
-        public DbSet<Kingdom> Kingdom { get; set; }
-        public DbSet<Soldier> Soldier { get; set; }
-        public DbSet<SoldierType> SoldierType { get; set; }
-        public DbSet<BuildingType> BuildingType { get; set; }
-        public DbSet<Building> Building { get; set; }
+    }   
         public DbSet<Account> Account { get; set; }
+        public DbSet<Location> Location { get; set; }
+        public DbSet<Archer> Archer { get; set; }
+        public DbSet<Knight> Knight { get; set; }
+        public DbSet<MountedKnight> MountedKnight { get; set; }
+        public DbSet<Bank> Bank { get; set; }
+        public DbSet<Lab> Lab { get; set; }
+        public DbSet<Barrack> Barrack { get; set; }
     }
 }

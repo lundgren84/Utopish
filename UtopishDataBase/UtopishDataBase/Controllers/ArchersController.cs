@@ -10,107 +10,107 @@ using UtopishDataBase;
 
 namespace UtopishDataBase.Controllers
 {
-    public class BuildingTypesController : Controller
+    public class ArchersController : Controller
     {
         private UtopishDBContext db = new UtopishDBContext();
 
-        // GET: BuildingTypes
+        // GET: Archers
         public ActionResult Index()
         {
-            return View(db.BuildingType.ToList());
+            return View(db.Archer.ToList());
         }
 
-        // GET: BuildingTypes/Details/5
+        // GET: Archers/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BuildingType buildingType = db.BuildingType.Find(id);
-            if (buildingType == null)
+            Archer archer = db.Archer.Find(id);
+            if (archer == null)
             {
                 return HttpNotFound();
             }
-            return View(buildingType);
+            return View(archer);
         }
 
-        // GET: BuildingTypes/Create
+        // GET: Archers/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: BuildingTypes/Create
+        // POST: Archers/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BuildingTypeID,BuildingTypeName")] BuildingType buildingType)
+        public ActionResult Create([Bind(Include = "ArcherID,Tier,Name,Quantity,Cost,HP,AttackPower,Armor")] Archer archer)
         {
             if (ModelState.IsValid)
             {
-                db.BuildingType.Add(buildingType);
+                db.Archer.Add(archer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(buildingType);
+            return View(archer);
         }
 
-        // GET: BuildingTypes/Edit/5
+        // GET: Archers/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BuildingType buildingType = db.BuildingType.Find(id);
-            if (buildingType == null)
+            Archer archer = db.Archer.Find(id);
+            if (archer == null)
             {
                 return HttpNotFound();
             }
-            return View(buildingType);
+            return View(archer);
         }
 
-        // POST: BuildingTypes/Edit/5
+        // POST: Archers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BuildingTypeID,BuildingTypeName")] BuildingType buildingType)
+        public ActionResult Edit([Bind(Include = "ArcherID,Tier,Name,Quantity,Cost,HP,AttackPower,Armor")] Archer archer)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(buildingType).State = EntityState.Modified;
+                db.Entry(archer).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(buildingType);
+            return View(archer);
         }
 
-        // GET: BuildingTypes/Delete/5
+        // GET: Archers/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BuildingType buildingType = db.BuildingType.Find(id);
-            if (buildingType == null)
+            Archer archer = db.Archer.Find(id);
+            if (archer == null)
             {
                 return HttpNotFound();
             }
-            return View(buildingType);
+            return View(archer);
         }
 
-        // POST: BuildingTypes/Delete/5
+        // POST: Archers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            BuildingType buildingType = db.BuildingType.Find(id);
-            db.BuildingType.Remove(buildingType);
+            Archer archer = db.Archer.Find(id);
+            db.Archer.Remove(archer);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
