@@ -12,7 +12,7 @@ namespace TheGame
 
         public void PopulateWorld()
         {
-            gameworld = LoginRelated.GetGameWorld();
+           // gameworld = LoginRelated.GetGameWorld();
         }
     }
 }

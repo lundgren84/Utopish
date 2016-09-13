@@ -9,7 +9,22 @@ namespace TheGame
 {
     class Transaction
     {
+        string type;
+        int quantity;
+        int pricePerUnit;
         SqlConnection connection;
+
+       public int CalculateTotalCostOfTransaction(List<Transaction> transactions, Player player)
+        {
+            int total = 0;
+            foreach (var item in transactions)
+            {
+
+
+                total += item.pricePerUnit * item.quantity;
+            }
+            return total;
+        }
         public bool CanYouAffordTraining(ArmyUnit unit, int amount, Player player)
         {
 
@@ -64,7 +79,7 @@ namespace TheGame
             }
             return false;
         }
-        public bool CanYouAffordResearching()
+        public bool CanYouAffordResearching(Research research, int amount, Player player)
         {
 
             string sql = "Select * from Player";
@@ -76,7 +91,7 @@ namespace TheGame
                 {
                     if (Convert.ToInt32(datareader["UserID"]) == player.playerId)
                     {
-                        if (unit.cost * amount > Convert.ToInt32(datareader["Money"]))
+                        if (research.cost* amount > Convert.ToInt32(datareader["Money"]))
                             return true;
                     }
 

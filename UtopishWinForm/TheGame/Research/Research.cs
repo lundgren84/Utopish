@@ -8,6 +8,7 @@ namespace TheGame
 {
     class Research
     {
+        public int cost;
         decimal researchMax;
         int researchPoints;
 
