@@ -57,6 +57,7 @@
     <Compile Include="Class\SoldierTypes\MountedKnight.cs" />
     <Compile Include="Class\SoldierTypes\Knight.cs" />
     <Compile Include="DatabaseCommunication\LoginRelated.cs" />
+    <Compile Include="DatabaseCommunication\TrainingTroops.cs" />
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>

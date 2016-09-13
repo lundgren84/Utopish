@@ -10,5 +10,11 @@ namespace TheGame
     {
        public int island;
        public int kingdomNumber;
+        public Location(int _island, int _kingdomNumber)
+        {
+            this.island = _island;
+            this.kingdomNumber = _kingdomNumber;
+        }
     }
+    
 }

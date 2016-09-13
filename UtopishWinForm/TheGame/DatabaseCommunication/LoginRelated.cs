@@ -28,7 +28,8 @@ namespace TheGame
                         return false;
                 }
             }
-                return true;
+            CloseConnection();
+            return true;
         }
         public bool UniqueKingdomName(string kingdomName)
         {
@@ -47,6 +48,7 @@ namespace TheGame
                         return false;
                 }
             }
+            CloseConnection();
             return true;
         }
         public bool IsLocationOccupied(Location location)
@@ -65,11 +67,28 @@ namespace TheGame
                          
                 }
             }
+            CloseConnection();
             return false;
         }
-        public static List<Location> GetGameWorld()
+        public List<Location> GetGameWorld()
         {
-            return new List<Location>();
+            List<Location> gameworld = new List<Location>();
+            EstablishConnection();
+            OpenConnection();
+            string sql = "Select * from UserLocation";
+            var command = new SqlCommand(sql, connection);
+
+            using (var datareader = command.ExecuteReader())
+            {
+                while (datareader.Read())
+                {
+                    Location location = new Location(Convert.ToInt32(datareader["Island"]),Convert.ToInt32(datareader["KingdomNumber"]));
+                    gameworld.Add(location);
+
+                }
+            }
+            CloseConnection();
+            return gameworld;
         }
         private void EstablishConnection()
         {

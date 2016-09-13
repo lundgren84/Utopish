@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TheGame.Player
+namespace TheGame
 {
-    class Player
+    public class Player
     {
-        int playerId;
+        public int playerId;
         string Name;
         string KingdomName;
         Archer archer;
