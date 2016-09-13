@@ -7,11 +7,11 @@ using System.Data.SqlClient;
 
 namespace TheGame
 {
-    class Transaction
+    public class Transaction
     {
-        string type;
-        int quantity;
-        int pricePerUnit;
+        public string type;
+        public int quantity;
+        public int pricePerUnit;
         SqlConnection connection;
 
        public int CalculateTotalCostOfTransaction(List<Transaction> transactions, Player player)
@@ -25,6 +25,7 @@ namespace TheGame
             }
             return total;
         }
+     
         public bool CanYouAffordTraining(ArmyUnit unit, int amount, Player player)
         {
 

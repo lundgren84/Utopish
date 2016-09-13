@@ -9,7 +9,30 @@ namespace TheGame
 {
    public class TrainingTroops
     {
-        public static SqlConnection connection;
+        public SqlConnection connection;
+        public void CommitAllTransactions(List<Transaction> transactions, Player player)
+        {
+            OpenConnection();
+            string sql = "Select * from Player";
+            foreach (var item in transactions)
+            {
+                var command = new SqlCommand(sql, connection);
+
+                using (var datareader = command.ExecuteReader())
+                {
+                    while (datareader.Read())
+                    {
+                        if (Convert.ToInt32(datareader["UserID"]) == player.playerId)
+                        {
+                            int updateValue = Convert.ToInt32(datareader[$"{item.type}"]) + item.quantity;
+                            string sql2 = $"UPDATE Player SET {item.type} = '{updateValue}' WHERE UserID = '{player.playerId}';";
+                            var command2 = new SqlCommand(sql2, connection);
+                        }
+                    }
+                }
+            }
+            CloseConnection();
+        }
         public void TrainTroops(ArmyUnit unittype, int amount, Player player)
         {
             EstablishConnection();
