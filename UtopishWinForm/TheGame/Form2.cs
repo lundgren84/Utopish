@@ -17,6 +17,9 @@ namespace TheGame
         int archerCost;
         int knightCost;
         int mountedKnightCost;
+        int bankCost;
+        int labCost;
+        int barrackCost;
         public Form2()
         {
             InitializeComponent();
@@ -132,6 +135,32 @@ namespace TheGame
             mountedKnightCost = 0;
             mountedKnightCost = StaticShit.AddValue(numHorse.Value, Acc.mountedKnight.cost);
             lblTrainCost.Text = (knightCost + archerCost + mountedKnightCost).ToString();          
+        }
+
+        private void btnBuildBuild_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numBank_ValueChanged(object sender, EventArgs e)
+        {
+            bankCost = 0;
+            bankCost = StaticShit.AddValue(numBank.Value,Acc.bank.cost);
+            lblBuildCost.Text = (bankCost + labCost + barrackCost).ToString();
+        }
+
+        private void numBarrack_ValueChanged(object sender, EventArgs e)
+        {
+            barrackCost = 0;
+            barrackCost = StaticShit.AddValue(numBarrack.Value, Acc.barrack.cost);
+            lblBuildCost.Text = (bankCost + labCost + barrackCost).ToString();
+        }
+
+        private void numLab_ValueChanged(object sender, EventArgs e)
+        {
+            labCost = 0;
+            labCost = StaticShit.AddValue(numLab.Value, Acc.lab.cost);
+            lblBuildCost.Text = (bankCost + labCost + barrackCost).ToString();
         }
     }
 }
