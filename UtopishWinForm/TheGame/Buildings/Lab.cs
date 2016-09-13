@@ -12,7 +12,7 @@ namespace TheGame
         public Lab()
         {
             quantity = 0;
-            cost = 1000;
+            cost = 100;
         }
     }
 }

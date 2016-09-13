@@ -13,7 +13,7 @@ namespace TheGame
         public Bank()
         {
             quantity = 0;
-            cost = 1000;
+            cost = 200;
         }
     }
 }

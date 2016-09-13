@@ -48,6 +48,13 @@ namespace TheGame
             lblOverWiewArcher.Text = Acc.archer.quantity.ToString();
             lblOverWiewKnight.Text = Acc.knight.quantity.ToString();
             lblOverWiewHorse.Text = Acc.mountedKnight.quantity.ToString();
+
+            lblArcherCost.Text = "cost" + Acc.archer.cost;
+            lblKnightCost.Text = "cost" + Acc.knight.cost;
+            lblMountedCost.Text = "cost" + Acc.mountedKnight.cost;
+            lblBankCost.Text = "cost" + Acc.bank.cost;
+            lblLabCost.Text = "cost" + Acc.lab.cost;
+            lblBarrackCost.Text = "cost" + Acc.barrack.cost;
         }
 
 
