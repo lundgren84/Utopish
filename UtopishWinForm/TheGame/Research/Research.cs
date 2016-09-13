@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TheGame
 {
-    class Research
+    public class Research
     {
         public int cost;
         decimal researchMax;
