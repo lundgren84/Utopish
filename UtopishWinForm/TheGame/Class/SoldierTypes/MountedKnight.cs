@@ -8,13 +8,13 @@ namespace TheGame
 {
    public class MountedKnight : ArmyUnit
     {
-        public MountedKnight(int _cost, int _quantity, int _hp, int _attackPower, int _armor) : base(_cost, _quantity, _hp, _attackPower, _armor)
+        public MountedKnight()
         {
-            _quantity = 0;
-            _cost = 500;
-            _hp = 500;
-            _attackPower = 250;
-            _armor = 25;
+            quantity = 0;
+            cost = 500;
+            HP = 500;
+            attackPower = 250;
+            armor = 25;
         }
     }
 }

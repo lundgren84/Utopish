@@ -8,13 +8,13 @@ namespace TheGame
 {
    public class Archer : ArmyUnit
     {
-     public Archer(int _cost, int _quantity, int _hp, int _attackPower, int _armor) : base (_cost, _quantity,_hp , _attackPower , _armor)
+     public Archer()
         {
-            _quantity = 0;
-            _cost = 100;
-            _hp = 100;
-            _attackPower = 50;
-            _armor = 10;
+            quantity = 0;
+            cost = 100;
+            HP = 100;
+            attackPower = 50;
+            armor = 10;
         }
     }
 }

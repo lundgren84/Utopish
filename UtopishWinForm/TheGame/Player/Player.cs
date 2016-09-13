@@ -9,41 +9,61 @@ namespace TheGame
     public class Player
     {
         public int playerId;
-        string Name;
-        string KingdomName;
-        Archer archer;
-        Knight knight;
-        MountedKnight mountedKnight;
-        int size;
-        List<Buildings> buildings;
+        public string Name;
+        public string Password;
+        public string Email;
+        public string KingdomName;
+
+        public int Power;
+        public int Gold;
+        public int Size;
+        public Archer archer;
+        public Knight knight;
+        public MountedKnight mountedKnight;
+        public Bank bank;
+        public Barracks barrack;
+        public Lab lab;
+
         Location location;
 
-        public Player(string _name, string _kingdomName)
+        public Player(string _name, string password, string email)
         {
             this.playerId = FigureOutPlayerID();
             this.Name = _name;
-            this.KingdomName = _kingdomName;
-            size = 200;
-            this.archer = new Archer(archer.cost, 0, archer.HP, archer.attackPower, archer.armor);
-            this.mountedKnight = new MountedKnight(mountedKnight.cost, 0, mountedKnight.HP, mountedKnight.attackPower, mountedKnight.armor);
-            this.knight = new Knight(knight.cost, 0, knight.HP, knight.attackPower, knight.armor);
+            this.Password = password;
+            this.Email = email;
+            this.KingdomName = "";
+            this.Size = 200;
+            this.Gold = 1000;
+
+            this.archer = new Archer();
+            this.mountedKnight = new MountedKnight();
+            this.knight = new Knight();
+            this.bank = new Bank();
+            this.barrack = new Barracks();
+            this.lab = new Lab();
             this.location = FigureOutLocation();
+        }
+        public Player(string _name, string _kingdomName)//Placeholder
+        {
+            this.Name = _name;
+            this.KingdomName = _kingdomName;
         }
 
         private int FigureOutPlayerID()
         {
-            throw new NotImplementedException();
+            return 0;//Placeholder
         }
 
         private Location FigureOutLocation()
         {
-            throw new NotImplementedException();
+            return new Location(1, 1);//Placeholder
         }
 
         public Player CreateNewPlayer()
         {
             LoginRelated login = new LoginRelated();
-            string tempname = "tempname"; 
+            string tempname = "tempname";
             while (!login.UniqueUsername(tempname))
             {
                 tempname = "The name you supplied is already taken, please try again";
@@ -59,7 +79,7 @@ namespace TheGame
 
 
         }
-      
-        
+
+
     }
 }
