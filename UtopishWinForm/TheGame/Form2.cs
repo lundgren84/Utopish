@@ -31,7 +31,6 @@ namespace TheGame
             RefreshGame();
             timer1.Start();    
         }
-
         private void LoadAccount()
         {
             Acc.Location = "Im here!";
@@ -61,7 +60,11 @@ namespace TheGame
             lblLabCost.Text = "cost" + Acc.lab.cost;
             lblBarrackCost.Text = "cost" + Acc.barrack.cost;
         }
-
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            now = DateTime.Now;
+            lblTime.Text = now.Hour + ":" + now.Minute + ":" + now.Second;
+        }
 
         //MainNavButtons
         #region MainNavButtons
@@ -196,11 +199,7 @@ namespace TheGame
             lblBuildCost.Text = (bankCost + labCost + barrackCost).ToString();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            now = DateTime.Now;
-            lblTime.Text = now.Hour + ":"+now.Minute+":"+now.Second ;
-        }
+      
     } 
     #endregion
 }

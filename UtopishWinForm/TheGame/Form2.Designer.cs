@@ -520,7 +520,7 @@
             this.panelBuild.Controls.Add(this.label8);
             this.panelBuild.Location = new System.Drawing.Point(112, 3);
             this.panelBuild.Name = "panelBuild";
-            this.panelBuild.Size = new System.Drawing.Size(671, 410);
+            this.panelBuild.Size = new System.Drawing.Size(100, 410);
             this.panelBuild.TabIndex = 16;
             // 
             // lblLabCost
@@ -836,7 +836,7 @@
             // panelAttack
             // 
             this.panelAttack.Controls.Add(this.label10);
-            this.panelAttack.Location = new System.Drawing.Point(441, 3);
+            this.panelAttack.Location = new System.Drawing.Point(335, 3);
             this.panelAttack.Name = "panelAttack";
             this.panelAttack.Size = new System.Drawing.Size(103, 410);
             this.panelAttack.TabIndex = 16;
@@ -855,7 +855,7 @@
             // panelExplore
             // 
             this.panelExplore.Controls.Add(this.label11);
-            this.panelExplore.Location = new System.Drawing.Point(332, 3);
+            this.panelExplore.Location = new System.Drawing.Point(441, 3);
             this.panelExplore.Name = "panelExplore";
             this.panelExplore.Size = new System.Drawing.Size(103, 410);
             this.panelExplore.TabIndex = 16;
