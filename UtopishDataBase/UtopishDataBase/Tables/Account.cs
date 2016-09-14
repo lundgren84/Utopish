@@ -20,31 +20,36 @@ namespace UtopishDataBase
         public int Power { get; set; }
         public int Size { get; set; }
         public int Gold { get; set; }
-
+        public int Archer_Quant { get; set; }
+        public int Knight_Quant { get; set; }
+        public int MountKnight_Quant { get; set; }
+        public int Bank_Quant { get; set; }
+        public int Lab_Quant { get; set; }
+        public int Barrack_Quant { get; set; }
         //-----------ForenKeys------------
         //Location
         public int? LocationRefID { get; set; }
         [ForeignKey(name: "LocationRefID")]
         public virtual Location Location { get; set; }
         //Soldiers
-        public int? ArcherRefID { get; set; }
-        [ForeignKey(name: "ArcherRefID")]
-        public virtual Archer Archer { get; set; }
-        public int? KnightRefID { get; set; }
-        [ForeignKey(name: "KnightRefID")]
-        public virtual Knight Knight { get; set; }
-        public int? MountedKnightRefID { get; set; }
-        [ForeignKey(name: "MountedKnightRefID")]
-        public virtual MountedKnight MountedKnight { get; set; }
+        //public int? ArcherRefID { get; set; }
+        //[ForeignKey(name: "ArcherRefID")]
+        //public virtual Archer Archer { get; set; }
+        //public int? KnightRefID { get; set; }
+        //[ForeignKey(name: "KnightRefID")]
+        //public virtual Knight Knight { get; set; }
+        //public int? MountedKnightRefID { get; set; }
+        //[ForeignKey(name: "MountedKnightRefID")]
+        //public virtual MountedKnight MountedKnight { get; set; }
         //Buildings
-        public int? LabRefID { get; set; }
-        [ForeignKey(name: "LabRefID")]
-        public virtual Lab Lab { get; set; }
-        public int? BankRefID { get; set; }
-        [ForeignKey(name: "BankRefID")]
-        public virtual Bank Bank { get; set; }
-        public int? BarrackRefID { get; set; }
-        [ForeignKey(name: "BarrackRefID")]
-        public virtual Barrack Barrack { get; set; }
+        //public int? LabRefID { get; set; }
+        //[ForeignKey(name: "LabRefID")]
+        //public virtual Lab Lab { get; set; }
+        //public int? BankRefID { get; set; }
+        //[ForeignKey(name: "BankRefID")]
+        //public virtual Bank Bank { get; set; }
+        //public int? BarrackRefID { get; set; }
+        //[ForeignKey(name: "BarrackRefID")]
+        //public virtual Barrack Barrack { get; set; }
     }
 }
