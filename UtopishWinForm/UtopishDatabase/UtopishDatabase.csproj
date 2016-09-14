@@ -167,6 +167,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Classes\Buildings\Bank.cs" />
+    <Compile Include="Classes\Buildings\Barrack.cs" />
+    <Compile Include="Classes\Buildings\Lab.cs" />
+    <Compile Include="Classes\Player.cs" />
+    <Compile Include="Classes\Soldiers\Archer.cs" />
+    <Compile Include="Classes\Soldiers\Knight.cs" />
+    <Compile Include="Classes\Soldiers\MountedKnight.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />

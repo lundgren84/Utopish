@@ -1,0 +1,122 @@
+﻿@model UtopishDataBase.Account
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Account</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Archer.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Archer.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bank.BankID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bank.BankID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Barrack.BarrackID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Barrack.BarrackID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Knight.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Knight.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lab.LabID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lab.LabID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location.LocationID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location.LocationID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MountedKnight.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MountedKnight.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountPassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Power)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Power)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gold)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gold)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AccountID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -13,7 +13,7 @@ namespace TheGame
 {
     public partial class Form2 : Form
     {
-        Account Acc = StaticShit.acc;
+        Player Acc = StaticShit.player;
         DateTime now;
         int archerCost;
         int knightCost;
@@ -33,7 +33,7 @@ namespace TheGame
         }
         private void LoadAccount()
         {
-            Acc.Location = "Im here!";
+          
             Acc.Power = 19929;
             Acc.Size = 45;
             Acc.Gold = 1000;  
@@ -41,9 +41,9 @@ namespace TheGame
 
         private void RefreshGame()
         {
-            txtKDName.Text = Acc.Username;
+            txtKDName.Text = Acc.Name;
             txtPower.Text = Acc.Power.ToString();
-            txtLocation.Text = Acc.Location;
+          
             txtSize.Text = Acc.Size.ToString();
             txtGold.Text = Acc.Gold.ToString();
             lblOverWiewArcher.Text = Acc.archer.quantity.ToString();

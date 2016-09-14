@@ -10,7 +10,7 @@ namespace YtopishWinForm
 {
     public static class StaticShit
     {
-        public static Account acc { get; set; }
+        public static Player player { get; set; }
         public static bool CheckUsername(string username)
         {
             return true;
@@ -26,13 +26,13 @@ namespace YtopishWinForm
             return true;
         }
 
-        public static bool CheckLogin(string username, string password,List<Account> Accounts)
+        public static bool CheckLogin(string username, string password,List<Player> players)
         {
-            foreach (var item in Accounts)
+            foreach (var item in players)
             {
-                if(item.Username == username && item.Password == password)
+                if(item.Name == username && item.Password == password)
                 {
-                    acc = item;
+                    player = item;
                     return true;
                 } 
             }

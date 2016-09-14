@@ -13,14 +13,5 @@ namespace TheGame
         public int HP;
         public int attackPower;
         public int armor;
-
-        public ArmyUnit(int _cost,int _quantity, int _hp, int _attackPower, int _armor )
-        {
-            cost = _cost;
-            quantity = _quantity;
-            HP = _hp;
-            attackPower = _attackPower;
-            armor = _armor;
-        }
     }
 }

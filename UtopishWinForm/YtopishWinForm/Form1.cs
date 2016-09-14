@@ -13,14 +13,13 @@ namespace YtopishWinForm
 {
     public partial class Form1 : Form
     {
-        Player player;
-        List<Account> Accounts;
+        List<Player> Players;
         public Form1()
         {
             InitializeComponent();
             RefreshClick();
-            Accounts = new List<Account>();
-            Accounts.Add(new Account("q", "q", "q"));
+            Players = new List<Player>();
+            Players.Add(new Player("q", "q", "q"));
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -49,7 +48,7 @@ namespace YtopishWinForm
         private void btnCheckLogin_Click(object sender, EventArgs e)
         {
             RefreshClick();
-            if (StaticShit.CheckLogin(txtUsername.Text,txtPassword.Text,Accounts))
+            if (StaticShit.CheckLogin(txtUsername.Text,txtPassword.Text,Players))
             { 
             TheGame.Form2 form2 = new TheGame.Form2();
             this.Hide();
@@ -69,7 +68,7 @@ namespace YtopishWinForm
             string email = txtREmail.Text;
             if(StaticShit.CheckUsername(username) && StaticShit.CheckPassword(password) && StaticShit.CheckEMail(email))
             {
-                Accounts.Add(new Account(username, password, email));
+                Players.Add(new Player(username, password, email));
                 panelRegister.Visible = false;
                 lblNews.Text = "New Account registred";
             }
