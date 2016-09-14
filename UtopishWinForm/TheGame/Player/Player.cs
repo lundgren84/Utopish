@@ -18,16 +18,31 @@ namespace TheGame
         public int Gold;
         public int Size;
         public Archer archer;
+
         public Knight knight;
         public MountedKnight mountedKnight;
         public Bank bank;
         public Barracks barrack;
         public Lab lab;
 
+        public int Archer_Quant;
+        public int Knight_Quant;
+        public int MountedKnight_Quant;
+        public int Bank_Quant;
+        public int Barrack_Quant;
+        public int Lab_Quant;
+
         Location location;
 
         public Player(string _name, string password, string email)
         {
+            this.Archer_Quant = 0;
+            this.Knight_Quant = 0;
+            this.MountedKnight_Quant = 0;
+            this.Bank_Quant = 0;
+            this.Barrack_Quant = 0;
+            this.Lab_Quant = 0;
+
             this.playerId = FigureOutPlayerID();
             this.Name = _name;
             this.Password = password;

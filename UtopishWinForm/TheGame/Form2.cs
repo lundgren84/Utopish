@@ -46,12 +46,12 @@ namespace TheGame
           
             txtSize.Text = Acc.Size.ToString();
             txtGold.Text = Acc.Gold.ToString();
-            lblOverWiewArcher.Text = Acc.archer.quantity.ToString();
-            lblOverWiewKnight.Text = Acc.knight.quantity.ToString();
-            lblOverWiewHorse.Text = Acc.mountedKnight.quantity.ToString();
-            lblOverwieBank.Text = Acc.bank.quantity.ToString();
-            lblOverViewLab.Text = Acc.lab.quantity.ToString();
-            lblOverViewBarrack.Text = Acc.barrack.quantity.ToString();
+            lblOverWiewArcher.Text = Acc.Archer_Quant.ToString();
+            lblOverWiewKnight.Text = Acc.Knight_Quant.ToString();
+            lblOverWiewHorse.Text = Acc.MountedKnight_Quant.ToString();
+            lblOverwieBank.Text = Acc.Bank_Quant.ToString();
+            lblOverViewLab.Text = Acc.Lab_Quant.ToString();
+            lblOverViewBarrack.Text = Acc.Barrack_Quant.ToString();
 
             lblArcherCost.Text = "cost" + Acc.archer.cost;
             lblKnightCost.Text = "cost" + Acc.knight.cost;
@@ -122,9 +122,9 @@ namespace TheGame
             if (totalCost <= Acc.Gold)
             {
                 Acc.Gold -= totalCost;
-                Acc.archer.quantity += shopArcher;
-                Acc.knight.quantity += shopKnight;
-                Acc.mountedKnight.quantity += shopHorse;
+                Acc.Archer_Quant += shopArcher;
+                Acc.Knight_Quant += shopKnight;
+                Acc.MountedKnight_Quant += shopHorse;
                 numArcher.Value = 0;
                 numKnight.Value = 0;
                 numHorse.Value = 0;
@@ -168,9 +168,9 @@ namespace TheGame
             if (totalCost <= Acc.Gold)
             {
                 Acc.Gold -= totalCost;
-                Acc.bank.quantity += shopBank;
-                Acc.lab.quantity += shopLab;
-                Acc.barrack.quantity += shopBarrack;
+                Acc.Bank_Quant+= shopBank;
+                Acc.Lab_Quant += shopLab;
+                Acc.Barrack_Quant += shopBarrack;
                 numBank.Value = 0;
                 numLab.Value = 0;
                 numBarrack.Value = 0;
