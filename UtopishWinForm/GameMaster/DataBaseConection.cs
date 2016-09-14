@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameMaster
+
+namespace TheGame
 {
-    class DataBaseConection
+   public class DataBaseConection
     {
         private SqlConnection connection = null;
 
@@ -91,8 +92,27 @@ namespace GameMaster
             }
         }
 
+        public bool CheckLoggin(string UserName, string Password)
+        {
+
+            string sql = $"Select From Accounts Where Password = '{Password}'";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                try
+                {
+                    command.ExecuteNonQuery();
+                    return true;
+                }
+                catch (SqlException)
+                {
+                    return false;
+                }
+            }       
+        }
+
         internal void UpdateResourses()
         {
+            int newGold = 0;
             string sql;
             sql = @"Select * From Accounts";
             using (SqlCommand command = new SqlCommand(sql, connection))
@@ -100,16 +120,17 @@ namespace GameMaster
                 SqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    int Bank_Quant = (int)dataReader["Bank_Quanty"];
-                    int Gold = (int)dataReader["Gold"];  
-                    int newGold = Bank_Quant + Gold;  
-                    sql = $"Update Accounts Set Gold =''{newGold}";
-                    using (SqlCommand command2 = new SqlCommand(sql, connection))
-                    {
-                        command2.ExecuteNonQuery();
-                    }
+                    int Bank_Quant = (int)dataReader["Bank_Quant"];
+                    int Gold = (int)dataReader["Gold"];
+                     newGold = Bank_Quant + Gold;
+                  
                 }
-                dataReader.Close();
+                dataReader.Close();        
+            }
+            sql = $"Update Accounts Set Gold ='{newGold}'";
+            using (SqlCommand command2 = new SqlCommand(sql, connection))
+            {
+                command2.ExecuteNonQuery();
             }
         }
 

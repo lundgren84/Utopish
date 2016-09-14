@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using YtopishWinForm;
 
+
 namespace TheGame
 {
     public partial class Form2 : Form
     {
+        DataBaseConection dbc = new DataBaseConection();
         Player Acc = StaticShit.player;
         DateTime now;
         int archerCost;
@@ -36,7 +38,7 @@ namespace TheGame
           
             Acc.Power = 19929;
             Acc.Size = 45;
-            Acc.Gold = 1000;  
+        
         }
 
         private void RefreshGame()

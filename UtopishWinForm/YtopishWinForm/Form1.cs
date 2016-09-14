@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TheGame;
 
+
 namespace YtopishWinForm
 {
     public partial class Form1 : Form
     {
+        DataBaseConection dbc = new DataBaseConection();
         List<Player> Players;
         public Form1()
         {
@@ -26,7 +28,7 @@ namespace YtopishWinForm
         {
             RefreshClick();
             panelLogIn.BringToFront();
-            panelLogIn.Visible = true;       
+            panelLogIn.Visible = true;
             panelRegister.Visible = false;
         }
 
@@ -34,7 +36,7 @@ namespace YtopishWinForm
         {
             RefreshClick();
             panelLogIn.BringToFront();
-            panelLogIn.Visible = false;        
+            panelLogIn.Visible = false;
             panelRegister.Visible = true;
         }
 
@@ -48,11 +50,14 @@ namespace YtopishWinForm
         private void btnCheckLogin_Click(object sender, EventArgs e)
         {
             RefreshClick();
-            if (StaticShit.CheckLogin(txtUsername.Text,txtPassword.Text,Players))
-            { 
-            TheGame.Form2 form2 = new TheGame.Form2();
-            this.Hide();
-            form2.Show();
+            if (StaticShit.CheckLogin(txtUsername.Text, txtPassword.Text, Players))
+            {
+                if(dbc.CheckLoggin(txtUsername.Text, txtPassword.Text))
+                { }
+                
+                TheGame.Form2 form2 = new TheGame.Form2();
+                this.Hide();
+                form2.Show();
             }
             else
             {
@@ -63,16 +68,16 @@ namespace YtopishWinForm
         private void btnCheckRegister_Click(object sender, EventArgs e)
         {
             RefreshClick();
-            string username =txtRUser.Text;
+            string username = txtRUser.Text;
             string password = txtRPassword.Text;
             string email = txtREmail.Text;
-            if(StaticShit.CheckUsername(username) && StaticShit.CheckPassword(password) && StaticShit.CheckEMail(email))
+            if (StaticShit.CheckUsername(username) && StaticShit.CheckPassword(password) && StaticShit.CheckEMail(email))
             {
                 Players.Add(new Player(username, password, email));
                 panelRegister.Visible = false;
                 lblNews.Text = "New Account registred";
             }
-            
+
         }
         private void RefreshClick()
         {

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace GameMaster
+namespace TheGame
 {
     class MainMenu
     {
@@ -48,7 +48,7 @@ namespace GameMaster
             while (true) {          
             if(time< DateTime.Now)
             {
-                    // GiveResourses();
+                     GiveResourses();
                     Console.SetCursorPosition(30, 0);
                 Console.WriteLine("UpdatedGame - "+ updateNr);
                     time = DateTime.Now.AddSeconds(1);
