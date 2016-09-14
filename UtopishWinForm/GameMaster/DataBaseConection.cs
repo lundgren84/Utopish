@@ -91,6 +91,16 @@ namespace GameMaster
             }
         }
 
+        internal void UpdateResourses()
+        {
+            string sql;
+            sql = @"Select Gold From Accounts (Gold) Values('" + 0 + "','" + 200 + "')";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.ExecuteNonQuery();
+            }
+        }
+
         internal void FillBuildings()
         {
             string sql;

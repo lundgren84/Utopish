@@ -12,6 +12,7 @@ namespace GameMaster
         DataBaseConection dbc = new DataBaseConection();
         Thread gameUpdate;
         static DateTime time;
+        string ConString = "Data Source = (local);Initial Catalog = UtopishDataBase; User ID =Nisse; password = Nisse22; integrated Security = true";
 
         public void Start()
         {
@@ -26,12 +27,12 @@ namespace GameMaster
             switch (k.KeyChar)
             {
                 case '1':
-                    dbc.OpenConnection("Data Source = (local);Initial Catalog = UtopishDataBase; User ID =Nisse; password = Nisse22; integrated Security = true");
+                    dbc.OpenConnection(ConString);
                     dbc.Fillsoldiers();
                     dbc.CloseConnection();
                     break;
                 case '2':
-                    dbc.OpenConnection("Data Source = (local);Initial Catalog = UtopishDataBase; User ID =Nisse; password = Nisse22; integrated Security = true");
+                    dbc.OpenConnection(ConString);
                     dbc.FillBuildings();
                     dbc.CloseConnection();
                     break;
@@ -42,7 +43,19 @@ namespace GameMaster
 
         private void UpdateGame()
         {
+            time = DateTime.Now;
+            if(time == DateTime.Now)
+            {
+                GiveResourses();
 
+            }
+        }
+
+        private void GiveResourses()
+        {
+            dbc.OpenConnection(ConString);
+            dbc.UpdateResourses();
+            dbc.CloseConnection();
         }
     }
 }
