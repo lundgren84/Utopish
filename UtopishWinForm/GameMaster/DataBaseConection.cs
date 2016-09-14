@@ -94,7 +94,7 @@ namespace TheGame
 
         public void RemoveGold(int totalCost, string accName)
         {
-           string sql = $@" Update Accounts Set Gold -= '{totalCost}'  Where AccountName = '{accName}'";
+           string sql = $@" Update Accounts Set Gold =(Select Gold From Accounts Where AccountName = '{accName}') -'{totalCost}'  Where AccountName = '{accName}'";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 command.ExecuteNonQuery();
@@ -102,8 +102,7 @@ namespace TheGame
         }
 
         public void AddToQuant(string Quant, int Amount, string accName)
-        {
-            
+        {           
             string sql = $@"Update Accounts Set {Quant} ='{Amount}'+(Select {Quant} From Accounts Where AccountName = '{accName}') Where AccountName = '{accName}' ";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
@@ -111,17 +110,17 @@ namespace TheGame
             }
         }
 
-        public int GetPrice(string Table)
+        public int GetPrice(string Table,int Tier)
         {
             int result = 0;
-            string sql = $"Select Cost From {Table}";
+            string sql = $"Select Cost From {Table} Where Tier ='{Tier}'";
 
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 SqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    result = (int)dataReader[0];
+                    result = (int)dataReader["Cost"];
                 }
                 dataReader.Close();
             }         

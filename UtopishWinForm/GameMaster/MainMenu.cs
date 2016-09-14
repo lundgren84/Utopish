@@ -18,7 +18,7 @@ namespace TheGame
         {
             time = DateTime.Now;
             gameUpdate = new Thread(UpdateGame);
-            gameUpdate.Start();
+            //gameUpdate.Start();
             Console.WriteLine("Utopish GameMaster Program");
             Console.WriteLine("1. Refresh Soldiers");
             Console.WriteLine("2. Refresh Buildings");

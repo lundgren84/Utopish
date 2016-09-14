@@ -28,8 +28,7 @@ namespace TheGame
             InitializeComponent();
             panelOverWiew.Height = 410;
             panelOverWiew.Width = 927;
-            panelOverWiew.BringToFront();
-            LoadAccount();
+            panelOverWiew.BringToFront();          
             RefreshGame();
             timer1.Start();
         }
@@ -63,17 +62,13 @@ namespace TheGame
             lblOverwieBank.Text = Acc.Bank_Quant.ToString();
             lblOverViewLab.Text = Acc.Lab_Quant.ToString();
             lblOverViewBarrack.Text = Acc.Barrack_Quant.ToString();
+           
 
-            //lblArcherCost.Text = "cost" + Acc.archer.cost;
-            //lblKnightCost.Text = "cost" + Acc.knight.cost;
-            //lblMountedCost.Text = "cost" + Acc.mountedKnight.cost;
-            //lblBankCost.Text = "cost" + Acc.bank.cost;
-            //lblLabCost.Text = "cost" + Acc.lab.cost;
-            //lblBarrackCost.Text = "cost" + Acc.barrack.cost;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
             now = DateTime.Now;
+           // RefreshGame();
             lblTime.Text = now.Hour + ":" + now.Minute + ":" + now.Second;
         }
 
@@ -152,7 +147,7 @@ namespace TheGame
         {
             knightCost = 0;
             dbc.OpenConnection(StaticShit.ConString);
-            knightCost =  StaticShit.AddValue(numKnight.Value,dbc.GetPrice("Knights"));
+            knightCost =  StaticShit.AddValue(numKnight.Value,dbc.GetPrice("Knights",1));
             dbc.CloseConnection();
             lblTrainCost.Text = (knightCost + archerCost + mountedKnightCost).ToString();
         }
@@ -161,7 +156,7 @@ namespace TheGame
         {
             archerCost = 0;
             dbc.OpenConnection(StaticShit.ConString);
-            archerCost = StaticShit.AddValue(numArcher.Value, dbc.GetPrice("Archers"));
+            archerCost = StaticShit.AddValue(numArcher.Value, dbc.GetPrice("Archers",1));
             dbc.CloseConnection();
             lblTrainCost.Text = (knightCost + archerCost + mountedKnightCost).ToString();
         }
@@ -170,7 +165,7 @@ namespace TheGame
         {
             mountedKnightCost = 0;
             dbc.OpenConnection(StaticShit.ConString);
-            mountedKnightCost = StaticShit.AddValue(numHorse.Value, dbc.GetPrice("MountedKnights"));
+            mountedKnightCost = StaticShit.AddValue(numHorse.Value, dbc.GetPrice("MountedKnights",1));
             dbc.CloseConnection();
             lblTrainCost.Text = (knightCost + archerCost + mountedKnightCost).ToString();
         }

@@ -50,8 +50,8 @@ namespace TheGame
             this.Password = password;
             this.Email = email;
             this.KingdomName = "";
-            this.Size = 200;
-            this.Gold = 1000;
+            this.Size = 0;
+            this.Gold = 0;
 
             this.archer = new Archer();
             this.mountedKnight = new MountedKnight();
