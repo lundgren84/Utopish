@@ -94,10 +94,22 @@ namespace GameMaster
         internal void UpdateResourses()
         {
             string sql;
-            sql = @"Select Gold From Accounts";
+            sql = @"Select * From Accounts";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
-                command.ExecuteNonQuery();
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    int Bank_Quant = (int)dataReader["Bank_Quanty"];
+                    int Gold = (int)dataReader["Gold"];  
+                    int newGold = Bank_Quant + Gold;  
+                    sql = $"Update Accounts Set Gold =''{newGold}";
+                    using (SqlCommand command2 = new SqlCommand(sql, connection))
+                    {
+                        command2.ExecuteNonQuery();
+                    }
+                }
+                dataReader.Close();
             }
         }
 
