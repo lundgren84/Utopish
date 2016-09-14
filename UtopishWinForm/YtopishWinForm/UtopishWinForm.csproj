@@ -90,6 +90,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GameMaster\GameMaster.csproj">
+      <Project>{37dbb0c1-0150-4c0e-9e3b-baffad4f1419}</Project>
+      <Name>GameMaster</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TheGame\TheGame.csproj">
       <Project>{a3ec86c8-7bef-4a59-b520-53abfc897d29}</Project>
       <Name>TheGame</Name>

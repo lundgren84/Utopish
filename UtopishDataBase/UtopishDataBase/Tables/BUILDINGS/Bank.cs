@@ -8,7 +8,8 @@ namespace UtopishDataBase
     public class Bank
     {
         public int BankID { get; set; }
-        public int Quantity { get; set; }
+      
         public int Cost { get; set; }
+       
     }
 }

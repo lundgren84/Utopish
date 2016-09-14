@@ -10,7 +10,8 @@ namespace YtopishWinForm
 {
     public static class StaticShit
     {
-        public static Player player { get; set; }
+       public static string ConString = "Data Source = (local);Initial Catalog = UtopishDataBase; User ID =Nisse; password = Nisse22; integrated Security = true";      
+        public static string AccName;
         public static bool CheckUsername(string username)
         {
             return true;
@@ -24,20 +25,7 @@ namespace YtopishWinForm
         public static bool CheckEMail(string email)
         {
             return true;
-        }
-
-        public static bool CheckLogin(string username, string password,List<Player> players)
-        {
-            foreach (var item in players)
-            {
-                if(item.Name == username && item.Password == password)
-                {
-                    player = item;
-                    return true;
-                } 
-            }
-            return false;
-        }
+        }     
 
         internal static int AddValue(decimal dec, int cost)
         {

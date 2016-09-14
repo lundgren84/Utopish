@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace GameMaster
+namespace TheGame
 {
     class MainMenu
     {
@@ -19,7 +19,7 @@ namespace GameMaster
             time = DateTime.Now;
             gameUpdate = new Thread(UpdateGame);
             gameUpdate.Start();
-            Console.WriteLine("Utopish GameMasterProgram");
+            Console.WriteLine("Utopish GameMaster Program");
             Console.WriteLine("1. Refresh Soldiers");
             Console.WriteLine("2. Refresh Buildings");
             ConsoleKeyInfo k;
@@ -44,10 +44,16 @@ namespace GameMaster
         private void UpdateGame()
         {
             time = DateTime.Now;
-            if(time == DateTime.Now)
+            int updateNr = 0;
+            while (true) {          
+            if(time< DateTime.Now)
             {
-                GiveResourses();
-
+                     GiveResourses();
+                    Console.SetCursorPosition(30, 0);
+                Console.WriteLine("UpdatedGame - "+ updateNr);
+                    time = DateTime.Now.AddSeconds(1);
+                    updateNr++;
+            }
             }
         }
 

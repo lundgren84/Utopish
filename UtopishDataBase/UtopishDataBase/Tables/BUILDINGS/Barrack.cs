@@ -8,7 +8,8 @@ namespace UtopishDataBase
     public class Barrack
     {
         public int BarrackID { get; set; }
-        public int Quantity { get; set; }
+      
         public int Cost { get; set; }
+       
     }
 }
