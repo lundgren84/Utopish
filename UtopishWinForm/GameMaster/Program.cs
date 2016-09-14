@@ -10,6 +10,8 @@ namespace GameMaster
     {
         static void Main(string[] args)
         {
+            MainMenu mm = new MainMenu();
+            mm.Start();
         }
     }
 }
