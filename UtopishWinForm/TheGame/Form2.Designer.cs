@@ -83,8 +83,6 @@
             this.lblMountedCost = new System.Windows.Forms.Label();
             this.lblArcherCost = new System.Windows.Forms.Label();
             this.lblKnightCost = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.numHorse = new System.Windows.Forms.NumericUpDown();
             this.numArcher = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
@@ -663,8 +661,6 @@
             this.panelTrain.Controls.Add(this.lblMountedCost);
             this.panelTrain.Controls.Add(this.lblArcherCost);
             this.panelTrain.Controls.Add(this.lblKnightCost);
-            this.panelTrain.Controls.Add(this.label18);
-            this.panelTrain.Controls.Add(this.label17);
             this.panelTrain.Controls.Add(this.numHorse);
             this.panelTrain.Controls.Add(this.numArcher);
             this.panelTrain.Controls.Add(this.label15);
@@ -675,7 +671,7 @@
             this.panelTrain.Controls.Add(this.label9);
             this.panelTrain.Location = new System.Drawing.Point(218, 3);
             this.panelTrain.Name = "panelTrain";
-            this.panelTrain.Size = new System.Drawing.Size(111, 410);
+            this.panelTrain.Size = new System.Drawing.Size(114, 410);
             this.panelTrain.TabIndex = 16;
             // 
             // lblTrainCost
@@ -732,28 +728,6 @@
             this.lblKnightCost.Size = new System.Drawing.Size(80, 17);
             this.lblKnightCost.TabIndex = 26;
             this.lblKnightCost.Text = "cost: 200";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(571, 13);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(48, 17);
-            this.label18.TabIndex = 25;
-            this.label18.Text = "Gold:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(377, 13);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(48, 17);
-            this.label17.TabIndex = 24;
-            this.label17.Text = "Iron:";
             // 
             // numHorse
             // 
@@ -993,8 +967,6 @@
         private System.Windows.Forms.Label lblMountedCost;
         private System.Windows.Forms.Label lblArcherCost;
         private System.Windows.Forms.Label lblKnightCost;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.NumericUpDown numHorse;
         private System.Windows.Forms.NumericUpDown numArcher;
         private System.Windows.Forms.Label label15;

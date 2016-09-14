@@ -174,6 +174,7 @@ namespace TheGame
         #region Buildings
         private void btnBuildBuild_Click(object sender, EventArgs e)
         {
+            RefreshGame();
             int shopBank = (int)numBank.Value;
             int shopLab = (int)numLab.Value;
             int shopBarrack = (int)numBarrack.Value;
@@ -182,13 +183,15 @@ namespace TheGame
 
             if (totalCost <= Acc.Gold)
             {
-                Acc.Gold -= totalCost;
-                Acc.Bank_Quant += shopBank;
-                Acc.Lab_Quant += shopLab;
-                Acc.Barrack_Quant += shopBarrack;
+                dbc.OpenConnection(StaticShit.ConString);
+                dbc.RemoveGold(totalCost, Acc.Name);
+                dbc.AddToQuant("Bank_Quant", shopBank, Acc.Name);
+                dbc.AddToQuant("Lab_Quant", shopLab, Acc.Name);
+                dbc.AddToQuant("Barrack_Quant", shopBarrack, Acc.Name);             
                 numBank.Value = 0;
                 numLab.Value = 0;
                 numBarrack.Value = 0;
+                dbc.CloseConnection();
             }
             RefreshGame();
         }
@@ -196,21 +199,27 @@ namespace TheGame
         private void numBank_ValueChanged(object sender, EventArgs e)
         {
             bankCost = 0;
-            bankCost = StaticShit.AddValue(numBank.Value, Acc.bank.cost);
-            lblBuildCost.Text = (bankCost + labCost + barrackCost).ToString();
+            dbc.OpenConnection(StaticShit.ConString);
+            bankCost = StaticShit.AddValue(numBank.Value, dbc.GetPrice("Banks", 0));
+            dbc.CloseConnection();
+            lblBuildCost.Text = (bankCost + labCost + barrackCost).ToString();   
         }
 
         private void numBarrack_ValueChanged(object sender, EventArgs e)
         {
             barrackCost = 0;
-            barrackCost = StaticShit.AddValue(numBarrack.Value, Acc.barrack.cost);
+            dbc.OpenConnection(StaticShit.ConString);
+            barrackCost = StaticShit.AddValue(numBarrack.Value, dbc.GetPrice("Labs", 0));
+            dbc.CloseConnection();
             lblBuildCost.Text = (bankCost + labCost + barrackCost).ToString();
         }
 
         private void numLab_ValueChanged(object sender, EventArgs e)
         {
             labCost = 0;
-            labCost = StaticShit.AddValue(numLab.Value, Acc.lab.cost);
+            dbc.OpenConnection(StaticShit.ConString);
+            labCost = StaticShit.AddValue(numLab.Value, dbc.GetPrice("Barracks", 0));
+            dbc.CloseConnection();
             lblBuildCost.Text = (bankCost + labCost + barrackCost).ToString();
         }
 

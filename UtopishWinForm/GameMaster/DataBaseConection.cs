@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TheGame
 {
-   public class DataBaseConection
+    public class DataBaseConection
     {
         private SqlConnection connection = null;
 
@@ -28,7 +28,7 @@ namespace TheGame
         public void Fillsoldiers()
         {
             string sql;
-          
+
             RemoveSoldiers("Archers");
             //Archers
             //-----------------------------------------------------------------------------Cost          HP         AttackPower    Armor       Tier            Name
@@ -91,10 +91,34 @@ namespace TheGame
                 command.ExecuteNonQuery();
             }
         }
+       public void AddFluffyAcc()
+        {
+            RemoveFluffy();
+            InsertNewPlayer();
+        }
 
+        private void RemoveFluffy()
+        {
+          
+          string sql = $"Delete From Accounts Where AccountName = 'Fluffy'";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                try { command.ExecuteNonQuery(); } catch { }
+            }
+        }
+
+        public void InsertNewPlayer()
+        {
+            string sql = @"Insert into  Accounts (AccountName,AccountPassword,AccountEmail,Gold,Power,Size,Archer_Quant,Knight_Quant,MountKnight_Quant,Bank_Quant,Lab_Quant,Barrack_Quant) 
+            Values('" + "Fluffy" + "','" + "123" + "','" + "Fluffy@hotmail.fluff" + "','" + 15430 + "','" + 0 + "','" + 0 + "','" + 0 + "','" + 0 + "','" + 0 + "','" + 0 + "','" + 0 + "','" + 0 + "')";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.ExecuteNonQuery();
+            }
+        }
         public void RemoveGold(int totalCost, string accName)
         {
-           string sql = $@" Update Accounts Set Gold =(Select Gold From Accounts Where AccountName = '{accName}') -'{totalCost}'  Where AccountName = '{accName}'";
+            string sql = $@" Update Accounts Set Gold =(Select Gold From Accounts Where AccountName = '{accName}') -'{totalCost}'  Where AccountName = '{accName}'";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 command.ExecuteNonQuery();
@@ -102,7 +126,7 @@ namespace TheGame
         }
 
         public void AddToQuant(string Quant, int Amount, string accName)
-        {           
+        {
             string sql = $@"Update Accounts Set {Quant} ='{Amount}'+(Select {Quant} From Accounts Where AccountName = '{accName}') Where AccountName = '{accName}' ";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
@@ -110,11 +134,18 @@ namespace TheGame
             }
         }
 
-        public int GetPrice(string Table,int Tier)
+        public int GetPrice(string Table, int Tier)
         {
+            string sql = "";
             int result = 0;
-            string sql = $"Select Cost From {Table} Where Tier ='{Tier}'";
-
+            if (Tier > 0)
+            {
+                 sql = $"Select Cost From {Table} Where Tier ='{Tier}'";
+            }
+            else
+            {
+               sql = $"Select Cost From {Table}";
+            }
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 SqlDataReader dataReader = command.ExecuteReader();
@@ -123,7 +154,7 @@ namespace TheGame
                     result = (int)dataReader["Cost"];
                 }
                 dataReader.Close();
-            }         
+            }
             return result;
         }
 
@@ -149,19 +180,24 @@ namespace TheGame
         public bool CheckLoggin(string UserName, string Password)
         {
 
-            string sql = $"Select * From Accounts Where AccountPassword = '{Password}' AND AccountName = '{UserName}'";
+            string sql = $"Select * From Accounts";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
-                try
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
                 {
-                    command.ExecuteNonQuery();
-                    return true;
+                    try
+                    {
+                        if ((string)dataReader["AccountName"] == UserName && (string)dataReader["AccountPassword"] == Password)
+                            return true;
+                    }
+                    catch (SqlException)
+                    {
+
+                    }
                 }
-                catch (SqlException)
-                {
-                    return false;
-                }
-            }       
+                return false;
+            }
         }
 
         internal void UpdateResourses()
@@ -176,10 +212,10 @@ namespace TheGame
                 {
                     int Bank_Quant = (int)dataReader["Bank_Quant"];
                     int Gold = (int)dataReader["Gold"];
-                     newGold = Bank_Quant + Gold;
-                  
+                    newGold = Bank_Quant + Gold;
+
                 }
-                dataReader.Close();        
+                dataReader.Close();
             }
             sql = $"Update Accounts Set Gold ='{newGold}'";
             using (SqlCommand command2 = new SqlCommand(sql, connection))
