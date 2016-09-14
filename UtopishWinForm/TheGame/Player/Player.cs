@@ -8,29 +8,48 @@ namespace TheGame
 {
     public class Player
     {
-        public int playerId;
-        string Name;
-        string KingdomName;
-        Archer archer;
-        Knight knight;
-        MountedKnight mountedKnight;
-        int size;
-        List<Buildings> buildings;
-        Location location;
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string KingdomName { get; set; }
+        public string Email { get; set; }
+        public int Power { get; set; }
+        public string Location { get; set; }
+        public int Size { get; set; }
+        public int Gold { get; set; }
 
-        public Player(string _name, string _kingdomName)
+        public Location location;
+        public Knight knight;
+        public Archer archer;
+        public MountedKnight mountedKnight;
+        public Bank bank;
+        public Barracks barrack;
+        public Lab lab;
+
+
+
+        public Player(string username, string password, string email)
         {
-            this.playerId = FigureOutPlayerID();
-            this.Name = _name;
-            this.KingdomName = _kingdomName;
-            size = 200;
-            this.archer = new Archer(archer.cost, 0, archer.HP, archer.attackPower, archer.armor);
-            this.mountedKnight = new MountedKnight(mountedKnight.cost, 0, mountedKnight.HP, mountedKnight.attackPower, mountedKnight.armor);
-            this.knight = new Knight(knight.cost, 0, knight.HP, knight.attackPower, knight.armor);
+            LoginRelated login = new LoginRelated();
+            string tempname = "tempname";
+            while (!login.UniqueUsername(tempname))
+            {
+                tempname = "The name you supplied is already taken, please try again";
+            }
+            this.KingdomName = tempname;
+            this.Username = username;
+            this.Password = password;
+            this.Email = email;
+            this.Gold = 1000;
             this.location = FigureOutLocation();
+            knight = new Knight(200, 0, 200, 90, 25);
+            archer = new Archer(100, 0, 100, 50, 10);
+            mountedKnight = new MountedKnight(500, 0, 500, 250, 25);
+            bank = new Bank();
+            barrack = new Barracks();
+            lab = new Lab();
         }
-
-        private int FigureOutPlayerID()
+    
+    private int FigureOutPlayerID()
         {
             throw new NotImplementedException();
         }
@@ -40,25 +59,25 @@ namespace TheGame
             throw new NotImplementedException();
         }
 
-        public Player CreateNewPlayer()
-        {
-            LoginRelated login = new LoginRelated();
-            string tempname = "tempname"; 
-            while (!login.UniqueUsername(tempname))
-            {
-                tempname = "The name you supplied is already taken, please try again";
-            }
-            string tempname2 = "tempname2";
-            while (!login.UniqueKingdomName(tempname2))
-            {
-                tempname2 = "The name you supplied is already taken, please try again";
-            }
+        //public Player CreateNewPlayer()
+        //{
+        //    LoginRelated login = new LoginRelated();
+        //    string tempname = "tempname"; 
+        //    while (!login.UniqueUsername(tempname))
+        //    {
+        //        tempname = "The name you supplied is already taken, please try again";
+        //    }
+        //    string tempname2 = "tempname2";
+        //    while (!login.UniqueKingdomName(tempname2))
+        //    {
+        //        tempname2 = "The name you supplied is already taken, please try again";
+        //    }
 
-            Player player = new Player(tempname, tempname2);
-            return player;
+        //    Player player = new Player(tempname, tempname2);
+        //    return player;
 
 
-        }
+        //}
       
         
     }

@@ -13,6 +13,7 @@ namespace YtopishWinForm
 {
     public partial class Form1 : Form
     {
+        Player player;
         List<Account> Accounts;
         public Form1()
         {
