@@ -68,7 +68,7 @@ namespace TheGame
         private void timer1_Tick(object sender, EventArgs e)
         {
             now = DateTime.Now;
-           // RefreshGame();
+            RefreshGame();
             lblTime.Text = now.Hour + ":" + now.Minute + ":" + now.Second;
         }
 
