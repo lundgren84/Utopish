@@ -21,7 +21,7 @@ namespace YtopishWinForm
             InitializeComponent();
             RefreshClick();
             Players = new List<Player>();
-            Players.Add(new Player("q", "q", "q"));
+         
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -49,20 +49,21 @@ namespace YtopishWinForm
 
         private void btnCheckLogin_Click(object sender, EventArgs e)
         {
-            RefreshClick();
-            if (StaticShit.CheckLogin(txtUsername.Text, txtPassword.Text, Players))
+            RefreshClick();           
+            dbc.OpenConnection(StaticShit.ConString);
+            if (dbc.CheckLoggin(txtUsername.Text, txtPassword.Text))
             {
-                if(dbc.CheckLoggin(txtUsername.Text, txtPassword.Text))
-                { }
-                
+                StaticShit.AccName = txtUsername.Text;
                 TheGame.Form2 form2 = new TheGame.Form2();
                 this.Hide();
                 form2.Show();
             }
+            //}
             else
             {
                 lblNews.Text = "Wrong Username or password!";
             }
+            dbc.CloseConnection();
         }
 
         private void btnCheckRegister_Click(object sender, EventArgs e)

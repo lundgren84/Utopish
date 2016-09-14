@@ -92,10 +92,15 @@ namespace TheGame
             }
         }
 
+        public int GetAccInfo(string v, string accName)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool CheckLoggin(string UserName, string Password)
         {
 
-            string sql = $"Select From Accounts Where Password = '{Password}'";
+            string sql = $"Select * From Accounts Where AccountPassword = '{Password}' AND AccountName = '{UserName}'";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 try

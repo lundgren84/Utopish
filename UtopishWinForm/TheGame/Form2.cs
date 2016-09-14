@@ -15,7 +15,7 @@ namespace TheGame
     public partial class Form2 : Form
     {
         DataBaseConection dbc = new DataBaseConection();
-        Player Acc = StaticShit.player;
+        Player Acc = new Player();
         DateTime now;
         int archerCost;
         int knightCost;
@@ -35,9 +35,9 @@ namespace TheGame
         }
         private void LoadAccount()
         {
-          
-            Acc.Power = 19929;
-            Acc.Size = 45;
+
+            Acc.Name = StaticShit.AccName;
+            Acc.Size = dbc.GetAccInfo("Size",StaticShit.AccName);
         
         }
 

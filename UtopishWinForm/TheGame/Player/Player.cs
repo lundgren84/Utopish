@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TheGame
 {
+    
     public class Player
     {
         public int playerId;
@@ -33,7 +34,8 @@ namespace TheGame
         public int Lab_Quant;
 
         Location location;
-
+        public Player()
+        { }
         public Player(string _name, string password, string email)
         {
             this.Archer_Quant = 0;
