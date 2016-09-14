@@ -8,59 +8,26 @@ namespace TheGame
 {
     public class Player
     {
-        public int playerId;
-        public string Name;
-        public string Password;
-        public string Email;
-        public string KingdomName;
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string KingdomName { get; set; }
+        public string Email { get; set; }
+        public int Power { get; set; }
+        public string Location { get; set; }
+        public int Size { get; set; }
+        public int Gold { get; set; }
 
-        public int Power;
-        public int Gold;
-        public int Size;
-        public Archer archer;
+        public Location location;
         public Knight knight;
+        public Archer archer;
         public MountedKnight mountedKnight;
         public Bank bank;
         public Barracks barrack;
         public Lab lab;
 
-        Location location;
 
-        public Player(string _name, string password, string email)
-        {
-            this.playerId = FigureOutPlayerID();
-            this.Name = _name;
-            this.Password = password;
-            this.Email = email;
-            this.KingdomName = "";
-            this.Size = 200;
-            this.Gold = 1000;
 
-            this.archer = new Archer();
-            this.mountedKnight = new MountedKnight();
-            this.knight = new Knight();
-            this.bank = new Bank();
-            this.barrack = new Barracks();
-            this.lab = new Lab();
-            this.location = FigureOutLocation();
-        }
-        public Player(string _name, string _kingdomName)//Placeholder
-        {
-            this.Name = _name;
-            this.KingdomName = _kingdomName;
-        }
-
-        private int FigureOutPlayerID()
-        {
-            return 0;//Placeholder
-        }
-
-        private Location FigureOutLocation()
-        {
-            return new Location(1, 1);//Placeholder
-        }
-
-        public Player CreateNewPlayer()
+        public Player(string username, string password, string email)
         {
             LoginRelated login = new LoginRelated();
             string tempname = "tempname";
@@ -68,18 +35,50 @@ namespace TheGame
             {
                 tempname = "The name you supplied is already taken, please try again";
             }
-            string tempname2 = "tempname2";
-            while (!login.UniqueKingdomName(tempname2))
-            {
-                tempname2 = "The name you supplied is already taken, please try again";
-            }
-
-            Player player = new Player(tempname, tempname2);
-            return player;
-
-
+            this.KingdomName = tempname;
+            this.Username = username;
+            this.Password = password;
+            this.Email = email;
+            this.Gold = 1000;
+            this.location = FigureOutLocation();
+            knight = new Knight(200, 0, 200, 90, 25);
+            archer = new Archer(100, 0, 100, 50, 10);
+            mountedKnight = new MountedKnight(500, 0, 500, 250, 25);
+            bank = new Bank();
+            barrack = new Barracks();
+            lab = new Lab();
+        }
+    
+    private int FigureOutPlayerID()
+        {
+            throw new NotImplementedException();
         }
 
+        private Location FigureOutLocation()
+        {
+            throw new NotImplementedException();
+        }
 
+        //public Player CreateNewPlayer()
+        //{
+        //    LoginRelated login = new LoginRelated();
+        //    string tempname = "tempname"; 
+        //    while (!login.UniqueUsername(tempname))
+        //    {
+        //        tempname = "The name you supplied is already taken, please try again";
+        //    }
+        //    string tempname2 = "tempname2";
+        //    while (!login.UniqueKingdomName(tempname2))
+        //    {
+        //        tempname2 = "The name you supplied is already taken, please try again";
+        //    }
+
+        //    Player player = new Player(tempname, tempname2);
+        //    return player;
+
+
+        //}
+      
+        
     }
 }
