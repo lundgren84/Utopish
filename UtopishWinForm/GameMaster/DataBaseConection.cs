@@ -92,9 +92,59 @@ namespace TheGame
             }
         }
 
-        public int GetAccInfo(string v, string accName)
+        public void RemoveGold(int totalCost, string accName)
         {
-            throw new NotImplementedException();
+           string sql = $@" Update Accounts Set Gold -= '{totalCost}'  Where AccountName = '{accName}'";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void AddToQuant(string Quant, int Amount, string accName)
+        {
+            
+            string sql = $@"Update Accounts Set {Quant} ='{Amount}'+(Select {Quant} From Accounts Where AccountName = '{accName}') Where AccountName = '{accName}' ";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public int GetPrice(string Table)
+        {
+            int result = 0;
+            string sql = $"Select Cost From {Table}";
+
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    result = (int)dataReader[0];
+                }
+                dataReader.Close();
+            }         
+            return result;
+        }
+
+        public string GetAccInfo(string Value, string accName)
+        {
+            string result = "";
+            int intResult = 0;
+            string sql;
+            sql = $@"Select {Value} From Accounts WHERE AccountName = '{accName}'";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    intResult = (int)dataReader[Value];
+                }
+                dataReader.Close();
+            }
+            result = intResult.ToString();
+            return result;
         }
 
         public bool CheckLoggin(string UserName, string Password)

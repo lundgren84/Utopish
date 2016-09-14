@@ -31,21 +31,30 @@ namespace TheGame
             panelOverWiew.BringToFront();
             LoadAccount();
             RefreshGame();
-            timer1.Start();    
+            timer1.Start();
         }
         private void LoadAccount()
         {
-
+            dbc.OpenConnection(StaticShit.ConString);
             Acc.Name = StaticShit.AccName;
-            Acc.Size = dbc.GetAccInfo("Size",StaticShit.AccName);
-        
+            Acc.Size = Convert.ToInt32((dbc.GetAccInfo("Size", StaticShit.AccName)));
+            Acc.Power = Convert.ToInt32((dbc.GetAccInfo("Power", StaticShit.AccName)));
+            Acc.Gold = Convert.ToInt32((dbc.GetAccInfo("Gold", StaticShit.AccName)));
+            Acc.Archer_Quant = Convert.ToInt32((dbc.GetAccInfo("Archer_Quant", StaticShit.AccName)));
+            Acc.Knight_Quant = Convert.ToInt32((dbc.GetAccInfo("Knight_Quant", StaticShit.AccName)));
+            Acc.MountedKnight_Quant = Convert.ToInt32((dbc.GetAccInfo("MountKnight_Quant", StaticShit.AccName)));
+            Acc.Bank_Quant = Convert.ToInt32((dbc.GetAccInfo("Bank_Quant", StaticShit.AccName)));
+            Acc.Lab_Quant = Convert.ToInt32((dbc.GetAccInfo("Lab_Quant", StaticShit.AccName)));
+            Acc.Barrack_Quant = Convert.ToInt32((dbc.GetAccInfo("Barrack_Quant", StaticShit.AccName)));
+            dbc.CloseConnection();
         }
 
         private void RefreshGame()
         {
+            LoadAccount();
             txtKDName.Text = Acc.Name;
             txtPower.Text = Acc.Power.ToString();
-          
+
             txtSize.Text = Acc.Size.ToString();
             txtGold.Text = Acc.Gold.ToString();
             lblOverWiewArcher.Text = Acc.Archer_Quant.ToString();
@@ -55,12 +64,12 @@ namespace TheGame
             lblOverViewLab.Text = Acc.Lab_Quant.ToString();
             lblOverViewBarrack.Text = Acc.Barrack_Quant.ToString();
 
-            lblArcherCost.Text = "cost" + Acc.archer.cost;
-            lblKnightCost.Text = "cost" + Acc.knight.cost;
-            lblMountedCost.Text = "cost" + Acc.mountedKnight.cost;
-            lblBankCost.Text = "cost" + Acc.bank.cost;
-            lblLabCost.Text = "cost" + Acc.lab.cost;
-            lblBarrackCost.Text = "cost" + Acc.barrack.cost;
+            //lblArcherCost.Text = "cost" + Acc.archer.cost;
+            //lblKnightCost.Text = "cost" + Acc.knight.cost;
+            //lblMountedCost.Text = "cost" + Acc.mountedKnight.cost;
+            //lblBankCost.Text = "cost" + Acc.bank.cost;
+            //lblLabCost.Text = "cost" + Acc.lab.cost;
+            //lblBarrackCost.Text = "cost" + Acc.barrack.cost;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -109,12 +118,13 @@ namespace TheGame
         {
             panelResearch.BringToFront();
             panelResearch.Dock = DockStyle.Fill;
-        } 
+        }
         #endregion
         //Soldiers
         #region Soldiers
         private void btnTroopTrain_Click(object sender, EventArgs e)
         {
+            RefreshGame();
             int shopKnight = (int)numKnight.Value;
             int shopArcher = (int)numArcher.Value;
             int shopHorse = (int)numHorse.Value;
@@ -123,13 +133,15 @@ namespace TheGame
 
             if (totalCost <= Acc.Gold)
             {
-                Acc.Gold -= totalCost;
-                Acc.Archer_Quant += shopArcher;
-                Acc.Knight_Quant += shopKnight;
-                Acc.MountedKnight_Quant += shopHorse;
+                dbc.OpenConnection(StaticShit.ConString);
+                dbc.RemoveGold(totalCost,Acc.Name);
+                dbc.AddToQuant("Archer_Quant", shopArcher, Acc.Name);
+                dbc.AddToQuant("Knight_Quant", shopKnight, Acc.Name);
+                dbc.AddToQuant("MountKnight_Quant", shopHorse, Acc.Name);            
                 numArcher.Value = 0;
                 numKnight.Value = 0;
                 numHorse.Value = 0;
+                dbc.CloseConnection();
             }
 
 
@@ -139,23 +151,29 @@ namespace TheGame
         private void numKnight_ValueChanged(object sender, EventArgs e)
         {
             knightCost = 0;
-            knightCost = StaticShit.AddValue(numKnight.Value, Acc.knight.cost);
+            dbc.OpenConnection(StaticShit.ConString);
+            knightCost =  StaticShit.AddValue(numKnight.Value,dbc.GetPrice("Knights"));
+            dbc.CloseConnection();
             lblTrainCost.Text = (knightCost + archerCost + mountedKnightCost).ToString();
         }
 
         private void numArcher_ValueChanged(object sender, EventArgs e)
         {
             archerCost = 0;
-            archerCost = StaticShit.AddValue(numArcher.Value, Acc.archer.cost);
+            dbc.OpenConnection(StaticShit.ConString);
+            archerCost = StaticShit.AddValue(numArcher.Value, dbc.GetPrice("Archers"));
+            dbc.CloseConnection();
             lblTrainCost.Text = (knightCost + archerCost + mountedKnightCost).ToString();
         }
 
         private void numHorse_ValueChanged(object sender, EventArgs e)
         {
             mountedKnightCost = 0;
-            mountedKnightCost = StaticShit.AddValue(numHorse.Value, Acc.mountedKnight.cost);
+            dbc.OpenConnection(StaticShit.ConString);
+            mountedKnightCost = StaticShit.AddValue(numHorse.Value, dbc.GetPrice("MountedKnights"));
+            dbc.CloseConnection();
             lblTrainCost.Text = (knightCost + archerCost + mountedKnightCost).ToString();
-        } 
+        }
         #endregion
         //Building
         #region Buildings
@@ -170,7 +188,7 @@ namespace TheGame
             if (totalCost <= Acc.Gold)
             {
                 Acc.Gold -= totalCost;
-                Acc.Bank_Quant+= shopBank;
+                Acc.Bank_Quant += shopBank;
                 Acc.Lab_Quant += shopLab;
                 Acc.Barrack_Quant += shopBarrack;
                 numBank.Value = 0;
@@ -201,7 +219,7 @@ namespace TheGame
             lblBuildCost.Text = (bankCost + labCost + barrackCost).ToString();
         }
 
-      
-    } 
+
+    }
     #endregion
 }
