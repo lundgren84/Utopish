@@ -74,12 +74,20 @@ namespace YtopishWinForm
             string username = txtRUser.Text;
             string password = txtRPassword.Text;
             string email = txtREmail.Text;
-            if (StaticShit.CheckUsername(username) && StaticShit.CheckPassword(password) && StaticShit.CheckEMail(email))
+            dbc.OpenConnection(StaticShit.ConString);
+            string check = dbc.CheckRegister(username, email);
+            dbc.CloseConnection();
+            if ("Clear" == check)
             {
-               
                 panelRegister.Visible = false;
                 lblNews.Text = "New Account registred";
+                dbc.OpenConnection(StaticShit.ConString);
+                dbc.CreateAccount(username, password, email);
+                dbc.CloseConnection();
             }
+            else if ("Username" == check) { lblNews.Text = "Username allready taken, try another one!"; }
+            else if ("Mail" == check) { lblNews.Text = "Email allready in use test other!"; }
+
 
         }
         private void RefreshClick()

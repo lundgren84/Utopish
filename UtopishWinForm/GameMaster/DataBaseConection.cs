@@ -24,7 +24,36 @@ namespace TheGame
             connection.Close();
             connection.Dispose();
         }
-
+        public void CreateAccount(string username, string password, string email)
+        {
+            string sql = $@"Insert into  Accounts (AccountName,AccountPassword,AccountEmail,Gold,Power,Bank_Quant,Size,Archer_Quant,Knight_Quant,MountKnight_Quant,Lab_Quant,Barrack_Quant) 
+            Values('" + username + "','" + password + "','" + email + "','" + 1000 + "','" + 0 + "','" + 1 + "','" + 0 + "','" + 0 + "','" + 0 + "','" + 0 + "','" + 0 + "','" + 0 + "')";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.ExecuteNonQuery();
+            }
+        }
+        public string CheckRegister(string username, string email)
+        {
+            string sql = $@"Select * From Accounts";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    if (username == (string)dataReader["AccountName"])
+                    {
+                        return "Username";
+                    }
+                    if (email == (string)dataReader["AccountEmail"])
+                    {
+                        return "Mail";
+                    }
+                }
+                dataReader.Close();
+                return "Clear";
+            }
+        }
         public void Fillsoldiers()
         {
             string sql;
