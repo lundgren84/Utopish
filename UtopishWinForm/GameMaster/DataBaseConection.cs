@@ -94,7 +94,7 @@ namespace GameMaster
         internal void UpdateResourses()
         {
             string sql;
-            sql = @"Select Gold From Accounts (Gold) Values('" + 0 + "','" + 200 + "')";
+            sql = @"Select Gold From Accounts";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 command.ExecuteNonQuery();
