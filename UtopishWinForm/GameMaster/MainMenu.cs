@@ -12,8 +12,7 @@ namespace TheGame
         DataBaseConection dbc = new DataBaseConection();
         Thread gameUpdate;
         static DateTime time;
-        string ConString = "Data Source = 217.210.151.153,1433;Initial Catalog = UtopishDataBase; User ID =hampus; password = nisse22; integrated Security = true";
-
+        string ConString = @"Data source=217.210.151.153,1433; Network Library=DBMSSOCN; Initial Catalog=UtopishDataBase; User ID = guest; Password=nisse22;";
         public void Start()
         {
             time = DateTime.Now;
