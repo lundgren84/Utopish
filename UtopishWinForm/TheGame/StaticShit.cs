@@ -10,7 +10,7 @@ namespace YtopishWinForm
 {
     public static class StaticShit
     {
-       public static string ConString = "Data Source = (local);Initial Catalog = UtopishDataBase; User ID =Nisse; password = Nisse22; integrated Security = true";      
+        string ConString = "Data Source = 217.210.151.153,1433;Initial Catalog = UtopishDataBase; User ID =hampus; password = nisse22; integrated Security = true";
         public static string AccName;
         public static bool CheckUsername(string username)
         {
