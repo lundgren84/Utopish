@@ -518,7 +518,7 @@
             this.panelBuild.Controls.Add(this.label8);
             this.panelBuild.Location = new System.Drawing.Point(112, 3);
             this.panelBuild.Name = "panelBuild";
-            this.panelBuild.Size = new System.Drawing.Size(100, 410);
+            this.panelBuild.Size = new System.Drawing.Size(103, 410);
             this.panelBuild.TabIndex = 16;
             // 
             // lblLabCost

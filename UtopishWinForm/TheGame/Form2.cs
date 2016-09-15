@@ -30,8 +30,15 @@ namespace TheGame
             panelOverWiew.Width = 927;
             panelOverWiew.BringToFront();          
             RefreshGame();
+            SetText_Lables();
             timer1.Start();
         }
+
+        private void SetText_Lables()
+        {
+            lblArcherCost.Text = dbc.GetPrice("Archers",1).ToString();
+        }
+
         private void LoadAccount()
         {
             dbc.OpenConnection(StaticShit.ConString);
