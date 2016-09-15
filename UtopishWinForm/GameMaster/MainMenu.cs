@@ -43,16 +43,13 @@ namespace TheGame
         private void UpdateGame()
         {
             time = DateTime.Now;
-            int updateNr = 0;
-            while (true) {          
-            if(time< DateTime.Now)
+            while (true)
             {
-                     GiveResourses();
-                    Console.SetCursorPosition(30, 0);
-                Console.WriteLine("UpdatedGame - "+ updateNr);
+                if (time < DateTime.Now)
+                {
+                    GiveResourses();
                     time = DateTime.Now.AddSeconds(1);
-                    updateNr++;
-            }
+                }
             }
         }
 

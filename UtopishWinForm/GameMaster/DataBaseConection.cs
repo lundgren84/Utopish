@@ -231,25 +231,28 @@ namespace TheGame
 
         internal void UpdateResourses()
         {
-            int newGold = 0;
+            List<string> NameList = new List<string>();
+
             string sql;
-            sql = @"Select * From Accounts";
+
+            sql = $@"Select AccountName From Accounts";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 SqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    int Bank_Quant = (int)dataReader["Bank_Quant"];
-                    int Gold = (int)dataReader["Gold"];
-                    newGold = Bank_Quant + Gold;
-
+                    NameList.Add((string)dataReader["AccountName"]);
                 }
                 dataReader.Close();
             }
-            sql = $"Update Accounts Set Gold ='{newGold}'";
-            using (SqlCommand command2 = new SqlCommand(sql, connection))
+
+            foreach (var item in NameList)
             {
-                command2.ExecuteNonQuery();
+                sql = $@"Update Accounts Set Gold =((Select Gold From Accounts Where AccountName = '{item}')+(Select Bank_Quant From Accounts Where AccountName = '{item}')) Where AccountName = '{item}'";
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
             }
         }
 
