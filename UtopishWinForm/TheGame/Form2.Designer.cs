@@ -402,7 +402,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(91, 52);
             this.button7.TabIndex = 16;
-            this.button7.Text = "Exit";
+            this.button7.Text = "Logg out";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 

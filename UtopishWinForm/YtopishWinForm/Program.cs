@@ -16,7 +16,9 @@ namespace YtopishWinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Form1 form1 = new Form1();
+            StaticShit.form = form1;
+            Application.Run(form1);
         }
     }
 }

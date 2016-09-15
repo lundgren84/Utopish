@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TheGame;
 using YtopishWinForm;
 
 
@@ -89,6 +90,7 @@ namespace TheGame
         #region MainNavButtons
         private void button7_Click(object sender, EventArgs e)
         {
+            StaticShit.form.Show();
             this.Close();
 
         }

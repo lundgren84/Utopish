@@ -20,8 +20,9 @@ namespace YtopishWinForm
         {
             InitializeComponent();
             RefreshClick();
-            dbc.OpenConnection(StaticShit.ConString);
-           // dbc.AddFluffyAcc();
+            panelLogIn.Visible = false;
+            panelRegister.Visible = false;
+            dbc.OpenConnection(StaticShit.ConString);         
             dbc.CloseConnection();
         }
 
@@ -54,10 +55,12 @@ namespace YtopishWinForm
             dbc.OpenConnection(StaticShit.ConString);
             if (dbc.CheckLoggin(txtUsername.Text, txtPassword.Text))
             {
+                
                 this.Cursor = Cursors.WaitCursor;
                 StaticShit.AccName = txtUsername.Text;
                 TheGame.Form2 form2 = new TheGame.Form2();
                 this.Hide();
+                ResetForm1();
                 form2.Show();
             }
             //}
@@ -93,6 +96,15 @@ namespace YtopishWinForm
         private void RefreshClick()
         {
             lblNews.Text = "";
+        }
+        private void ResetForm1()
+        {
+            Refresh();
+            panelLogIn.Visible = false;
+            panelRegister.Visible = false;
+            txtUsername.Text = "";
+            txtPassword.Text = "";
+            this.Cursor = Cursors.Arrow;
         }
     }
 }
