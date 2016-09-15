@@ -62,6 +62,7 @@ namespace YtopishWinForm
                 this.Hide();
                 ResetForm1();
                 form2.Show();
+                this.Cursor = Cursors.Arrow;
             }
             //}
             else

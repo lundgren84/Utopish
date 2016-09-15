@@ -187,6 +187,11 @@ namespace TheGame
             return result;
         }
 
+        public List<string> GetAllEnemys()
+        {
+            return new List<string>();
+        }
+
         public string GetAccInfo(string Value, string accName)
         {
             string result = "";

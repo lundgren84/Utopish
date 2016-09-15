@@ -237,8 +237,37 @@ namespace TheGame
             dbc.CloseConnection();
             lblBuildCost.Text = (bankCost + labCost + barrackCost).ToString();
         }
+        List<string> playerList = new List<string>();
+        private void buttonAttackRefresh_Click(object sender, EventArgs e)
+        {
 
+            playerList = dbc.GetAllEnemys();
+        }
 
+        private void buttonAttack1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAttack2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAttack3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAttack4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAttack5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     #endregion
 }
