@@ -55,7 +55,7 @@ namespace TheGame
             txtPower.Text = Acc.Power.ToString();
 
             txtSize.Text = Acc.Size.ToString();
-            txtGold.Text = ((dbc.GetAccInfo("Gold", StaticShit.AccName)));
+            txtGold.Text = Acc.Gold.ToString();
             lblOverWiewArcher.Text = Acc.Archer_Quant.ToString();
             lblOverWiewKnight.Text = Acc.Knight_Quant.ToString();
             lblOverWiewHorse.Text = Acc.MountedKnight_Quant.ToString();
