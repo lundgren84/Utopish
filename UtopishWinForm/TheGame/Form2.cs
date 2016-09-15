@@ -39,7 +39,7 @@ namespace TheGame
             dbc.OpenConnection(StaticShit.ConString);
             lblArcherCost.Text = dbc.GetPrice("Archers",1).ToString();
             lblKnightCost.Text = dbc.GetPrice("Knights", 1).ToString();
-            lblMountedCost.Text = dbc.GetPrice("MountKnight", 1).ToString();
+            lblMountedCost.Text = dbc.GetPrice("MountedKnights", 1).ToString();
             lblBankCost.Text = dbc.GetPrice("Banks", 0).ToString();
             lblLabCost.Text = dbc.GetPrice("Labs", 0).ToString();
             lblBarrackCost.Text = dbc.GetPrice("Barracks", 0).ToString();
