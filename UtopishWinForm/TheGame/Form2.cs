@@ -36,8 +36,9 @@ namespace TheGame
 
         private void SetText_Lables()
         {
+            dbc.OpenConnection(StaticShit.ConString);
             lblArcherCost.Text = dbc.GetPrice("Archers",1).ToString();
-        }
+            dbc.CloseConnection();        }
 
         private void LoadAccount()
         {

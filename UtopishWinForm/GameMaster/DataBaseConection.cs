@@ -67,7 +67,7 @@ namespace TheGame
                 command.ExecuteNonQuery();
             }
             //-----------------------------------------------------------------------------Cost          HP         AttackPower    Armor       Tier            Name
-            sql = @"Insert into  Archers (Cost,HP,AttackPower,Armor,Tier,Name) Values('" + 300 + "','" + 150 + "','" + 100 + "','" + 20 + "','" + 2 + "','" + "Armored Archers" + "')";
+            sql = @"Insert into  Archers (Cost,HP,AttackPower,Armor,Tier,Name) Values('" + 200+ "','" + 150 + "','" + 100 + "','" + 20 + "','" + 2 + "','" + "Armored Archers" + "')";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 command.ExecuteNonQuery();
