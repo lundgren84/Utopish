@@ -259,23 +259,23 @@ namespace TheGame
                 {
                     if (nr == 0)
                     {
-                        txtEnemy1.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops{enemies[3]}";
+                        txtEnemy1.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops:{enemies[3]}";
                     }
                     if (nr == 1)
                     {
-                        txtEnemy2.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops{enemies[3]}";
+                        txtEnemy2.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops:{enemies[3]}";
                     }
                     if (nr == 2)
                     {
-                        txtEnemy3.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops{enemies[3]}";
+                        txtEnemy3.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops:{enemies[3]}";
                     }
                     if (nr == 3)
                     {
-                        txtEnemy4.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops{enemies[3]}";
+                        txtEnemy4.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops:{enemies[3]}";
                     }
                     if (nr == 4)
                     {
-                        txtEnemy5.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops{enemies[3]}";
+                        txtEnemy5.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops:{enemies[3]}";
                     }
                     if (nr > 4)
                     {
