@@ -17,6 +17,7 @@ namespace TheGame
     {
         DataBaseConection dbc = new DataBaseConection();
         Player Acc = new Player();
+        Player Enemy = new Player();
         DateTime now;
         int archerCost;
         int knightCost;
@@ -285,13 +286,51 @@ namespace TheGame
                 }
             }
         }
+        Dictionary<string, int> BattleInfo;
         private void buttonAttackRefresh_Click(object sender, EventArgs e)
         {
             RefreshEnemies();
         }
         private void buttonAttack1_Click(object sender, EventArgs e)
         {
+            panelBattleBegin.Visible = true;
+            panelBattleBegin.Dock = DockStyle.Fill;
+            panelBattleBegin.BringToFront();
 
+            BattleInfo = new Dictionary<string, int>();
+            Enemy.Name = txtEnemy1.Text;
+            dbc.OpenConnection(StaticShit.ConString);
+            BattleInfo = dbc.AttackEnemy(Acc.Name,Enemy.Name);
+            dbc.CloseConnection();
+            int enemyStats = BattleInfo["enemyAttack"];
+            enemyStats += BattleInfo["enemyHP"];
+            int playerStats = BattleInfo["yourAttack"];
+            playerStats += BattleInfo["yourHP"];
+
+            bool win = GetWinner(enemyStats, playerStats);
+            dbc.OpenConnection(StaticShit.ConString);
+            if (win)
+            {
+                dbc.TakeGoldFromOther(Acc.Name, Enemy.Name);
+                dbc.KillTroops(Acc.Name, Enemy.Name, "win");
+            }
+            else
+            {
+                dbc.KillTroops(Acc.Name, Enemy.Name, "loose");
+            }
+            dbc.CloseConnection();
+        }
+
+        private bool GetWinner(int enemyStats, int playerStats)
+        {
+            if (playerStats > enemyStats)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void buttonAttack2_Click(object sender, EventArgs e)
@@ -314,7 +353,10 @@ namespace TheGame
 
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panelBattleBegin.Visible = false;
+        }
     }
 
 }

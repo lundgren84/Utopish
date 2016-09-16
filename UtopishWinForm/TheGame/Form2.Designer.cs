@@ -111,6 +111,13 @@
             this.panelScreen = new System.Windows.Forms.Panel();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panelBattleBegin = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lblyourOffence = new System.Windows.Forms.Label();
+            this.lblEnemyOffence = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelOverWiew.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelBuild.SuspendLayout();
@@ -125,6 +132,7 @@
             this.panelExplore.SuspendLayout();
             this.panelResearch.SuspendLayout();
             this.panelScreen.SuspendLayout();
+            this.panelBattleBegin.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -820,6 +828,7 @@
             // 
             // panelAttack
             // 
+            this.panelAttack.Controls.Add(this.panelBattleBegin);
             this.panelAttack.Controls.Add(this.buttonAttackRefresh);
             this.panelAttack.Controls.Add(this.buttonAttack5);
             this.panelAttack.Controls.Add(this.buttonAttack4);
@@ -832,9 +841,9 @@
             this.panelAttack.Controls.Add(this.txtEnemy2);
             this.panelAttack.Controls.Add(this.txtEnemy1);
             this.panelAttack.Controls.Add(this.label10);
-            this.panelAttack.Location = new System.Drawing.Point(332, 3);
+            this.panelAttack.Location = new System.Drawing.Point(3, 3);
             this.panelAttack.Name = "panelAttack";
-            this.panelAttack.Size = new System.Drawing.Size(535, 410);
+            this.panelAttack.Size = new System.Drawing.Size(864, 410);
             this.panelAttack.TabIndex = 16;
             // 
             // buttonAttackRefresh
@@ -1041,6 +1050,85 @@
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // panelBattleBegin
+            // 
+            this.panelBattleBegin.Controls.Add(this.button1);
+            this.panelBattleBegin.Controls.Add(this.label18);
+            this.panelBattleBegin.Controls.Add(this.lblEnemyOffence);
+            this.panelBattleBegin.Controls.Add(this.lblyourOffence);
+            this.panelBattleBegin.Controls.Add(this.label17);
+            this.panelBattleBegin.Controls.Add(this.label16);
+            this.panelBattleBegin.Location = new System.Drawing.Point(13, 26);
+            this.panelBattleBegin.Name = "panelBattleBegin";
+            this.panelBattleBegin.Size = new System.Drawing.Size(84, 340);
+            this.panelBattleBegin.TabIndex = 27;
+            this.panelBattleBegin.Visible = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(63, 26);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(315, 33);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Your Offence power =";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(49, 79);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(330, 33);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Enemy Offence power =";
+            // 
+            // lblyourOffence
+            // 
+            this.lblyourOffence.AutoSize = true;
+            this.lblyourOffence.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblyourOffence.ForeColor = System.Drawing.Color.White;
+            this.lblyourOffence.Location = new System.Drawing.Point(384, 27);
+            this.lblyourOffence.Name = "lblyourOffence";
+            this.lblyourOffence.Size = new System.Drawing.Size(45, 33);
+            this.lblyourOffence.TabIndex = 2;
+            this.lblyourOffence.Text = "..";
+            // 
+            // lblEnemyOffence
+            // 
+            this.lblEnemyOffence.AutoSize = true;
+            this.lblEnemyOffence.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnemyOffence.ForeColor = System.Drawing.Color.White;
+            this.lblEnemyOffence.Location = new System.Drawing.Point(385, 78);
+            this.lblEnemyOffence.Name = "lblEnemyOffence";
+            this.lblEnemyOffence.Size = new System.Drawing.Size(45, 33);
+            this.lblEnemyOffence.TabIndex = 3;
+            this.lblEnemyOffence.Text = "..";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(3, 3);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(76, 23);
+            this.label18.TabIndex = 28;
+            this.label18.Text = "Attack";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(275, 195);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(185, 64);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1082,6 +1170,8 @@
             this.panelResearch.ResumeLayout(false);
             this.panelResearch.PerformLayout();
             this.panelScreen.ResumeLayout(false);
+            this.panelBattleBegin.ResumeLayout(false);
+            this.panelBattleBegin.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1171,6 +1261,13 @@
         private System.Windows.Forms.TextBox txtEnemy3;
         private System.Windows.Forms.TextBox txtEnemy2;
         private System.Windows.Forms.TextBox txtEnemy1;
+        private System.Windows.Forms.Panel panelBattleBegin;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblEnemyOffence;
+        private System.Windows.Forms.Label lblyourOffence;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
     }
 }
 

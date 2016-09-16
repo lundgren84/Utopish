@@ -235,6 +235,109 @@ namespace TheGame
             return result;
         }
 
+        public Dictionary<string,int> AttackEnemy(string yourName,string enemyName)
+        {
+
+            int yourAttack = GetAttackPowerOrHp("AttackPower", yourName);
+            int yourHP = GetAttackPowerOrHp("HP", yourName);
+            int enemyAttack = GetAttackPowerOrHp("AttackPower", enemyName);
+            int enemyHP = GetAttackPowerOrHp("HP", enemyName);
+            Dictionary<string, int> BattleInfo = new Dictionary<string, int>();
+            BattleInfo.Add("yourAttack", yourAttack);
+            BattleInfo.Add("yourHP", yourHP);
+            BattleInfo.Add("enemyAttack", enemyAttack);
+            BattleInfo.Add("enemyHP", enemyHP);
+            return BattleInfo;
+        }
+
+        public void TakeGoldFromOther(string name1, string name2)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void KillTroops(string name1, string name2, string v)
+        {
+            throw new NotImplementedException();
+        }
+
+        private int GetAttackPowerOrHp(string value,string accName)
+        {
+            int UnitQuant = 0;
+            int ArchPower = 0;
+            int KnightPower = 0;
+            int MountPower = 0;
+            // Get the base stats
+            string sql = $@"Select {value} From Archers";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    ArchPower = (int)dataReader[value];
+                }
+                dataReader.Close();
+            }
+             sql = $@"Select {value} From Knighs";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    KnightPower = (int)dataReader[value];
+                }
+                dataReader.Close();
+            }
+             sql = $@"Select {value} From MountedKnights";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    MountPower = (int)dataReader[value];
+                }
+                dataReader.Close();
+            }
+            // Get your personal stats
+            sql = $@"Select Archer_Quant From Accounts Where AccountName = '{accName}'";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    UnitQuant += (int)dataReader[value];
+                }
+                dataReader.Close();
+                ArchPower = ArchPower * UnitQuant;
+            }
+            UnitQuant = 0;
+            sql = $@"Select Knight_Quant From Accounts Where AccountName = '{accName}'";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    UnitQuant += (int)dataReader[value];
+                }
+                dataReader.Close();
+                KnightPower = KnightPower * UnitQuant;
+            }
+            UnitQuant = 0;
+            sql = $@"Select MountKnight_Quant From Accounts Where AccountName = '{accName}'";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    UnitQuant += (int)dataReader[value];
+                }
+                dataReader.Close();
+                MountPower = MountPower * UnitQuant;
+            }
+            UnitQuant = 0;
+
+            return ArchPower+KnightPower+MountPower;
+        }
+
         public bool CheckLoggin(string UserName, string Password)
         {
 
