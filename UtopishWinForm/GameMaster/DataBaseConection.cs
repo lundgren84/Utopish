@@ -250,9 +250,44 @@ namespace TheGame
             return BattleInfo;
         }
 
-        public void TakeGoldFromOther(string name1, string name2)
+        public int TakeGoldFromOther(string AccWin, string AccLose)
         {
-          
+            int playerGold = 0;
+            int enemyGold = 0;
+            int grab = 0;
+            string sql = $@"Select * From Accounts Where AccountName = '{AccWin}'";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    playerGold = (int)dataReader["Gold"];
+                }
+                dataReader.Close();
+            }
+             sql = $@"Select * From Accounts Where AccountName = '{AccLose}'";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    enemyGold = (int)dataReader["Gold"];
+                }
+                dataReader.Close();
+            }
+            grab = enemyGold / 4;
+            
+            sql = $@"Update Accounts Set Gold += {grab} Where AccountName = '{AccWin}'";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.ExecuteNonQuery();
+            }
+            sql = $@"Update Accounts Set Gold -= {grab} Where AccountName = '{AccLose}'";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.ExecuteNonQuery();
+            }
+            return grab;
         }
 
         public void KillTroops(string name1, string name2, string v)

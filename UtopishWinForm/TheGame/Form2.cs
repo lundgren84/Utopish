@@ -245,6 +245,11 @@ namespace TheGame
 
         //Attack
         List<string> playerList = new List<string>();
+        string e1;
+        string e2;
+        string e3;
+        string e4;
+        string e5;
         public void RefreshEnemies()
         {
             int nr = 0;
@@ -312,7 +317,7 @@ namespace TheGame
             dbc.OpenConnection(StaticShit.ConString);
             if (win)
             {
-                dbc.TakeGoldFromOther(Acc.Name, Enemy.Name);
+              GoldGrab.Text =  dbc.TakeGoldFromOther(Acc.Name, Enemy.Name).ToString();
                 dbc.KillTroops(Acc.Name, Enemy.Name, "win");
                 winORlose.Text = "WIN";
             }
@@ -338,22 +343,134 @@ namespace TheGame
 
         private void buttonAttack2_Click(object sender, EventArgs e)
         {
+            panelBattleBegin.Visible = true;
+            panelBattleBegin.Dock = DockStyle.Fill;
+            panelBattleBegin.BringToFront();
 
+            BattleInfo = new Dictionary<string, int>();
+            Enemy.Name = txtEnemy2.Text;
+            dbc.OpenConnection(StaticShit.ConString);
+            BattleInfo = dbc.AttackEnemy(Acc.Name, Enemy.Name);
+            dbc.CloseConnection();
+            int enemyStats = BattleInfo["enemyAttack"];
+            enemyStats += BattleInfo["enemyHP"];
+            int playerStats = BattleInfo["yourAttack"];
+            playerStats += BattleInfo["yourHP"];
+            lblyourOffence.Text = playerStats.ToString();
+            lblEnemyOffence.Text = enemyStats.ToString();
+            bool win = GetWinner(enemyStats, playerStats);
+            dbc.OpenConnection(StaticShit.ConString);
+            if (win)
+            {
+                GoldGrab.Text = dbc.TakeGoldFromOther(Acc.Name, Enemy.Name).ToString();
+                dbc.KillTroops(Acc.Name, Enemy.Name, "win");
+                winORlose.Text = "WIN";
+            }
+            else
+            {
+                dbc.KillTroops(Acc.Name, Enemy.Name, "loose");
+                winORlose.Text = "LOOSE";
+            }
+            dbc.CloseConnection();
         }
 
         private void buttonAttack3_Click(object sender, EventArgs e)
         {
+            panelBattleBegin.Visible = true;
+            panelBattleBegin.Dock = DockStyle.Fill;
+            panelBattleBegin.BringToFront();
 
+            BattleInfo = new Dictionary<string, int>();
+            Enemy.Name = txtEnemy3.Text;
+            dbc.OpenConnection(StaticShit.ConString);
+            BattleInfo = dbc.AttackEnemy(Acc.Name, Enemy.Name);
+            dbc.CloseConnection();
+            int enemyStats = BattleInfo["enemyAttack"];
+            enemyStats += BattleInfo["enemyHP"];
+            int playerStats = BattleInfo["yourAttack"];
+            playerStats += BattleInfo["yourHP"];
+            lblyourOffence.Text = playerStats.ToString();
+            lblEnemyOffence.Text = enemyStats.ToString();
+            bool win = GetWinner(enemyStats, playerStats);
+            dbc.OpenConnection(StaticShit.ConString);
+            if (win)
+            {
+                GoldGrab.Text = dbc.TakeGoldFromOther(Acc.Name, Enemy.Name).ToString();
+                dbc.KillTroops(Acc.Name, Enemy.Name, "win");
+                winORlose.Text = "WIN";
+            }
+            else
+            {
+                dbc.KillTroops(Acc.Name, Enemy.Name, "loose");
+                winORlose.Text = "LOOSE";
+            }
+            dbc.CloseConnection();
         }
 
         private void buttonAttack4_Click(object sender, EventArgs e)
         {
+            panelBattleBegin.Visible = true;
+            panelBattleBegin.Dock = DockStyle.Fill;
+            panelBattleBegin.BringToFront();
 
+            BattleInfo = new Dictionary<string, int>();
+            Enemy.Name = txtEnemy4.Text;
+            dbc.OpenConnection(StaticShit.ConString);
+            BattleInfo = dbc.AttackEnemy(Acc.Name, Enemy.Name);
+            dbc.CloseConnection();
+            int enemyStats = BattleInfo["enemyAttack"];
+            enemyStats += BattleInfo["enemyHP"];
+            int playerStats = BattleInfo["yourAttack"];
+            playerStats += BattleInfo["yourHP"];
+            lblyourOffence.Text = playerStats.ToString();
+            lblEnemyOffence.Text = enemyStats.ToString();
+            bool win = GetWinner(enemyStats, playerStats);
+            dbc.OpenConnection(StaticShit.ConString);
+            if (win)
+            {
+                GoldGrab.Text = dbc.TakeGoldFromOther(Acc.Name, Enemy.Name).ToString();
+                dbc.KillTroops(Acc.Name, Enemy.Name, "win");
+                winORlose.Text = "WIN";
+            }
+            else
+            {
+                dbc.KillTroops(Acc.Name, Enemy.Name, "loose");
+                winORlose.Text = "LOOSE";
+            }
+            dbc.CloseConnection();
         }
 
         private void buttonAttack5_Click(object sender, EventArgs e)
         {
+            panelBattleBegin.Visible = true;
+            panelBattleBegin.Dock = DockStyle.Fill;
+            panelBattleBegin.BringToFront();
 
+            BattleInfo = new Dictionary<string, int>();
+            Enemy.Name = txtEnemy5.Text;
+            dbc.OpenConnection(StaticShit.ConString);
+            BattleInfo = dbc.AttackEnemy(Acc.Name, Enemy.Name);
+            dbc.CloseConnection();
+            int enemyStats = BattleInfo["enemyAttack"];
+            enemyStats += BattleInfo["enemyHP"];
+            int playerStats = BattleInfo["yourAttack"];
+            playerStats += BattleInfo["yourHP"];
+            lblyourOffence.Text = playerStats.ToString();
+            lblEnemyOffence.Text = enemyStats.ToString();
+            bool win = GetWinner(enemyStats, playerStats);
+            dbc.OpenConnection(StaticShit.ConString);
+            if (win)
+            {
+                GoldGrab.Text = dbc.TakeGoldFromOther(Acc.Name, Enemy.Name).ToString();
+                dbc.KillTroops(Acc.Name, Enemy.Name, "win");
+                winORlose.Text = "WIN";
+            }
+            else
+            {
+                dbc.KillTroops(Acc.Name, Enemy.Name, "loose");
+                winORlose.Text = "LOOSE";
+            }
+            dbc.CloseConnection();
         }
 
         private void button1_Click(object sender, EventArgs e)
