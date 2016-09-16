@@ -252,12 +252,12 @@ namespace TheGame
 
         public void TakeGoldFromOther(string name1, string name2)
         {
-            throw new NotImplementedException();
+          
         }
 
         public void KillTroops(string name1, string name2, string v)
         {
-            throw new NotImplementedException();
+            
         }
 
         private int GetAttackPowerOrHp(string value,string accName)
@@ -267,7 +267,7 @@ namespace TheGame
             int KnightPower = 0;
             int MountPower = 0;
             // Get the base stats
-            string sql = $@"Select {value} From Archers";
+            string sql = $@"Select {value} From Archers Where Tier = '1'";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 SqlDataReader dataReader = command.ExecuteReader();
@@ -277,7 +277,7 @@ namespace TheGame
                 }
                 dataReader.Close();
             }
-             sql = $@"Select {value} From Knighs";
+             sql = $@"Select {value} From Knights Where Tier = '1'";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 SqlDataReader dataReader = command.ExecuteReader();
@@ -287,7 +287,7 @@ namespace TheGame
                 }
                 dataReader.Close();
             }
-             sql = $@"Select {value} From MountedKnights";
+             sql = $@"Select {value} From MountedKnights Where Tier = '1'";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 SqlDataReader dataReader = command.ExecuteReader();
@@ -304,7 +304,7 @@ namespace TheGame
                 SqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    UnitQuant += (int)dataReader[value];
+                    UnitQuant += (int)dataReader["Archer_Quant"];
                 }
                 dataReader.Close();
                 ArchPower = ArchPower * UnitQuant;
@@ -316,7 +316,7 @@ namespace TheGame
                 SqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    UnitQuant += (int)dataReader[value];
+                    UnitQuant += (int)dataReader["Knight_Quant"];
                 }
                 dataReader.Close();
                 KnightPower = KnightPower * UnitQuant;
@@ -328,7 +328,7 @@ namespace TheGame
                 SqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    UnitQuant += (int)dataReader[value];
+                    UnitQuant += (int)dataReader["MountKnight_Quant"];
                 }
                 dataReader.Close();
                 MountPower = MountPower * UnitQuant;

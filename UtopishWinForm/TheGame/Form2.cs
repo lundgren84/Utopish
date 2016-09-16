@@ -306,17 +306,20 @@ namespace TheGame
             enemyStats += BattleInfo["enemyHP"];
             int playerStats = BattleInfo["yourAttack"];
             playerStats += BattleInfo["yourHP"];
-
+            lblyourOffence.Text = playerStats.ToString();
+            lblEnemyOffence.Text = enemyStats.ToString();
             bool win = GetWinner(enemyStats, playerStats);
             dbc.OpenConnection(StaticShit.ConString);
             if (win)
             {
                 dbc.TakeGoldFromOther(Acc.Name, Enemy.Name);
                 dbc.KillTroops(Acc.Name, Enemy.Name, "win");
+                winORlose.Text = "WIN";
             }
             else
             {
                 dbc.KillTroops(Acc.Name, Enemy.Name, "loose");
+                winORlose.Text = "LOOSE";
             }
             dbc.CloseConnection();
         }
@@ -356,7 +359,11 @@ namespace TheGame
         private void button1_Click(object sender, EventArgs e)
         {
             panelBattleBegin.Visible = false;
+            winORlose.Text = "";
+            GoldGrab.Text = "0";
         }
+
+      
     }
 
 }
