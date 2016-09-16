@@ -189,7 +189,30 @@ namespace TheGame
 
         public List<string> GetAllEnemys()
         {
-            return new List<string>();
+            string name = "";
+            int power = 0;
+            int gold = 0;
+            int troops = 0;
+            List<string> enemies = new List<string>();
+            string sql;
+            sql = $@"Select * From Accounts";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    name = (string)dataReader["AccountName"];
+                    power = (int)dataReader["Power"];
+                    gold = (int)dataReader["Gold"];
+                    //  troops = (int)dataReader["Archer_Quant"+"Knight_Quant"+"MountKnight_Quant"];
+
+
+                    enemies.Add(name + "." + power.ToString() + "." + gold.ToString() + "." + troops.ToString());
+                }
+                dataReader.Close();
+            }
+            return enemies;
         }
 
         public string GetAccInfo(string Value, string accName)

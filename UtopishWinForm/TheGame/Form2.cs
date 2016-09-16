@@ -114,6 +114,7 @@ namespace TheGame
 
         private void btnAttack_Click(object sender, EventArgs e)
         {
+            RefreshEnemies();
             panelAttack.BringToFront();
             panelAttack.Dock = DockStyle.Fill;
         }
@@ -237,13 +238,53 @@ namespace TheGame
             dbc.CloseConnection();
             lblBuildCost.Text = (bankCost + labCost + barrackCost).ToString();
         }
+       
+        #endregion
+
+        //Attack
         List<string> playerList = new List<string>();
+        public void RefreshEnemies()
+        {
+            int nr = 0;
+            dbc.OpenConnection(StaticShit.ConString);
+            playerList = dbc.GetAllEnemys();
+            dbc.CloseConnection();
+            foreach (var item in playerList)
+            {
+                List<string> atributes = new List<string>();
+                string[] enemies = item.Split('.');
+
+                if (nr == 0)
+                {
+                    txtEnemy1.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops{enemies[3]}";
+                }
+                if (nr == 1)
+                {
+                    txtEnemy2.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops{enemies[3]}";
+                }
+                if (nr == 2)
+                {
+                    txtEnemy3.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops{enemies[3]}";
+                }
+                if (nr == 3)
+                {
+                    txtEnemy4.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops{enemies[3]}";
+                }
+                if (nr == 4)
+                {
+                    txtEnemy5.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops{enemies[3]}";
+                }
+                if (nr > 4)
+                {
+                    return;
+                }
+                nr++;
+            }
+        }
         private void buttonAttackRefresh_Click(object sender, EventArgs e)
         {
-
-            playerList = dbc.GetAllEnemys();
+            RefreshEnemies();
         }
-
         private void buttonAttack1_Click(object sender, EventArgs e)
         {
 
@@ -268,6 +309,8 @@ namespace TheGame
         {
 
         }
+
+       
     }
-    #endregion
+   
 }

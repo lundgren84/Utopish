@@ -92,6 +92,17 @@
             this.btnTroopTrain = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.panelAttack = new System.Windows.Forms.Panel();
+            this.buttonAttackRefresh = new System.Windows.Forms.Button();
+            this.buttonAttack5 = new System.Windows.Forms.Button();
+            this.buttonAttack4 = new System.Windows.Forms.Button();
+            this.buttonAttack3 = new System.Windows.Forms.Button();
+            this.buttonAttack2 = new System.Windows.Forms.Button();
+            this.buttonAttack1 = new System.Windows.Forms.Button();
+            this.txtEnemy5 = new System.Windows.Forms.TextBox();
+            this.txtEnemy4 = new System.Windows.Forms.TextBox();
+            this.txtEnemy3 = new System.Windows.Forms.TextBox();
+            this.txtEnemy2 = new System.Windows.Forms.TextBox();
+            this.txtEnemy1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panelExplore = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
@@ -100,17 +111,6 @@
             this.panelScreen = new System.Windows.Forms.Panel();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.txtEnemy1 = new System.Windows.Forms.TextBox();
-            this.txtEnemy2 = new System.Windows.Forms.TextBox();
-            this.txtEnemy3 = new System.Windows.Forms.TextBox();
-            this.txtEnemy4 = new System.Windows.Forms.TextBox();
-            this.txtEnemy5 = new System.Windows.Forms.TextBox();
-            this.buttonAttack1 = new System.Windows.Forms.Button();
-            this.buttonAttack2 = new System.Windows.Forms.Button();
-            this.buttonAttack3 = new System.Windows.Forms.Button();
-            this.buttonAttack4 = new System.Windows.Forms.Button();
-            this.buttonAttack5 = new System.Windows.Forms.Button();
-            this.buttonAttackRefresh = new System.Windows.Forms.Button();
             this.panelOverWiew.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelBuild.SuspendLayout();
@@ -834,8 +834,134 @@
             this.panelAttack.Controls.Add(this.label10);
             this.panelAttack.Location = new System.Drawing.Point(332, 3);
             this.panelAttack.Name = "panelAttack";
-            this.panelAttack.Size = new System.Drawing.Size(106, 410);
+            this.panelAttack.Size = new System.Drawing.Size(535, 410);
             this.panelAttack.TabIndex = 16;
+            // 
+            // buttonAttackRefresh
+            // 
+            this.buttonAttackRefresh.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAttackRefresh.Location = new System.Drawing.Point(103, 288);
+            this.buttonAttackRefresh.Name = "buttonAttackRefresh";
+            this.buttonAttackRefresh.Size = new System.Drawing.Size(107, 34);
+            this.buttonAttackRefresh.TabIndex = 26;
+            this.buttonAttackRefresh.Text = "Refresh";
+            this.buttonAttackRefresh.UseVisualStyleBackColor = true;
+            this.buttonAttackRefresh.Click += new System.EventHandler(this.buttonAttackRefresh_Click);
+            // 
+            // buttonAttack5
+            // 
+            this.buttonAttack5.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAttack5.Location = new System.Drawing.Point(103, 231);
+            this.buttonAttack5.Name = "buttonAttack5";
+            this.buttonAttack5.Size = new System.Drawing.Size(107, 34);
+            this.buttonAttack5.TabIndex = 25;
+            this.buttonAttack5.Text = "Attack";
+            this.buttonAttack5.UseVisualStyleBackColor = true;
+            this.buttonAttack5.Click += new System.EventHandler(this.buttonAttack5_Click);
+            // 
+            // buttonAttack4
+            // 
+            this.buttonAttack4.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAttack4.Location = new System.Drawing.Point(103, 181);
+            this.buttonAttack4.Name = "buttonAttack4";
+            this.buttonAttack4.Size = new System.Drawing.Size(107, 34);
+            this.buttonAttack4.TabIndex = 24;
+            this.buttonAttack4.Text = "Attack";
+            this.buttonAttack4.UseVisualStyleBackColor = true;
+            this.buttonAttack4.Click += new System.EventHandler(this.buttonAttack4_Click);
+            // 
+            // buttonAttack3
+            // 
+            this.buttonAttack3.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAttack3.Location = new System.Drawing.Point(103, 133);
+            this.buttonAttack3.Name = "buttonAttack3";
+            this.buttonAttack3.Size = new System.Drawing.Size(107, 34);
+            this.buttonAttack3.TabIndex = 23;
+            this.buttonAttack3.Text = "Attack";
+            this.buttonAttack3.UseVisualStyleBackColor = true;
+            this.buttonAttack3.Click += new System.EventHandler(this.buttonAttack3_Click);
+            // 
+            // buttonAttack2
+            // 
+            this.buttonAttack2.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAttack2.Location = new System.Drawing.Point(103, 83);
+            this.buttonAttack2.Name = "buttonAttack2";
+            this.buttonAttack2.Size = new System.Drawing.Size(107, 34);
+            this.buttonAttack2.TabIndex = 22;
+            this.buttonAttack2.Text = "Attack";
+            this.buttonAttack2.UseVisualStyleBackColor = true;
+            this.buttonAttack2.Click += new System.EventHandler(this.buttonAttack2_Click);
+            // 
+            // buttonAttack1
+            // 
+            this.buttonAttack1.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAttack1.Location = new System.Drawing.Point(103, 38);
+            this.buttonAttack1.Name = "buttonAttack1";
+            this.buttonAttack1.Size = new System.Drawing.Size(107, 34);
+            this.buttonAttack1.TabIndex = 21;
+            this.buttonAttack1.Text = "Attack";
+            this.buttonAttack1.UseVisualStyleBackColor = true;
+            this.buttonAttack1.Click += new System.EventHandler(this.buttonAttack1_Click);
+            // 
+            // txtEnemy5
+            // 
+            this.txtEnemy5.BackColor = System.Drawing.Color.Black;
+            this.txtEnemy5.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnemy5.ForeColor = System.Drawing.Color.White;
+            this.txtEnemy5.Location = new System.Drawing.Point(219, 231);
+            this.txtEnemy5.Name = "txtEnemy5";
+            this.txtEnemy5.ReadOnly = true;
+            this.txtEnemy5.Size = new System.Drawing.Size(629, 34);
+            this.txtEnemy5.TabIndex = 20;
+            this.txtEnemy5.Text = "Enemy5";
+            // 
+            // txtEnemy4
+            // 
+            this.txtEnemy4.BackColor = System.Drawing.Color.Black;
+            this.txtEnemy4.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnemy4.ForeColor = System.Drawing.Color.White;
+            this.txtEnemy4.Location = new System.Drawing.Point(219, 181);
+            this.txtEnemy4.Name = "txtEnemy4";
+            this.txtEnemy4.ReadOnly = true;
+            this.txtEnemy4.Size = new System.Drawing.Size(629, 34);
+            this.txtEnemy4.TabIndex = 19;
+            this.txtEnemy4.Text = "Enemy4";
+            // 
+            // txtEnemy3
+            // 
+            this.txtEnemy3.BackColor = System.Drawing.Color.Black;
+            this.txtEnemy3.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnemy3.ForeColor = System.Drawing.Color.White;
+            this.txtEnemy3.Location = new System.Drawing.Point(219, 133);
+            this.txtEnemy3.Name = "txtEnemy3";
+            this.txtEnemy3.ReadOnly = true;
+            this.txtEnemy3.Size = new System.Drawing.Size(629, 34);
+            this.txtEnemy3.TabIndex = 18;
+            this.txtEnemy3.Text = "Enemy3";
+            // 
+            // txtEnemy2
+            // 
+            this.txtEnemy2.BackColor = System.Drawing.Color.Black;
+            this.txtEnemy2.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnemy2.ForeColor = System.Drawing.Color.White;
+            this.txtEnemy2.Location = new System.Drawing.Point(219, 84);
+            this.txtEnemy2.Name = "txtEnemy2";
+            this.txtEnemy2.ReadOnly = true;
+            this.txtEnemy2.Size = new System.Drawing.Size(629, 34);
+            this.txtEnemy2.TabIndex = 17;
+            this.txtEnemy2.Text = "Enemy2";
+            // 
+            // txtEnemy1
+            // 
+            this.txtEnemy1.BackColor = System.Drawing.Color.Black;
+            this.txtEnemy1.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnemy1.ForeColor = System.Drawing.Color.White;
+            this.txtEnemy1.Location = new System.Drawing.Point(219, 38);
+            this.txtEnemy1.Name = "txtEnemy1";
+            this.txtEnemy1.ReadOnly = true;
+            this.txtEnemy1.Size = new System.Drawing.Size(629, 34);
+            this.txtEnemy1.TabIndex = 16;
+            this.txtEnemy1.Text = "Enemy1";
             // 
             // label10
             // 
@@ -914,132 +1040,6 @@
             // 
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // txtEnemy1
-            // 
-            this.txtEnemy1.BackColor = System.Drawing.Color.Black;
-            this.txtEnemy1.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEnemy1.ForeColor = System.Drawing.Color.White;
-            this.txtEnemy1.Location = new System.Drawing.Point(219, 38);
-            this.txtEnemy1.Name = "txtEnemy1";
-            this.txtEnemy1.ReadOnly = true;
-            this.txtEnemy1.Size = new System.Drawing.Size(629, 34);
-            this.txtEnemy1.TabIndex = 16;
-            this.txtEnemy1.Text = "Enemy1";
-            // 
-            // txtEnemy2
-            // 
-            this.txtEnemy2.BackColor = System.Drawing.Color.Black;
-            this.txtEnemy2.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEnemy2.ForeColor = System.Drawing.Color.White;
-            this.txtEnemy2.Location = new System.Drawing.Point(219, 84);
-            this.txtEnemy2.Name = "txtEnemy2";
-            this.txtEnemy2.ReadOnly = true;
-            this.txtEnemy2.Size = new System.Drawing.Size(629, 34);
-            this.txtEnemy2.TabIndex = 17;
-            this.txtEnemy2.Text = "Enemy2";
-            // 
-            // txtEnemy3
-            // 
-            this.txtEnemy3.BackColor = System.Drawing.Color.Black;
-            this.txtEnemy3.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEnemy3.ForeColor = System.Drawing.Color.White;
-            this.txtEnemy3.Location = new System.Drawing.Point(219, 133);
-            this.txtEnemy3.Name = "txtEnemy3";
-            this.txtEnemy3.ReadOnly = true;
-            this.txtEnemy3.Size = new System.Drawing.Size(629, 34);
-            this.txtEnemy3.TabIndex = 18;
-            this.txtEnemy3.Text = "Enemy3";
-            // 
-            // txtEnemy4
-            // 
-            this.txtEnemy4.BackColor = System.Drawing.Color.Black;
-            this.txtEnemy4.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEnemy4.ForeColor = System.Drawing.Color.White;
-            this.txtEnemy4.Location = new System.Drawing.Point(219, 181);
-            this.txtEnemy4.Name = "txtEnemy4";
-            this.txtEnemy4.ReadOnly = true;
-            this.txtEnemy4.Size = new System.Drawing.Size(629, 34);
-            this.txtEnemy4.TabIndex = 19;
-            this.txtEnemy4.Text = "Enemy4";
-            // 
-            // txtEnemy5
-            // 
-            this.txtEnemy5.BackColor = System.Drawing.Color.Black;
-            this.txtEnemy5.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEnemy5.ForeColor = System.Drawing.Color.White;
-            this.txtEnemy5.Location = new System.Drawing.Point(219, 231);
-            this.txtEnemy5.Name = "txtEnemy5";
-            this.txtEnemy5.ReadOnly = true;
-            this.txtEnemy5.Size = new System.Drawing.Size(629, 34);
-            this.txtEnemy5.TabIndex = 20;
-            this.txtEnemy5.Text = "Enemy5";
-            // 
-            // buttonAttack1
-            // 
-            this.buttonAttack1.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAttack1.Location = new System.Drawing.Point(103, 38);
-            this.buttonAttack1.Name = "buttonAttack1";
-            this.buttonAttack1.Size = new System.Drawing.Size(107, 34);
-            this.buttonAttack1.TabIndex = 21;
-            this.buttonAttack1.Text = "Attack";
-            this.buttonAttack1.UseVisualStyleBackColor = true;
-            this.buttonAttack1.Click += new System.EventHandler(this.buttonAttack1_Click);
-            // 
-            // buttonAttack2
-            // 
-            this.buttonAttack2.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAttack2.Location = new System.Drawing.Point(103, 83);
-            this.buttonAttack2.Name = "buttonAttack2";
-            this.buttonAttack2.Size = new System.Drawing.Size(107, 34);
-            this.buttonAttack2.TabIndex = 22;
-            this.buttonAttack2.Text = "Attack";
-            this.buttonAttack2.UseVisualStyleBackColor = true;
-            this.buttonAttack2.Click += new System.EventHandler(this.buttonAttack2_Click);
-            // 
-            // buttonAttack3
-            // 
-            this.buttonAttack3.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAttack3.Location = new System.Drawing.Point(103, 133);
-            this.buttonAttack3.Name = "buttonAttack3";
-            this.buttonAttack3.Size = new System.Drawing.Size(107, 34);
-            this.buttonAttack3.TabIndex = 23;
-            this.buttonAttack3.Text = "Attack";
-            this.buttonAttack3.UseVisualStyleBackColor = true;
-            this.buttonAttack3.Click += new System.EventHandler(this.buttonAttack3_Click);
-            // 
-            // buttonAttack4
-            // 
-            this.buttonAttack4.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAttack4.Location = new System.Drawing.Point(103, 181);
-            this.buttonAttack4.Name = "buttonAttack4";
-            this.buttonAttack4.Size = new System.Drawing.Size(107, 34);
-            this.buttonAttack4.TabIndex = 24;
-            this.buttonAttack4.Text = "Attack";
-            this.buttonAttack4.UseVisualStyleBackColor = true;
-            this.buttonAttack4.Click += new System.EventHandler(this.buttonAttack4_Click);
-            // 
-            // buttonAttack5
-            // 
-            this.buttonAttack5.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAttack5.Location = new System.Drawing.Point(103, 231);
-            this.buttonAttack5.Name = "buttonAttack5";
-            this.buttonAttack5.Size = new System.Drawing.Size(107, 34);
-            this.buttonAttack5.TabIndex = 25;
-            this.buttonAttack5.Text = "Attack";
-            this.buttonAttack5.UseVisualStyleBackColor = true;
-            this.buttonAttack5.Click += new System.EventHandler(this.buttonAttack5_Click);
-            // 
-            // buttonAttackRefresh
-            // 
-            this.buttonAttackRefresh.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAttackRefresh.Location = new System.Drawing.Point(103, 288);
-            this.buttonAttackRefresh.Name = "buttonAttackRefresh";
-            this.buttonAttackRefresh.Size = new System.Drawing.Size(107, 34);
-            this.buttonAttackRefresh.TabIndex = 26;
-            this.buttonAttackRefresh.Text = "Refresh";
-            this.buttonAttackRefresh.UseVisualStyleBackColor = true;
-            this.buttonAttackRefresh.Click += new System.EventHandler(this.buttonAttackRefresh_Click);
             // 
             // Form2
             // 
