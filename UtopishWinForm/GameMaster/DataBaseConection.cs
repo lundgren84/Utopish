@@ -202,11 +202,12 @@ namespace TheGame
                 SqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
+                   
                     name = (string)dataReader["AccountName"];
                     power = (int)dataReader["Power"];
                     gold = (int)dataReader["Gold"];
-                    //  troops = (int)dataReader["Archer_Quant"+"Knight_Quant"+"MountKnight_Quant"];
-
+                        //  troops = (int)dataReader["Archer_Quant"+"Knight_Quant"+"MountKnight_Quant"];
+                    
 
                     enemies.Add(name + "." + power.ToString() + "." + gold.ToString() + "." + troops.ToString());
                 }

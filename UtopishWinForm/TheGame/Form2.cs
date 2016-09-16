@@ -29,7 +29,7 @@ namespace TheGame
             InitializeComponent();
             panelOverWiew.Height = 410;
             panelOverWiew.Width = 927;
-            panelOverWiew.BringToFront();          
+            panelOverWiew.BringToFront();
             RefreshGame();
             SetText_Lables();
             timer1.Start();
@@ -38,13 +38,14 @@ namespace TheGame
         private void SetText_Lables()
         {
             dbc.OpenConnection(StaticShit.ConString);
-            lblArcherCost.Text = dbc.GetPrice("Archers",1).ToString();
+            lblArcherCost.Text = dbc.GetPrice("Archers", 1).ToString();
             lblKnightCost.Text = dbc.GetPrice("Knights", 1).ToString();
             lblMountedCost.Text = dbc.GetPrice("MountedKnights", 1).ToString();
             lblBankCost.Text = dbc.GetPrice("Banks", 0).ToString();
             lblLabCost.Text = dbc.GetPrice("Labs", 0).ToString();
             lblBarrackCost.Text = dbc.GetPrice("Barracks", 0).ToString();
-            dbc.CloseConnection();        }
+            dbc.CloseConnection();
+        }
 
         private void LoadAccount()
         {
@@ -76,7 +77,7 @@ namespace TheGame
             lblOverwieBank.Text = Acc.Bank_Quant.ToString();
             lblOverViewLab.Text = Acc.Lab_Quant.ToString();
             lblOverViewBarrack.Text = Acc.Barrack_Quant.ToString();
-           
+
 
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -145,10 +146,10 @@ namespace TheGame
             if (totalCost <= Acc.Gold)
             {
                 dbc.OpenConnection(StaticShit.ConString);
-                dbc.RemoveGold(totalCost,Acc.Name);
+                dbc.RemoveGold(totalCost, Acc.Name);
                 dbc.AddToQuant("Archer_Quant", shopArcher, Acc.Name);
                 dbc.AddToQuant("Knight_Quant", shopKnight, Acc.Name);
-                dbc.AddToQuant("MountKnight_Quant", shopHorse, Acc.Name);            
+                dbc.AddToQuant("MountKnight_Quant", shopHorse, Acc.Name);
                 numArcher.Value = 0;
                 numKnight.Value = 0;
                 numHorse.Value = 0;
@@ -163,7 +164,7 @@ namespace TheGame
         {
             knightCost = 0;
             dbc.OpenConnection(StaticShit.ConString);
-            knightCost =  StaticShit.AddValue(numKnight.Value,dbc.GetPrice("Knights",1));
+            knightCost = StaticShit.AddValue(numKnight.Value, dbc.GetPrice("Knights", 1));
             dbc.CloseConnection();
             lblTrainCost.Text = (knightCost + archerCost + mountedKnightCost).ToString();
         }
@@ -172,7 +173,7 @@ namespace TheGame
         {
             archerCost = 0;
             dbc.OpenConnection(StaticShit.ConString);
-            archerCost = StaticShit.AddValue(numArcher.Value, dbc.GetPrice("Archers",1));
+            archerCost = StaticShit.AddValue(numArcher.Value, dbc.GetPrice("Archers", 1));
             dbc.CloseConnection();
             lblTrainCost.Text = (knightCost + archerCost + mountedKnightCost).ToString();
         }
@@ -181,7 +182,7 @@ namespace TheGame
         {
             mountedKnightCost = 0;
             dbc.OpenConnection(StaticShit.ConString);
-            mountedKnightCost = StaticShit.AddValue(numHorse.Value, dbc.GetPrice("MountedKnights",1));
+            mountedKnightCost = StaticShit.AddValue(numHorse.Value, dbc.GetPrice("MountedKnights", 1));
             dbc.CloseConnection();
             lblTrainCost.Text = (knightCost + archerCost + mountedKnightCost).ToString();
         }
@@ -203,7 +204,7 @@ namespace TheGame
                 dbc.RemoveGold(totalCost, Acc.Name);
                 dbc.AddToQuant("Bank_Quant", shopBank, Acc.Name);
                 dbc.AddToQuant("Lab_Quant", shopLab, Acc.Name);
-                dbc.AddToQuant("Barrack_Quant", shopBarrack, Acc.Name);             
+                dbc.AddToQuant("Barrack_Quant", shopBarrack, Acc.Name);
                 numBank.Value = 0;
                 numLab.Value = 0;
                 numBarrack.Value = 0;
@@ -218,7 +219,7 @@ namespace TheGame
             dbc.OpenConnection(StaticShit.ConString);
             bankCost = StaticShit.AddValue(numBank.Value, dbc.GetPrice("Banks", 0));
             dbc.CloseConnection();
-            lblBuildCost.Text = (bankCost + labCost + barrackCost).ToString();   
+            lblBuildCost.Text = (bankCost + labCost + barrackCost).ToString();
         }
 
         private void numBarrack_ValueChanged(object sender, EventArgs e)
@@ -238,7 +239,7 @@ namespace TheGame
             dbc.CloseConnection();
             lblBuildCost.Text = (bankCost + labCost + barrackCost).ToString();
         }
-       
+
         #endregion
 
         //Attack
@@ -251,34 +252,37 @@ namespace TheGame
             dbc.CloseConnection();
             foreach (var item in playerList)
             {
-                List<string> atributes = new List<string>();
+                 
                 string[] enemies = item.Split('.');
 
-                if (nr == 0)
+                if (enemies[0] != Acc.Name)
                 {
-                    txtEnemy1.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops{enemies[3]}";
+                    if (nr == 0)
+                    {
+                        txtEnemy1.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops{enemies[3]}";
+                    }
+                    if (nr == 1)
+                    {
+                        txtEnemy2.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops{enemies[3]}";
+                    }
+                    if (nr == 2)
+                    {
+                        txtEnemy3.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops{enemies[3]}";
+                    }
+                    if (nr == 3)
+                    {
+                        txtEnemy4.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops{enemies[3]}";
+                    }
+                    if (nr == 4)
+                    {
+                        txtEnemy5.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops{enemies[3]}";
+                    }
+                    if (nr > 4)
+                    {
+                        return;
+                    }
+                    nr++;
                 }
-                if (nr == 1)
-                {
-                    txtEnemy2.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops{enemies[3]}";
-                }
-                if (nr == 2)
-                {
-                    txtEnemy3.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops{enemies[3]}";
-                }
-                if (nr == 3)
-                {
-                    txtEnemy4.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops{enemies[3]}";
-                }
-                if (nr == 4)
-                {
-                    txtEnemy5.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops{enemies[3]}";
-                }
-                if (nr > 4)
-                {
-                    return;
-                }
-                nr++;
             }
         }
         private void buttonAttackRefresh_Click(object sender, EventArgs e)
@@ -310,7 +314,7 @@ namespace TheGame
 
         }
 
-       
+
     }
-   
+
 }
