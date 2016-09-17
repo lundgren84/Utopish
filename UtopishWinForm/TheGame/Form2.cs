@@ -265,22 +265,27 @@ namespace TheGame
                 {
                     if (nr == 0)
                     {
+                        e1 = enemies[0];
                         txtEnemy1.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops:{enemies[3]}";
                     }
                     if (nr == 1)
                     {
+                        e2 = enemies[0];
                         txtEnemy2.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops:{enemies[3]}";
                     }
                     if (nr == 2)
                     {
+                        e3 = enemies[0];
                         txtEnemy3.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops:{enemies[3]}";
                     }
                     if (nr == 3)
                     {
+                        e4 = enemies[0];
                         txtEnemy4.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops:{enemies[3]}";
                     }
                     if (nr == 4)
                     {
+                        e5 = enemies[0];
                         txtEnemy5.Text = $@"Name:{enemies[0]} Power:{enemies[1]} Gold:{enemies[2]} Troops:{enemies[3]}";
                     }
                     if (nr > 4)
@@ -303,7 +308,7 @@ namespace TheGame
             panelBattleBegin.BringToFront();
 
             BattleInfo = new Dictionary<string, int>();
-            Enemy.Name = txtEnemy1.Text;
+            Enemy.Name = e1;
             dbc.OpenConnection(StaticShit.ConString);
             BattleInfo = dbc.AttackEnemy(Acc.Name,Enemy.Name);
             dbc.CloseConnection();
@@ -348,7 +353,7 @@ namespace TheGame
             panelBattleBegin.BringToFront();
 
             BattleInfo = new Dictionary<string, int>();
-            Enemy.Name = txtEnemy2.Text;
+            Enemy.Name = e2;
             dbc.OpenConnection(StaticShit.ConString);
             BattleInfo = dbc.AttackEnemy(Acc.Name, Enemy.Name);
             dbc.CloseConnection();
@@ -381,7 +386,7 @@ namespace TheGame
             panelBattleBegin.BringToFront();
 
             BattleInfo = new Dictionary<string, int>();
-            Enemy.Name = txtEnemy3.Text;
+            Enemy.Name = e3;
             dbc.OpenConnection(StaticShit.ConString);
             BattleInfo = dbc.AttackEnemy(Acc.Name, Enemy.Name);
             dbc.CloseConnection();
@@ -414,7 +419,7 @@ namespace TheGame
             panelBattleBegin.BringToFront();
 
             BattleInfo = new Dictionary<string, int>();
-            Enemy.Name = txtEnemy4.Text;
+            Enemy.Name = e4;
             dbc.OpenConnection(StaticShit.ConString);
             BattleInfo = dbc.AttackEnemy(Acc.Name, Enemy.Name);
             dbc.CloseConnection();
@@ -447,7 +452,7 @@ namespace TheGame
             panelBattleBegin.BringToFront();
 
             BattleInfo = new Dictionary<string, int>();
-            Enemy.Name = txtEnemy5.Text;
+            Enemy.Name = e5;
             dbc.OpenConnection(StaticShit.ConString);
             BattleInfo = dbc.AttackEnemy(Acc.Name, Enemy.Name);
             dbc.CloseConnection();
@@ -461,12 +466,14 @@ namespace TheGame
             dbc.OpenConnection(StaticShit.ConString);
             if (win)
             {
+                RefreshGame();
                 GoldGrab.Text = dbc.TakeGoldFromOther(Acc.Name, Enemy.Name).ToString();
                 dbc.KillTroops(Acc.Name, Enemy.Name, "win");
                 winORlose.Text = "WIN";
             }
             else
             {
+                RefreshGame();
                 dbc.KillTroops(Acc.Name, Enemy.Name, "loose");
                 winORlose.Text = "LOOSE";
             }

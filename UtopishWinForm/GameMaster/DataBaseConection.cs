@@ -67,7 +67,7 @@ namespace TheGame
                 command.ExecuteNonQuery();
             }
             //-----------------------------------------------------------------------------Cost          HP         AttackPower    Armor       Tier            Name
-            sql = @"Insert into  Archers (Cost,HP,AttackPower,Armor,Tier,Name) Values('" + 200+ "','" + 150 + "','" + 100 + "','" + 20 + "','" + 2 + "','" + "Armored Archers" + "')";
+            sql = @"Insert into  Archers (Cost,HP,AttackPower,Armor,Tier,Name) Values('" + 200 + "','" + 150 + "','" + 100 + "','" + 20 + "','" + 2 + "','" + "Armored Archers" + "')";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 command.ExecuteNonQuery();
@@ -120,7 +120,7 @@ namespace TheGame
                 command.ExecuteNonQuery();
             }
         }
-       public void AddFluffyAcc()
+        public void AddFluffyAcc()
         {
             RemoveFluffy();
             InsertNewPlayer();
@@ -128,8 +128,8 @@ namespace TheGame
 
         private void RemoveFluffy()
         {
-          
-          string sql = $"Delete From Accounts Where AccountName = 'Fluffy'";
+
+            string sql = $"Delete From Accounts Where AccountName = 'Fluffy'";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 try { command.ExecuteNonQuery(); } catch { }
@@ -169,11 +169,11 @@ namespace TheGame
             int result = 0;
             if (Tier > 0)
             {
-                 sql = $"Select Cost From {Table} Where Tier ='{Tier}'";
+                sql = $"Select Cost From {Table} Where Tier ='{Tier}'";
             }
             else
             {
-               sql = $"Select Cost From {Table}";
+                sql = $"Select Cost From {Table}";
             }
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
@@ -202,12 +202,12 @@ namespace TheGame
                 SqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
-                   
+
                     name = (string)dataReader["AccountName"];
                     power = (int)dataReader["Power"];
                     gold = (int)dataReader["Gold"];
-                        //  troops = (int)dataReader["Archer_Quant"+"Knight_Quant"+"MountKnight_Quant"];
-                    
+                    troops = (int)dataReader["Archer_Quant"] + (int)dataReader["Knight_Quant"] + (int)dataReader["MountKnight_Quant"];
+
 
                     enemies.Add(name + "." + power.ToString() + "." + gold.ToString() + "." + troops.ToString());
                 }
@@ -235,7 +235,7 @@ namespace TheGame
             return result;
         }
 
-        public Dictionary<string,int> AttackEnemy(string yourName,string enemyName)
+        public Dictionary<string, int> AttackEnemy(string yourName, string enemyName)
         {
 
             int yourAttack = GetAttackPowerOrHp("AttackPower", yourName);
@@ -265,7 +265,7 @@ namespace TheGame
                 }
                 dataReader.Close();
             }
-             sql = $@"Select * From Accounts Where AccountName = '{AccLose}'";
+            sql = $@"Select * From Accounts Where AccountName = '{AccLose}'";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 SqlDataReader dataReader = command.ExecuteReader();
@@ -276,7 +276,7 @@ namespace TheGame
                 dataReader.Close();
             }
             grab = enemyGold / 4;
-            
+
             sql = $@"Update Accounts Set Gold += {grab} Where AccountName = '{AccWin}'";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
@@ -290,12 +290,31 @@ namespace TheGame
             return grab;
         }
 
-        public void KillTroops(string name1, string name2, string v)
+        public void KillTroops(string accName, string enemyName, string state)
         {
-            
+            string looser = "";
+            string sql;
+            if (state == "win") { looser = enemyName; }
+            else { looser = accName; }
+
+            sql = $@"Update Accounts Set Archer_Quant = ((Select Archer_Quant From Accounts Where AccountName = '{looser}') / 2) Where AccountName = '{looser}'";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.ExecuteNonQuery();
+            }
+            sql = $@"Update Accounts Set Knight_Quant = ((Select Knight_Quant From Accounts Where AccountName = '{looser}') / 2) Where AccountName = '{looser}'";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.ExecuteNonQuery();
+            }
+            sql = $@"Update Accounts Set MountKnight_Quant = ((Select MountKnight_Quant From Accounts Where AccountName = '{looser}') / 2) Where AccountName = '{looser}'";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.ExecuteNonQuery();
+            }
         }
 
-        private int GetAttackPowerOrHp(string value,string accName)
+        private int GetAttackPowerOrHp(string value, string accName)
         {
             int UnitQuant = 0;
             int ArchPower = 0;
@@ -312,7 +331,7 @@ namespace TheGame
                 }
                 dataReader.Close();
             }
-             sql = $@"Select {value} From Knights Where Tier = '1'";
+            sql = $@"Select {value} From Knights Where Tier = '1'";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 SqlDataReader dataReader = command.ExecuteReader();
@@ -322,7 +341,7 @@ namespace TheGame
                 }
                 dataReader.Close();
             }
-             sql = $@"Select {value} From MountedKnights Where Tier = '1'";
+            sql = $@"Select {value} From MountedKnights Where Tier = '1'";
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 SqlDataReader dataReader = command.ExecuteReader();
@@ -370,7 +389,7 @@ namespace TheGame
             }
             UnitQuant = 0;
 
-            return ArchPower+KnightPower+MountPower;
+            return ArchPower + KnightPower + MountPower;
         }
 
         public bool CheckLoggin(string UserName, string Password)
@@ -422,7 +441,7 @@ namespace TheGame
                 }
             }
         }
-
+        
         internal void FillBuildings()
         {
             string sql;
@@ -448,7 +467,10 @@ namespace TheGame
                 command.ExecuteNonQuery();
             }
         }
-
+        internal void GiveGold(string player)
+        {
+            //string sql =
+        }
         private void RemoveSoldiers(string SoldierTable)
         {
             string sql;
