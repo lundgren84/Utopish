@@ -44,14 +44,14 @@ namespace Utopish_Space
             else{
                 try
                 {
-                    SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["UserDatabaseConnectionString"].ConnectionString);
+         
                     connection.Open();
-                    string sql = "Insert into Accounts (username,password,email) values (@username,@password,@email)";
-                    SqlCommand command = new SqlCommand(sql, connection);
-                    command.Parameters.AddWithValue("@username", tb_RegUserName.Text);
-                    command.Parameters.AddWithValue("@email", tb_RegEmail.Text);
-                    command.Parameters.AddWithValue("@password", tb_RegPassword.Text);
-                    command.ExecuteNonQuery();
+                     sql = "Insert into Accounts (username,password,email) values (@username,@password,@email)";
+                    SqlCommand command2 = new SqlCommand(sql, connection);
+                    command2.Parameters.AddWithValue("@username", tb_RegUserName.Text);
+                    command2.Parameters.AddWithValue("@email", tb_RegEmail.Text);
+                    command2.Parameters.AddWithValue("@password", tb_RegPassword.Text);
+                    command2.ExecuteNonQuery();
                     Response.Redirect("GM.aspx");
                     Response.Write("Your Registration is succsesful");
                     connection.Close();
