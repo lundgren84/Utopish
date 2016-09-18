@@ -22,13 +22,13 @@ namespace Utopish_Space {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Label3 control.
+        /// LabelGameName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label LabelGameName;
         
         /// <summary>
         /// ButtonChangeLoggin control.
@@ -121,6 +121,15 @@ namespace Utopish_Space {
         protected global::System.Web.UI.WebControls.TextBox tb_RegUserName;
         
         /// <summary>
+        /// Label_ValidRegUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_ValidRegUsername;
+        
+        /// <summary>
         /// Label7 control.
         /// </summary>
         /// <remarks>
@@ -137,6 +146,15 @@ namespace Utopish_Space {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_RegEmail;
+        
+        /// <summary>
+        /// Label_ValidRegEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_ValidRegEmail;
         
         /// <summary>
         /// Label5 control.
@@ -157,6 +175,15 @@ namespace Utopish_Space {
         protected global::System.Web.UI.WebControls.TextBox tb_RegPassword;
         
         /// <summary>
+        /// Label_Valid_RegPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_Valid_RegPassword;
+        
+        /// <summary>
         /// Label8 control.
         /// </summary>
         /// <remarks>
@@ -173,6 +200,15 @@ namespace Utopish_Space {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_RegRepeatPassword;
+        
+        /// <summary>
+        /// Label_Valid_RegRePassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_Valid_RegRePassword;
         
         /// <summary>
         /// ButtonRegister control.

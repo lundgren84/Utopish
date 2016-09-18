@@ -11,7 +11,9 @@
     width: 100%;
     height: 100%;
 }
-
+.ValidatorLabel{
+    color:red;
+}
 .logginButton {
     opacity: .4;
     margin-top: 1%;

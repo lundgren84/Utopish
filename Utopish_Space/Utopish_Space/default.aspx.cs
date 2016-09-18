@@ -29,23 +29,37 @@ namespace Utopish_Space
         }
         protected void ButtonRegister_Click(object sender, EventArgs e)
         {
-            try
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["UserDatabaseConnectionString"].ConnectionString);
+            connection.Open();
+            string sql = "Select count(*) From Accounts Where username = '" + tb_RegUserName.Text + "'";
+            SqlCommand command = new SqlCommand(sql, connection);
+            int temp = Convert.ToInt32(command.ExecuteScalar().ToString());
+            connection.Close();
+            if (temp > 0)
             {
-                SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["UserDatabaseConnectionString"].ConnectionString);
-                connection.Open();
-                string sql = "Insert into Accounts (username,password,email) values (@username,@password,@email)";
-                SqlCommand command = new SqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@username", tb_RegUserName.Text);
-                command.Parameters.AddWithValue("@email", tb_RegEmail.Text);
-                command.Parameters.AddWithValue("@password", tb_RegPassword.Text);
-                command.ExecuteNonQuery();
-                Response.Redirect("GM.aspx");
-                Response.Write("Your Registration is succsesful");
-                connection.Close();
+                Response.Write("User already Exists");
+               
             }
-            catch (Exception ex)
-            {
-                Response.Write("Error: " + ex.Message);
+            
+            else{
+                try
+                {
+                    SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["UserDatabaseConnectionString"].ConnectionString);
+                    connection.Open();
+                    string sql = "Insert into Accounts (username,password,email) values (@username,@password,@email)";
+                    SqlCommand command = new SqlCommand(sql, connection);
+                    command.Parameters.AddWithValue("@username", tb_RegUserName.Text);
+                    command.Parameters.AddWithValue("@email", tb_RegEmail.Text);
+                    command.Parameters.AddWithValue("@password", tb_RegPassword.Text);
+                    command.ExecuteNonQuery();
+                    Response.Redirect("GM.aspx");
+                    Response.Write("Your Registration is succsesful");
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("Error: " + ex.Message);
+                }
             }
 
         }
