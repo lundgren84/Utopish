@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Utopish_Space
 {
@@ -11,16 +13,70 @@ namespace Utopish_Space
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+            if (IsPostBack)
+            {
+                SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["UserDatabaseConnectionString"].ConnectionString);
+                connection.Open();
+                string sql = "Select count(*) From Accounts Where username = '" + tb_RegUserName.Text + "'";
+                SqlCommand command = new SqlCommand(sql, connection);
+                int temp = Convert.ToInt32(command.ExecuteScalar().ToString());
+                if (temp > 0)
+                {
+                    Response.Write("User already Exists");
+                }
+                connection.Close();
+            }
         }
         protected void ButtonRegister_Click(object sender, EventArgs e)
         {
-            Response.Write("Your Registration is succsesful");
+            try
+            {
+                SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["UserDatabaseConnectionString"].ConnectionString);
+                connection.Open();
+                string sql = "Insert into Accounts (username,password,email) values (@username,@password,@email)";
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@username", tb_RegUserName.Text);
+                command.Parameters.AddWithValue("@email", tb_RegEmail.Text);
+                command.Parameters.AddWithValue("@password", tb_RegPassword.Text);
+                command.ExecuteNonQuery();
+                Response.Redirect("GM.aspx");
+                Response.Write("Your Registration is succsesful");
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                Response.Write("Error: " + ex.Message);
+            }
+
         }
 
         protected void TextBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void ButtonChangeLogin_Click(object sender, EventArgs e)
+        {
+        
+        }
+
+        protected void Label6_Click(object sender, EventArgs e)
+        {   
+        }
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+          if(ButtonChangeLoggin.Text == "Register")
+            {
+                ButtonChangeLoggin.Text = "Login";
+                PanelLoggin.Visible = false;
+                PanelRegistration.Visible = true;
+            }
+            else
+            {
+                ButtonChangeLoggin.Text = "Register";
+                PanelLoggin.Visible = true;
+                PanelRegistration.Visible = false;
+            }
         }
     }
 }
