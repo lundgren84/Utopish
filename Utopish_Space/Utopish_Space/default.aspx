@@ -70,7 +70,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:TextBox ID="tb_RegUserName" CssClass="LogginLabel" runat="server" Font-Names="Consolas" Height="40px" Width="300px" OnTextChanged="tb_RegUserName"></asp:TextBox>
+                            <asp:TextBox ID="tb_RegUserName" CssClass="LogginLabel" runat="server" Font-Names="Consolas" Height="40px" Width="300px" ></asp:TextBox>
                         </td>
                         <td>
                           <asp:Label ID="Label_ValidRegUsername" CssClass="ValidatorLabel" runat="server" Text=""></asp:Label>                 
