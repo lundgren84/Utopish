@@ -165,6 +165,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="default.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="GM.aspx" />
     <Content Include="Graphic\Grids\Grid.png" />
     <Content Include="Graphic\Grids\Grid2.png" />
     <Content Include="Graphic\Grids\Grid3.png" />
@@ -258,6 +259,13 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GM.aspx.cs">
+      <DependentUpon>GM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GM.aspx.designer.cs">
+      <DependentUpon>GM.aspx</DependentUpon>
     </Compile>
     <Compile Include="StartPage.aspx.cs">
       <DependentUpon>StartPage.aspx</DependentUpon>

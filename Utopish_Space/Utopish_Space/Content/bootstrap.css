@@ -183,6 +183,8 @@ input[type="reset"],
 input[type="submit"] {
   cursor: pointer;
   -webkit-appearance: button;
+    height: 29px;
+    width: 57px;
 }
 
 button[disabled],

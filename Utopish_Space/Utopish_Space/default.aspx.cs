@@ -13,6 +13,10 @@ namespace Utopish_Space
         {
           
         }
+        protected void ButtonRegister_Click(object sender, EventArgs e)
+        {
+            Response.Write("Your Registration is succsesful");
+        }
 
         protected void TextBox2_TextChanged(object sender, EventArgs e)
         {
