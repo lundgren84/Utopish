@@ -15,7 +15,7 @@
     <div class="overlay" id="main">
         <form id="form1" runat="server">
             <asp:Label ID="LabelGameName" runat="server" CssClass="LogginLabel" Text="Game name" Font-Names="Consolas" ForeColor="White"></asp:Label>
-            <asp:Button ID="ButtonChangeLoggin" CssClass="logginButton" runat="server" Font-Names="Consolas" Font-Size="Medium" Height="50px" Width="150px" Text="Register" OnClick="Button3_Click" />
+            <asp:Button ID="ButtonChangeLoggin" CssClass="logginButton" runat="server" Font-Names="Consolas" Font-Size="Medium" Height="50px" Width="150px" Text="Register"  OnClick="Button3_Click" CausesValidation="false"/>
             <br />
             <div id="logginPlanet1">
                 <img src="Graphic/Plantes/planet_21.png" style="height: 496px; width: 495px" />
@@ -30,11 +30,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:TextBox ID="tb_Username" CssClass="LogginLabel" runat="server" Font-Names="Consolas" Height="40px"></asp:TextBox>
+                            <asp:TextBox ID="tb_Username" CssClass="LogginLabel" runat="server" Font-Names="Consolas" Height="40px" OnTextChanged="tb_Username_TextChanged" ControlToValidate="tb_Username"></asp:TextBox>
                         </td>
-                        <td>
-                            <%--     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="tb_Username" ErrorMessage="Required" Font-Names="Consolas" ForeColor="#CC0000"></asp:RequiredFieldValidator>
-                            --%> </td>
+                        <td>                   
+                                 <%-- Validate login Username --%>
+                              <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Required" ControlToValidate="tb_Username" ForeColor="Red"></asp:RequiredFieldValidator>                
+                          </td>
                     </tr>
                     <tr>
                         <td>
@@ -46,13 +47,13 @@
                             <asp:TextBox ID="tb_Password" CssClass="LogginLabel" runat="server" Height="40px" TextMode="Password" Font-Names="Consolas" OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
                         </td>
                         <td>
-                            <%--       <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="tb_Password" ErrorMessage="Required" Font-Names="Consolas" ForeColor="#CC0000"></asp:RequiredFieldValidator>
-                            --%>   </td>
+                               <%-- Validate login Password --%>
+                          <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Required" ControlToValidate="tb_Password" ForeColor="Red"></asp:RequiredFieldValidator>                 
+                          </td>
                     </tr>
                     <tr>
                         <td>
                             <asp:Button ID="Button1" CssClass="logginButton" runat="server" Text="Loggin" Font-Names="Consolas" Font-Size="Medium" Height="50px" Width="150px" />
-
                         </td>
 
                     </tr>
@@ -73,7 +74,8 @@
                             <asp:TextBox ID="tb_RegUserName" CssClass="LogginLabel" runat="server" Font-Names="Consolas" Height="40px" Width="300px" ></asp:TextBox>
                         </td>
                         <td>
-                          <asp:Label ID="Label_ValidRegUsername" CssClass="ValidatorLabel" runat="server" Text=""></asp:Label>                 
+                            <%-- Validate Registration Username --%>
+                           <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Required" ControlToValidate="tb_RegUserName" ForeColor="Red"></asp:RequiredFieldValidator>                 
                         </td>
                     </tr>
                     <tr>
@@ -86,9 +88,11 @@
                             <asp:TextBox ID="tb_RegEmail" CssClass="LogginLabel" runat="server" Font-Names="Consolas" Height="40px" Width="300px"></asp:TextBox>
                         </td>
                         <td>
-                            <asp:Label ID="Label_ValidRegEmail" CssClass="ValidatorLabel" runat="server" Text=""></asp:Label>                 
-                            --%>             
-                        </td>
+                            <%-- Validate Registration email --%>
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Required" ControlToValidate="tb_RegEmail" ForeColor="Red"></asp:RequiredFieldValidator>                                    
+                            <br />
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Not valid email" ForeColor="Red" ControlToValidate="tb_RegEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                             </td>
                     </tr>
                     <tr>
                         <td>
@@ -100,7 +104,8 @@
                             <asp:TextBox ID="tb_RegPassword" CssClass="LogginLabel" runat="server" Height="40px" TextMode="Password" Font-Names="Consolas" OnTextChanged="TextBox2_TextChanged" Width="300px"></asp:TextBox>
                         </td>
                         <td>
-                            <asp:Label ID="Label_Valid_RegPassword" CssClass="ValidatorLabel" runat="server" Text=""></asp:Label>          
+                            <%-- Validate Registration Password --%>
+                          <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="tb_RegPassword" ForeColor="Red" Text="Required"></asp:RequiredFieldValidator>            
                         </td>
                     </tr>
                     <tr>
@@ -113,8 +118,10 @@
                             <asp:TextBox ID="tb_RegRepeatPassword" runat="server" CssClass="LogginLabel" Font-Names="Consolas" Height="40px" OnTextChanged="TextBox2_TextChanged" TextMode="Password" Width="300px"></asp:TextBox>
                         </td>
                         <td>
-                          <asp:Label ID="Label_Valid_RegRePassword" CssClass="ValidatorLabel" runat="server" Text=""></asp:Label>               
-                            --%>
+                            <%-- Validate Registration password repeat --%>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="tb_RegRepeatPassword" Text="Required" ForeColor="Red"></asp:RequiredFieldValidator>  
+                            <br />
+                            <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="tb_RegRepeatPassword" ErrorMessage="Not equal passwords!" ForeColor="Red" ControlToCompare="tb_RegPassword"></asp:CompareValidator>
                         </td>
                     </tr>
                     <tr>

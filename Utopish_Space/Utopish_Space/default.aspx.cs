@@ -38,15 +38,16 @@ namespace Utopish_Space
             if (temp > 0)
             {
                 Response.Write("User already Exists");
-               
+
             }
-            
-            else{
+
+            else
+            {
                 try
                 {
-         
+
                     connection.Open();
-                     sql = "Insert into Accounts (username,password,email) values (@username,@password,@email)";
+                    sql = "Insert into Accounts (username,password,email) values (@username,@password,@email)";
                     SqlCommand command2 = new SqlCommand(sql, connection);
                     command2.Parameters.AddWithValue("@username", tb_RegUserName.Text);
                     command2.Parameters.AddWithValue("@email", tb_RegEmail.Text);
@@ -71,15 +72,15 @@ namespace Utopish_Space
 
         protected void ButtonChangeLogin_Click(object sender, EventArgs e)
         {
-        
+
         }
 
         protected void Label6_Click(object sender, EventArgs e)
-        {   
+        {
         }
         protected void Button3_Click(object sender, EventArgs e)
         {
-          if(ButtonChangeLoggin.Text == "Register")
+            if (ButtonChangeLoggin.Text == "Register")
             {
                 ButtonChangeLoggin.Text = "Login";
                 PanelLoggin.Visible = false;
@@ -91,6 +92,11 @@ namespace Utopish_Space
                 PanelLoggin.Visible = true;
                 PanelRegistration.Visible = false;
             }
+        }
+
+        protected void tb_Username_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
