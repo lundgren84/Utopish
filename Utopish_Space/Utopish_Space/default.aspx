@@ -53,7 +53,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button ID="Button1" CssClass="logginButton" runat="server" Text="Loggin" Font-Names="Consolas" Font-Size="Medium" Height="50px" Width="150px" />
+                            <asp:Button ID="ButtonLogin" CssClass="logginButton" runat="server" Text="Loggin" Font-Names="Consolas" Font-Size="Medium" Height="50px" Width="150px" OnClick="ButtonLogin_Click" />
                         </td>
 
                     </tr>
