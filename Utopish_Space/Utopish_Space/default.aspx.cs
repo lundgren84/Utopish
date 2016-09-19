@@ -13,19 +13,7 @@ namespace Utopish_Space
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (IsPostBack)
-            //{
-            //    SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["UserDatabaseConnectionString"].ConnectionString);
-            //    connection.Open();
-            //    string sql = "Select count(*) From Accounts Where username = '" + tb_RegUserName.Text + "'";
-            //    SqlCommand command = new SqlCommand(sql, connection);
-            //    int temp = Convert.ToInt32(command.ExecuteScalar().ToString());
-            //    if (temp > 0)
-            //    {
-            //        Response.Write("User already Exists");
-            //    }
-            //    connection.Close();
-            //}
+    
         }
         protected void ButtonRegister_Click(object sender, EventArgs e)
         {
@@ -80,7 +68,7 @@ namespace Utopish_Space
         }
         protected void Button3_Click(object sender, EventArgs e)
         {
-            if (ButtonChangeLoggin.Text == "Register")
+            if (ButtonChangeLoggin.Text.Contains("Register"))
             {
                 ButtonChangeLoggin.Text = "Login";
                 PanelLoggin.Visible = false;

@@ -32,12 +32,12 @@
     position: absolute;
     top: 40%;
     left: -20%;
-    animation: infinite spinplanet 200s;
+    animation: infinite spinplanet 500s;
 }
 @keyframes spinplanet {
 
     100%{
-      transform:rotateZ(180deg)
+      transform:rotateZ(360deg)
     }
 }
 
