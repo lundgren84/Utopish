@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
+using Utopish_Space.Models;
 
 namespace Utopish_Space
 {
@@ -109,7 +110,12 @@ namespace Utopish_Space
             //{
             //     temp = Convert.ToInt32(command.ExecuteScalar().ToString());
             //}
+            PlayerObject player = new PlayerObject();
+            player._email = tb_Username.Text;
+            
+            Session["Player"] = player;
             Response.Redirect("~/UserPages/Overview.aspx");
+           
         }
     }
 }

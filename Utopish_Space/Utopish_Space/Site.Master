@@ -13,13 +13,13 @@
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link href="Style/Style.css" rel="stylesheet" />
+    <link href="~/Style.css" rel="stylesheet" />
 
-    <link href="Style/Scanner.css" rel="stylesheet" />
-    <link href="Style/Overview.css" rel="stylesheet" />
-    <link href="Style/MainStyle.css" rel="stylesheet" />
-    <link href="Utopish/LogginBackground.css" rel="stylesheet" />
-    <script src="Utopish/LogginBackground.js"></script>
+    <link href="~/Style/Scanner.css" rel="stylesheet" />
+    <link href="~/Style/Overview.css" rel="stylesheet" />
+    <link href="~/Style/MainStyle.css" rel="stylesheet" />
+    <link href="~/Utopish/LogginBackground.css" rel="stylesheet" />
+    <script src="~/Utopish/LogginBackground.js"></script>
 </head>
 <body style="overflow: hidden; margin: 0">
 

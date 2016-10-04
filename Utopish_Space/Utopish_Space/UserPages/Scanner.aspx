@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Scanner" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="MainPage.aspx.cs" Inherits="Utopish_Space.User.MainPage" %>
+﻿<%@ Page Title="Scanner" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Scanner.aspx.cs" Inherits="Utopish_Space.User.Scanner" %>
 
 <asp:Content ID="BodyContent"  ContentPlaceHolderID="MainContent" runat="server">
     <h2 style="text-align: center;"><%: Title %>.</h2>

@@ -7,11 +7,14 @@ using System.Web.UI.WebControls;
 
 namespace Utopish_Space.User
 {
-    public partial class Map : System.Web.UI.Page
+    public partial class Scanner : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Player"] == null)
+            {
+                Response.Redirect("~/default.aspx");
+            }
         }
     }
 }

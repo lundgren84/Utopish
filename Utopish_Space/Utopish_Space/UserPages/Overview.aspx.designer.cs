@@ -10,6 +10,6 @@
 namespace Utopish_Space.User {
     
     
-    public partial class MainPage {
+    public partial class Overview {
     }
 }

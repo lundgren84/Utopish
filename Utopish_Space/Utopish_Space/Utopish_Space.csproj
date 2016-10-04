@@ -277,6 +277,7 @@
     <Compile Include="GM.aspx.designer.cs">
       <DependentUpon>GM.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\PlayerObject.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
