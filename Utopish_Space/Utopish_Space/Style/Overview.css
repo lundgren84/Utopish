@@ -1,0 +1,18 @@
+﻿body {
+}
+.OverviewScreen{
+   
+    text-align:center;
+    color:white;
+    font-size:20px;
+}
+.OveviewBar{
+     border-top:solid gray 1px;
+       border-bottom:solid gray 1px;
+}
+.OveviewBarRight{
+     border-left:solid gray 1px;
+}
+.OveviewBarLeft{
+     border-right:solid gray 1px;
+}

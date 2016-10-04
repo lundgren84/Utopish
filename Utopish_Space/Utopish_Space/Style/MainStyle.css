@@ -1,0 +1,94 @@
+﻿body {
+}
+
+html {
+    font-family: Consolas;
+    background-color: black;
+}
+
+/*--------------------------------ALL PANEL----------------------------*/
+.MainPanel {
+    border: solid 5px;
+    border-color:darkgrey
+}
+.TopPanel {
+    height: 100px;
+}
+
+.MiddlePanel {
+    border-top: none;
+    height: 500px;
+}
+
+.RightPanel {
+    height: 650px;
+    border-top: none;
+    border-bottom-left-radius: 10px;
+}
+
+.LeftPanel {
+    height: 650px;
+    border-top: none;
+    border-bottom-right-radius: 10px;
+}
+
+.BottomPanel {
+    height: 150px;
+    border-top: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/*--------------------------------TOP PANEL----------------------------*/
+.Top_Logo {
+    text-align: center;
+    font-size: 80px;
+}
+
+
+/*--------------------------------LEFT PANEL----------------------------*/
+.LeftPanel {
+    text-align: center;
+}
+
+.LeftPanelMenu {
+    margin-top: 40px;
+}
+
+    .LeftPanelMenu a {
+        text-decoration: none;
+        color:white;
+    }
+
+.leftPanelButton {
+    border: solid #151515 2px;
+  margin-top:5px;
+}
+
+    .leftPanelButton :hover {
+ 
+    }
+    .leftPanelButton_A{
+       
+        font-size:x-large;
+    transition: transform 0.2s,background-color 0.2s,box-shadow 0.2s,color 0.2s;
+    transform: translateY(0);
+    background-color: gray;
+    height: 30px;
+    }
+      .leftPanelButton_A :hover{
+                 background-color: rgba(0,0,0,.3);
+        z-index: 10;
+        transform: translateY(-5px);
+        color: gray;
+        transition: 0.25s;
+        box-shadow: 5px 5px 15px rgba(0,0,0,.4);
+    }
+/*--------------------------------MIDDLE PANEL----------------------------*/
+
+
+
+
+
+/*--------------------------------RIGHT PANEL----------------------------*/
+/*--------------------------------BOTTOM PANEL----------------------------*/

@@ -8,7 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 
-namespace Utopish_Space
+namespace WebApplication5
 {
     public partial class SiteMaster : MasterPage
     {

@@ -224,7 +224,16 @@
     <Content Include="StartPage.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Site.Master" />
+    <Content Include="Style\MainStyle.css" />
+    <Content Include="Style\Menu.css" />
+    <Content Include="Style\Overview.css" />
+    <Content Include="Style\Scanner.css" />
+    <Content Include="UserPages\Construction.aspx" />
+    <Content Include="UserPages\Hangar.aspx" />
+    <Content Include="UserPages\Overview.aspx" />
+    <Content Include="UserPages\Scanner.aspx" />
+    <Content Include="UserPages\Research.aspx" />
+    <Content Include="UserPages\Troops.aspx" />
     <Content Include="Utopish\LogginBackground.css" />
     <Content Include="Utopish\LogginBackground.js" />
     <Content Include="ViewSwitcher.ascx" />
@@ -234,6 +243,7 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
+    <Content Include="Site.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -267,6 +277,12 @@
     <Compile Include="GM.aspx.designer.cs">
       <DependentUpon>GM.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
     <Compile Include="StartPage.aspx.cs">
       <DependentUpon>StartPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -279,13 +295,6 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site.Master.cs">
-      <DependentUpon>Site.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site.Master.designer.cs">
-      <DependentUpon>Site.Master</DependentUpon>
-    </Compile>
     <Compile Include="Site.Mobile.Master.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -294,6 +303,48 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="UserPages\Construction.aspx.cs">
+      <DependentUpon>Construction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPages\Construction.aspx.designer.cs">
+      <DependentUpon>Construction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPages\Hangar.aspx.cs">
+      <DependentUpon>Hangar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPages\Hangar.aspx.designer.cs">
+      <DependentUpon>Hangar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPages\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPages\Overview.aspx.designer.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPages\Scanner.aspx.cs">
+      <DependentUpon>Scanner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPages\Scanner.aspx.designer.cs">
+      <DependentUpon>Scanner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPages\Research.aspx.cs">
+      <DependentUpon>Research.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPages\Research.aspx.designer.cs">
+      <DependentUpon>Research.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPages\Troops.aspx.cs">
+      <DependentUpon>Troops.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPages\Troops.aspx.designer.cs">
+      <DependentUpon>Troops.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -311,6 +362,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

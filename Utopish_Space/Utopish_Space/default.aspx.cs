@@ -102,14 +102,14 @@ namespace Utopish_Space
 
         protected void ButtonLogin_Click(object sender, EventArgs e)
         {
-            int temp;
-            connection.Open();
-            sql = $@"Selec COUNT(*) FROM Accounts WHERE username = '{tb_Username.Text}' AND password = '{tb_Password.Text}'";
-            using (SqlCommand command = new SqlCommand(sql, connection))
-            {
-                 temp = Convert.ToInt32(command.ExecuteScalar().ToString());
-            }
-         
+            //int temp;
+            //connection.Open();
+            //sql = $@"Selec COUNT(*) FROM Accounts WHERE username = '{tb_Username.Text}' AND password = '{tb_Password.Text}'";
+            //using (SqlCommand command = new SqlCommand(sql, connection))
+            //{
+            //     temp = Convert.ToInt32(command.ExecuteScalar().ToString());
+            //}
+            Response.Redirect("~/UserPages/Overview.aspx");
         }
     }
 }

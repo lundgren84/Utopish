@@ -1,0 +1,14 @@
+﻿body {
+}
+.ScannerImg{
+border:1px solid white;
+}
+
+
+.ScannerImg_A span:hover .ScannerImg{
+       border-color: blue;
+}
+.ScannerPlanetInfo{
+    border:1px solid gray;
+    padding:10px;
+}

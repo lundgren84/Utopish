@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Utopish_Space.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication5.SiteMaster" %>
 
 <!DOCTYPE html>
 
@@ -11,74 +11,251 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Style/Style.css" rel="stylesheet" />
 
+    <link href="Style/Scanner.css" rel="stylesheet" />
+    <link href="Style/Overview.css" rel="stylesheet" />
+    <link href="Style/MainStyle.css" rel="stylesheet" />
+    <link href="Utopish/LogginBackground.css" rel="stylesheet" />
+    <script src="Utopish/LogginBackground.js"></script>
 </head>
-<body>
-    <form runat="server">
-        <asp:ScriptManager runat="server">
-            <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                <%--Framework Scripts--%>
-                <asp:ScriptReference Name="MsAjaxBundle" />
-                <asp:ScriptReference Name="jquery" />
-                <asp:ScriptReference Name="bootstrap" />
-                <asp:ScriptReference Name="respond" />
-                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
-                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
-                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
-                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
-                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
-                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
-                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                <asp:ScriptReference Name="WebFormsBundle" />
-                <%--Site Scripts--%>
-            </Scripts>
-        </asp:ScriptManager>
+<body style="overflow: hidden; margin: 0">
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                    </ul>
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
-                                <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                                </li>
-                            </ul>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
+    <form runat="server">
+        <div class="overlay" id="main">
+            <asp:ScriptManager runat="server">
+                <Scripts>
+                    <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                    <%--Framework Scripts--%>
+                    <asp:ScriptReference Name="MsAjaxBundle" />
+                    <asp:ScriptReference Name="jquery" />
+                    <asp:ScriptReference Name="bootstrap" />
+                    <asp:ScriptReference Name="respond" />
+                    <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                    <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                    <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                    <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                    <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                    <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                    <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                    <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                    <asp:ScriptReference Name="WebFormsBundle" />
+                    <%--Site Scripts--%>
+                </Scripts>
+            </asp:ScriptManager>
+
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" style="font-family: Consolas" runat="server" href="~/">GALAXY IN WAR</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                        <%-- Right side header --%>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#">Link</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <%--  --%>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
+            <%-- Page START --%>
+
+            <div class="row">
+                <div class="col-md-12 MainPanel TopPanel">
+                    <asp:Panel ID="Panel_Top" runat="server">
+                        <%-- TOP BAR --%>
+                        <div class="Top_Logo">GALAXY IN WAR</div>
+                    </asp:Panel>
+                </div>
+                <div class="col-md-2 MainPanel LeftPanel">
+                    <%-- LEFT BAR --%>
+                    <asp:Panel ID="Panel_Left" runat="server">
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <asp:Label ID="Label1" runat="server" Text="Empire name" ForeColor="White" Font-Size="X-Large"></asp:Label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <asp:Label ID="Label5" runat="server" Text="123 : 123" ForeColor="White" Font-Size="X-Large"></asp:Label>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <asp:Label ID="Label9" runat="server" Text=""></asp:Label>
+                            </div>
+                        </div>
+                        <div class="row LeftPanelMenu">
+                            <a href="Overview.aspx" class="leftPanelButton_A">
+                                <div class="leftPanelButton col-xs-12">-Overview-</div>
+                            </a>
+                            <a href="Construction.aspx" class="leftPanelButton_A">
+                                <div class="leftPanelButton col-xs-12">-Construction-</div>
+                            </a>
+                            <a href="Troops.aspx" class="leftPanelButton_A">
+                                <div class="leftPanelButton col-xs-12">-Troops-</div>
+                            </a>
+                            <a href="Hangar.aspx" class="leftPanelButton_A">
+                                <div class="leftPanelButton col-xs-12">-Hangar-</div>
+                            </a>
+                            <a href="Research.aspx" class="leftPanelButton_A">
+                                <div class="leftPanelButton col-xs-12">-Research-</div>
+                            </a>
+                            <a href="Scanner.aspx" class="leftPanelButton_A">
+                                <div class="leftPanelButton col-xs-12">-Scanner-</div>
+                            </a>
+                            <a href="#" class="leftPanelButton_A">
+                                <div class="leftPanelButton col-xs-12">-Space Exploration-</div>
+                            </a>
+                            <a href="#" class="leftPanelButton_A">
+                                <div class="leftPanelButton col-xs-12">-War council-</div>
+                            </a>
+                            <a href="#" class="leftPanelButton_A">
+                                <div class="leftPanelButton col-xs-12">-Orbital Defence-</div>
+                            </a>
+                            <a href="#" class="leftPanelButton_A">
+                                <div class="leftPanelButton col-xs-12">-Forum-</div>
+                            </a>
+                            <a href="#" class="leftPanelButton_A">
+                                <div class="leftPanelButton col-xs-12">-Mail-</div>
+                            </a>
+                            <a href="#" class="leftPanelButton_A">
+                                <div class="leftPanelButton col-xs-12">-Aid-</div>
+                            </a>
+                        </div>
+                    </asp:Panel>
+                </div>
+                <div class="col-md-8">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 MainPanel MiddlePanel">
+                                <asp:Panel ID="Panel_Mid" runat="server">
+                                    <%-- MIDDLE BAR --%>
+                                    <div class="container body-content">
+                                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                                        </asp:ContentPlaceHolder>
+
+                                    </div>
+                                </asp:Panel>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 MainPanel BottomPanel">
+                                <asp:Panel ID="Panel_Bot" runat="server">
+                                    <%-- BOTTOM BAR --%>
+                                </asp:Panel>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 MainPanel RightPanel">
+                    <asp:Panel ID="Panel3" runat="server">
+                        <%-- RIGHT BAR --%>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <asp:Label ID="Label2" runat="server" Text="Friends" ForeColor="White" Font-Size="X-Large"></asp:Label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <asp:Label ID="Label4" runat="server" Text="">Online</asp:Label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <ul>
+                                        <li>1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                        <li>4</li>
+                                        <li>5</li>
+                                        <li>6</li>
+                                        <li>7</li>
+                                        <li>8</li>
+                                        <li>9</li>
+                                        <li>10</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <asp:Label ID="Label6" runat="server" Text="">Offline</asp:Label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <ul>
+                                        <li>1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                        <li>4</li>
+                                        <li>5</li>
+                                        <li>6</li>
+                                        <li>7</li>
+                                        <li>8</li>
+                                        <li>9</li>
+                                        <li>10</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </asp:Panel>
+                </div>
+
+
+            </div>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> - KH Game's - GALAXY IN WAR</p>
             </footer>
         </div>
     </form>
