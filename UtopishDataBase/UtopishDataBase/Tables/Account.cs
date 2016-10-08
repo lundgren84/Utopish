@@ -30,7 +30,6 @@ namespace UtopishDataBase
         //Location
         public int? LocationRefID { get; set; }
         [ForeignKey(name: "LocationRefID")]
-        public virtual Location Location { get; set; }
         //Soldiers
         //public int? ArcherRefID { get; set; }
         //[ForeignKey(name: "ArcherRefID")]
