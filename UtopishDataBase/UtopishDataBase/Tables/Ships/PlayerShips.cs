@@ -19,6 +19,7 @@ namespace UtopishDatabase
 
         public virtual Player Player { get; set; }
         public virtual Ships Ships { get; set; }
+
         [Required]
         public int Quantity { get; set; }
     }
