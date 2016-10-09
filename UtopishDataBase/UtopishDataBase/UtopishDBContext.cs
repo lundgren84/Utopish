@@ -13,7 +13,7 @@ namespace UtopishDataBase
         {
 
 
-    }   
+        }
         public DbSet<Player> Player { get; set; }
         public DbSet<PlayerTroops> PlayerTroops { get; set; }
         public DbSet<PlayerShips> PlayerShips { get; set; }
@@ -23,6 +23,7 @@ namespace UtopishDataBase
         public DbSet<PlayerBuildings> PlayerBuildings { get; set; }
         public DbSet<PlayerMail> PlayerMail { get; set; }
         public DbSet<PlayerResources> PlayerResources { get; set; }
+        public DbSet<PlayerProtectionLevel> PlayerProtectionLevel { get; set; }
 
         public DbSet<Troops> Troops { get; set; }
         public DbSet<Ships> Ships { get; set; }
@@ -38,5 +39,6 @@ namespace UtopishDataBase
         public DbSet<Chat> Chat { get; set; }
         public DbSet<ProtectionLevel> ProtectionLevel { get; set; }
         public DbSet<Race> Race { get; set; }
+
     }
 }
