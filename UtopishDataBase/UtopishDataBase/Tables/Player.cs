@@ -15,6 +15,7 @@ namespace UtopishDatabase
         [Required]
         public int PlayerAccountNumber { get; set; }
         [Required]
+        [MaxLength(50)]
         public string EmpireName { get; set; }
         [Required]
         public int TradeBalance { get; set; }

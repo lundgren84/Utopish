@@ -11,6 +11,7 @@ namespace UtopishDataBase
         [Key]
         public int RaceID { get; set; }
         [Required]
+        [MaxLength(50)]
         public string RaceName { get; set; }
     }
 }

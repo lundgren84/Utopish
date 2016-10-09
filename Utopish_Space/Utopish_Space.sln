@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utopish_Space", "Utopish_Space\Utopish_Space.csproj", "{D075618E-4EFC-4B30-9AF6-A90257148185}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemporaryTest", "TemporaryTest\TemporaryTest.csproj", "{CD69384A-3D68-4679-BA23-8C6B8B24131D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D075618E-4EFC-4B30-9AF6-A90257148185}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D075618E-4EFC-4B30-9AF6-A90257148185}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D075618E-4EFC-4B30-9AF6-A90257148185}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD69384A-3D68-4679-BA23-8C6B8B24131D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD69384A-3D68-4679-BA23-8C6B8B24131D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD69384A-3D68-4679-BA23-8C6B8B24131D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD69384A-3D68-4679-BA23-8C6B8B24131D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

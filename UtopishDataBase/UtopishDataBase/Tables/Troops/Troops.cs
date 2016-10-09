@@ -12,6 +12,7 @@ namespace UtopishDatabase
         [Key]
         public int TroopsID { get; set; }
         [Required]
+        [MaxLength(50)]
         public string TroopName { get; set; }
       
 

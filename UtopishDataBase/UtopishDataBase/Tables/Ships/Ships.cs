@@ -12,6 +12,7 @@ namespace UtopishDatabase
         [Key]
         public int ShipsID { get; set; }
         [Required]
+        [MaxLength(100)]
         public string ShipName { get; set; }
 
     }

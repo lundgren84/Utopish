@@ -12,6 +12,7 @@ namespace UtopishDatabase
         [Key]
         public int ResourcesID { get; set; }
         [Required]
+        [MaxLength(50)]
         public string ResourceName { get; set; }
     }
 }

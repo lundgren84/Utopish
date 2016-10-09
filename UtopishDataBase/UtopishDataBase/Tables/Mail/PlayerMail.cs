@@ -22,7 +22,9 @@ namespace UtopishDataBase
         public virtual Mail Mail { get; set; }
         [Required]
         public bool IsRead { get; set; }
+        [MaxLength(50)]
         public string From { get; set; }
+        [MaxLength(50)]
         public string Too { get; set; }
 
     }

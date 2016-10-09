@@ -12,6 +12,7 @@ namespace UtopishDataBase
         [Key]
         public int TerrainID { get; set; }
         [Required]
+        [MaxLength(50)]
         public string TerrainType { get; set; }
     }
 }

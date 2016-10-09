@@ -12,6 +12,7 @@ namespace UtopishDataBase
     {
         [Key]
         public int ChatID { get; set; }
+        [MaxLength(500)]
         public string Message { get; set; }
         public DateTime TimeStamp { get; set; }
 

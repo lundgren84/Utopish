@@ -12,6 +12,7 @@ namespace UtopishDataBase
         [Key]
         public int MailID { get; set; }
         [Required]
+        [MaxLength(500)]
         public string MailContentMessage { get; set; }
     }
 }

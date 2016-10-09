@@ -14,6 +14,7 @@ namespace UtopishDataBase
         [Key]
         public int ProtectionLevelID { get; set; }
         [Required]
-        public int ProtectionLevelName { get; set; }
+        [MaxLength(50)]
+        public string ProtectionLevelName { get; set; }
     }
 }

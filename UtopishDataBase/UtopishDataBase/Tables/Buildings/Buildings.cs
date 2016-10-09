@@ -12,6 +12,7 @@ namespace UtopishDataBase
         [Key]
         public int BuildingID { get; set; }
         [Required]
+        [MaxLength(50)]
         public string BuildingName { get; set; }
 
        

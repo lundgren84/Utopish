@@ -12,6 +12,7 @@ namespace UtopishDatabase
         [Key]
         public int ResearchID { get; set; }
         [Required]
+        [MaxLength(100)]
         public string ResearchName { get; set; }
     }
 }
