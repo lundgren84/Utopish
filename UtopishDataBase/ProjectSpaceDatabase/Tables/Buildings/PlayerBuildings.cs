@@ -9,5 +9,18 @@ namespace ProjectSpaceDatabase
 {
     public class PlayerBuildings
     {
+        [Key, Column(Order = 0)]
+        public int PlayerID { get; set; }
+
+
+        [Key, Column(Order = 1)]
+        public int BuilldingsID { get; set; }
+
+
+        public virtual Player Player { get; set; }
+        public virtual Buildings Building { get; set; }
+        [Required]
+        public int Quantity { get; set; }
+
     }
 }
