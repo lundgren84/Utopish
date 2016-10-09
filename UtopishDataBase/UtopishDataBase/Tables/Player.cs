@@ -35,7 +35,7 @@ namespace ProjectSpaceDatabase
 
         public ICollection<Ships> Ship;
         public ICollection<Planets> Planet;
-
+        public ICollection<Buildings>
         public Player()
         {
             this.Planet = new HashSet<Planets>();

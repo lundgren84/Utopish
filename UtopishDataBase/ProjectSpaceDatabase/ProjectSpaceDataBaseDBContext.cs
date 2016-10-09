@@ -14,7 +14,7 @@ namespace ProjectSpaceDatabase
 
 
             }
-           // public DbSet<KlassNamn> KlassNamn { get; set; }
+           public DbSet<Buildings> KlassNamn { get; set; }
        
         }
 

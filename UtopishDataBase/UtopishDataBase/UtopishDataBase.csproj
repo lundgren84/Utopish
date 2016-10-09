@@ -179,14 +179,28 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Tables\Account.cs" />
-    <Compile Include="Tables\BUILDINGS\Bank.cs" />
-    <Compile Include="Tables\BUILDINGS\Barrack.cs" />
-    <Compile Include="Tables\BUILDINGS\Lab.cs" />
-    <Compile Include="Tables\Location.cs" />
-    <Compile Include="Tables\SOLDIERS\Archer.cs" />
-    <Compile Include="Tables\SOLDIERS\Knight.cs" />
-    <Compile Include="Tables\SOLDIERS\MountedKnight.cs" />
+    <Compile Include="Tables\Buildings\Buildings.cs" />
+    <Compile Include="Tables\Buildings\PlayerBuildings.cs" />
+    <Compile Include="Tables\Location\Galaxy.cs" />
+    <Compile Include="Tables\Location\LocalCluster.cs" />
+    <Compile Include="Tables\Location\PlayerLocation.cs" />
+    <Compile Include="Tables\Location\SolarSystem.cs" />
+    <Compile Include="Tables\Mail\Mail.cs" />
+    <Compile Include="Tables\Mail\PlayerMail.cs" />
+    <Compile Include="Tables\Messageboards\LocalClusterMB.cs" />
+    <Compile Include="Tables\Messageboards\Messageboards.cs" />
+    <Compile Include="Tables\Planets\Planets.cs" />
+    <Compile Include="Tables\Planets\PlayerPlanets.cs" />
+    <Compile Include="Tables\Planets\Terrain.cs" />
+    <Compile Include="Tables\Player.cs" />
+    <Compile Include="Tables\Research\PlayerResearch.cs" />
+    <Compile Include="Tables\Research\Research.cs" />
+    <Compile Include="Tables\Resources\PlayerResources.cs" />
+    <Compile Include="Tables\Resources\Resources.cs" />
+    <Compile Include="Tables\Ships\PlayerShips.cs" />
+    <Compile Include="Tables\Ships\Ships.cs" />
+    <Compile Include="Tables\Troops\PlayerTroops.cs" />
+    <Compile Include="Tables\Troops\Troops.cs" />
     <Compile Include="UtopishDBContext.cs" />
   </ItemGroup>
   <ItemGroup>
