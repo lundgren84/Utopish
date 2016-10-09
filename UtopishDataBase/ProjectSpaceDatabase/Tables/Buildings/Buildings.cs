@@ -9,10 +9,11 @@ namespace ProjectSpaceDatabase
 {
     public class Buildings
     {
+        [Required]
         public int BuildingID { get; set; }
         [Required]
         public string BuildingName { get; set; }
-        [Required]
+
        
     }
 }

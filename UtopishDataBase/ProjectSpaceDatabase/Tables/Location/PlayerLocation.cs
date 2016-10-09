@@ -24,7 +24,7 @@ namespace ProjectSpaceDatabase
         public virtual LocalCluster LocalCluster { get; set; }
         public virtual Galaxy Galaxy { get; set; }
         public virtual SolarSystem SolarSystem { get; set; }
-        [Required]
+
 
     }
 }

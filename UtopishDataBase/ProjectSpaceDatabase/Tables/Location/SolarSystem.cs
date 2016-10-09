@@ -9,9 +9,10 @@ namespace ProjectSpaceDatabase
 { 
     public class SolarSystem
     {
+        [Required]
         public int SolarSystemID { get; set; }
         [Required]
         public int SolarSystemNumber { get; set; }
-        [Required]
+
     }
 }
