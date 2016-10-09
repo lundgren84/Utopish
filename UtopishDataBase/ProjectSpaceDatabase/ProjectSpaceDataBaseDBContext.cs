@@ -6,10 +6,10 @@ using System.Data.Entity;
 
 namespace ProjectSpaceDatabase
 {
-    public class ProjectSpaceDataBaseDBContect: DbContext
+    public class ProjectSpaceDataBaseDBContext: DbContext
     {
 
-            public ProjectSpaceDataBaseDBContect() : base("name =ProjectSpaceDataBaseDBContectConectionString")
+            public ProjectSpaceDataBaseDBContext() : base("name =ProjectSpaceDataBaseDBContextConectionString")
             {
 
 
