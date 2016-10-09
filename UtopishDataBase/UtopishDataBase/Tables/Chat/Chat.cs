@@ -12,6 +12,8 @@ namespace UtopishDataBase
     {
         public string Message { get; set; }
         public DateTime TimeStamp { get; set; }
+
+        // F-Key
         public int PlayerRefID { get; set; }
         [ForeignKey(name: "PlayerID")]
         public virtual Player Player { get; set; }
