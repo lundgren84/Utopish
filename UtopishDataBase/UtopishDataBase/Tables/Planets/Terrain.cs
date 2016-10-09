@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Web;
 
-namespace ProjectSpaceDatabase
+namespace UtopishDataBase
 {
     public class Terrain
     {
