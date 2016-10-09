@@ -9,5 +9,9 @@ namespace ProjectSpaceDatabase
 {
     public class Planets
     {
+        [Required]
+        public int PlanetID { get; set; }
+        [Required]
+        public string PlanetName { get; set; }
     }
 }
