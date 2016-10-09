@@ -15,6 +15,5 @@ namespace UtopishDataBase
         public int ProtectionLevelID { get; set; }
         [Required]
         public int ProtectionLevelName { get; set; }
-        public DateTime Expires { get; set; }
     }
 }
