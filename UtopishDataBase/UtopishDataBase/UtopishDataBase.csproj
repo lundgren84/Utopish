@@ -199,6 +199,7 @@
     <Compile Include="Tables\Resources\Resources.cs" />
     <Compile Include="Tables\Ships\PlayerShips.cs" />
     <Compile Include="Tables\Ships\Ships.cs" />
+    <Compile Include="Tables\TheRace\Race.cs" />
     <Compile Include="Tables\Troops\PlayerTroops.cs" />
     <Compile Include="Tables\Troops\Troops.cs" />
     <Compile Include="UtopishDBContext.cs" />

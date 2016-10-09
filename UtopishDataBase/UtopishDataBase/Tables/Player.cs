@@ -10,8 +10,6 @@ namespace UtopishDatabase
 {
     public class Player
     {
- 
-    
         [Required]
         public int PlayerID { get; set; }
         [Required]
@@ -27,13 +25,12 @@ namespace UtopishDatabase
         [Required]
         public int Experience { get; set; }
         [Required]
+        public bool DonatorStatus { get; set; } 
         //-----------ForenKeys------------
         //Location
         public int RaceRefID { get; set; }
         [ForeignKey(name: "RaceID")]
         public virtual Race Race { get; set; }
-
-       
 
     }
 

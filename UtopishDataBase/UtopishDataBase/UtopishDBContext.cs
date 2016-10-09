@@ -36,5 +36,7 @@ namespace UtopishDataBase
         public DbSet<Terrain> Terrain { get; set; }
         public DbSet<Resources> Resources { get; set; }
         public DbSet<Chat> Chat { get; set; }
+        public DbSet<ProtectionLevel> ProtectionLevel { get; set; }
+        public DbSet<Race> Race { get; set; }
     }
 }
