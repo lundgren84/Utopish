@@ -91,12 +91,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ProjectSpaceDatabase\ProjectSpaceDatabase.csproj">
-      <Project>{E64362FC-C8D0-43C0-94D6-D6DA412CEC54}</Project>
-      <Name>ProjectSpaceDatabase</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

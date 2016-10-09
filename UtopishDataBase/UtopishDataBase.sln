@@ -5,10 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtopishDataBase", "UtopishDataBase\UtopishDataBase.csproj", "{451E01BD-A0B8-47F1-B783-9DB83F762524}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectSpaceDatabase", "ProjectSpaceDatabase\ProjectSpaceDatabase.csproj", "{E64362FC-C8D0-43C0-94D6-D6DA412CEC54}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectSpaceDatabase.Tests", "ProjectSpaceDatabase.Tests\ProjectSpaceDatabase.Tests.csproj", "{DC65977A-068A-4E4B-A55F-6493D5C32F3C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,14 +15,6 @@ Global
 		{451E01BD-A0B8-47F1-B783-9DB83F762524}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{451E01BD-A0B8-47F1-B783-9DB83F762524}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{451E01BD-A0B8-47F1-B783-9DB83F762524}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E64362FC-C8D0-43C0-94D6-D6DA412CEC54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E64362FC-C8D0-43C0-94D6-D6DA412CEC54}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E64362FC-C8D0-43C0-94D6-D6DA412CEC54}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E64362FC-C8D0-43C0-94D6-D6DA412CEC54}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DC65977A-068A-4E4B-A55F-6493D5C32F3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC65977A-068A-4E4B-A55F-6493D5C32F3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC65977A-068A-4E4B-A55F-6493D5C32F3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC65977A-068A-4E4B-A55F-6493D5C32F3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
