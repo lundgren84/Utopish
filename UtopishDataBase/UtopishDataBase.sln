@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtopishDataBase", "UtopishDataBase\UtopishDataBase.csproj", "{451E01BD-A0B8-47F1-B783-9DB83F762524}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountDataBase", "AccountDataBase\AccountDataBase.csproj", "{6641EF9D-88D5-45AA-A3AE-DA1D6072836E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{451E01BD-A0B8-47F1-B783-9DB83F762524}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{451E01BD-A0B8-47F1-B783-9DB83F762524}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{451E01BD-A0B8-47F1-B783-9DB83F762524}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6641EF9D-88D5-45AA-A3AE-DA1D6072836E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6641EF9D-88D5-45AA-A3AE-DA1D6072836E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6641EF9D-88D5-45AA-A3AE-DA1D6072836E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6641EF9D-88D5-45AA-A3AE-DA1D6072836E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
