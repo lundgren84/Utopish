@@ -179,6 +179,8 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Tables\Armies\ArmyLocation.cs" />
+    <Compile Include="Tables\Armies\PlayerArmy.cs" />
     <Compile Include="Tables\Buildings\Buildings.cs" />
     <Compile Include="Tables\Buildings\PlayerBuildings.cs" />
     <Compile Include="Tables\Chat\Chat.cs" />
@@ -199,6 +201,7 @@
     <Compile Include="Tables\Resources\PlayerResources.cs" />
     <Compile Include="Tables\Resources\Resources.cs" />
     <Compile Include="Tables\Ships\PlayerShips.cs" />
+    <Compile Include="Tables\Ships\ShipDeployment.cs" />
     <Compile Include="Tables\Ships\Ships.cs" />
     <Compile Include="Tables\TheRace\Race.cs" />
     <Compile Include="Tables\Troops\PlayerTroops.cs" />

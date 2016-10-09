@@ -13,7 +13,7 @@ namespace TemporaryTest
         public void CreateTableEntry(string table, string column, string value)
         {
             string sql = $@"INSERT INTO {table} ({column}) VALUES ('{value}')";
-        connection.ConnectionString = @"Data source=217.210.151.153,1433; Network Library=DBMSSOCN; Initial Catalog=ProjectSpace; User ID = guest; Password=temppass22;";
+        connection.ConnectionString = @"Data source=217.210.151.153,1433; Network Library=DBMSSOCN; Initial Catalog=KHProjectSpace; User ID = guest; Password=temppass22;";
 
             using (connection)
             {
