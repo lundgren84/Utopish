@@ -33,7 +33,7 @@ namespace ProjectSpaceDatabase
         public int LocationRefID { get; set; }
         [ForeignKey(name: "LocationID")]
 
-
+     
         public ICollection<Planet> Planet;
         public Player()
         {
