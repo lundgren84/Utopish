@@ -9,6 +9,7 @@ namespace ProjectSpaceDatabase
 {
     public class Player
     {
+        [Required]
         public int PlayerID { get; set; }
         [Required]
         public int PlayerAccountNumber { get; set; }
@@ -27,11 +28,11 @@ namespace ProjectSpaceDatabase
         //Location
         public int RaceRefID { get; set; }
         [ForeignKey(name: "RaceID")]
+
         [Required]
         public int LocationRefID { get; set; }
         [ForeignKey(name: "LocationID")]
-        [Required]
-        public virtual Location Location { get; set; }
+
 
     }
 }

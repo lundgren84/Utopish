@@ -155,7 +155,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tables\Buildings\Buildings.cs" />
     <Compile Include="Tables\Buildings\PlayerBuildings.cs" />
-    <Compile Include="Tables\Location.cs" />
+    <Compile Include="Tables\Location\Galaxy.cs" />
+    <Compile Include="Tables\Location\LocalCluster.cs" />
+    <Compile Include="Tables\Location\PlayerLocation.cs" />
+    <Compile Include="Tables\Location\SolarSystem.cs" />
+    <Compile Include="Tables\Mail\Mail.cs" />
+    <Compile Include="Tables\Mail\PlayerMail.cs" />
+    <Compile Include="Tables\Messageboards\LocalClusterMB.cs" />
+    <Compile Include="Tables\Messageboards\Messageboards.cs" />
     <Compile Include="Tables\Planets\Planets.cs" />
     <Compile Include="Tables\Planets\PlayerPlanets.cs" />
     <Compile Include="Tables\Planets\Terrain.cs" />
