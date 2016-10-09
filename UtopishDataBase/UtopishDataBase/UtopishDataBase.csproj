@@ -192,6 +192,7 @@
     <Compile Include="Tables\Planets\PlayerPlanets.cs" />
     <Compile Include="Tables\Planets\Terrain.cs" />
     <Compile Include="Tables\Player.cs" />
+    <Compile Include="Tables\ProtectionLevel\ProtectionLevel.cs" />
     <Compile Include="Tables\Research\PlayerResearch.cs" />
     <Compile Include="Tables\Research\Research.cs" />
     <Compile Include="Tables\Resources\PlayerResources.cs" />
