@@ -31,11 +31,9 @@ namespace UtopishDatabase
         //Location
         public int RaceRefID { get; set; }
         [ForeignKey(name: "RaceID")]
+        public virtual Race Race { get; set; }
 
-        [Required]
-        public int LocationRefID { get; set; }
-        [ForeignKey(name: "LocationID")]
-
+       
 
     }
 
