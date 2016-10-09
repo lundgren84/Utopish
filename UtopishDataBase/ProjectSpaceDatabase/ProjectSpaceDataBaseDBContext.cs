@@ -9,12 +9,12 @@ namespace ProjectSpaceDatabase
     public class ProjectSpaceDataBaseDBContext: DbContext
     {
 
-            public ProjectSpaceDataBaseDBContext() : base("name =ProjectSpaceDataBaseDBContextConectionString")
+           // public ProjectSpaceDataBaseDBContext() : base("name =ProjectSpaceDataBaseDBContextConectionString")
             {
 
 
             }
-           public DbSet<Buildings> KlassNamn { get; set; }
+          // public DbSet<Buildings> KlassNamn { get; set; }
        
         }
 
