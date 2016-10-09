@@ -15,5 +15,6 @@ namespace UtopishDataBase
         public string PlanetName { get; set; }
         public int TerrainRefID { get; set; }
         [ForeignKey(name: "TerrainRefID")]
+        public virtual Terrain Terrain { get; set; }
     }
 }
