@@ -13,7 +13,6 @@ namespace ProjectSpaceDatabase
         public int TroopsID { get; set; }
         [Required]
         public string TroopName { get; set; }
-        [Required]
       
 
       

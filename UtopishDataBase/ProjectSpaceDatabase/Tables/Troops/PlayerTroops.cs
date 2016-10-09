@@ -9,16 +9,19 @@ namespace ProjectSpaceDatabase
 {
     public class PlayerTroops
     {
+
+        [Key, Column(Order = 0)]
+        public int PlayerID { get; set; }
+
+
+        [Key, Column(Order = 1)]
+        public int TroopsID { get; set; }
+
+
+        public virtual Player Player { get; set; }
+        public virtual Troops Troops { get; set; }
         [Required]
         public int Quantity { get; set; }
-        //-----------ForenKeys------------
-        //Location
-        public int PlayerRefID { get; set; }
-        [ForeignKey(name: "PlayerID")]
-
-        [Required]
-        public int TroopsRefID { get; set; }
-        [ForeignKey(name: "TroopsID")]
 
     }
 }
