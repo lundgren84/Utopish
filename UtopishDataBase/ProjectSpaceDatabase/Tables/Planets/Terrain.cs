@@ -10,7 +10,7 @@ namespace ProjectSpaceDatabase
     public class Terrain
     {
         [Required]
-        public int PlayerID { get; set; }
+        public int TerrainID { get; set; }
         [Required]
         public string TerrainType { get; set; }
     }
