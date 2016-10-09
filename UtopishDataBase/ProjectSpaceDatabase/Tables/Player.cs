@@ -34,5 +34,11 @@ namespace ProjectSpaceDatabase
         [ForeignKey(name: "LocationID")]
 
 
+        public ICollection<Planet> Planet;
+        public Player()
+        {
+            this.Planet = new HashSet<Planet>();
+        }
+
     }
 }
