@@ -33,11 +33,12 @@ namespace ProjectSpaceDatabase
         public int LocationRefID { get; set; }
         [ForeignKey(name: "LocationID")]
 
-     
-        public ICollection<Tables.Planets.Planets> Planet;
+        public ICollection<Ships> Ship;
+        public ICollection<Planets> Planet;
         public Player()
         {
             this.Planet = new HashSet<Planets>();
+            this.Ship = new HashSet<Ships>();
         }
 
     }
