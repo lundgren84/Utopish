@@ -13,5 +13,7 @@ namespace UtopishDataBase
         public int PlanetID { get; set; }
         [Required]
         public string PlanetName { get; set; }
+        public int TerrainRefID { get; set; }
+        [ForeignKey(name: "TerrainRefID")]
     }
 }
