@@ -4,11 +4,18 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using UtopishDataBase;
 
 namespace UtopishDatabase
 {
     public class Player
     {
+        public Player()
+        {
+            this.Planet = new HashSet<Planets>();
+            this.Ship = new HashSet<Ships>();
+        }
+    
         [Required]
         public int PlayerID { get; set; }
         [Required]
@@ -35,12 +42,10 @@ namespace UtopishDatabase
 
         public ICollection<Ships> Ship;
         public ICollection<Planets> Planet;
-        public ICollection<Buildings>
-        public Player()
-        {
-            this.Planet = new HashSet<Planets>();
-            this.Ship = new HashSet<Ships>();
-        }
+        public ICollection<Buildings> Building;
+
+
 
     }
+
 }
