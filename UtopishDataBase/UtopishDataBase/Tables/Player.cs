@@ -10,11 +10,7 @@ namespace UtopishDatabase
 {
     public class Player
     {
-        public Player()
-        {
-            this.Planet = new HashSet<Planets>();
-            this.Ship = new HashSet<Ships>();
-        }
+ 
     
         [Required]
         public int PlayerID { get; set; }
@@ -39,11 +35,6 @@ namespace UtopishDatabase
         [Required]
         public int LocationRefID { get; set; }
         [ForeignKey(name: "LocationID")]
-
-        public ICollection<Ships> Ship;
-        public ICollection<Planets> Planet;
-        public ICollection<Buildings> Building;
-
 
 
     }

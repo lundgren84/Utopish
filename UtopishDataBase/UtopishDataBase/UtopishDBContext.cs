@@ -33,6 +33,8 @@ namespace UtopishDataBase
         public DbSet<Buildings> Buildings { get; set; }
         public DbSet<Mail> Mail { get; set; }
         public DbSet<Research> Research { get; set; }
-
+        public DbSet<Terrain> Terrain { get; set; }
+        public DbSet<Resources> Resources { get; set; }
+        public DbSet<Chat> Chat { get; set; }
     }
 }
