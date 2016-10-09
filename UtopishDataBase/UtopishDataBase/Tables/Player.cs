@@ -29,7 +29,7 @@ namespace UtopishDatabase
         //-----------ForenKeys------------
         //Location
         public int RaceRefID { get; set; }
-        [ForeignKey(name: "RaceID")]
+        [ForeignKey(name: "RaceRefID")]
         public virtual Race Race { get; set; }
 
     }

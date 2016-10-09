@@ -9,7 +9,7 @@ namespace UtopishDataBase
 {
     public class LocalCluster
     {
-        [Required]
+        [Key]
         public int LocalClusterID { get; set; }
         [Required]
         public int LocalClusterNumber { get; set; }

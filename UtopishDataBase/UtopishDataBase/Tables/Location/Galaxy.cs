@@ -9,7 +9,8 @@ namespace UtopishDataBase
 {
     public class Galaxy
     {
-        [Required]
+
+        [Key]
         public int GalaxyID { get; set; }
         [Required]
         public int GalaxyNumber { get; set; }

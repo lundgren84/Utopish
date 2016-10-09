@@ -9,7 +9,7 @@ namespace UtopishDataBase
 { 
     public class Mail
     {
-        [Required]
+        [Key]
         public int MailID { get; set; }
         [Required]
         public string MailContentMessage { get; set; }

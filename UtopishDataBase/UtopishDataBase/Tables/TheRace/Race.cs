@@ -8,7 +8,7 @@ namespace UtopishDataBase
 {
     public class Race
     {
-        [Required]
+        [Key]
         public int RaceID { get; set; }
         [Required]
         public string RaceName { get; set; }

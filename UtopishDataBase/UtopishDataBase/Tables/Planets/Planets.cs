@@ -9,7 +9,7 @@ namespace UtopishDataBase
 {
     public class Planets
     {
-        [Required]
+        [Key]
         public int PlanetID { get; set; }
         [Required]
         public string PlanetName { get; set; }

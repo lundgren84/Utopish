@@ -10,12 +10,14 @@ namespace UtopishDataBase
 {
     public class Chat
     {
+        [Key]
+        public int ChatID { get; set; }
         public string Message { get; set; }
         public DateTime TimeStamp { get; set; }
 
         // F-Key
         public int PlayerRefID { get; set; }
-        [ForeignKey(name: "PlayerID")]
+        [ForeignKey(name: "PlayerRefID")]
         public virtual Player Player { get; set; }
     }
 }

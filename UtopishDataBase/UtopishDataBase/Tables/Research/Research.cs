@@ -9,7 +9,7 @@ namespace UtopishDatabase
 {
     public class Research
     {
-        [Required]
+        [Key]
         public int ResearchID { get; set; }
         [Required]
         public string ResearchName { get; set; }

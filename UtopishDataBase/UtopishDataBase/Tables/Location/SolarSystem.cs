@@ -9,7 +9,7 @@ namespace UtopishDataBase
 { 
     public class SolarSystem
     {
-        [Required]
+        [Key]
         public int SolarSystemID { get; set; }
         [Required]
         public int SolarSystemNumber { get; set; }

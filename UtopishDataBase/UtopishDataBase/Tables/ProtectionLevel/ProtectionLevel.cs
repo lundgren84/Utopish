@@ -11,7 +11,7 @@ namespace UtopishDataBase
 {
     public class ProtectionLevel
     {
-        [Required]
+        [Key]
         public int ProtectionLevelID { get; set; }
         [Required]
         public int ProtectionLevelName { get; set; }
