@@ -21,8 +21,8 @@ namespace UtopishDataBase
         public int Slot2ID { get; set; }
 
         [Key, Column(Order = 3)]
-
         public int Slot3ID { get; set; }
+
         [Key, Column(Order = 4)]
         public int Slot4ID { get; set; }
 
