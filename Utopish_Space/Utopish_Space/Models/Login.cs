@@ -25,7 +25,7 @@ namespace Utopish_Space.Models
         internal void CreateNewAccount(AccountObject accountObject)
         {
             connection.OpenLogin();
-            string query = "Insert into Accounts (Email,Hash,Salt,) values (@email,@hash,@salt)";
+            string query = "Insert into Accounts (Email,Hash,Salt) values (@email,@hash,@salt)";
             SqlCommand command = new SqlCommand(query, connection.connection);
             command.Parameters.AddWithValue("@email", accountObject._email);
             command.Parameters.AddWithValue("@hash", accountObject._hash);
