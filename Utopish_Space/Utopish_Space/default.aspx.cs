@@ -22,7 +22,6 @@ namespace Utopish_Space
         }
         protected void ButtonRegister_Click(object sender, EventArgs e)
         {
-
             // Check email
             int count = login.CheckEMail(tb_RegEmail.Text);
 
@@ -46,12 +45,14 @@ namespace Utopish_Space
 
                     login.CreateNewAccount(accountObject);
 
-
+                    MailSender mailSender = new MailSender();
+                    string mailContent = $@"Your Code is : {accountObject.Status.ActivationCode}";
+                    mailSender.SendMailTo(accountObject._email, mailContent);
                     Response.Write("Your Registration is succsesful");
                     PanelRegistration.Visible = false;
                     PanelLoggin.Visible = true;
 
-                    //Page.RegisterStartupScript("UserMsg", "<script>alert('Sending Failed...');if(alert){ window.location='SendMail.aspx';}</script>");
+
                 }
                 catch (Exception ex)
                 {

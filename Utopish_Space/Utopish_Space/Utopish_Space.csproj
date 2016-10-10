@@ -281,6 +281,7 @@
     </Compile>
     <Compile Include="Models\AccountObject.cs" />
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\MailSender.cs" />
     <Compile Include="Models\Security.cs" />
     <Compile Include="Models\StatusObject.cs" />
     <Compile Include="Site.Master.cs">
