@@ -51,7 +51,7 @@ namespace Utopish_Space
                     Response.Write("Your Registration is succsesful");
                     PanelRegistration.Visible = false;
                     PanelLoggin.Visible = true;
-                    tb_Username.Text = tb_RegUserName.Text;
+                  
                     //Page.RegisterStartupScript("UserMsg", "<script>alert('Sending Failed...');if(alert){ window.location='SendMail.aspx';}</script>");
                     Page.RegisterStartupScript("UserMsg", " < script > alert('Your Registration is succsesful'); </ script >");
                 }
