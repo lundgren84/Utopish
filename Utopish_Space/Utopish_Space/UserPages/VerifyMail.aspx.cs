@@ -10,7 +10,7 @@ namespace Utopish_Space.UserPages
 {
     public partial class VerifyMail : System.Web.UI.Page
     {
-        AccountObject acc;
+        AccountObject acc = new AccountObject();
         Models.Login login = new Models.Login();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,7 +21,7 @@ namespace Utopish_Space.UserPages
         {
             if (TextBox_ActivationCode.Text == acc.Status.ActivationCode)
             {
-                login.ChangeAccountStatus("Open", acc);
+                login.ChangeAccountStatus("Open", acc._statusRefID);
                 Response.Redirect("~/UserPages/Overview.aspx");
             }
             else

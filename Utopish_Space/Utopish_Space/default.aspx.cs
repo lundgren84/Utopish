@@ -86,11 +86,12 @@ namespace Utopish_Space
             {
                 if (player.Status.AccountStatus == "Locked")
                 {
-                    Response.Redirect("~/UserPages/UnlockAccount.aspx");
+                    Response.Redirect("~/UserPages/VerifyMail.aspx");
                 }
                 else if (player.Status.AccountStatus == "Open")
                 {
-                    Session["Player"] = player;
+                  
+                    Session["PlayerID"] = player;
                     Response.Redirect("~/UserPages/Overview.aspx");
                 }
             }

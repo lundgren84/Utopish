@@ -22,6 +22,8 @@ namespace Utopish_Space.Models
             return temp;
         }
 
+     
+
         internal void CreateNewAccount(AccountObject accountObject)
         {
             Security security = new Security();
@@ -40,9 +42,18 @@ namespace Utopish_Space.Models
             connection.Close();
         }
 
-        internal void ChangeAccountStatus(string v, AccountObject acc)
+        internal void ChangeAccountStatus(string StatusString,int StatusRefID)
         {
-            throw new NotImplementedException();
+            string query = $@"USE[ProjectSpaceUserDataBase]
+                                  GO
+                                  Update Status SET AccountStatus = '{StatusString}'
+                                  WHERE StatusID = {StatusRefID};";
+            connection.OpenLogin();
+            using (SqlCommand command = new SqlCommand(query, connection.connection))
+            {
+                command.ExecuteNonQuery();
+            }
+            connection.Close();
         }
 
         private StatusObject GetAccountStatusObject(int _statusRefID)
