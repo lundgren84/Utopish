@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Utopish_Space.Models
+namespace Utopish_Space.Login
 {
-    public class PlayerObject
+    public class UserDB_DAL
     {
-        public string _email { get; set; }
     }
 }

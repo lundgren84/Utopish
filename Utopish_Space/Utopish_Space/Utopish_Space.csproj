@@ -277,7 +277,8 @@
     <Compile Include="GM.aspx.designer.cs">
       <DependentUpon>GM.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Models\PlayerObject.cs" />
+    <Compile Include="Login\UserDB_DAL.cs" />
+    <Compile Include="Models\AccountObject.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
@@ -363,7 +364,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
