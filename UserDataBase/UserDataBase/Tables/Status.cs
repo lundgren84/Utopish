@@ -12,5 +12,6 @@ namespace UserDataBase.Tables
         [Key]
         public int StatusID { get; set; }
         public string AccountStatus { get; set; }
+        public string ActivationCode { get; set; }
     }
 }

@@ -34,7 +34,7 @@
                         </td>
                         <td>                   
                                  <%-- Validate login Username --%>
-                              <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Required" ControlToValidate="tb_Username" ForeColor="Red"></asp:RequiredFieldValidator>                
+                              <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Required" ControlToValidate="tb_UserEmail" ForeColor="Red"></asp:RequiredFieldValidator>                
                           </td>
                     </tr>
                 
