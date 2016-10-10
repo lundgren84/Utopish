@@ -24,15 +24,51 @@ namespace Utopish_Space.Models
 
         internal void CreateNewAccount(AccountObject accountObject)
         {
+            Security security = new Security();
+            accountObject._statusRefID = CreateNewAccountStatus();
             connection.OpenLogin();
-            string query = "Insert into Accounts (Email,Hash,Salt) values (@email,@hash,@salt)";
+            string query = "Insert into Accounts (Email,Hash,Salt,StatusRefID) values (@email,@hash,@salt,@statusRefID)";
             SqlCommand command = new SqlCommand(query, connection.connection);
             command.Parameters.AddWithValue("@email", accountObject._email);
             command.Parameters.AddWithValue("@hash", accountObject._hash);
             command.Parameters.AddWithValue("@salt", accountObject._salt);
+            command.Parameters.AddWithValue("@statusRefID", accountObject._statusRefID);
             command.ExecuteNonQuery();
             connection.Close();
         }
+
+        private int CreateNewAccountStatus()
+        {
+            Security security = new Security();
+            var ActivationCode = security.CreateSalt(5);
+            var AccountStatus = "Locked";
+            var result = 0;
+            string query = string.Empty;
+            connection.OpenLogin();
+
+            query = "Insert into Status (AccountStatus,ActivationCode) values (@AccountStatus,@ActivationCode)";
+            using (SqlCommand command = new SqlCommand(query, connection.connection))
+            {
+                command.Parameters.AddWithValue("@AccountStatus", AccountStatus);
+                command.Parameters.AddWithValue("@ActivationCode", ActivationCode);
+                command.ExecuteNonQuery();
+            }
+            query = $@"SELECT StatusID FROM Status WHERE ActivationCode = '{ActivationCode}'";
+            using (SqlCommand command = new SqlCommand(query, connection.connection))
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        result = int.Parse(reader["StatusID"].ToString());
+                    }
+                }
+            }
+
+            connection.Close();
+            return result;
+        }
+
         internal AccountObject AccountLogin(string email, string password)
         {
             Security security = new Security();
