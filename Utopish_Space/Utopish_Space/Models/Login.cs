@@ -44,8 +44,7 @@ namespace Utopish_Space.Models
 
         internal void ChangeAccountStatus(string StatusString,int StatusRefID)
         {
-            string query = $@"USE[ProjectSpaceUserDataBase]
-                                  GO
+            string query = $@"
                                   Update Status SET AccountStatus = '{StatusString}'
                                   WHERE StatusID = {StatusRefID};";
             connection.OpenLogin();
@@ -81,7 +80,7 @@ namespace Utopish_Space.Models
         {
             Security security = new Security();
             var ActivationCode = security.CreateSalt(7);
-            var AccountStatus = "Locked";
+            var AccountStatus = "VerifyEmail";
             var result = 0;
             string query = string.Empty;
             connection.OpenLogin();
