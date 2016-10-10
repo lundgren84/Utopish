@@ -234,6 +234,7 @@
     <Content Include="UserPages\Scanner.aspx" />
     <Content Include="UserPages\Research.aspx" />
     <Content Include="UserPages\Troops.aspx" />
+    <Content Include="UserPages\VerifyMail.aspx" />
     <Content Include="Utopish\LogginBackground.css" />
     <Content Include="Utopish\LogginBackground.js" />
     <Content Include="ViewSwitcher.ascx" />
@@ -285,6 +286,7 @@
     <Compile Include="Models\StatusObject.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -350,6 +352,13 @@
     </Compile>
     <Compile Include="UserPages\Troops.aspx.designer.cs">
       <DependentUpon>Troops.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPages\VerifyMail.aspx.cs">
+      <DependentUpon>VerifyMail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPages\VerifyMail.aspx.designer.cs">
+      <DependentUpon>VerifyMail.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

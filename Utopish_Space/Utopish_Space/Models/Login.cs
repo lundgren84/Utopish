@@ -40,6 +40,11 @@ namespace Utopish_Space.Models
             connection.Close();
         }
 
+        internal void ChangeAccountStatus(string v, AccountObject acc)
+        {
+            throw new NotImplementedException();
+        }
+
         private StatusObject GetAccountStatusObject(int _statusRefID)
         {
             StatusObject result = new StatusObject();
