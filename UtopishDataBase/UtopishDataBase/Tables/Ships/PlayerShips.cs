@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using UtopishDataBase;
 
 namespace UtopishDatabase
 {
@@ -15,10 +16,13 @@ namespace UtopishDatabase
 
         [Key, Column(Order = 1)]
         public int ShipsID { get; set; }
+        [Key, Column(Order = 1)]
+        public int ShipDeploymentID { get; set; }
 
 
         public virtual Player Player { get; set; }
         public virtual Ships Ships { get; set; }
+        public virtual ShipDeployment ShipDeployment { get; set; }
 
         [Required]
         public int Quantity { get; set; }

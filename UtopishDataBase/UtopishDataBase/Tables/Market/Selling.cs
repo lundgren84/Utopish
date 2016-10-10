@@ -4,15 +4,18 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using UtopishDatabase;
 
 namespace UtopishDataBase
 {
-    public class ShipDeployment
+    public class Selling
     {
-        [Key]
-        public int ShipDeploymentID { get; set; }
-        [Required]
-        [MaxLength(50)]
-        public string ShipDeploymentName { get; set; }
+
+        [Key, Column(Order = 1)]
+        public int MarketContentID { get; set; }
+
+        public virtual MarketContent ForSale { get; set; }
+
+
     }
 }

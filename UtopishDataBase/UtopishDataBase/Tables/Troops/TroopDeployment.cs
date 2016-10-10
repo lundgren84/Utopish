@@ -7,12 +7,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace UtopishDataBase
 {
-    public class ShipDeployment
+    public class TroopDeployment
     {
         [Key]
-        public int ShipDeploymentID { get; set; }
+        public int TroopDeploymentID { get; set; }
         [Required]
         [MaxLength(50)]
-        public string ShipDeploymentName { get; set; }
+        public string TroopDeploymentName { get; set; }
     }
 }
