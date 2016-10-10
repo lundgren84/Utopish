@@ -15,5 +15,6 @@ namespace Utopish_Space.Models
         public string _hash { get; set; }
         public DateTime _registrationDate { get; set; }
         public int _statusRefID { get; set; }
+        public StatusObject Status { get; set; }
     }
 }

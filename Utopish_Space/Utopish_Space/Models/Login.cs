@@ -25,7 +25,10 @@ namespace Utopish_Space.Models
         internal void CreateNewAccount(AccountObject accountObject)
         {
             Security security = new Security();
+
             accountObject._statusRefID = CreateNewAccountStatus();
+            accountObject.Status= GetAccountStatusObject(accountObject._statusRefID);
+
             connection.OpenLogin();
             string query = "Insert into Accounts (Email,Hash,Salt,StatusRefID) values (@email,@hash,@salt,@statusRefID)";
             SqlCommand command = new SqlCommand(query, connection.connection);
@@ -35,6 +38,27 @@ namespace Utopish_Space.Models
             command.Parameters.AddWithValue("@statusRefID", accountObject._statusRefID);
             command.ExecuteNonQuery();
             connection.Close();
+        }
+
+        private StatusObject GetAccountStatusObject(int _statusRefID)
+        {
+            StatusObject result = new StatusObject();
+           string query = $@"SELECT * FROM Status WHERE StatusID = '{_statusRefID}'";
+            connection.OpenLogin();
+            using (SqlCommand command = new SqlCommand(query, connection.connection))
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        result.StatusID = int.Parse(reader["StatusID"].ToString());
+                        result.ActivationCode = reader["ActivationCode"].ToString();
+                        result.AccountStatus = reader["AccountStatus"].ToString();
+                    }
+                }
+            }
+            connection.Close();
+            return result;
         }
 
         private int CreateNewAccountStatus()
@@ -53,6 +77,7 @@ namespace Utopish_Space.Models
                 command.Parameters.AddWithValue("@ActivationCode", ActivationCode);
                 command.ExecuteNonQuery();
             }
+
             query = $@"SELECT StatusID FROM Status WHERE ActivationCode = '{ActivationCode}'";
             using (SqlCommand command = new SqlCommand(query, connection.connection))
             {
@@ -76,7 +101,7 @@ namespace Utopish_Space.Models
             int count = 0;
             var salt = GetSalt(email);
             var hash = security.GenerateSHA256Hash(password, salt); // Generate Hash
-
+           
             try
             {
                 connection.OpenLogin();
@@ -128,6 +153,7 @@ namespace Utopish_Space.Models
             }
             catch { }
             finally { connection.Close(); }
+            result.Status = GetAccountStatusObject(result._statusRefID);
 
             return result;
         }
