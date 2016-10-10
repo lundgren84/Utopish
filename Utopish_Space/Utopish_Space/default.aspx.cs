@@ -84,6 +84,7 @@ namespace Utopish_Space
 
             if (player != null)
             {
+                Session["PlayerID"] = player;
                 if (player.Status.AccountStatus == "Locked")
                 {
                     Response.Redirect("~/UserPages/VerifyMail.aspx");
@@ -91,7 +92,7 @@ namespace Utopish_Space
                 else if (player.Status.AccountStatus == "Open")
                 {
                   
-                    Session["PlayerID"] = player;
+                  
                     Response.Redirect("~/UserPages/Overview.aspx");
                 }
             }
