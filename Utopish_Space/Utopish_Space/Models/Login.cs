@@ -33,5 +33,17 @@ namespace Utopish_Space.Models
             command.ExecuteNonQuery();
             connection.Close();
         }
+        internal AccountObject AccountLogin(string email,string hash)
+        {
+            AccountObject result = new AccountObject();
+            connection.OpenLogin();
+            string sql = "Select count(*) From Accounts Where Email = '" + email + "' AND Hash = '"+hash+"'";
+            SqlCommand command = new SqlCommand(sql, connection.connection);
+            int temp = Convert.ToInt32(command.ExecuteScalar().ToString());
+            connection.Close();
+
+
+            return result;
+        }
     }
 }

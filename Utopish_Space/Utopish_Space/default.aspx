@@ -30,7 +30,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:TextBox ID="tb_Username" CssClass="LogginLabel" runat="server" Font-Names="Consolas" Height="40px" OnTextChanged="tb_Username_TextChanged" ControlToValidate="tb_Username"></asp:TextBox>
+                            <asp:TextBox ID="tb_UserEmail" CssClass="LogginLabel" runat="server" Font-Names="Consolas" Height="40px" OnTextChanged="tb_Username_TextChanged" ControlToValidate="tb_Username"></asp:TextBox>
                         </td>
                         <td>                   
                                  <%-- Validate login Username --%>
