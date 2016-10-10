@@ -15,7 +15,7 @@ namespace Utopish_Space
     public partial class WebForm1 : System.Web.UI.Page
     {
         Models.Login login = new Models.Login();
-        string sql;
+       
         protected void Page_Load(object sender, EventArgs e)
         {
     
@@ -28,8 +28,7 @@ namespace Utopish_Space
 
             if (count > 0)
             {
-                Response.Write("Email already in use");
-
+                Response.Write("Email already in use");           
             }         
             else
             {
@@ -53,7 +52,6 @@ namespace Utopish_Space
                     PanelLoggin.Visible = true;
                   
                     //Page.RegisterStartupScript("UserMsg", "<script>alert('Sending Failed...');if(alert){ window.location='SendMail.aspx';}</script>");
-                    Page.RegisterStartupScript("UserMsg", " < script > alert('Your Registration is succsesful'); </ script >");
                 }
                 catch (Exception ex)
                 {
@@ -99,6 +97,19 @@ namespace Utopish_Space
 
         protected void ButtonLogin_Click(object sender, EventArgs e)
         {
+            AccountObject player = login.AccountLogin(tb_UserEmail.Text,tb_Password.Text);
+          
+            if(player != null)
+            {
+                Session["Player"] = player;
+                Response.Redirect("~/UserPages/Overview.aspx");
+            }
+        else
+            {
+                Response.Write("Wrong username or password");
+            }
+
+
             //int temp;
             //connection.Open();
             //sql = $@"Selec COUNT(*) FROM Accounts WHERE username = '{tb_Username.Text}' AND password = '{tb_Password.Text}'";
@@ -106,11 +117,8 @@ namespace Utopish_Space
             //{
             //     temp = Convert.ToInt32(command.ExecuteScalar().ToString());
             //}
-            AccountObject player = new AccountObject();
-            player._email = tb_Username.Text;
-            
-            Session["Player"] = player;
-            Response.Redirect("~/UserPages/Overview.aspx");
+       
+  
            
         }
     }

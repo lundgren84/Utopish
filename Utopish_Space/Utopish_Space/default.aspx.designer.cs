@@ -58,13 +58,13 @@ namespace Utopish_Space {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// tb_Username control.
+        /// tb_UserEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_Username;
+        protected global::System.Web.UI.WebControls.TextBox tb_UserEmail;
         
         /// <summary>
         /// RequiredFieldValidator1 control.
