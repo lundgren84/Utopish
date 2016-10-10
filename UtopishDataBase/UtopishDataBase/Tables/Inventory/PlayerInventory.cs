@@ -17,13 +17,13 @@ namespace UtopishDataBase
         [Key, Column(Order = 1)]
         public int Slot1ID { get; set; }
 
-        [Key, Column(Order = 1)]
+        [Key, Column(Order = 2)]
         public int Slot2ID { get; set; }
 
-        [Key, Column(Order = 1)]
+        [Key, Column(Order = 3)]
 
         public int Slot3ID { get; set; }
-        [Key, Column(Order = 1)]
+        [Key, Column(Order = 4)]
         public int Slot4ID { get; set; }
 
         public virtual Player Player { get; set; }
