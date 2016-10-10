@@ -182,6 +182,9 @@
     <Compile Include="Tables\Buildings\Buildings.cs" />
     <Compile Include="Tables\Buildings\PlayerBuildings.cs" />
     <Compile Include="Tables\Chat\Chat.cs" />
+    <Compile Include="Tables\Inventory\Items.cs" />
+    <Compile Include="Tables\Inventory\PlayerEquipped.cs" />
+    <Compile Include="Tables\Inventory\PlayerInventory.cs" />
     <Compile Include="Tables\Location\Galaxy.cs" />
     <Compile Include="Tables\Location\LocalCluster.cs" />
     <Compile Include="Tables\Location\PlayerLocation.cs" />
