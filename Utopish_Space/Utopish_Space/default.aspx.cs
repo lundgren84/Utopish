@@ -15,10 +15,10 @@ namespace Utopish_Space
     public partial class WebForm1 : System.Web.UI.Page
     {
         Models.Login login = new Models.Login();
-       
+
         protected void Page_Load(object sender, EventArgs e)
         {
-    
+
         }
         protected void ButtonRegister_Click(object sender, EventArgs e)
         {
@@ -28,8 +28,8 @@ namespace Utopish_Space
 
             if (count > 0)
             {
-                Response.Write("Email already in use");           
-            }         
+                Response.Write("Email already in use");
+            }
             else
             {
                 try
@@ -46,11 +46,11 @@ namespace Utopish_Space
 
                     login.CreateNewAccount(accountObject);
 
-                  
+
                     Response.Write("Your Registration is succsesful");
                     PanelRegistration.Visible = false;
                     PanelLoggin.Visible = true;
-                  
+
                     //Page.RegisterStartupScript("UserMsg", "<script>alert('Sending Failed...');if(alert){ window.location='SendMail.aspx';}</script>");
                 }
                 catch (Exception ex)
@@ -60,21 +60,7 @@ namespace Utopish_Space
             }
 
         }
-
-        protected void TextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         protected void ButtonChangeLogin_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Label6_Click(object sender, EventArgs e)
-        {
-        }
-        protected void Button3_Click(object sender, EventArgs e)
         {
             if (ButtonChangeLoggin.Text.Contains("Register"))
             {
@@ -90,36 +76,31 @@ namespace Utopish_Space
             }
         }
 
-        protected void tb_Username_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         protected void ButtonLogin_Click(object sender, EventArgs e)
         {
-            AccountObject player = login.AccountLogin(tb_UserEmail.Text,tb_Password.Text);
-          
-            if(player != null)
+
+            AccountObject player = login.AccountLogin(tb_UserEmail.Text, tb_Password.Text);
+
+            if (player != null)
             {
-                Session["Player"] = player;
-                Response.Redirect("~/UserPages/Overview.aspx");
+                if (player.Status.AccountStatus == "Locked")
+                {
+                    Response.Redirect("~/UserPages/UnlockAccount.aspx");
+                }
+                else if (player.Status.AccountStatus == "Open")
+                {
+                    Session["Player"] = player;
+                    Response.Redirect("~/UserPages/Overview.aspx");
+                }
             }
-        else
+            else
             {
                 Response.Write("Wrong username or password");
             }
 
 
-            //int temp;
-            //connection.Open();
-            //sql = $@"Selec COUNT(*) FROM Accounts WHERE username = '{tb_Username.Text}' AND password = '{tb_Password.Text}'";
-            //using (SqlCommand command = new SqlCommand(sql, connection))
-            //{
-            //     temp = Convert.ToInt32(command.ExecuteScalar().ToString());
-            //}
-       
-  
-           
+
+
         }
     }
 }

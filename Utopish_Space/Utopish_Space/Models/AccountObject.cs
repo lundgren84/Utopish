@@ -14,6 +14,7 @@ namespace Utopish_Space.Models
         public string _salt { get; set; }
         public string _hash { get; set; }
         public DateTime _registrationDate { get; set; }
-        public int StatusRefID { get; set; }
+        public int _statusRefID { get; set; }
+        public StatusObject Status { get; set; }
     }
 }

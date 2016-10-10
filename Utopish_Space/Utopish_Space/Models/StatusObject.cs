@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace UserDataBase.Tables
+namespace Utopish_Space.Models
 {
-    public class Status
+    public class StatusObject
     {
-        [Key]
         public int StatusID { get; set; }
         public string AccountStatus { get; set; }
         public string ActivationCode { get; set; }
