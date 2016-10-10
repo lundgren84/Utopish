@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using UtopishDataBase;
 
 namespace UtopishDatabase
 {
@@ -20,6 +21,7 @@ namespace UtopishDatabase
 
         public virtual Player Player { get; set; }
         public virtual Troops Troops { get; set; }
+        public virtual TroopDeployment TroopDeployment { get; set; }
         [Required]
         public int Quantity { get; set; }
 
