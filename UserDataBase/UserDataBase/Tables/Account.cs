@@ -14,14 +14,17 @@ namespace UserDataBase.Tables
         [Required]
         [MaxLength(50)]
         public string Email { get; set; }
-        [Required]
+        
         [MaxLength(50)]
         public string FirstName { get; set; }
-        [Required]
+        
         [MaxLength(50)]
         public string LastName { get; set; }
+        [Required]
         public string Salt { get; set; }
+        [Required]
         public string Hash { get; set; }
+        [Required]
         public DateTime RegistrationDate { get; set; }
 
         //FK
