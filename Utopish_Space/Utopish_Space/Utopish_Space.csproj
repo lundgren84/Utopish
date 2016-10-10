@@ -234,7 +234,6 @@
     <Content Include="UserPages\Scanner.aspx" />
     <Content Include="UserPages\Research.aspx" />
     <Content Include="UserPages\Troops.aspx" />
-    <Content Include="UserPages\UnlockAccount.aspx" />
     <Content Include="Utopish\LogginBackground.css" />
     <Content Include="Utopish\LogginBackground.js" />
     <Content Include="ViewSwitcher.ascx" />
@@ -351,13 +350,6 @@
     </Compile>
     <Compile Include="UserPages\Troops.aspx.designer.cs">
       <DependentUpon>Troops.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UserPages\UnlockAccount.aspx.cs">
-      <DependentUpon>UnlockAccount.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserPages\UnlockAccount.aspx.designer.cs">
-      <DependentUpon>UnlockAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
