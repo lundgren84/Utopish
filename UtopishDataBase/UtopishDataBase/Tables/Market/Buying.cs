@@ -11,8 +11,8 @@ namespace UtopishDataBase
     public class Buying
     {
 
-        [Key, Column(Order = 1)]
-        public int MarketContentID { get; set; }
+        [Key, Column(Order = 0)]
+        public int BuyingID { get; set; }
 
         public virtual MarketContent AskingPrice { get; set; }
 

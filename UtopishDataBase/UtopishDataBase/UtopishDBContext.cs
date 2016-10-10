@@ -24,6 +24,7 @@ namespace UtopishDataBase
         public DbSet<PlayerMail> PlayerMail { get; set; }
         public DbSet<PlayerResources> PlayerResources { get; set; }
         public DbSet<PlayerProtectionLevel> PlayerProtectionLevel { get; set; }
+        public DbSet<PlayerMarket> PlayerMarket { get; set; }
 
         public DbSet<Troops> Troops { get; set; }
         public DbSet<Ships> Ships { get; set; }
@@ -39,6 +40,11 @@ namespace UtopishDataBase
         public DbSet<Chat> Chat { get; set; }
         public DbSet<ProtectionLevel> ProtectionLevel { get; set; }
         public DbSet<Race> Race { get; set; }
+        public DbSet<MarketContent> MarketContent { get; set; }
+
+        public DbSet<Buying> Buying { get; set; }
+        public DbSet<Selling> Selling { get; set; }
+
 
     }
 }

@@ -11,7 +11,8 @@ namespace UtopishDataBase
 {
     public class MarketContent
     {
-
+        [Key, Column(Order = 0)]
+        public int MarketContentID { get; set; }
         public int? Oil { get; set; }
         public int? Minerals { get; set; }
         public int? Credits { get; set; }
