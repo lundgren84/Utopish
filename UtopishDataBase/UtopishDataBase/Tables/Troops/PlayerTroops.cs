@@ -17,11 +17,16 @@ namespace UtopishDatabase
 
         [Key, Column(Order = 1)]
         public int TroopsID { get; set; }
+        [Key, Column(Order = 2)]
+        public int TroopDeploymentID { get; set; }
+        [Key, Column(Order = 3)]
+        public int PlayerToAttackID { get; set; }
 
 
         public virtual Player Player { get; set; }
         public virtual Troops Troops { get; set; }
         public virtual TroopDeployment TroopDeployment { get; set; }
+        public virtual Player PlayerToAttack { get; set; }
         [Required]
         public int Quantity { get; set; }
 

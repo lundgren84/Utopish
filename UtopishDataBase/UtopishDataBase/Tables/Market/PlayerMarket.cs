@@ -17,7 +17,7 @@ namespace UtopishDataBase
     [Key, Column(Order = 1)]
     public int SellingID { get; set; }
 
-    [Key, Column(Order = 1)]
+    [Key, Column(Order = 2)]
     public int BuyingID { get; set; }
 
 

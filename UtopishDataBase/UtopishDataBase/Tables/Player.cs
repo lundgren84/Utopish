@@ -26,6 +26,8 @@ namespace UtopishDatabase
         [Required]
         public int Experience { get; set; }
         [Required]
+        public int DailyTradesLeft { get; set; }
+        [Required]
         public bool DonatorStatus { get; set; } 
         //-----------ForenKeys------------
         //Location
