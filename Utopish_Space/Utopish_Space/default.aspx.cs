@@ -28,8 +28,7 @@ namespace Utopish_Space
 
             if (count > 0)
             {
-                Response.Write("Email already in use");
-
+                Response.Write("Email already in use");           
             }         
             else
             {
@@ -53,7 +52,6 @@ namespace Utopish_Space
                     PanelLoggin.Visible = true;
                   
                     //Page.RegisterStartupScript("UserMsg", "<script>alert('Sending Failed...');if(alert){ window.location='SendMail.aspx';}</script>");
-                    Page.RegisterStartupScript("UserMsg", " < script > alert('Your Registration is succsesful'); </ script >");
                 }
                 catch (Exception ex)
                 {

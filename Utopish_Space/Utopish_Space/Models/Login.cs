@@ -14,7 +14,7 @@ namespace Utopish_Space.Models
         internal int CheckEMail(string email)
         {
             connection.OpenLogin();
-            string sql = "Select count(*) From Accounts Where FirstName = '" + email + "'";
+            string sql = "Select count(*) From Accounts Where Email = '" + email + "'";
             SqlCommand command = new SqlCommand(sql, connection.connection);
             int temp = Convert.ToInt32(command.ExecuteScalar().ToString());
             connection.Close();
