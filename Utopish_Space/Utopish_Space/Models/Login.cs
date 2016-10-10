@@ -40,7 +40,7 @@ namespace Utopish_Space.Models
         private int CreateNewAccountStatus()
         {
             Security security = new Security();
-            var ActivationCode = security.CreateSalt(5);
+            var ActivationCode = security.CreateSalt(7);
             var AccountStatus = "Locked";
             var result = 0;
             string query = string.Empty;

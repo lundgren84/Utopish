@@ -48,7 +48,7 @@
     font-size: 200%;
 }
 
-#PanelLoggin, #PanelRegistration {
+#PanelLoggin, #PanelRegistration, #PanelVerify {
     z-index: 100;
     position: absolute;
     top: 20%;
