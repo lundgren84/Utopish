@@ -37,6 +37,7 @@
                               <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Required" ControlToValidate="tb_Username" ForeColor="Red"></asp:RequiredFieldValidator>                
                           </td>
                     </tr>
+                
                     <tr>
                         <td>
                             <asp:Label ID="Label2" CssClass="LogginLabel" runat="server" Text="Password" ForeColor="White"></asp:Label>
@@ -64,7 +65,9 @@
             <%--RegistrationPanel--%>
             <asp:Panel ID="PanelRegistration" runat="server" Visible="False">
                 <table>
-                    <tr>
+
+                     <%-- Validate Registration Username --%>
+             <%--       <tr>
                         <td>
                             <asp:Label ID="Label4" runat="server" CssClass="LogginLabel" Text="User name" ForeColor="White"></asp:Label><br />
                         </td>
@@ -74,10 +77,11 @@
                             <asp:TextBox ID="tb_RegUserName" CssClass="LogginLabel" runat="server" Font-Names="Consolas" Height="40px" Width="300px" ></asp:TextBox>
                         </td>
                         <td>
-                            <%-- Validate Registration Username --%>
+                           
                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Required" ControlToValidate="tb_RegUserName" ForeColor="Red"></asp:RequiredFieldValidator>                 
                         </td>
-                    </tr>
+                    </tr>--%>
+             
                     <tr>
                         <td>
                             <asp:Label ID="Label7" runat="server" CssClass="LogginLabel" Text="Email" ForeColor="White"></asp:Label><br />
