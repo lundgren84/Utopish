@@ -84,7 +84,7 @@ namespace Utopish_Space
 
             if (player != null)
             {
-                Session["PlayerID"] = player;
+                Session["Player"] = player;
                 if (player.Status.AccountStatus == "Locked")
                 {
                     Response.Redirect("~/UserPages/VerifyMail.aspx");

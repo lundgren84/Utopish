@@ -14,7 +14,7 @@ namespace Utopish_Space.UserPages
         Models.Login login = new Models.Login();
         protected void Page_Load(object sender, EventArgs e)
         {
-            acc = Session["Player"] as AccountObject;
+            acc = (AccountObject)Session["Player"] ;
         }
 
         protected void Button_Unlock_Click(object sender, EventArgs e)
