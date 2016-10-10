@@ -9,8 +9,8 @@ namespace Utopish_Space.DAL
     public class DBConnection
     {
         public SqlConnection connection = new SqlConnection();
-        private string connectionString = "";
-        private string connectionStringLogin = "";
+        private string connectionString = "Data Source = (local); Network Library = DBMSSOCN; Initial Catalog = ProjectSpace; User ID = {User name} ; password = {Password}; integrated Security = true";
+        private string connectionStringLogin = "Data Source = (local); Network Library = DBMSSOCN; Initial Catalog = ProjectSpaceUserDataBase; User ID = {User name} ; password = {Password}; integrated Security = true";
 
         public void Open()
         {
