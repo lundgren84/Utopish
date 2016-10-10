@@ -270,6 +270,7 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DBConnection.cs" />
     <Compile Include="GM.aspx.cs">
       <DependentUpon>GM.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -277,7 +278,6 @@
     <Compile Include="GM.aspx.designer.cs">
       <DependentUpon>GM.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login\UserDB_DAL.cs" />
     <Compile Include="Models\AccountObject.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

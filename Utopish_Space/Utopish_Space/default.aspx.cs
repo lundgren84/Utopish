@@ -23,11 +23,11 @@ namespace Utopish_Space
             
             connection.Open();
             // CHeck Username
-             sql = "Select count(*) From Accounts Where username = '" + tb_RegUserName.Text + "'";
+             sql = "Select count(*) From Accounts Where FirstName = '" + tb_RegUserName.Text + "'";
             SqlCommand command = new SqlCommand(sql, connection);
             int temp = Convert.ToInt32(command.ExecuteScalar().ToString());
             // Check email
-             sql = "Select count(*) From Accounts Where email = '" + tb_RegEmail.Text + "'";
+             sql = "Select count(*) From Accounts Where Email = '" + tb_RegEmail.Text + "'";
             SqlCommand command3 = new SqlCommand(sql, connection);
              int emailtemp = Convert.ToInt32(command3.ExecuteScalar().ToString());
 
@@ -52,12 +52,14 @@ namespace Utopish_Space
                     command2.Parameters.AddWithValue("@username", tb_RegUserName.Text);
                     command2.Parameters.AddWithValue("@email", tb_RegEmail.Text);
                     command2.Parameters.AddWithValue("@password", tb_RegPassword.Text);
-                    command2.ExecuteNonQuery();               
+                    command2.ExecuteNonQuery();
+                    connection.Close();
                     Response.Write("Your Registration is succsesful");
                     PanelRegistration.Visible = false;
                     PanelLoggin.Visible = true;
                     tb_Username.Text = tb_RegUserName.Text;
-                    connection.Close();
+                    //Page.RegisterStartupScript("UserMsg", "<script>alert('Sending Failed...');if(alert){ window.location='SendMail.aspx';}</script>");
+                    Page.RegisterStartupScript("UserMsg", " < script > alert('Your Registration is succsesful'); </ script >");
                 }
                 catch (Exception ex)
                 {
@@ -110,7 +112,7 @@ namespace Utopish_Space
             //{
             //     temp = Convert.ToInt32(command.ExecuteScalar().ToString());
             //}
-            PlayerObject player = new PlayerObject();
+            AccountObject player = new AccountObject();
             player._email = tb_Username.Text;
             
             Session["Player"] = player;
