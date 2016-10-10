@@ -22,5 +22,9 @@ namespace Utopish_Space.DAL
             connection.ConnectionString = connectionStringLogin;
             connection.Open();
         }
+        public void Close()
+        {
+            connection.Close();
+        }
     }
 }

@@ -7,12 +7,14 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
 using Utopish_Space.Models;
+using Utopish_Space.DAL;
+
 
 namespace Utopish_Space
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["UserDatabaseConnectionString"].ConnectionString);
+        Models.Login login = new Models.Login();
         string sql;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,40 +22,32 @@ namespace Utopish_Space
         }
         protected void ButtonRegister_Click(object sender, EventArgs e)
         {
-            
-            connection.Open();
-            // CHeck Username
-             sql = "Select count(*) From Accounts Where FirstName = '" + tb_RegUserName.Text + "'";
-            SqlCommand command = new SqlCommand(sql, connection);
-            int temp = Convert.ToInt32(command.ExecuteScalar().ToString());
+
             // Check email
-             sql = "Select count(*) From Accounts Where Email = '" + tb_RegEmail.Text + "'";
-            SqlCommand command3 = new SqlCommand(sql, connection);
-             int emailtemp = Convert.ToInt32(command3.ExecuteScalar().ToString());
+            int count = login.CheckEMail(tb_RegEmail.Text);
 
-            connection.Close();
-            if (temp > 0)
+            if (count > 0)
             {
-                Response.Write("User already Exists");
+                Response.Write("Email already in use");
 
-            }
-            else if(emailtemp > 0)
-            {
-                Response.Write("Email already Registred");
-            }
+            }         
             else
             {
                 try
                 {
+                    Security security = new Security();
+                    var salt = security.CreateSalt(10); // Generate salt
+                    var hash = security.GenerateSHA256Hash(tb_RegPassword.Text, salt); // Generate Hash
+                    AccountObject accountObject = new AccountObject();
+                    accountObject._salt = salt;
+                    accountObject._hash = hash;
+                    accountObject._email = tb_RegEmail.Text;
+                    accountObject._firstName = "";
+                    accountObject._lastName = "";
 
-                    connection.Open();
-                    sql = "Insert into Accounts (username,password,email) values (@username,@password,@email)";
-                    SqlCommand command2 = new SqlCommand(sql, connection);
-                    command2.Parameters.AddWithValue("@username", tb_RegUserName.Text);
-                    command2.Parameters.AddWithValue("@email", tb_RegEmail.Text);
-                    command2.Parameters.AddWithValue("@password", tb_RegPassword.Text);
-                    command2.ExecuteNonQuery();
-                    connection.Close();
+                    login.CreateNewAccount(accountObject);
+
+                  
                     Response.Write("Your Registration is succsesful");
                     PanelRegistration.Visible = false;
                     PanelLoggin.Visible = true;

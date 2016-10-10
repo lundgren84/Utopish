@@ -279,6 +279,8 @@
       <DependentUpon>GM.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountObject.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Security.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
