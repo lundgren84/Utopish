@@ -26,7 +26,7 @@ namespace Utopish_Space.UserPages
             }
             else
             {
-                Response.Write("your account is LOCKED!!!");
+                Response.Write("Wrong code!");
             }
         }
     }
