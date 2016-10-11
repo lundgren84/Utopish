@@ -186,6 +186,7 @@
     <Content Include="Graphic\Plantes\planet_31.png" />
     <Content Include="Graphic\Plantes\planet_32.png" />
     <Content Include="Graphic\Plantes\planet_33.png" />
+    <Content Include="Graphic\RaceLogo\logo1.png" />
     <Content Include="Graphic\StarSky\space_bk.png" />
     <Content Include="Graphic\StarSky\space_dn.png" />
     <Content Include="Graphic\StarSky\space_ft.png" />
@@ -286,6 +287,7 @@
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\MailSender.cs" />
     <Compile Include="Models\PlayerObject.cs" />
+    <Compile Include="Models\RaceObject.cs" />
     <Compile Include="Models\Security.cs" />
     <Compile Include="Models\StatusObject.cs" />
     <Compile Include="Models\TheGame.cs" />
