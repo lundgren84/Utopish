@@ -28,7 +28,7 @@ namespace Utopish_Space.UserPages
                     TheGame theGame = new TheGame();
                     PlayerObject playerObject = theGame.CreateNewPlayerObject(account);
                     Session["Player"] = playerObject;
-                    Response.Redirect("~/UserPages/Overview.aspx");
+                    Response.Redirect("~/UserPages/CreatePlayer.aspx");
                 }
             }
             else
