@@ -118,6 +118,28 @@
                     </tr>
                     <tr>
                         <td>
+                            <%-- Math Label --%>
+                            <asp:Label ID="Label_Math" CssClass="LogginLabel" ForeColor="White" runat="server" Text="2+2 ="></asp:Label>
+                            <asp:Label ID="Label_MathError" CssClass="LogginLabel" ForeColor="Red" runat="server" Text=""></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <%-- Math Awnser --%>
+                              <asp:TextBox ID="TextBox_MathAwnser" placeholder="Im not a robot" Font-Names="Consolas" Height="40px" Width="300px" CssClass="LogginLabel" runat="server"></asp:TextBox>
+                        </td>                  
+                    </tr>
+                    <tr>
+                        <td>
+                            <%-- Game rules --%>
+                            <asp:Label ID="Label6" Font-Names="Consolas" ForeColor="White" runat="server" Text="I Accept all"></asp:Label>
+                            <asp:HyperLink ID="HyperLink1" runat="server">Game Rules</asp:HyperLink>
+                            <asp:CheckBox ID="CheckBox_GameRules" runat="server" />   
+                             <asp:Label ID="Label_GameRuleError" CssClass="LogginLabel" ForeColor="Red" runat="server" Text=""></asp:Label>        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <asp:Button ID="ButtonRegister" CssClass="logginButton" runat="server" Text="Register" Font-Names="Consolas" Font-Size="Medium" Height="50px" Width="150px" OnClick="ButtonRegister_Click" />
                         </td>
                     </tr>

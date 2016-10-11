@@ -237,6 +237,7 @@
     <Content Include="UserPages\VerifyMail.aspx" />
     <Content Include="Utopish\LogginBackground.css" />
     <Content Include="Utopish\LogginBackground.js" />
+    <Content Include="Utopish\TEST.js" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />

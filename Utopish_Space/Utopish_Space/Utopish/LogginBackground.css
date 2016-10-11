@@ -48,17 +48,17 @@
     font-size: 200%;
 }
 
-#PanelLoggin, #PanelRegistration, #PanelVerify {
+/*#PanelLoggin, #PanelRegistration, #PanelVerify {
     z-index: 100;
     position: absolute;
     top: 20%;
-    left: 20%;
-}
+    left: 30%;
+}*/
 .StartPanel{
         z-index: 100;
     position: absolute;
     top: 20%;
-    left: 20%;
+    left: 50%;
 }
 h1 {
     text-align: center;

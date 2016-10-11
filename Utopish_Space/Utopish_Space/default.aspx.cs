@@ -15,59 +15,114 @@ namespace Utopish_Space
     public partial class WebForm1 : System.Web.UI.Page
     {
         Models.Login login = new Models.Login();
+        int mathAwnser;
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (IsPostBack)
+            {
+                mathAwnser = GetMathAwner(Label_Math.Text);
+            }
+            else
+            {
+                Label_Math.Text = getNewMath() + " =";
+            }
+          
+
         }
+
+        private int GetMathAwner(string text)
+        {
+            char one = text[0];
+            char two = text[2];
+            int nr1 =int.Parse(one.ToString());
+            int nr2 = int.Parse(two.ToString());
+            int result = nr1 + nr2;
+                return result;
+        }
+
+        private string getNewMath()
+        {
+            string result = "";
+            Random random = new Random();
+            int nr1 = random.Next(6);
+            int nr2 = random.Next(5);
+            mathAwnser = nr1 + nr2;
+            result = nr1.ToString() + "+" + nr2.ToString();
+            return result;
+        }
+
         protected void ButtonRegister_Click(object sender, EventArgs e)
         {
             // Check email
             int count = login.CheckEMail(tb_RegEmail.Text);
+            int testMath;
+            int.TryParse(TextBox_MathAwnser.Text, out testMath);
 
-            if (count > 0)
+            if (mathAwnser == testMath && CheckBox_GameRules.Checked)
             {
-                Response.Write("Email already in use");
-                Label_EMailInUse.Text = "Email already in use";
+                Label_MathError.Text = "";
+                Label_GameRuleError.Text = "";
+                if (count > 0)
+                {
+                    Response.Write("Email already in use");
+                    Label_EMailInUse.Text = "Email already in use";
+                }
+                else
+                {
+                    try
+                    {
+                        Security security = new Security();
+                        var salt = security.CreateSalt(10); // Generate salt
+                        var hash = security.GenerateSHA256Hash(tb_RegPassword.Text, salt); // Generate Hash
+                        AccountObject accountObject = new AccountObject();
+                        accountObject._salt = salt;
+                        accountObject._hash = hash;
+                        accountObject._email = tb_RegEmail.Text;
+                        accountObject._firstName = "";
+                        accountObject._lastName = "";
+
+                        login.CreateNewAccount(accountObject);
+
+                        MailSender mailSender = new MailSender();
+                        string mailContent = $@"Your Code is : {accountObject.Status.ActivationCode}";
+                        mailSender.SendMailTo(accountObject._email, mailContent);
+                        Response.Write("Your Registration is succsesful");
+                        PanelRegistration.Visible = false;
+                        PanelLoggin.Visible = false;
+                        Panel_RegCompleated.Visible = true;
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Response.Write("Error: " + ex.Message);
+                    }
+                }
             }
             else
-            {               
-                try
+            {
+                Label_Math.Text = getNewMath() + " =";
+                if (mathAwnser != testMath)
                 {
-                    Security security = new Security();
-                    var salt = security.CreateSalt(10); // Generate salt
-                    var hash = security.GenerateSHA256Hash(tb_RegPassword.Text, salt); // Generate Hash
-                    AccountObject accountObject = new AccountObject();
-                    accountObject._salt = salt;
-                    accountObject._hash = hash;
-                    accountObject._email = tb_RegEmail.Text;
-                    accountObject._firstName = "";
-                    accountObject._lastName = "";
-
-                    login.CreateNewAccount(accountObject);
-
-                    MailSender mailSender = new MailSender();
-                    string mailContent = $@"Your Code is : {accountObject.Status.ActivationCode}";
-                    mailSender.SendMailTo(accountObject._email, mailContent);
-                    Response.Write("Your Registration is succsesful");
-                    PanelRegistration.Visible = false;
-                    PanelLoggin.Visible = false;
-                    Panel_RegCompleated.Visible = true;
-
-
+                    Label_MathError.Text = "Wrong!";
+                    Label_Math.Text = getNewMath() + " =";
                 }
-                catch (Exception ex)
+                if(!CheckBox_GameRules.Checked)
                 {
-                    Response.Write("Error: " + ex.Message);
-                }
+                    Label_GameRuleError.Text = "Required";
+                }          
             }
-
         }
         protected void ButtonChangeLogin_Click(object sender, EventArgs e)
         {
             Label_EMailInUse.Text = "";
+            Label_MathError.Text = "";
+            Label_GameRuleError.Text = "";
             if (ButtonChangeLoggin.Text.Contains("Register"))
             {
+            
                 ButtonChangeLoggin.Text = "Login";
                 PanelLoggin.Visible = false;
                 PanelRegistration.Visible = true;
@@ -96,8 +151,8 @@ namespace Utopish_Space
                 }
                 else if (player.Status.AccountStatus == "Open")
                 {
-                  
-                  
+
+
                     Response.Redirect("~/UserPages/Overview.aspx");
                 }
             }
@@ -111,6 +166,6 @@ namespace Utopish_Space
 
         }
 
- 
+
     }
 }
