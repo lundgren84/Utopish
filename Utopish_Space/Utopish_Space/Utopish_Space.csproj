@@ -229,6 +229,7 @@
     <Content Include="Style\Overview.css" />
     <Content Include="Style\Scanner.css" />
     <Content Include="UserPages\Construction.aspx" />
+    <Content Include="UserPages\GameRules.aspx" />
     <Content Include="UserPages\Hangar.aspx" />
     <Content Include="UserPages\Overview.aspx" />
     <Content Include="UserPages\Scanner.aspx" />
@@ -320,6 +321,13 @@
     </Compile>
     <Compile Include="UserPages\Construction.aspx.designer.cs">
       <DependentUpon>Construction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPages\GameRules.aspx.cs">
+      <DependentUpon>GameRules.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPages\GameRules.aspx.designer.cs">
+      <DependentUpon>GameRules.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserPages\Hangar.aspx.cs">
       <DependentUpon>Hangar.aspx</DependentUpon>

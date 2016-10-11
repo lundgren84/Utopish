@@ -133,7 +133,7 @@
                         <td>
                             <%-- Game rules --%>
                             <asp:Label ID="Label6" Font-Names="Consolas" ForeColor="White" runat="server" Text="I Accept all"></asp:Label>
-                            <asp:HyperLink ID="HyperLink1" runat="server">Game Rules</asp:HyperLink>
+                            <asp:HyperLink Target="_blank" NavigateUrl="~/UserPages/GameRules.aspx" ID="HyperLink1" runat="server">Game Rules</asp:HyperLink>
                             <asp:CheckBox ID="CheckBox_GameRules" runat="server" />   
                              <asp:Label ID="Label_GameRuleError" CssClass="LogginLabel" ForeColor="Red" runat="server" Text=""></asp:Label>        
                         </td>
