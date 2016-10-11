@@ -23,7 +23,14 @@
             <%-- START --%>
             <asp:Panel ID="Panel_CreatePlayer" runat="server">
                 <div class="container">
-                     <div class="row"><h1>Get Started</h1></div>
+                     <div class="row">
+                         <h1>Get Started</h1>
+                     </div>
+                     <div class="row">
+                        <div class="col-md-4" runat="server" id="Div1"><asp:Label ID="Label1" runat="server" Text="Empire Name:"></asp:Label></div>
+                        <div class="col-md-4" runat="server" id="Div2">2</div>
+                        <div class="col-md-4" runat="server" id="Div3">3</div>
+                    </div>
                     <div class="row">
                         <div class="col-md-4" runat="server" id="Col1">1</div>
                         <div class="col-md-4" runat="server" id="Col2">2</div>
