@@ -23,6 +23,11 @@
             <%-- LoginPanel--%>
             <asp:Panel ID="PanelLoggin" CssClass="StartPanel" runat="server">
                 <table>
+                      <tr>
+                        <td>
+                            <asp:Label ID="Label_AccountLocked" runat="server" CssClass="LogginLabel" Text="" ForeColor="Red"></asp:Label><br />
+                        </td>
+                    </tr>
                     <tr>
                         <td>
                             <asp:Label ID="Label1" runat="server" CssClass="LogginLabel" Text="User name" ForeColor="White"></asp:Label><br />

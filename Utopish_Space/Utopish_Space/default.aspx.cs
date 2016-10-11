@@ -120,6 +120,7 @@ namespace Utopish_Space
             Label_EMailInUse.Text = "";
             Label_MathError.Text = "";
             Label_GameRuleError.Text = "";
+            Label_AccountLocked.Text = "";
             if (ButtonChangeLoggin.Text.Contains("Register"))
             {
             
@@ -139,21 +140,27 @@ namespace Utopish_Space
 
         protected void ButtonLogin_Click(object sender, EventArgs e)
         {
+            Label_AccountLocked.Text = "";
+            AccountObject Account = login.AccountLogin(tb_UserEmail.Text, tb_Password.Text);
 
-            AccountObject player = login.AccountLogin(tb_UserEmail.Text, tb_Password.Text);
-
-            if (player != null)
+            if (Account != null)
             {
-                Session["Player"] = player;
-                if (player.Status.AccountStatus == "VerifyEmail")
+                Session["Account"] = Account;
+                if (Account.Status.AccountStatus == "VerifyEmail")
                 {
                     Response.Redirect("~/UserPages/VerifyMail.aspx");
                 }
-                else if (player.Status.AccountStatus == "Open")
+                else if (Account.Status.AccountStatus == "Open")
                 {
-
+                    TheGame theGame = new TheGame();
+                    PlayerObject playerObject = theGame.CreateNewPlayerObject(Account);
+                    Session["Player"] = playerObject;
 
                     Response.Redirect("~/UserPages/Overview.aspx");
+                }
+                else if (Account.Status.AccountStatus == "Locked")
+                {
+                    Label_AccountLocked.Text = "Account is Locked!";
                 }
             }
             else
