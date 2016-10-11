@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 
@@ -31,5 +32,6 @@ namespace Utopish_Space.Models
         public string RaceName { get; set; }
         public string History { get; set; }
         public List<Manipulators> ManipulatorList { get; set; }
+        public Image img { get; set; }
     }
 }
