@@ -54,7 +54,12 @@
     top: 20%;
     left: 20%;
 }
-
+.StartPanel{
+        z-index: 100;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
 h1 {
     text-align: center;
     color: #FFF !important;

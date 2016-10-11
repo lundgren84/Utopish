@@ -21,7 +21,7 @@
                 <img src="Graphic/Plantes/planet_21.png" style="height: 496px; width: 495px" />
             </div>
             <%-- LoginPanel--%>
-            <asp:Panel ID="PanelLoggin" runat="server">
+            <asp:Panel ID="PanelLoggin" CssClass="StartPanel" runat="server">
                 <table>
                     <tr>
                         <td>
@@ -63,8 +63,13 @@
 
             </asp:Panel>
             <%--RegistrationPanel--%>
-            <asp:Panel ID="PanelRegistration" runat="server" Visible="False">
-                <table>       
+            <asp:Panel ID="PanelRegistration" CssClass="StartPanel" runat="server" Visible="False">
+                <table>  
+                     <tr>
+                        <td>
+                            <asp:Label ID="Label_EMailInUse" runat="server" CssClass="LogginLabel" Text="" ForeColor="Red"></asp:Label><br />
+                        </td>
+                    </tr>     
                     <tr>
                         <td>
                             <asp:Label ID="Label7" runat="server" CssClass="LogginLabel" Text="Email" ForeColor="White"></asp:Label><br />
@@ -119,6 +124,23 @@
                 </table>
 
             </asp:Panel>
+            <%-- Registration compleated --%>
+            <asp:Panel ID="Panel_RegCompleated" CssClass="StartPanel" runat="server" Visible="False">
+                <table>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Label3" runat="server" Text="You Account is created!" CssClass="LogginLabel" ForeColor="White"></asp:Label>
+                        </td>
+                    </tr>
+                      <tr>
+                        <td>
+                            <asp:Label ID="Label4" runat="server" Text="A activation code is sended to you mail!" CssClass="LogginLabel" ForeColor="White"></asp:Label>
+                        </td>
+                    </tr>                 
+                </table>
+
+            </asp:Panel>
+            <%-- END --%>
         </form>
         <div id="logginPlanet2">
             <img src="Graphic/Plantes/planet_18.png" />

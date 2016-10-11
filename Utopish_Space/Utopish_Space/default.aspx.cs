@@ -28,9 +28,10 @@ namespace Utopish_Space
             if (count > 0)
             {
                 Response.Write("Email already in use");
+                Label_EMailInUse.Text = "Email already in use";
             }
             else
-            {
+            {               
                 try
                 {
                     Security security = new Security();
@@ -50,7 +51,8 @@ namespace Utopish_Space
                     mailSender.SendMailTo(accountObject._email, mailContent);
                     Response.Write("Your Registration is succsesful");
                     PanelRegistration.Visible = false;
-                    PanelLoggin.Visible = true;
+                    PanelLoggin.Visible = false;
+                    Panel_RegCompleated.Visible = true;
 
 
                 }
@@ -63,17 +65,20 @@ namespace Utopish_Space
         }
         protected void ButtonChangeLogin_Click(object sender, EventArgs e)
         {
+            Label_EMailInUse.Text = "";
             if (ButtonChangeLoggin.Text.Contains("Register"))
             {
                 ButtonChangeLoggin.Text = "Login";
                 PanelLoggin.Visible = false;
                 PanelRegistration.Visible = true;
+                Panel_RegCompleated.Visible = false;
             }
             else
             {
                 ButtonChangeLoggin.Text = "Register";
                 PanelLoggin.Visible = true;
                 PanelRegistration.Visible = false;
+                Panel_RegCompleated.Visible = false;
             }
         }
 
@@ -105,5 +110,7 @@ namespace Utopish_Space
 
 
         }
+
+ 
     }
 }

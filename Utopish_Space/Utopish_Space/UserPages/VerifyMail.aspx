@@ -20,7 +20,7 @@
             <div id="logginPlanet1">
                 <img src="../Graphic/Plantes/planet_21.png" style="height: 496px; width: 495px" />
             </div>
-            <asp:Panel ID="PanelVerify"  runat="server">
+            <asp:Panel ID="PanelVerify" CssClass="StartPanel"  runat="server">
                <table>
                    <tr>
                        <td>
