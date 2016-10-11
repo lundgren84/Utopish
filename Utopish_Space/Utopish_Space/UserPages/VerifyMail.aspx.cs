@@ -23,11 +23,7 @@ namespace Utopish_Space.UserPages
             {
                 if (account.Status.AccountStatus == "VerifyEmail")
                 {
-                    login.ChangeAccountStatus("Open", account._statusRefID);
-                 
-                    TheGame theGame = new TheGame();
-                    PlayerObject playerObject = theGame.CreateNewPlayerObject(account);
-                    Session["Player"] = playerObject;
+                    login.ChangeAccountStatus("CreatePlayer", account._statusRefID);           
                     Response.Redirect("~/UserPages/CreatePlayer.aspx");
                 }
             }

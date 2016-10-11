@@ -142,7 +142,7 @@ namespace Utopish_Space
         {
             Label_AccountLocked.Text = "";
             AccountObject Account = login.AccountLogin(tb_UserEmail.Text, tb_Password.Text);
-
+            TheGame theGame = new TheGame();
             if (Account != null)
             {
                 Session["Account"] = Account;
@@ -152,11 +152,15 @@ namespace Utopish_Space
                 }
                 else if (Account.Status.AccountStatus == "Open")
                 {
-                    TheGame theGame = new TheGame();
+                 
                     PlayerObject playerObject = theGame.CreateNewPlayerObject(Account);
                     Session["Player"] = playerObject;
 
                     Response.Redirect("~/UserPages/Overview.aspx");
+                }
+                else if (Account.Status.AccountStatus == "CreatePlayer")
+                {
+                    Response.Redirect("~/UserPages/CreatePlayer.aspx");
                 }
                 else if (Account.Status.AccountStatus == "Locked")
                 {
