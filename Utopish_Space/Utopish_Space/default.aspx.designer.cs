@@ -247,15 +247,6 @@ namespace Utopish_Space {
         protected global::System.Web.UI.WebControls.Label Label_Math;
         
         /// <summary>
-        /// Label_MathError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_MathError;
-        
-        /// <summary>
         /// TextBox_MathAwnser control.
         /// </summary>
         /// <remarks>
@@ -263,6 +254,15 @@ namespace Utopish_Space {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox_MathAwnser;
+        
+        /// <summary>
+        /// Label_MathError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_MathError;
         
         /// <summary>
         /// Label6 control.
