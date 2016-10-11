@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace UpdateProgram
 {
     class DALResources
     {
+        SqlConnection connection = new SqlConnection();
         public void CalculateAndUpdatePlayerResources()
         {
             string sql =
@@ -32,7 +34,33 @@ namespace UpdateProgram
         }
         public void DefineTheHourlyUpdate(int PlayerID)
         {
+            string sql = $@"Select 
+                         PlayerPlanet.Size, 
+                         from Player
+                         INNER JOIN Player ON PlayerPlanet.PlayerID = Player.PlayerID
+                         WHERE PlayerID = {PlayerID}";
+
+            connection.ConnectionString = @"Data source=217.210.151.153,1433; Network Library=DBMSSOCN; Initial Catalog=Webbshop; User ID = guest; Password=temppass22;";
+            using (connection)
+            {
+                SqlCommand cmd = new SqlCommand(sql, connection);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    reader.Read();
+                }
+            }
+            sql =        $@"Select 
+                         BuildingName, 
+                         Quantity
+                         FROM PlayerBuildings
+                         INNER JOIN Player ON PlayerBuildings.PlayerID = Player.PlayerID
+                         WHERE PlayerID = {PlayerID}
+                         AND WHERE BuildingName = Banks";
 
         }
+
+
+    }
     }
 }
