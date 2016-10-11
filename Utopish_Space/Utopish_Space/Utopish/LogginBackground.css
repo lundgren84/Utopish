@@ -60,6 +60,9 @@
     top: 20%;
     left: 50%;
 }
+#Panel_RegCompleated{
+    left:30%;
+}
 h1 {
     text-align: center;
     color: #FFF !important;
