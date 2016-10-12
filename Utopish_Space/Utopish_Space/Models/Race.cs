@@ -9,7 +9,7 @@ namespace Utopish_Space.Models
     {
         internal List<RaceObject> GetAllRaces()
         {
-            throw new NotImplementedException();
+            return new List<RaceObject>();
         }
     }
 }

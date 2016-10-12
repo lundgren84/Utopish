@@ -23,12 +23,24 @@ namespace Utopish_Space.UserPages
 
         private void FillRaceDiv(List<RaceObject> raceList)
         {
-            
-            foreach (var item in raceList)
+
+            if (raceList != null)
             {
-                sb.Append($@"");
+                foreach (var item in raceList)
+                {
+                    sb.Append($@" <div class='col - sm - 6 col - md - 4'>
+                                   <div class='thumbnail'>
+                                     <img src = '...' alt='...'>
+                                     <div class='caption'>
+                                       <h3>Thumbnail label</h3>
+                                       <p>...</p>
+                                       <p><a href = '#' class='btn btn-primary' role='button'>Button</a> <a href = '#' class='btn btn-default' role='button'>Button</a></p>
+                                     </div>
+                                   </div>
+                                 </div>");
+                }
+                FillRaces.InnerHtml = sb.ToString();
             }
-            FillRaces.InnerHtml = sb.ToString();
         }
     }
 }
