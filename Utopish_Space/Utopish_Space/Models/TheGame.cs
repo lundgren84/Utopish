@@ -9,7 +9,7 @@ namespace Utopish_Space.Models
     {
         internal PlayerObject CreateNewPlayerObject(AccountObject acc)
         {
-            throw new NotImplementedException();
+            return new PlayerObject();
         }
     }
 }

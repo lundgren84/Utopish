@@ -151,8 +151,7 @@ namespace Utopish_Space
                     Response.Redirect("~/UserPages/VerifyMail.aspx");
                 }
                 else if (Account.Status.AccountStatus == "Open")
-                {
-                 
+                {        
                     PlayerObject playerObject = theGame.CreateNewPlayerObject(Account);
                     Session["Player"] = playerObject;
 
