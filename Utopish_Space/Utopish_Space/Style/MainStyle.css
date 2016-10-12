@@ -9,7 +9,9 @@ html {
 /*--------------------------------ALL PANEL----------------------------*/
 .MainPanel {
     border: solid 5px;
-    border-color:darkgrey
+    border-color:darkgrey;
+    background-color: rgba(0,0,0,.6)
+        
 }
 .TopPanel {
     height: 100px;

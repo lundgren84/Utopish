@@ -28,8 +28,6 @@ namespace Utopish_Space
             {
                 Label_Math.Text = getNewMath() + " =";
             }
-          
-
         }
 
         private int GetMathAwner(string text)
