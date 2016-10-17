@@ -46,6 +46,7 @@ namespace Utopish_Space.Models
             {           
                 RaceObject race = new RaceObject();
                 race.raceName = (RaceName)Enum.Parse(typeof(RaceName), item);
+                race = race.GetRace(race.raceName);
                 result.Add(race);
             }
             return result;

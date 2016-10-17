@@ -40,13 +40,13 @@ namespace Utopish_Space.Models
     {
         public RaceName raceName { get; set; }
         public string History { get; set; }
-        public Dictionary<Manipulators,int> ManipulatorList { get; set; }
+        public Dictionary<Manipulators, int> ManipulatorList = new Dictionary<Manipulators, int>();
         public Image img { get; set; }
 
 
         public RaceObject GetRace(RaceName raceName)
         {
-            RaceObject rightRace;
+            RaceObject rightRace = new RaceObject();
             switch (raceName)
             {
                 case RaceName.Human:
@@ -70,13 +70,14 @@ namespace Utopish_Space.Models
                 default:
                     break;
             }
-            return new RaceObject();
+            return rightRace;
         }
 
         private RaceObject GetFenixian()
         {
             RaceObject raceObject = new RaceObject();
             raceObject.History = "";
+            raceObject.raceName = RaceName.Fenixian;
             raceObject.img = null;
 
             //Attributes uniqe to the race
@@ -91,6 +92,7 @@ namespace Utopish_Space.Models
         {
             RaceObject raceObject = new RaceObject();
             raceObject.History = "";
+            raceObject.raceName = RaceName.Rogan;
             raceObject.img = null;
 
             //Attributes uniqe to the race
@@ -105,6 +107,7 @@ namespace Utopish_Space.Models
         {
             RaceObject raceObject = new RaceObject();
             raceObject.History = "";
+            raceObject.raceName = RaceName.Raptor;
             raceObject.img = null;
 
             //Attributes uniqe to the race
@@ -119,6 +122,7 @@ namespace Utopish_Space.Models
         {
             RaceObject raceObject = new RaceObject();
             raceObject.History = "";
+            raceObject.raceName = RaceName.Mixxal;
             raceObject.img = null;
 
             //Attributes uniqe to the race
@@ -133,6 +137,7 @@ namespace Utopish_Space.Models
         {
             RaceObject raceObject = new RaceObject();
             raceObject.History = "";
+            raceObject.raceName = RaceName.Centian;
             raceObject.img = null;
 
             //Attributes uniqe to the race
@@ -147,6 +152,7 @@ namespace Utopish_Space.Models
         {
             RaceObject raceObject = new RaceObject();
             raceObject.History = "";
+            raceObject.raceName = RaceName.Human;
             raceObject.img = null;
 
             //Attributes uniqe to the race
