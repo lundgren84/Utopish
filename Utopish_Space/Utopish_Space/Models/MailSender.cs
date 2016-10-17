@@ -16,7 +16,7 @@ namespace Utopish_Space.Models
             try
             {
                 MailMessage o = new MailMessage("lundgren84@hotmail.se", $"{email}", "Validate Email", $"{MailContent}");
-                NetworkCredential netCred = new NetworkCredential("lundgren84@hotmail.se", "olleolle12");
+                NetworkCredential netCred = new NetworkCredential("Mail@hotmail.se", "Password");
                 SmtpClient smtpobj = new SmtpClient("smtp.live.com", 587);
                 smtpobj.EnableSsl = true;
                 smtpobj.Credentials = netCred;
