@@ -228,6 +228,7 @@
     <Content Include="Style\MainStyle.css" />
     <Content Include="Style\Menu.css" />
     <Content Include="Style\Overview.css" />
+    <Content Include="Style\PlayerCreation.css" />
     <Content Include="Style\Scanner.css" />
     <Content Include="UserPages\Construction.aspx" />
     <Content Include="UserPages\CreatePlayer.aspx" />

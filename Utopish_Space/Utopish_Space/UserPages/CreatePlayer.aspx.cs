@@ -50,7 +50,7 @@ namespace Utopish_Space.UserPages
                     }
                     
 
-                    sb.Append($@" <div class='col-sm-6 col-md-4' style='margin-bottom:2%'>
+                    sb.Append($@" <div class='col-sm-6 col-md-4 raceBlock' style='margin-bottom:2%'>
                                    <div class='thumbnail' style='background-color:black'>
                                      <img src = '../Graphic/RaceLogo/logo1.png' alt='Race img'>
                                      <div class='caption'>

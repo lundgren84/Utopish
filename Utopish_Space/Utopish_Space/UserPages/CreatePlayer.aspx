@@ -10,6 +10,7 @@
     <link href="../Content/bootstrap.css" rel="stylesheet" />
     <link href="../Utopish/LogginBackground.css" rel="stylesheet" />
     <script src="../Utopish/LogginBackground.js"></script>
+    <link href="../Style/PlayerCreation.css" rel="stylesheet" />
 </head>
    
 <body>
@@ -32,6 +33,10 @@
                     <%-- SELECT RACE --%>
                     <div class="row" runat="server" id="FillRaces">
              
+                    </div>
+                    <%-- CONFIRM --%>
+                     <div class="row" runat="server" id="Div2">                 
+                         <asp:Button ID="Button1" CssClass="logginButton" runat="server" Font-Names="Consolas" Font-Size="Medium" Height="50px" Width="150px" Text="Continue" />
                     </div>
                 </div>
             </asp:Panel>
