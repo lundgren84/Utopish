@@ -48,7 +48,7 @@ namespace Utopish_Space.UserPages
                         if (counter == 5) { skill5 = skill.Key + " = " + skill.Value + " %"; }
 
                     }
-
+                    
 
                     sb.Append($@" <div class='col-sm-6 col-md-4' style='margin-bottom:2%'>
                                    <div class='thumbnail' style='background-color:black'>
@@ -56,7 +56,7 @@ namespace Utopish_Space.UserPages
                                      <div class='caption'>
                                        <h3>{item.raceName}</h3>
                                        <p>{skill1}</p> <p>{skill2}</p> <p>{skill3}</p> <p>{skill4}</p> <p>{skill5}</p>
-                                      <a href = '#' class='btn btn-primary' role='button'>Info</a> <a href = '#' class='btn btn-default' role='button'>Select</a></p>
+                                      <a href = '#' class='btn btn-primary logginButton' role='button'>Info</a> <a href = '#' class='btn btn-default logginButton' role='button'>Select</a></p>
                                      </div>
                                    </div>
                                  </div>");

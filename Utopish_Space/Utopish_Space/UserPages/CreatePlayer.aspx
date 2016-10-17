@@ -23,10 +23,10 @@
                         <h1>Get Started</h1>
                     </div>
                     <%-- SELECT Name --%>
-                    <div class="row">
+                    <div class="row" style="margin-bottom:5%">
                         <div class="col-md-12" runat="server" id="Div1">
-                            <asp:Label ID="Label1" runat="server" Text="Empire Name:"></asp:Label>
-                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                            <asp:Label ID="Label1" CssClass="LogginLabel" runat="server" Text="Empire Name:"></asp:Label>
+                            <asp:TextBox ID="TextBox1" CssClass="LogginLabel" runat="server"></asp:TextBox>
                         </div>
                     </div>
                     <%-- SELECT RACE --%>
