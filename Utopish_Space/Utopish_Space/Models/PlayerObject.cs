@@ -15,6 +15,7 @@ namespace Utopish_Space.Models
         public int Level { get; set; }
         public int Experience { get; set; }
         public bool DonatorStatus { get; set; }
+        public int RaceID { get; set; }
         public RaceObject RaceObject { get; set; }
         public PlayerObject()
         {
