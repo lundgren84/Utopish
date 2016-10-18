@@ -10,20 +10,29 @@ namespace Utopish_Space.UserPages
 {
     public partial class VerifyMail : System.Web.UI.Page
     {
-        AccountObject account = new AccountObject();
+        AccountObject accountObject = new AccountObject();
+        Account account = new Account();
         Models.Login login = new Models.Login();
         protected void Page_Load(object sender, EventArgs e)
         {
-            account = (AccountObject)Session["Account"];
+            if (Session["Account"] == null)
+            {
+                Response.Redirect("~/default.aspx");
+            }
+            accountObject = (AccountObject)Session["Account"];
+            if ((account.CheckAccountStatus(accountObject._accountID)) != AccountStatus.VerifyEmail)
+            {
+                Response.Redirect("~/default.aspx");
+            }
         }
 
         protected void Button_Unlock_Click(object sender, EventArgs e)
         {
-            if (TextBox_ActivationCode.Text == account.Status.ActivationCode)
+            if (TextBox_ActivationCode.Text == accountObject.Status.ActivationCode)
             {
-                if (account.Status.accountStatus == AccountStatus.VerifyEmail)
+                if (accountObject.Status.accountStatus == AccountStatus.VerifyEmail)
                 {
-                    login.ChangeAccountStatus(AccountStatus.CreatePlayer, account._statusRefID);           
+                    login.ChangeAccountStatus(AccountStatus.CreatePlayer, accountObject._statusRefID);           
                     Response.Redirect("~/UserPages/CreatePlayer.aspx");
                 }
             }
