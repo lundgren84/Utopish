@@ -29,7 +29,7 @@ namespace Utopish_Space.Models
                             RaceObject newRace = new RaceObject();
                             Race race = new Race();                  
                             newRace.raceName = (RaceName)Enum.Parse(typeof(RaceName), reader["RaceName"].ToString());
-                            newRace = race.GetRace(newRace.raceName);
+                            newRace = race.GetRace(newRace);
                             newRace.RaceID = int.Parse(reader["RaceID"].ToString());
                             theRaceObjects.Add(newRace);
                         }
@@ -51,10 +51,11 @@ namespace Utopish_Space.Models
         {
             throw new NotImplementedException();
         }
-        public RaceObject GetRace(RaceName raceName)
+        public RaceObject GetRace(RaceObject rightRace)
         {
-            RaceObject rightRace = new RaceObject();
-            switch (raceName)
+
+
+            switch (rightRace.raceName)
             {
                 case RaceName.Human:
                     rightRace = GetHuman();
@@ -77,6 +78,7 @@ namespace Utopish_Space.Models
                 default:
                     break;
             }
+            //  rightRace.RaceID = GetRaceID(rightRace.raceName.ToString());
             return rightRace;
         }
 

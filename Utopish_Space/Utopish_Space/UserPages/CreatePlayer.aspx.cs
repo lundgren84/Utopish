@@ -11,13 +11,24 @@ namespace Utopish_Space.UserPages
 {
     public partial class CreatePlayer : System.Web.UI.Page
     {
-        AccountObject account = new AccountObject();
+        AccountObject accountObject = new AccountObject();
+        Account account = new Account();
         StringBuilder sb = new StringBuilder();
+        List<RaceObject> raceList;
         Race race = new Race();
         protected void Page_Load(object sender, EventArgs e)
         {
-            account = (AccountObject)Session["Account"];
-            List<RaceObject> raceList = race.GetAllRacesFromDB();
+            if (Session["Account"] == null)
+            {
+                Response.Redirect("~/default.aspx");
+            }
+            accountObject = (AccountObject)Session["Account"];
+            if ((account.CheckAccountStatus(accountObject._accountID)) != AccountStatus.CreatePlayer)
+            {
+                Response.Redirect("~/default.aspx");
+            }
+
+            raceList = race.GetAllRacesFromDB();
             FillRaceDiv(raceList);
             FillDropDown(raceList);
         }
@@ -84,20 +95,35 @@ namespace Utopish_Space.UserPages
                 PlayerObject playerObject = new PlayerObject();
                 //Set Name
                 playerObject.EmpireName = TextBox_EmpireName.Text;
-                //Set Race     
-                RaceName rn = (RaceName)Enum.Parse(typeof(RaceName), DropDownList_Races.SelectedIndex.ToString(), true);
-                playerObject.RaceObject = race.GetRace(rn);        
+                //Set Race        
+                playerObject.RaceObject.raceName = (RaceName)Enum.Parse(typeof(RaceName), DropDownList_Races.SelectedIndex.ToString(), true);
+                playerObject.RaceObject = race.GetRace(playerObject.RaceObject);
+                playerObject.RaceObject.RaceID = GetIDFromList(playerObject.RaceObject);
                 //Set AccountID
 
-                playerObject.AccountID = account._accountID;
+                playerObject.AccountID = accountObject._accountID;
                 //Create the Player
                 player.CreateNewPlayer(playerObject);
                 //Start Game
                 Session["Player"] = playerObject;
                 Models.Login login = new Models.Login();
-                login.ChangeAccountStatus(AccountStatus.Open, account._statusRefID);
+                login.ChangeAccountStatus(AccountStatus.Open, accountObject._statusRefID);
                 Response.Redirect("~/UserPages/Overview.aspx");
             }
+        }
+        private int GetIDFromList(RaceObject raceObject)
+        {
+            int result = 0;
+            foreach (var item in raceList)
+            {
+                if (item.raceName == raceObject.raceName)
+                {
+                    result = item.RaceID;
+                    break;
+                }
+            }
+
+            return result;
         }
         protected void Button_RaceHistory_Click(object sender, EventArgs e)
         {
