@@ -28,7 +28,7 @@ namespace Utopish_Space.UserPages
             {
                 DropDownList_Races.Items.Add(item.raceName.ToString());
             }
-         
+
         }
 
         private void FillRaceDiv(List<RaceObject> raceList)
@@ -38,7 +38,7 @@ namespace Utopish_Space.UserPages
             {
                 foreach (var item in raceList)
                 {
-           
+
                     string skill1 = "";
                     string skill2 = "";
                     string skill3 = "";
@@ -58,7 +58,7 @@ namespace Utopish_Space.UserPages
                         if (counter == 5) { skill5 = skill.Key + " = " + skill.Value + " %"; }
 
                     }
-                    
+
 
                     sb.Append($@" <div class='col-sm-6 col-md-4 raceBlock' style='margin-bottom:2%'>
                                    <div class='thumbnail' style='background-color:black'>
@@ -78,15 +78,27 @@ namespace Utopish_Space.UserPages
 
         protected void Button_ConfirmPlayer_Click(object sender, EventArgs e)
         {
-            Player player = new Player();
-            PlayerObject playerObject = new PlayerObject();
-   
-            player.CreateNewPlayer(account, playerObject);
+            if (string.IsNullOrWhiteSpace(TextBox_EmpireName.Text))
+            {
+                Player player = new Player();
+                PlayerObject playerObject = new PlayerObject();
+                //Set Name
+                playerObject.EmpireName = TextBox_EmpireName.Text;
+                //Set Race
+                playerObject.RaceObject = playerObject.RaceObject.GetRace((RaceName)Enum.Parse(typeof(RaceName), DropDownList_Races.SelectedIndex.ToString(), true));
+                //Set AccountID
+                playerObject.AccountID = account._accountID;
+                //Create the Player
+                player.CreateNewPlayer(playerObject);
+                //Start Game
+                Session["Player"] = playerObject;
+                Response.Redirect("~/UserPages/Overview.aspx");
+            }
         }
         protected void Button_RaceHistory_Click(object sender, EventArgs e)
         {
 
         }
-        
+
     }
 }

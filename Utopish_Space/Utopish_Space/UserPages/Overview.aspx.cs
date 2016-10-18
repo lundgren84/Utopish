@@ -12,14 +12,14 @@ namespace Utopish_Space.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if( Session["Player"] == null)
-            //{
-            //    Response.Redirect("~/default.aspx");
-            //}
-            //else
-            //{
-            //    PlayerObject playerObject = (PlayerObject)Session["Player"];
-            //}
+            if (Session["Player"] == null)
+            {
+                Response.Redirect("~/default.aspx");
+            }
+            else
+            {
+                PlayerObject playerObject = (PlayerObject)Session["Player"];
+            }
         }
     }
 }
