@@ -19,6 +19,16 @@ namespace Utopish_Space.UserPages
             account = (AccountObject)Session["Account"];
             List<RaceObject> raceList = race.GetRaceObjectsFromNames(race.GetAllRaceNamesFromDB());
             FillRaceDiv(raceList);
+            FillDropDown(raceList);
+        }
+
+        private void FillDropDown(List<RaceObject> raceList)
+        {
+            foreach (var item in raceList)
+            {
+                DropDownList_Races.Items.Add(item.raceName.ToString());
+            }
+         
         }
 
         private void FillRaceDiv(List<RaceObject> raceList)
@@ -54,9 +64,9 @@ namespace Utopish_Space.UserPages
                                    <div class='thumbnail' style='background-color:black'>
                                      <img src = '../Graphic/RaceLogo/logo1.png' alt='Race img'>
                                      <div class='caption'>
-                                       <h3>{item.raceName}</h3>
+                                       <h3><p>{item.raceName}</p></h3>
                                        <p>{skill1}</p> <p>{skill2}</p> <p>{skill3}</p> <p>{skill4}</p> <p>{skill5}</p>
-                                      <a href = '#' class='btn btn-primary logginButton' role='button'>Info</a> <a href = '#' class='btn btn-default logginButton' role='button'>Select</a></p>
+                                     <p><a href = '#' class='btn btn-default logginButton' OnClick='Button_RaceHistory_Click' role='button'>Race History</a></p>
                                      </div>
                                    </div>
                                  </div>");
@@ -65,5 +75,18 @@ namespace Utopish_Space.UserPages
                 FillRaces.InnerHtml = sb.ToString();
             }
         }
+
+        protected void Button_ConfirmPlayer_Click(object sender, EventArgs e)
+        {
+            Player player = new Player();
+            PlayerObject playerObject = new PlayerObject();
+   
+            player.CreateNewPlayer(account, playerObject);
+        }
+        protected void Button_RaceHistory_Click(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

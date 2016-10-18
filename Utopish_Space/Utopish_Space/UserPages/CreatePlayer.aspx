@@ -11,24 +11,34 @@
     <link href="../Utopish/LogginBackground.css" rel="stylesheet" />
     <script src="../Utopish/LogginBackground.js"></script>
     <link href="../Style/PlayerCreation.css" rel="stylesheet" />
+
 </head>
    
 <body>
         <form id="form2" runat="server">
-        <br />
-         
+        <br />      
             <%-- START --%>
             <asp:Panel ID="Panel_CreatePlayer" runat="server">
-                <div class="container">
+                <div  class="container">
                     <div class="row">
-                        <h1>Get Started</h1>
+                        <h1>Create player</h1>
                     </div>
                     <%-- SELECT Name --%>
                     <div class="row" style="margin-bottom:5%">
-                        <div class="col-md-12" runat="server" id="Div1">
-                            <asp:Label ID="Label1" CssClass="LogginLabel" runat="server" Text="Empire Name:"></asp:Label>
-                            <asp:TextBox ID="TextBox1" CssClass="LogginLabel" runat="server"></asp:TextBox>
+                        <div class="col-md-3" >
+                              <p class="LogginLabel" style="text-align:end">Empire name:</p>
                         </div>
+                        <div class="col-md-8" runat="server" id="Div1">                          
+                            <asp:TextBox ID="TextBox_EmpireName" CssClass="LogginLabel" runat="server"></asp:TextBox>
+                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Font-Names="consolas" runat="server" ErrorMessage="Required" ControlToValidate="TextBox_EmpireName"></asp:RequiredFieldValidator>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-bottom:5%">
+                          <div class="col-md-3">  <p class="LogginLabel" style="text-align:end">Race:</p></div>
+                         <div class="col-md-8" runat="server" id="Div3">                         
+                             <asp:DropDownList ID="DropDownList_Races"  CssClass="LogginLabel" runat="server" Font-Names="consolas"></asp:DropDownList>
+                             </div>
                     </div>
                     <%-- SELECT RACE --%>
                     <div class="row" runat="server" id="FillRaces">
@@ -36,9 +46,9 @@
                     </div>
                     <%-- CONFIRM --%>
                      <div class="row" runat="server" id="Div2">                 
-                         <asp:Button ID="Button1" CssClass="logginButton" runat="server" Font-Names="Consolas" Font-Size="Medium" Height="50px" Width="150px" Text="Continue" />
+                         <asp:Button ID="Button_ConfirmPlayer" CssClass="logginButton" OnClick="Button_ConfirmPlayer_Click" runat="server" Font-Names="Consolas" Font-Size="Medium" Height="50px" Width="150px" Text="Continue" />
                     </div>
-                </div>
+               </div>
             </asp:Panel>
             <%-- END --%>
         </form>
