@@ -38,6 +38,7 @@ namespace Utopish_Space.Models
     }
     public class RaceObject
     {
+        public int RaceID { get; set; }
         public RaceName raceName { get; set; }
         public string History { get; set; }
         public Dictionary<Manipulators, int> ManipulatorList = new Dictionary<Manipulators, int>();

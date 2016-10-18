@@ -84,14 +84,17 @@ namespace Utopish_Space.UserPages
                 PlayerObject playerObject = new PlayerObject();
                 //Set Name
                 playerObject.EmpireName = TextBox_EmpireName.Text;
-                //Set Race
-                playerObject.RaceObject = playerObject.RaceObject.GetRace((RaceName)Enum.Parse(typeof(RaceName), DropDownList_Races.SelectedIndex.ToString(), true));
+                //Set Race              
+                playerObject.RaceObject = playerObject.RaceObject.GetRace((RaceName)Enum.Parse(typeof(RaceName), DropDownList_Races.SelectedIndex.ToString(), true));        
                 //Set AccountID
+
                 playerObject.AccountID = account._accountID;
                 //Create the Player
                 player.CreateNewPlayer(playerObject);
                 //Start Game
                 Session["Player"] = playerObject;
+                Models.Login login = new Models.Login();
+                login.ChangeAccountStatus(AccountStatus.Open, account._statusRefID);
                 Response.Redirect("~/UserPages/Overview.aspx");
             }
         }

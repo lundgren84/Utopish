@@ -144,22 +144,23 @@ namespace Utopish_Space
             if (Account != null)
             {
                 Session["Account"] = Account;
-                if (Account.Status.AccountStatus == "VerifyEmail")
+
+                if (Account.Status.accountStatus == AccountStatus.VerifyEmail)
                 {
                     Response.Redirect("~/UserPages/VerifyMail.aspx");
                 }
-                else if (Account.Status.AccountStatus == "Open")
+                else if (Account.Status.accountStatus == AccountStatus.Open)
                 {        
                     PlayerObject playerObject = theGame.CreateNewPlayerObject(Account);
                     Session["Player"] = playerObject;
 
                     Response.Redirect("~/UserPages/Overview.aspx");
                 }
-                else if (Account.Status.AccountStatus == "CreatePlayer")
+                else if (Account.Status.accountStatus == AccountStatus.CreatePlayer)
                 {
                     Response.Redirect("~/UserPages/CreatePlayer.aspx");
                 }
-                else if (Account.Status.AccountStatus == "Locked")
+                else if (Account.Status.accountStatus == AccountStatus.Locked)
                 {
                     Label_AccountLocked.Text = "Account is Locked!";
                 }

@@ -42,10 +42,10 @@ namespace Utopish_Space.Models
             connection.Close();
         }
 
-        internal void ChangeAccountStatus(string StatusString,int StatusRefID)
+        internal void ChangeAccountStatus(AccountStatus StatusString,int StatusRefID)
         {
             string query = $@"
-                                  Update Status SET AccountStatus = '{StatusString}'
+                                  Update Status SET AccountStatus = '{StatusString.ToString()}'
                                   WHERE StatusID = {StatusRefID};";
             connection.OpenLogin();
             using (SqlCommand command = new SqlCommand(query, connection.connection))
@@ -68,7 +68,7 @@ namespace Utopish_Space.Models
                     {
                         result.StatusID = int.Parse(reader["StatusID"].ToString());
                         result.ActivationCode = reader["ActivationCode"].ToString();
-                        result.AccountStatus = reader["AccountStatus"].ToString();
+                        result.accountStatus = (AccountStatus)Enum.Parse(typeof(AccountStatus), reader["AccountStatus"].ToString());
                     }
                 }
             }
