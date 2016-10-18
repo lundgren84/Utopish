@@ -12,13 +12,19 @@ namespace Utopish_Space.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+        
             if (Session["Player"] == null)
             {
                 Response.Redirect("~/default.aspx");
             }
             else
             {
+                Account account = new Account();
                 PlayerObject playerObject = (PlayerObject)Session["Player"];
+                if(account.CheckAccountStatus(playerObject.AccountID) != AccountStatus.Open)
+                {
+                    Response.Redirect("~/default.aspx");
+                }
             }
         }
     }

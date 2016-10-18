@@ -17,7 +17,7 @@ namespace Utopish_Space.UserPages
         protected void Page_Load(object sender, EventArgs e)
         {
             account = (AccountObject)Session["Account"];
-            List<RaceObject> raceList = race.GetRaceObjectsFromNames(race.GetAllRaceNamesFromDB());
+            List<RaceObject> raceList = race.GetAllRacesFromDB();
             FillRaceDiv(raceList);
             FillDropDown(raceList);
         }

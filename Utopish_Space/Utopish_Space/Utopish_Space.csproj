@@ -284,6 +284,7 @@
     <Compile Include="GM.aspx.designer.cs">
       <DependentUpon>GM.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountObject.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\MailSender.cs" />

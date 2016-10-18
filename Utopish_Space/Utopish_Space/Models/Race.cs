@@ -12,13 +12,10 @@ namespace Utopish_Space.Models
     {
         DBConnection connection = new DBConnection();
 
-
-
-
-        internal List<string> GetAllRaceNamesFromDB()
+        internal List<RaceObject> GetAllRacesFromDB()
         {
-            List<string> theRaceNames = new List<string>();
-            string query = $@"SELECT RaceName FROM Races";
+            List<RaceObject> theRaceObjects = new List<RaceObject>();
+            string query = $@"SELECT * FROM Races";
             try
             {
                 connection.Open();
@@ -28,7 +25,12 @@ namespace Utopish_Space.Models
                     {
                         while (reader.Read())
                         {
-                            theRaceNames.Add(reader["RaceName"].ToString());   
+                            //  theRaceObjects.Add(reader["RaceName"].ToString());   
+                            RaceObject newRace = new RaceObject();                    
+                            newRace.raceName = (RaceName)Enum.Parse(typeof(RaceName), reader["RaceName"].ToString());
+                            newRace = newRace.GetRace(newRace.raceName);
+                            newRace.RaceID = int.Parse(reader["RaceID"].ToString());
+                            theRaceObjects.Add(newRace);
                         }
                     }
                 }
@@ -41,20 +43,8 @@ namespace Utopish_Space.Models
             {
                 connection.Close();
             }          
-            return theRaceNames;
-        }
-        internal List<RaceObject> GetRaceObjectsFromNames(List<string> list)
-        {
-            List<RaceObject> result = new List<RaceObject>();
-            foreach (var item in list)
-            {           
-                RaceObject race = new RaceObject();
-                race.raceName = (RaceName)Enum.Parse(typeof(RaceName), item);
-                race = race.GetRace(race.raceName);
-                result.Add(race);
-            }
-            return result;
-        }
+            return theRaceObjects;
+        }  
 
         internal int GetRaceID(string v)
         {

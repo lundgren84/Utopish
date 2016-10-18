@@ -21,9 +21,9 @@ namespace Utopish_Space.UserPages
         {
             if (TextBox_ActivationCode.Text == account.Status.ActivationCode)
             {
-                if (account.Status.AccountStatus == "VerifyEmail")
+                if (account.Status.accountStatus == AccountStatus.VerifyEmail)
                 {
-                    login.ChangeAccountStatus("CreatePlayer", account._statusRefID);           
+                    login.ChangeAccountStatus(AccountStatus.CreatePlayer, account._statusRefID);           
                     Response.Redirect("~/UserPages/CreatePlayer.aspx");
                 }
             }
