@@ -78,14 +78,15 @@ namespace Utopish_Space.UserPages
 
         protected void Button_ConfirmPlayer_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(TextBox_EmpireName.Text))
+            if (!string.IsNullOrWhiteSpace(TextBox_EmpireName.Text))
             {
                 Player player = new Player();
                 PlayerObject playerObject = new PlayerObject();
                 //Set Name
                 playerObject.EmpireName = TextBox_EmpireName.Text;
-                //Set Race              
-                playerObject.RaceObject = playerObject.RaceObject.GetRace((RaceName)Enum.Parse(typeof(RaceName), DropDownList_Races.SelectedIndex.ToString(), true));        
+                //Set Race     
+                RaceName rn = (RaceName)Enum.Parse(typeof(RaceName), DropDownList_Races.SelectedIndex.ToString(), true);
+                playerObject.RaceObject = race.GetRace(rn);        
                 //Set AccountID
 
                 playerObject.AccountID = account._accountID;

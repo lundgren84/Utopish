@@ -19,6 +19,7 @@ namespace Utopish_Space.Models
         public RaceObject RaceObject { get; set; }
         public PlayerObject()
         {
+            RaceObject = new RaceObject();
             this.Level = 1;
             this.Experience = 0;
             this.DonatorStatus = false;
