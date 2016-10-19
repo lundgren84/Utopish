@@ -286,7 +286,6 @@
     </Compile>
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountObject.cs" />
-    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\MailSender.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\PlayerObject.cs" />

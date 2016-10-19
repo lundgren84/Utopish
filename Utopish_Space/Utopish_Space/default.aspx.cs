@@ -14,7 +14,7 @@ namespace Utopish_Space
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        Models.Login login = new Models.Login();
+        Account account = new Account();
         int mathAwnser;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace Utopish_Space
         protected void ButtonRegister_Click(object sender, EventArgs e)
         {
             // Check email
-            int count = login.CheckEMail(tb_RegEmail.Text);
+            int count = account.CheckEMail(tb_RegEmail.Text);
             int testMath;
             int.TryParse(TextBox_MathAwnser.Text, out testMath);
 
@@ -81,7 +81,7 @@ namespace Utopish_Space
                         accountObject._firstName = "";
                         accountObject._lastName = "";
 
-                        login.CreateNewAccount(accountObject);
+                        account.CreateNewAccount(accountObject);
 
                         MailSender mailSender = new MailSender();
                         string mailContent = $@"Your Code is : {accountObject.Status.ActivationCode}";
@@ -139,7 +139,7 @@ namespace Utopish_Space
         protected void ButtonLogin_Click(object sender, EventArgs e)
         {
             Label_AccountLocked.Text = "";
-            AccountObject Account = login.AccountLogin(tb_UserEmail.Text, tb_Password.Text);
+            AccountObject Account = account.AccountLogin(tb_UserEmail.Text, tb_Password.Text);
             TheGame theGame = new TheGame();
             if (Account != null)
             {

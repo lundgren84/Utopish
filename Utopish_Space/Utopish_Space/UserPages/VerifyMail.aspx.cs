@@ -12,7 +12,7 @@ namespace Utopish_Space.UserPages
     {
         AccountObject accountObject = new AccountObject();
         Account account = new Account();
-        Models.Login login = new Models.Login();
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Account"] == null)
@@ -32,7 +32,7 @@ namespace Utopish_Space.UserPages
             {
                 if (accountObject.Status.accountStatus == AccountStatus.VerifyEmail)
                 {
-                    login.ChangeAccountStatus(AccountStatus.CreatePlayer, accountObject._statusRefID);           
+                    account.ChangeAccountStatus(AccountStatus.CreatePlayer, accountObject._statusRefID);           
                     Response.Redirect("~/UserPages/CreatePlayer.aspx");
                 }
             }

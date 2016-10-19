@@ -106,8 +106,8 @@ namespace Utopish_Space.UserPages
                 player.CreateNewPlayer(playerObject);
                 //Start Game
                 Session["Player"] = playerObject;
-                Models.Login login = new Models.Login();
-                login.ChangeAccountStatus(AccountStatus.Open, accountObject._statusRefID);
+            
+                account.ChangeAccountStatus(AccountStatus.Open, accountObject._statusRefID);
                 Response.Redirect("~/UserPages/Overview.aspx");
             }
         }
