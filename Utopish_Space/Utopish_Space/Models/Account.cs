@@ -12,28 +12,26 @@ namespace Utopish_Space.Models
         DBConnection connection = new DBConnection();
         internal AccountStatus CheckAccountStatus(int accountID)
         {
-            AccountStatus status = new AccountStatus();
-            string query = $@"SELECT Status.AccountStatus as TheStatus From Accounts
-                              INNER JOIN Status ON Status.StatusID = Accounts.StatusRefID
+            string stringStatus = "";
+           
+            string query = $@"SELECT AccountStatus FROM dbo.Status
+                              INNER JOIN Accounts ON  Accounts.StatusRefID = dbo.Status.StatusID
                               WHERE Accounts.AccountID = {accountID}";
-            try
+
+            connection.OpenLogin();
+
+
+            using (SqlCommand command = new SqlCommand(query, connection.connection))
             {
-                connection.OpenLogin();
-
-
-                using(SqlCommand command = new SqlCommand(query, connection.connection))
+                using (SqlDataReader reader = command.ExecuteReader())
                 {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        status = (AccountStatus)Enum.Parse(typeof(AccountStatus), reader["TheStatus"].ToString());
-                    }
+                    stringStatus = reader["AccountStatus"].ToString();
                 }
             }
-            catch { }
-            finally { connection.Close(); }
+            connection.Close();
 
-
-            return status;
+            return = (AccountStatus)Enum.Parse(typeof(AccountStatus), stringStatus);
+          
         }
         internal int CheckEMail(string email)
         {

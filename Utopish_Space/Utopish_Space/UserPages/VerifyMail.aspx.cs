@@ -10,11 +10,13 @@ namespace Utopish_Space.UserPages
 {
     public partial class VerifyMail : System.Web.UI.Page
     {
-        AccountObject accountObject = new AccountObject();
-        Account account = new Account();
+        AccountObject accountObject;
+        Account account;
        
         protected void Page_Load(object sender, EventArgs e)
         {
+            accountObject = new AccountObject();
+            account = new Account();
             if (Session["Account"] == null)
             {
                 Response.Redirect("~/default.aspx");
