@@ -23,10 +23,10 @@ namespace Utopish_Space.UserPages
                 Response.Redirect("~/default.aspx");
             }
             accountObject = (AccountObject)Session["Account"];
-            if ((account.CheckAccountStatus(accountObject._accountID)) != AccountStatus.CreatePlayer)
-            {
-                Response.Redirect("~/default.aspx");
-            }
+            //if ((account.CheckAccountStatus(accountObject._accountID)) != AccountStatus.CreatePlayer)
+            //{
+            //    Response.Redirect("~/default.aspx");
+            //}
 
             raceList = race.GetAllRacesFromDB();
             FillRaceDiv(raceList);

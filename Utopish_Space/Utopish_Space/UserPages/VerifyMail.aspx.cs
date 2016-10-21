@@ -22,10 +22,10 @@ namespace Utopish_Space.UserPages
                 Response.Redirect("~/default.aspx");
             }
             accountObject = (AccountObject)Session["Account"];
-            if ((account.CheckAccountStatus(accountObject._accountID)) != AccountStatus.VerifyEmail)
-            {
-                Response.Redirect("~/default.aspx");
-            }
+            //if ((account.CheckAccountStatus(accountObject._accountID)) != AccountStatus.VerifyEmail)
+            //{
+            //    Response.Redirect("~/default.aspx");
+            //}
         }
 
         protected void Button_Unlock_Click(object sender, EventArgs e)

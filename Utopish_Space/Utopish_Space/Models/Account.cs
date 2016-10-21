@@ -30,7 +30,7 @@ namespace Utopish_Space.Models
             }
             connection.Close();
 
-            return = (AccountStatus)Enum.Parse(typeof(AccountStatus), stringStatus);
+            return  (AccountStatus)Enum.Parse(typeof(AccountStatus), stringStatus);
           
         }
         internal int CheckEMail(string email)
