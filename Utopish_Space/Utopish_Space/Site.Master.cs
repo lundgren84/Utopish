@@ -7,6 +7,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using Utopish_Space.Models;
 
 namespace WebApplication5
 {
@@ -15,6 +16,8 @@ namespace WebApplication5
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
+        PlayerObject playerObject;
+        Account account = new Account();
 
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -69,7 +72,34 @@ namespace WebApplication5
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            CheckLoginStatus();
+        }
 
+        private void CheckLoginStatus()
+        {
+            if (Session["Player"] == null)
+            {
+                Response.Redirect("~/default.aspx");
+            }
+            else
+            {              
+                AccountObject accountObject = (AccountObject)Session["Account"];
+                if (accountObject.Status.accountStatus != AccountStatus.Open)
+                {
+                    Response.Redirect("~/default.aspx");
+                }
+                else // LoggedIn!!
+                {
+                    playerObject = (PlayerObject)Session["Player"];
+                }
+            }
+            UploadPage(playerObject);
+        }
+
+        private void UploadPage(PlayerObject playerObject)
+        {
+            Label_EmpireName.Text = playerObject.EmpireName;
+            Label_Position.Text = "";
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

@@ -10,26 +10,16 @@ namespace Utopish_Space.User
 {
     public partial class Overview : System.Web.UI.Page
     {
+        PlayerObject playerObject;
         protected void Page_Load(object sender, EventArgs e)
         {
         
-            if (Session["Player"] == null)
-            {
-                Response.Redirect("~/default.aspx");
-            }
-            else
-            {
-                Account account = new Account();              
-                AccountObject accountObject = (AccountObject)Session["Account"];
-                if(accountObject.Status.accountStatus != AccountStatus.Open)
-                {
-                    Response.Redirect("~/default.aspx");
-                }
-                else // LoggedIn!!
-                {
-                    PlayerObject playerObject = (PlayerObject)Session["Player"];
-                }
-            }
+         
+        }
+
+        private void UploadPage(PlayerObject playerObject)
+        {
+           
         }
     }
 }

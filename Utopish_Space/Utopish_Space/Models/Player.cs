@@ -26,5 +26,36 @@ namespace Utopish_Space.Models
           connection.Close(); 
 
         }
+
+        internal PlayerObject GetPlayerObject(AccountObject account)
+        {
+            PlayerObject playerObject = new PlayerObject();
+            playerObject.AccountID = account._accountID;
+            string query = $@"SELECT * FROM Players
+                           WHERE Players.PlayerAccountNumber = {account._accountID}";
+            connection.Open();
+            using (SqlCommand command = new SqlCommand(query, connection.connection))
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read()) { 
+                    playerObject.PlayerID = int.Parse(reader["PlayerID"].ToString());
+                    playerObject.EmpireName = reader["EmpireName"].ToString();
+                    playerObject.TradeBalance = int.Parse(reader["TradeBalance"].ToString());
+                    playerObject.Strength = int.Parse(reader["Strength"].ToString());
+                    playerObject.Level = int.Parse(reader["Level"].ToString());
+                    playerObject.Experience = int.Parse(reader["Experience"].ToString());
+                    playerObject.DailyTradesLeft = int.Parse(reader["DailyTradesLeft"].ToString());
+                    playerObject.DonatorStatus = bool.Parse(reader["DonatorStatus"].ToString());
+                    playerObject.RaceID = int.Parse(reader["RaceRefID"].ToString());
+                    }
+                }
+            }
+
+
+                connection.Close();
+
+            return playerObject;
+        }
     }
 }

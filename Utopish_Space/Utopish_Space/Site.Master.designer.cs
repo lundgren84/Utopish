@@ -31,22 +31,22 @@ namespace WebApplication5 {
         protected global::System.Web.UI.WebControls.Panel Panel_Left;
         
         /// <summary>
-        /// Label1 control.
+        /// Label_EmpireName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label Label_EmpireName;
         
         /// <summary>
-        /// Label5 control.
+        /// Label_Position control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label Label_Position;
         
         /// <summary>
         /// Label9 control.
