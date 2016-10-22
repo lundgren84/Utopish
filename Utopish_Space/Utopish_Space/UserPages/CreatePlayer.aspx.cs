@@ -23,10 +23,10 @@ namespace Utopish_Space.UserPages
                 Response.Redirect("~/default.aspx");
             }
             accountObject = (AccountObject)Session["Account"];
-            //if ((account.CheckAccountStatus(accountObject._accountID)) != AccountStatus.CreatePlayer)
-            //{
-            //    Response.Redirect("~/default.aspx");
-            //}
+            if (accountObject.Status.accountStatus != AccountStatus.CreatePlayer)
+            {
+                Response.Redirect("~/default.aspx");
+            }
 
             raceList = race.GetAllRacesFromDB();
             FillRaceDiv(raceList);
@@ -108,6 +108,7 @@ namespace Utopish_Space.UserPages
                 Session["Player"] = playerObject;
             
                 account.ChangeAccountStatus(AccountStatus.Open, accountObject._statusRefID);
+                accountObject.Status.accountStatus = AccountStatus.Open;
                 Response.Redirect("~/UserPages/Overview.aspx");
             }
         }

@@ -19,11 +19,15 @@ namespace Utopish_Space.User
             }
             else
             {
-                Account account = new Account();
-                PlayerObject playerObject = (PlayerObject)Session["Player"];
-                if(account.CheckAccountStatus(playerObject.AccountID) != AccountStatus.Open)
+                Account account = new Account();              
+                AccountObject accountObject = (AccountObject)Session["Account"];
+                if(accountObject.Status.accountStatus != AccountStatus.Open)
                 {
                     Response.Redirect("~/default.aspx");
+                }
+                else // LoggedIn!!
+                {
+                    PlayerObject playerObject = (PlayerObject)Session["Player"];
                 }
             }
         }

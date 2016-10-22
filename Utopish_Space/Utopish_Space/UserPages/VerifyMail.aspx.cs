@@ -22,10 +22,11 @@ namespace Utopish_Space.UserPages
                 Response.Redirect("~/default.aspx");
             }
             accountObject = (AccountObject)Session["Account"];
-            //if ((account.CheckAccountStatus(accountObject._accountID)) != AccountStatus.VerifyEmail)
-            //{
-            //    Response.Redirect("~/default.aspx");
-            //}
+            if (accountObject.Status.accountStatus != AccountStatus.VerifyEmail)
+            {
+                Response.Redirect("~/default.aspx");
+            }
+
         }
 
         protected void Button_Unlock_Click(object sender, EventArgs e)
@@ -34,7 +35,8 @@ namespace Utopish_Space.UserPages
             {
                 if (accountObject.Status.accountStatus == AccountStatus.VerifyEmail)
                 {
-                    account.ChangeAccountStatus(AccountStatus.CreatePlayer, accountObject._statusRefID);           
+                    account.ChangeAccountStatus(AccountStatus.CreatePlayer, accountObject._statusRefID);
+                    accountObject.Status.accountStatus = AccountStatus.CreatePlayer;        
                     Response.Redirect("~/UserPages/CreatePlayer.aspx");
                 }
             }

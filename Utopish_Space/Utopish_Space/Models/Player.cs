@@ -12,14 +12,14 @@ namespace Utopish_Space.Models
         DBConnection connection = new DBConnection();
         internal void CreateNewPlayer(PlayerObject playerObject)
         {
-            string query = $@"INSERT INTO Players(PlayerAccountNumber,EmpireName, TradeBalance, Strength,[Level],Experience,DonatorStatus,RaceRefID)
-            VALUES({playerObject.AccountID}, '{playerObject.EmpireName}', {playerObject.TradeBalance},{playerObject.Strength},{playerObject.Level},{playerObject.Experience},'{playerObject.DonatorStatus}',{playerObject.RaceObject.RaceID})";
+            string query = $@"INSERT INTO Players(PlayerAccountNumber,EmpireName, TradeBalance, Strength,[Level],Experience,DailyTradesLeft,DonatorStatus,RaceRefID)
+            VALUES({playerObject.AccountID}, '{playerObject.EmpireName}', {playerObject.TradeBalance},{playerObject.Strength},{playerObject.Level},{playerObject.Experience},{playerObject.DailyTradesLeft},'{playerObject.DonatorStatus}',{playerObject.RaceObject.RaceID})";
 
            
                 connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection.connection))
                 {
-                    command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
                 }
             
        
