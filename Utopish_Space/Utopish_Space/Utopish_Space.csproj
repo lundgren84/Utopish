@@ -293,6 +293,8 @@
     <Compile Include="Models\RaceObject.cs" />
     <Compile Include="Models\Security.cs" />
     <Compile Include="Models\StatusObject.cs" />
+    <Compile Include="Models\Troop.cs" />
+    <Compile Include="Models\TroopObject.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
