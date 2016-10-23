@@ -98,7 +98,7 @@ namespace Utopish_Space.User
         </div>");
             }
            
-            TroopConrainer.InnerHtml = sb.ToString();
+            //TroopConrainer.InnerHtml = sb.ToString();
         }
 
         protected void btn_TrainTroops_Click(object sender, EventArgs e)
