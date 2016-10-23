@@ -61,7 +61,7 @@
         <div class="row">
             <%-- TroopName --%>
             <div class="col-md-2">
-                <asp:Label CssClass="LogginLabel" ID="lbl_T1Name" runat="server" Text="TroopName"></asp:Label>
+                <asp:Label CssClass="LogginLabel TroopName" ID="lbl_T1Name" runat="server" Text="TroopName"></asp:Label>
             </div>
             <%-- TroopTextBox --%>
             <div class="col-md-2">
@@ -108,7 +108,7 @@
         <div class="row">
             <%-- TroopName --%>
             <div class="col-md-2">
-                <asp:Label CssClass="LogginLabel" ID="lbl_T2Name" runat="server" Text="TroopName"></asp:Label>
+                <asp:Label CssClass="LogginLabel TroopName" ID="lbl_T2Name" runat="server" Text="TroopName"></asp:Label>
             </div>
             <%-- TroopTextBox --%>
             <div class="col-md-2">
@@ -155,7 +155,7 @@
         <div class="row">
             <%-- TroopName --%>
             <div class="col-md-2">
-                <asp:Label CssClass="LogginLabel" ID="lbl_T3Name" runat="server" Text="TroopName"></asp:Label>
+                <asp:Label CssClass="LogginLabel TroopName" ID="lbl_T3Name" runat="server" Text="TroopName"></asp:Label>
             </div>
             <%-- TroopTextBox --%>
             <div class="col-md-2">
@@ -202,7 +202,7 @@
         <div class="row">
             <%-- TroopName --%>
             <div class="col-md-2">
-                <asp:Label CssClass="LogginLabel" ID="lbl_T4Name" runat="server" Text="TroopName"></asp:Label>
+                <asp:Label CssClass="LogginLabel TroopName" ID="lbl_T4Name" runat="server" Text="TroopName"></asp:Label>
             </div>
             <%-- TroopTextBox --%>
             <div class="col-md-2">
@@ -249,7 +249,7 @@
         <div class="row">
             <%-- TroopName --%>
             <div class="col-md-2">
-                <asp:Label CssClass="LogginLabel" ID="lbl_T5Name" runat="server" Text="TroopName"></asp:Label>
+                <asp:Label CssClass="LogginLabel TroopName" ID="lbl_T5Name" runat="server" Text="TroopName"></asp:Label>
             </div>
             <%-- TroopTextBox --%>
             <div class="col-md-2">
@@ -296,7 +296,7 @@
         <div class="row">
             <%-- TroopName --%>
             <div class="col-md-2">
-                <asp:Label CssClass="LogginLabel" ID="lbl_T6Name" runat="server" Text="TroopName"></asp:Label>
+                <asp:Label CssClass="LogginLabel TroopName" ID="lbl_T6Name" runat="server" Text="TroopName"></asp:Label>
             </div>
             <%-- TroopTextBox --%>
             <div class="col-md-2">
@@ -343,7 +343,7 @@
         <div class="row">
             <%-- TroopName --%>
             <div class="col-md-2">
-                <asp:Label CssClass="LogginLabel" ID="lbl_T7Name" runat="server" Text="TroopName"></asp:Label>
+                <asp:Label CssClass="LogginLabel TroopName" ID="lbl_T7Name" runat="server" Text="TroopName"></asp:Label>
             </div>
             <%-- TroopTextBox --%>
             <div class="col-md-2">
@@ -390,7 +390,7 @@
         <div class="row">
             <%-- TroopName --%>
             <div class="col-md-2">
-                <asp:Label CssClass="LogginLabel" ID="lbl_T8Name" runat="server" Text="TroopName"></asp:Label>
+                <asp:Label CssClass="LogginLabel TroopName" ID="lbl_T8Name" runat="server" Text="TroopName"></asp:Label>
             </div>
             <%-- TroopTextBox --%>
             <div class="col-md-2">
@@ -437,7 +437,7 @@
         <div class="row">
             <%-- TroopName --%>
             <div class="col-md-2">
-                <asp:Label CssClass="LogginLabel" ID="lbl_T9Name" runat="server" Text="TroopName"></asp:Label>
+                <asp:Label CssClass="LogginLabel TroopName" ID="lbl_T9Name" runat="server" Text="TroopName"></asp:Label>
             </div>
             <%-- TroopTextBox --%>
             <div class="col-md-2">
