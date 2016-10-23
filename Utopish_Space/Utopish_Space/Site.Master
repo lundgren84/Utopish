@@ -20,6 +20,7 @@
     <link href="~/Style/MainStyle.css" rel="stylesheet" />
     <link href="~/Utopish/LogginBackground.css" rel="stylesheet" />
     <script src="~/Utopish/LogginBackground.js"></script>
+    <link href="Style/TroopTraining.css" rel="stylesheet" />
 </head>
 <body style="overflow: hidden; margin: 0">
 
