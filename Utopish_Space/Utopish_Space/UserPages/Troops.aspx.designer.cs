@@ -130,13 +130,13 @@ namespace Utopish_Space.User {
         protected global::System.Web.UI.WebControls.Label lbl_T1TrainTime;
         
         /// <summary>
-        /// Label3 control.
+        /// lbl_T2Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label lbl_T2Name;
         
         /// <summary>
         /// TextBox1 control.
@@ -193,13 +193,13 @@ namespace Utopish_Space.User {
         protected global::System.Web.UI.WebControls.Label lbl_T2Defence;
         
         /// <summary>
-        /// Speed control.
+        /// lbl_T2Speed control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Speed;
+        protected global::System.Web.UI.WebControls.Label lbl_T2Speed;
         
         /// <summary>
         /// lbl_T2TrainTime control.
@@ -211,13 +211,13 @@ namespace Utopish_Space.User {
         protected global::System.Web.UI.WebControls.Label lbl_T2TrainTime;
         
         /// <summary>
-        /// Label12 control.
+        /// lbl_T3Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label12;
+        protected global::System.Web.UI.WebControls.Label lbl_T3Name;
         
         /// <summary>
         /// TextBox2 control.
@@ -229,76 +229,76 @@ namespace Utopish_Space.User {
         protected global::System.Web.UI.WebControls.TextBox TextBox2;
         
         /// <summary>
-        /// Label13 control.
+        /// lbl_T3Mineral control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label13;
+        protected global::System.Web.UI.WebControls.Label lbl_T3Mineral;
         
         /// <summary>
-        /// Label14 control.
+        /// lbl_T3Monney control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label14;
+        protected global::System.Web.UI.WebControls.Label lbl_T3Monney;
         
         /// <summary>
-        /// Label15 control.
+        /// lbl_T3Oli control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label15;
+        protected global::System.Web.UI.WebControls.Label lbl_T3Oli;
         
         /// <summary>
-        /// Label16 control.
+        /// lbl_T3Attack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label16;
+        protected global::System.Web.UI.WebControls.Label lbl_T3Attack;
         
         /// <summary>
-        /// Label17 control.
+        /// lbl_T3Defence control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label17;
+        protected global::System.Web.UI.WebControls.Label lbl_T3Defence;
         
         /// <summary>
-        /// Label18 control.
+        /// lbl_T3Speed control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label18;
+        protected global::System.Web.UI.WebControls.Label lbl_T3Speed;
         
         /// <summary>
-        /// Label19 control.
+        /// lbl_T3TrainTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label19;
+        protected global::System.Web.UI.WebControls.Label lbl_T3TrainTime;
         
         /// <summary>
-        /// Label20 control.
+        /// lbl_T4Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label20;
+        protected global::System.Web.UI.WebControls.Label lbl_T4Name;
         
         /// <summary>
         /// TextBox3 control.
@@ -310,76 +310,76 @@ namespace Utopish_Space.User {
         protected global::System.Web.UI.WebControls.TextBox TextBox3;
         
         /// <summary>
-        /// Label21 control.
+        /// lbl_T4Mineral control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label21;
+        protected global::System.Web.UI.WebControls.Label lbl_T4Mineral;
         
         /// <summary>
-        /// Label22 control.
+        /// lbl_T4Monney control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label22;
+        protected global::System.Web.UI.WebControls.Label lbl_T4Monney;
         
         /// <summary>
-        /// Label23 control.
+        /// lbl_T4Oil control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label23;
+        protected global::System.Web.UI.WebControls.Label lbl_T4Oil;
         
         /// <summary>
-        /// Label24 control.
+        /// lbl_T4Attack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label24;
+        protected global::System.Web.UI.WebControls.Label lbl_T4Attack;
         
         /// <summary>
-        /// Label25 control.
+        /// lbl_T4Defence control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label25;
+        protected global::System.Web.UI.WebControls.Label lbl_T4Defence;
         
         /// <summary>
-        /// Label26 control.
+        /// lbl_T4Speed control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label26;
+        protected global::System.Web.UI.WebControls.Label lbl_T4Speed;
         
         /// <summary>
-        /// Label27 control.
+        /// lbl_T4TrainTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label27;
+        protected global::System.Web.UI.WebControls.Label lbl_T4TrainTime;
         
         /// <summary>
-        /// Label28 control.
+        /// lbl_T5Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label28;
+        protected global::System.Web.UI.WebControls.Label lbl_T5Name;
         
         /// <summary>
         /// TextBox4 control.
@@ -391,76 +391,76 @@ namespace Utopish_Space.User {
         protected global::System.Web.UI.WebControls.TextBox TextBox4;
         
         /// <summary>
-        /// Label29 control.
+        /// lbl_T5Mineral control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label29;
+        protected global::System.Web.UI.WebControls.Label lbl_T5Mineral;
         
         /// <summary>
-        /// Label30 control.
+        /// lbl_T5Monney control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label30;
+        protected global::System.Web.UI.WebControls.Label lbl_T5Monney;
         
         /// <summary>
-        /// Label31 control.
+        /// lbl_T5Oil control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label31;
+        protected global::System.Web.UI.WebControls.Label lbl_T5Oil;
         
         /// <summary>
-        /// Label32 control.
+        /// lbl_T5Attack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label32;
+        protected global::System.Web.UI.WebControls.Label lbl_T5Attack;
         
         /// <summary>
-        /// Label33 control.
+        /// lbl_T5Defence control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label33;
+        protected global::System.Web.UI.WebControls.Label lbl_T5Defence;
         
         /// <summary>
-        /// Label34 control.
+        /// lbl_T5Speed control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label34;
+        protected global::System.Web.UI.WebControls.Label lbl_T5Speed;
         
         /// <summary>
-        /// Label35 control.
+        /// lbl_T5TrainTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label35;
+        protected global::System.Web.UI.WebControls.Label lbl_T5TrainTime;
         
         /// <summary>
-        /// Label36 control.
+        /// lbl_T6Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label36;
+        protected global::System.Web.UI.WebControls.Label lbl_T6Name;
         
         /// <summary>
         /// TextBox5 control.
@@ -472,76 +472,76 @@ namespace Utopish_Space.User {
         protected global::System.Web.UI.WebControls.TextBox TextBox5;
         
         /// <summary>
-        /// Label37 control.
+        /// lbl_T6Mineral control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label37;
+        protected global::System.Web.UI.WebControls.Label lbl_T6Mineral;
         
         /// <summary>
-        /// Label38 control.
+        /// lbl_T6Monney control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label38;
+        protected global::System.Web.UI.WebControls.Label lbl_T6Monney;
         
         /// <summary>
-        /// Label39 control.
+        /// lbl_T6Oil control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label39;
+        protected global::System.Web.UI.WebControls.Label lbl_T6Oil;
         
         /// <summary>
-        /// Label40 control.
+        /// lbl_T6Attack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label40;
+        protected global::System.Web.UI.WebControls.Label lbl_T6Attack;
         
         /// <summary>
-        /// Label41 control.
+        /// lbl_T6Defence control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label41;
+        protected global::System.Web.UI.WebControls.Label lbl_T6Defence;
         
         /// <summary>
-        /// Label42 control.
+        /// lbl_T6Speed control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label42;
+        protected global::System.Web.UI.WebControls.Label lbl_T6Speed;
         
         /// <summary>
-        /// Label43 control.
+        /// lbl_T6TrainTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label43;
+        protected global::System.Web.UI.WebControls.Label lbl_T6TrainTime;
         
         /// <summary>
-        /// Label44 control.
+        /// lbl_T7Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label44;
+        protected global::System.Web.UI.WebControls.Label lbl_T7Name;
         
         /// <summary>
         /// TextBox6 control.
@@ -553,76 +553,76 @@ namespace Utopish_Space.User {
         protected global::System.Web.UI.WebControls.TextBox TextBox6;
         
         /// <summary>
-        /// Label45 control.
+        /// lbl_T7Mineral control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label45;
+        protected global::System.Web.UI.WebControls.Label lbl_T7Mineral;
         
         /// <summary>
-        /// Label46 control.
+        /// lbl_T7Monney control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label46;
+        protected global::System.Web.UI.WebControls.Label lbl_T7Monney;
         
         /// <summary>
-        /// Label47 control.
+        /// lbl_T7Oil control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label47;
+        protected global::System.Web.UI.WebControls.Label lbl_T7Oil;
         
         /// <summary>
-        /// Label48 control.
+        /// lbl_T7Attack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label48;
+        protected global::System.Web.UI.WebControls.Label lbl_T7Attack;
         
         /// <summary>
-        /// Label49 control.
+        /// lbl_T7Defence control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label49;
+        protected global::System.Web.UI.WebControls.Label lbl_T7Defence;
         
         /// <summary>
-        /// Label50 control.
+        /// lbl_T7Speed control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label50;
+        protected global::System.Web.UI.WebControls.Label lbl_T7Speed;
         
         /// <summary>
-        /// Label51 control.
+        /// lbl_T7TrainTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label51;
+        protected global::System.Web.UI.WebControls.Label lbl_T7TrainTime;
         
         /// <summary>
-        /// Label52 control.
+        /// lbl_T8Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label52;
+        protected global::System.Web.UI.WebControls.Label lbl_T8Name;
         
         /// <summary>
         /// TextBox7 control.
@@ -634,76 +634,76 @@ namespace Utopish_Space.User {
         protected global::System.Web.UI.WebControls.TextBox TextBox7;
         
         /// <summary>
-        /// Label53 control.
+        /// lbl_T8Mineral control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label53;
+        protected global::System.Web.UI.WebControls.Label lbl_T8Mineral;
         
         /// <summary>
-        /// Label54 control.
+        /// lbl_T8Monney control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label54;
+        protected global::System.Web.UI.WebControls.Label lbl_T8Monney;
         
         /// <summary>
-        /// Label55 control.
+        /// lbl_T8Oil control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label55;
+        protected global::System.Web.UI.WebControls.Label lbl_T8Oil;
         
         /// <summary>
-        /// Label56 control.
+        /// lbl_T8Attack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label56;
+        protected global::System.Web.UI.WebControls.Label lbl_T8Attack;
         
         /// <summary>
-        /// Label57 control.
+        /// lbl_T8Defence control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label57;
+        protected global::System.Web.UI.WebControls.Label lbl_T8Defence;
         
         /// <summary>
-        /// Label58 control.
+        /// lbl_T8Speed control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label58;
+        protected global::System.Web.UI.WebControls.Label lbl_T8Speed;
         
         /// <summary>
-        /// Label59 control.
+        /// lbl_T8TrainTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label59;
+        protected global::System.Web.UI.WebControls.Label lbl_T8TrainTime;
         
         /// <summary>
-        /// Label60 control.
+        /// lbl_T9Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label60;
+        protected global::System.Web.UI.WebControls.Label lbl_T9Name;
         
         /// <summary>
         /// TextBox8 control.
@@ -715,67 +715,67 @@ namespace Utopish_Space.User {
         protected global::System.Web.UI.WebControls.TextBox TextBox8;
         
         /// <summary>
-        /// Label61 control.
+        /// lbl_T9Mineral control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label61;
+        protected global::System.Web.UI.WebControls.Label lbl_T9Mineral;
         
         /// <summary>
-        /// Label62 control.
+        /// lbl_MonneyT9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label62;
+        protected global::System.Web.UI.WebControls.Label lbl_MonneyT9;
         
         /// <summary>
-        /// Label63 control.
+        /// lbl_T9Oil control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label63;
+        protected global::System.Web.UI.WebControls.Label lbl_T9Oil;
         
         /// <summary>
-        /// Label64 control.
+        /// lbl_T9Attack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label64;
+        protected global::System.Web.UI.WebControls.Label lbl_T9Attack;
         
         /// <summary>
-        /// Label65 control.
+        /// lbl_T9Defence control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label65;
+        protected global::System.Web.UI.WebControls.Label lbl_T9Defence;
         
         /// <summary>
-        /// Label66 control.
+        /// lbl_T9Speed control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label66;
+        protected global::System.Web.UI.WebControls.Label lbl_T9Speed;
         
         /// <summary>
-        /// Label67 control.
+        /// lbl_T9TrainTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label67;
+        protected global::System.Web.UI.WebControls.Label lbl_T9TrainTime;
         
         /// <summary>
         /// btn_TrainTroops control.

@@ -108,7 +108,7 @@
         <div class="row">
             <%-- TroopName --%>
             <div class="col-md-2">
-                <asp:Label CssClass="LogginLabel" ID="Label3" runat="server" Text="TroopName"></asp:Label>
+                <asp:Label CssClass="LogginLabel" ID="lbl_T2Name" runat="server" Text="TroopName"></asp:Label>
             </div>
             <%-- TroopTextBox --%>
             <div class="col-md-2">
@@ -141,7 +141,7 @@
                             <asp:Label ID="lbl_T2Defence" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Speed" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T2Speed" runat="server" Text="0"></asp:Label>
                         </div>
                     </div>
                 </div>
@@ -155,7 +155,7 @@
         <div class="row">
             <%-- TroopName --%>
             <div class="col-md-2">
-                <asp:Label CssClass="LogginLabel" ID="Label12" runat="server" Text="TroopName"></asp:Label>
+                <asp:Label CssClass="LogginLabel" ID="lbl_T3Name" runat="server" Text="TroopName"></asp:Label>
             </div>
             <%-- TroopTextBox --%>
             <div class="col-md-2">
@@ -166,13 +166,13 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-4">
-                            <asp:Label ID="Label13" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T3Mineral" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label14" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T3Monney" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label15" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T3Oli" runat="server" Text="0"></asp:Label>
                         </div>
                     </div>
                 </div>
@@ -182,27 +182,27 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-4">
-                            <asp:Label ID="Label16" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T3Attack" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label17" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T3Defence" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label18" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T3Speed" runat="server" Text="0"></asp:Label>
                         </div>
                     </div>
                 </div>
             </div>
             <%-- TrainTime --%>
                 <div class="col-md-2 TroopTrainObject" style="border: solid 1px gray">
-                <asp:Label ID="Label19" runat="server" Text="1 Minute"></asp:Label>
+                <asp:Label ID="lbl_T3TrainTime" runat="server" Text="1"></asp:Label>
             </div>
         </div>
            <%-- TROOP 4 --%>
         <div class="row">
             <%-- TroopName --%>
             <div class="col-md-2">
-                <asp:Label CssClass="LogginLabel" ID="Label20" runat="server" Text="TroopName"></asp:Label>
+                <asp:Label CssClass="LogginLabel" ID="lbl_T4Name" runat="server" Text="TroopName"></asp:Label>
             </div>
             <%-- TroopTextBox --%>
             <div class="col-md-2">
@@ -213,13 +213,13 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-4">
-                            <asp:Label ID="Label21" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T4Mineral" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label22" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T4Monney" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label23" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T4Oil" runat="server" Text="0"></asp:Label>
                         </div>
                     </div>
                 </div>
@@ -229,27 +229,27 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-4">
-                            <asp:Label ID="Label24" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T4Attack" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label25" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T4Defence" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label26" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T4Speed" runat="server" Text="0"></asp:Label>
                         </div>
                     </div>
                 </div>
             </div>
             <%-- TrainTime --%>
                 <div class="col-md-2 TroopTrainObject" style="border: solid 1px gray">
-                <asp:Label ID="Label27" runat="server" Text="1 Minute"></asp:Label>
+                <asp:Label ID="lbl_T4TrainTime" runat="server" Text="1"></asp:Label>
             </div>
         </div>
            <%-- TROOP 5 --%>
         <div class="row">
             <%-- TroopName --%>
             <div class="col-md-2">
-                <asp:Label CssClass="LogginLabel" ID="Label28" runat="server" Text="TroopName"></asp:Label>
+                <asp:Label CssClass="LogginLabel" ID="lbl_T5Name" runat="server" Text="TroopName"></asp:Label>
             </div>
             <%-- TroopTextBox --%>
             <div class="col-md-2">
@@ -260,13 +260,13 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-4">
-                            <asp:Label ID="Label29" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T5Mineral" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label30" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T5Monney" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label31" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T5Oil" runat="server" Text="0"></asp:Label>
                         </div>
                     </div>
                 </div>
@@ -276,27 +276,27 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-4">
-                            <asp:Label ID="Label32" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T5Attack" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label33" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T5Defence" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label34" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T5Speed" runat="server" Text="0"></asp:Label>
                         </div>
                     </div>
                 </div>
             </div>
             <%-- TrainTime --%>
                 <div class="col-md-2 TroopTrainObject" style="border: solid 1px gray">
-                <asp:Label ID="Label35" runat="server" Text="1 Minute"></asp:Label>
+                <asp:Label ID="lbl_T5TrainTime" runat="server" Text="1"></asp:Label>
             </div>
         </div>
            <%-- TROOP 6 --%>
         <div class="row">
             <%-- TroopName --%>
             <div class="col-md-2">
-                <asp:Label CssClass="LogginLabel" ID="Label36" runat="server" Text="TroopName"></asp:Label>
+                <asp:Label CssClass="LogginLabel" ID="lbl_T6Name" runat="server" Text="TroopName"></asp:Label>
             </div>
             <%-- TroopTextBox --%>
             <div class="col-md-2">
@@ -307,13 +307,13 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-4">
-                            <asp:Label ID="Label37" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T6Mineral" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label38" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T6Monney" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label39" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T6Oil" runat="server" Text="0"></asp:Label>
                         </div>
                     </div>
                 </div>
@@ -323,27 +323,27 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-4">
-                            <asp:Label ID="Label40" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T6Attack" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label41" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T6Defence" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label42" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T6Speed" runat="server" Text="0"></asp:Label>
                         </div>
                     </div>
                 </div>
             </div>
             <%-- TrainTime --%>
                 <div class="col-md-2 TroopTrainObject" style="border: solid 1px gray">
-                <asp:Label ID="Label43" runat="server" Text="1 Minute"></asp:Label>
+                <asp:Label ID="lbl_T6TrainTime" runat="server" Text="1"></asp:Label>
             </div>
         </div>
            <%-- TROOP 7 --%>
         <div class="row">
             <%-- TroopName --%>
             <div class="col-md-2">
-                <asp:Label CssClass="LogginLabel" ID="Label44" runat="server" Text="TroopName"></asp:Label>
+                <asp:Label CssClass="LogginLabel" ID="lbl_T7Name" runat="server" Text="TroopName"></asp:Label>
             </div>
             <%-- TroopTextBox --%>
             <div class="col-md-2">
@@ -354,13 +354,13 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-4">
-                            <asp:Label ID="Label45" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T7Mineral" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label46" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T7Monney" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label47" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T7Oil" runat="server" Text="0"></asp:Label>
                         </div>
                     </div>
                 </div>
@@ -370,27 +370,27 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-4">
-                            <asp:Label ID="Label48" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T7Attack" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label49" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T7Defence" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label50" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T7Speed" runat="server" Text="0"></asp:Label>
                         </div>
                     </div>
                 </div>
             </div>
             <%-- TrainTime --%>
                 <div class="col-md-2 TroopTrainObject" style="border: solid 1px gray">
-                <asp:Label ID="Label51" runat="server" Text="1 Minute"></asp:Label>
+                <asp:Label ID="lbl_T7TrainTime" runat="server" Text="1"></asp:Label>
             </div>
         </div>
            <%-- TROOP 8 --%>
         <div class="row">
             <%-- TroopName --%>
             <div class="col-md-2">
-                <asp:Label CssClass="LogginLabel" ID="Label52" runat="server" Text="TroopName"></asp:Label>
+                <asp:Label CssClass="LogginLabel" ID="lbl_T8Name" runat="server" Text="TroopName"></asp:Label>
             </div>
             <%-- TroopTextBox --%>
             <div class="col-md-2">
@@ -401,13 +401,13 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-4">
-                            <asp:Label ID="Label53" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T8Mineral" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label54" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T8Monney" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label55" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T8Oil" runat="server" Text="0"></asp:Label>
                         </div>
                     </div>
                 </div>
@@ -417,27 +417,27 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-4">
-                            <asp:Label ID="Label56" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T8Attack" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label57" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T8Defence" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label58" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T8Speed" runat="server" Text="0"></asp:Label>
                         </div>
                     </div>
                 </div>
             </div>
             <%-- TrainTime --%>
                 <div class="col-md-2 TroopTrainObject" style="border: solid 1px gray">
-                <asp:Label ID="Label59" runat="server" Text="1 Minute"></asp:Label>
+                <asp:Label ID="lbl_T8TrainTime" runat="server" Text="1"></asp:Label>
             </div>
         </div>
            <%-- TROOP 9 --%>
         <div class="row">
             <%-- TroopName --%>
             <div class="col-md-2">
-                <asp:Label CssClass="LogginLabel" ID="Label60" runat="server" Text="TroopName"></asp:Label>
+                <asp:Label CssClass="LogginLabel" ID="lbl_T9Name" runat="server" Text="TroopName"></asp:Label>
             </div>
             <%-- TroopTextBox --%>
             <div class="col-md-2">
@@ -448,13 +448,13 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-4">
-                            <asp:Label ID="Label61" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T9Mineral" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label62" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_MonneyT9" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label63" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T9Oil" runat="server" Text="0"></asp:Label>
                         </div>
                     </div>
                 </div>
@@ -464,20 +464,20 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-4">
-                            <asp:Label ID="Label64" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T9Attack" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label65" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T9Defence" runat="server" Text="0"></asp:Label>
                         </div>
                         <div class="col-sm-4">
-                            <asp:Label ID="Label66" runat="server" Text="0"></asp:Label>
+                            <asp:Label ID="lbl_T9Speed" runat="server" Text="0"></asp:Label>
                         </div>
                     </div>
                 </div>
             </div>
             <%-- TrainTime --%>
                 <div class="col-md-2 TroopTrainObject" style="border: solid 1px gray">
-                <asp:Label ID="Label67" runat="server" Text="1 Minute"></asp:Label>
+                <asp:Label ID="lbl_T9TrainTime" runat="server" Text="1"></asp:Label>
             </div>
         </div>
         <%-- Troops END --%>
